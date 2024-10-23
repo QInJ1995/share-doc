@@ -1,25 +1,61 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
+title: 编程日志
+titleTemplate: Library
+
 hero:
-  name: "Knowledge Share Doc"
-  text: "Knowledge Share Doc"
-  tagline: My great project tagline
+  name: 编程日志
+  text: ''
+  tagline: '记录每一行代码，见证成长之路。'
+  image:
+    src: /svg/logo.svg
+    alt: 编程日志
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 文档查看
+      link: /guide/started
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: {src: '/svg/features/vue.svg', width: 32, height: 32}
+    title: Vue
+    details: 快速复制示例代码
+    link: /guide/started
+  - icon: {src: '/svg/features/react.svg', width: 32, height: 32}
+    title: React
+    details: 包含丰富的工具函数
+    link: /guide/started
+  - icon: {src: '/svg/features/java.svg', width: 32, height: 32}
+    title: Java
+    details: 支持自定义扩展
+    link: /guide/started
+  - icon: {src: '/svg/features/ts.svg', width: 32, height: 32}
+    title: TypScript
+    details: 简单易用，上手快
+    link: /guide/started
+  - icon: {src: '/svg/features/node.svg', width: 32, height: 32}
+    title: Node.js
+    details: 简单易用，上手快
+    link: /guide/started
+  - icon: {src: '/svg/features/flutter.svg', width: 32, height: 32}
+    title: Flutter
+    details: 快速复制示例代码
+    link: /guide/started
+  - icon: {src: '/svg/features/harmony.svg', width: 32, height: 32}
+    title: 鸿蒙
+    details: 包含丰富的工具函数
+    link: /guide/started
+  - icon: {src: '/svg/features/engineering.svg', width: 32, height: 32}
+    title: 前端工程化
+    details: 支持自定义扩展
+    link: /guide/started
 ---
 
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { fetchVersion } from '.vitepress/utils/fetchVersion.ts'
+
+onMounted(() => {
+  fetchVersion()
+})
+</script>
