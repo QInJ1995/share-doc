@@ -1,16 +1,16 @@
 ---
 layout: home
 
-title: 技术星球
+title: 知识星球
 titleTemplate: Library
 
 hero:
-  name: 技术星球
+  name: 知识星球
   text: ''
-  tagline: '探索技术星球，共享编程新知。'
+  tagline: '探索知识星球，共享编程新知。'
   image:
     src: /svg/logo.svg
-    alt: 技术星球
+    alt: 知识星球
   actions:
     - theme: brand
       text: 文档查看
