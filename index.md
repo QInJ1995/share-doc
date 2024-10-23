@@ -1,16 +1,16 @@
 ---
 layout: home
 
-title: 编程日志
+title: 技术星球
 titleTemplate: Library
 
 hero:
-  name: 编程日志
+  name: 技术星球
   text: ''
-  tagline: '记录每一行代码，见证成长之路。'
+  tagline: '探索技术星球，共享编程新知。'
   image:
     src: /svg/logo.svg
-    alt: 编程日志
+    alt: 技术星球
   actions:
     - theme: brand
       text: 文档查看
