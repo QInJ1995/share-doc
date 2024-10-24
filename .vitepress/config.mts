@@ -4,7 +4,7 @@ import { sidebar } from './constant/sidebarList'
 export default defineConfig({
   title: '知识星球', // 标题
   description: '知识星球', // 描述
-  base: '/', // 根路径
+  base: '/share-doc/', // 根路径
   head: [ // 网站图标
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/svg/logo.svg' }], // svg格式
     // ['link', { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }], // ico格式
