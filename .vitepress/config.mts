@@ -6,7 +6,7 @@ export default defineConfig({
   description: '知识星球', // 描述
   base: '/share-doc/', // 根路径
   head: [ // 网站图标
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/svg/logo.svg' }], // svg格式
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-doc/svg/logo.svg' }], // svg格式
     // ['link', { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }], // ico格式
   ],
   appearance: true, // 是否启用暗黑模式 
