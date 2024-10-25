@@ -2,7 +2,7 @@
 layout: home
 
 title: 知识星球
-titleTemplate: Library
+titleTemplate: 秦佬湿
 
 hero:
   name: 知识星球
@@ -19,35 +19,35 @@ hero:
 features:
   - icon: {src: '/svg/features/vue.svg', width: 32, height: 32}
     title: Vue
-    details: 快速复制示例代码
+    details: 轻量灵活，组件化开发，易上手
     link: /guide/started
   - icon: {src: '/svg/features/react.svg', width: 32, height: 32}
     title: React
-    details: 包含丰富的工具函数
+    details: 组件驱动，虚拟DOM，高效灵活
     link: /guide/started
   - icon: {src: '/svg/features/java.svg', width: 32, height: 32}
     title: Java
-    details: 支持自定义扩展
+    details: 跨平台，强类型，稳健无比
     link: /guide/started
   - icon: {src: '/svg/features/ts.svg', width: 32, height: 32}
     title: TypScript
-    details: 简单易用，上手快
+    details: 强类型，提升代码质量，便于维护
     link: /guide/started
   - icon: {src: '/svg/features/node.svg', width: 32, height: 32}
     title: Node.js
-    details: 简单易用，上手快
+    details: 非阻塞I/O，高效服务器，实时应用
     link: /guide/started
   - icon: {src: '/svg/features/flutter.svg', width: 32, height: 32}
     title: Flutter
-    details: 快速复制示例代码
+    details: 跨平台开发，快速构建，美观流畅
     link: /guide/started
   - icon: {src: '/svg/features/harmony.svg', width: 32, height: 32}
     title: 鸿蒙
-    details: 包含丰富的工具函数
+    details: 跨设备互联，智能生态，未来可期
     link: /guide/started
   - icon: {src: '/svg/features/engineering.svg', width: 32, height: 32}
     title: 前端工程化
-    details: 支持自定义扩展
+    details: 提升效率，规范管理，协同开发
     link: /guide/started
 ---
 

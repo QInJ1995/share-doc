@@ -19,12 +19,27 @@ export default defineConfig({
     },
     nav: [ // 导航栏
       {
-        text: 'API',
-        link: '/docs/api/front-end-frame'
-      },
-      {
-        text: '实用插件推荐',
-        link: '/docs/plugin/index'
+        text: 'API导航',
+        items: [
+          {
+            text: '全部',
+            link: '/docs/api/front-end-frame',
+            activeMatch: '/api/'
+          },
+          {
+            text: 'React',
+            link: 'https://react.docschina.org/'
+          },
+          {
+            text: 'Vue3',
+            link: 'https://cn.vuejs.org/'
+          },
+          {
+            text: 'Vue2',
+            link: 'https://v2.cn.vuejs.org/'
+          },
+        ],
+
       },
     ],
     sidebar, // 侧边栏
