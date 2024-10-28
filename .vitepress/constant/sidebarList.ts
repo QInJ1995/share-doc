@@ -25,7 +25,29 @@ export const sidebar = {
     '/docs/java/': [],
     '/docs/javascript/': [],
     '/docs/typescript/': [],
-    '/docs/node/': [],
+    '/docs/node/': [
+        {
+            text: '概览',
+            // link: 'docs/node/overview/basic/index'
+            collapsed: true,
+            items: [
+                { text: '架构', items: [
+                    { text: '概览', link: 'docs/node/overview/basic/index' },
+                    { text: '运行机制', link: 'docs/node/overview/basic/execution' },
+                    { text: '内存控制', link: 'docs/node/overview/basic/memory' },
+                ] },
+                { text: '模块机制', items: [] },
+                { text: '生态', items: [] },
+            ]
+        },
+        {
+            text: '引擎',
+            collapsed: true,
+            items: [
+                { text: 'Node.js', link: '/docs/node/nodejs' },
+            ]
+        },
+    ],
     '/docs/flutter/': [],
     '/docs/harmony/': [],
     '/docs/css/': [],

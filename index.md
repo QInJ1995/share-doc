@@ -36,7 +36,7 @@ features:
   - icon: {src: '/svg/features/node.svg', width: 32, height: 32}
     title: Node.js
     details: 非阻塞I/O，高效服务器，实时应用
-    link: /guide/started
+    link: docs/node/overview/basic/index
   - icon: {src: '/svg/features/flutter.svg', width: 32, height: 32}
     title: Flutter
     details: 跨平台开发，快速构建，美观流畅
