@@ -1,10 +1,10 @@
-# 学习资源
+# 开始TypeScript
 
 ## 官方
 
 - 官网
-  - 英文 - [https://nodejs.org/en](https://www.typescriptlang.org/)
-  - 中文 - [https://nodejs.org/zh-cn](https://ts.nodejs.cn/)
+  - 英文 - <https://www.typescriptlang.org/>
+  - 中文 - <https://ts.nodejs.cn/>
   
 ## 基础知识
 

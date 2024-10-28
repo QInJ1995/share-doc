@@ -24,7 +24,7 @@ features:
   - icon: {src: '/svg/features/react.svg', width: 32, height: 32}
     title: React
     details: 组件驱动，虚拟DOM，高效灵活
-    link: /guide/started
+    link: /docs/react/index
   - icon: {src: '/svg/features/java.svg', width: 32, height: 32}
     title: Java
     details: 跨平台，强类型，稳健无比
@@ -48,7 +48,7 @@ features:
   - icon: {src: '/svg/features/engineering.svg', width: 32, height: 32}
     title: 前端工程化
     details: 提升效率，规范管理，协同开发
-    link: /guide/started
+    link: /docs/engineering/代码规范
 ---
 
 <script setup lang="ts">

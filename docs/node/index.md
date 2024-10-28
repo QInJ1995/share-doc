@@ -1,10 +1,10 @@
-# 学习资源
+# 开始NodeJS
 
 ## 官方
 
 - 官网
-  - 英文 - [https://nodejs.org/en](https://nodejs.org/en)
-  - 中文 - [https://nodejs.org/zh-cn](https://nodejs.org/zh-cn)
+  - 英文 - <https://nodejs.org/en>
+  - 中文 - <https://nodejs.org/zh-cn>
   
 ## 基础知识
 
@@ -21,4 +21,4 @@
 
 ## 最佳实践
 
-- Node.js Best Practices - [https://github.com/goldbergyoni/nodebestpractices](https://github.com/goldbergyoni/nodebestpractices)
+- Node.js Best Practices - <https://github.com/goldbergyoni/nodebestpractices>
