@@ -20,20 +20,35 @@ export const sidebar = {
             ]
         },
     ],
-    '/docs/vue/': [],
+    '/docs/vue/': [
+        {
+            text: '关于Vue',
+            link: 'docs/vue/index'
+        },
+    ],
     '/docs/react/': [],
     '/docs/java/': [],
     '/docs/javascript/': [],
-    '/docs/typescript/': [],
+    '/docs/typescript/': [
+        {
+            text: '关于TypeScript',
+            link: 'docs/typescript/index'
+        },
+    ],
     '/docs/node/': [
         {
-            text: '学习资源',
-            link: 'docs/node/resource'
+            text: '关于NodeJS',
+            link: 'docs/node/index'
         },
     ],
     '/docs/flutter/': [],
     '/docs/harmony/': [],
-    '/docs/css/': [],
+    '/docs/css/': [
+        {
+            text: '学习资源',
+            link: 'docs/css/index'
+        },
+    ],
     '/docs/engineering/': [],
     '/docs/tools/': [],
     '/docs/plugin/': [],

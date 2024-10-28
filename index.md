@@ -20,7 +20,7 @@ features:
   - icon: {src: '/svg/features/vue.svg', width: 32, height: 32}
     title: Vue
     details: 轻量灵活，组件化开发，易上手
-    link: /guide/started
+    link: /docs/vue/index
   - icon: {src: '/svg/features/react.svg', width: 32, height: 32}
     title: React
     details: 组件驱动，虚拟DOM，高效灵活
@@ -32,11 +32,11 @@ features:
   - icon: {src: '/svg/features/ts.svg', width: 32, height: 32}
     title: TypScript
     details: 强类型，提升代码质量，便于维护
-    link: /guide/started
+    link: docs/typescript/index
   - icon: {src: '/svg/features/node.svg', width: 32, height: 32}
     title: Node.js
     details: 非阻塞I/O，高效服务器，实时应用
-    link: docs/node/resource
+    link: docs/node/index
   - icon: {src: '/svg/features/flutter.svg', width: 32, height: 32}
     title: Flutter
     details: 跨平台开发，快速构建，美观流畅
