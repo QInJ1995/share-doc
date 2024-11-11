@@ -25,6 +25,10 @@ features:
     title: React
     details: 组件驱动，虚拟DOM，高效灵活
     link: /docs/react/index
+  - icon: {src: '/svg/features/js.svg', width: 32, height: 32}
+    title: JavaScript
+    details: 动态网页编程语言，广泛应用
+    link: docs/javascript/index
   - icon: {src: '/svg/features/java.svg', width: 32, height: 32}
     title: Java
     details: 跨平台，强类型，稳健无比

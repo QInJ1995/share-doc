@@ -22,22 +22,34 @@ export const sidebar = {
     ],
     '/docs/vue/': [
         {
-            text: '开始Vue',
+            text: '开始',
             link: 'docs/vue/index'
         },
     ],
     '/docs/react/': [],
     '/docs/java/': [],
-    '/docs/javascript/': [],
+    '/docs/javascript/': [
+        {
+            text: '开始',
+            link: 'docs/javascript/index'
+        },
+        {
+            text: '基础',
+            collapsed: false,
+            items: [
+
+            ]
+        },
+    ],
     '/docs/typescript/': [
         {
-            text: '开始TypeScript',
+            text: '开始',
             link: 'docs/typescript/index'
         },
     ],
     '/docs/node/': [
         {
-            text: '开始NodeJS',
+            text: '开始',
             link: 'docs/node/index'
         },
     ],
