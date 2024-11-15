@@ -55,6 +55,16 @@ export const sidebar = {
                 }
             ]
         },
+        {
+            text: '通用组件',
+            collapsed: false,
+            items: [
+                {
+                    text: 'IconButtonList',
+                    link: 'docs/vue/通用组件/IconButtonList'
+                },
+            ]
+        },
     ],
     '/docs/react/': [],
     '/docs/java/': [],
