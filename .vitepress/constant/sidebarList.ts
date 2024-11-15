@@ -25,6 +25,36 @@ export const sidebar = {
             text: '开始',
             link: 'docs/vue/index'
         },
+        {
+            text: 'Vuex',
+            collapsed: true,
+            items: []
+        },
+        {
+            text: 'Vue Router',
+            collapsed: true,
+            items: []
+        },
+        {
+            text: '三方库',
+            collapsed: true,
+            items: [
+                {
+                    text: 'SVG',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: 'svg-sprite-loader',
+                            link: 'docs/vue/三方库/SVG/svg-sprite-loader'
+                        },
+                        {
+                            text: 'vite-plugin-svg-icons',
+                            link: 'docs/vue/三方库/SVG/vite-plugin-svg-icons'
+                        },
+                    ]
+                }
+            ]
+        },
     ],
     '/docs/react/': [],
     '/docs/java/': [],
