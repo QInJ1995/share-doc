@@ -73,14 +73,19 @@ export default {
 ```vue
 <template>
     <div class="icon-button-list">
-        <div class="icon-button-item" v-for="item in buttonList" :key="item.name" @click="item.onClick">
-            <svg-icon :name="item.icon"></svg-icon>
-            <span>{{ item.name }}</span>
-            <div v-if="item.children && item.children.length" class="icon-button-children">
-                <div class="icon-button-item-children" v-for="item in item.children" :key="item.name"
-                    @click.stop="item.onClick">
-                    <svg-icon :name="item.icon"></svg-icon>
-                    <span>{{ item.name }}</span>
+        <div class="icon-button-item" v-for="(item, index) in (buttonList.filter(i => !i.hidden))" :key="item.name"
+            @click="() => !item.disabled && item.onClick(item, index)">
+            <div :class="{ 'label-icon': true, 'disabled': item.disabled }">
+                <svg-icon :name="item.icon" :color="item.disabled ? '#D4D4D4' : '#417efd'"></svg-icon>
+                <span>{{ item.name }}</span>
+            </div>
+            <div v-if="!item.disabled && item.children && item.children.length" class="icon-button-children">
+                <div class="icon-button-item-children" v-for="(item, index) in (item.children.filter(i => !i.hidden)) "
+                    :key="item.name" @click.stop="() => !item.disabled && item.onClick(item, index)">
+                    <div :class="{ 'label-icon': true, 'disabled': item.disabled }">
+                        <svg-icon :name="item.icon" :color="item.disabled ? '#D4D4D4' : '#417efd'"></svg-icon>
+                        <span>{{ item.name }}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,6 +93,8 @@ export default {
 </template>
 
 <script>
+import { color } from 'echarts';
+
 export default {
     props: {
         buttonList: {
@@ -100,7 +107,7 @@ export default {
 
 <style lang="less" scoped>
 .icon-button-list {
-    padding: 4px 0px 4px 10px;
+    padding: 4px 0px 4px 0px;
     display: flex;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC, sans-serif;
@@ -129,7 +136,7 @@ export default {
         .icon-button-children {
             padding: 4px 0;
             position: absolute;
-            top: 38px;
+            top: 36px;
             z-index: 999;
             display: none;
             text-align: left;
@@ -152,6 +159,16 @@ export default {
                     border-radius: 2px;
                 }
             }
+        }
+
+        .label-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .disabled {
+            cursor: not-allowed;
+            color: #BFBFBF;
         }
     }
 }
