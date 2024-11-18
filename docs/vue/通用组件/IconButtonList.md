@@ -11,6 +11,8 @@
 | buttonList | Array  | []     | 按钮数组         |
 | buttonList[].icon | String | ''     | 按钮图标         |
 | buttonList[].label | String | ''     | 按钮文本         |
+| buttonList[].disabled | String | ''     | 是否禁用        |
+| buttonList[].hidden | String | ''     | 是否隐藏         |
 
 ## Events
 

@@ -33,7 +33,12 @@ export const sidebar = {
         {
             text: 'Vue Router',
             collapsed: true,
-            items: []
+            items: [
+                {
+                    text: '基本使用',
+                    link: 'docs/vue/Vue Router/基本使用'
+                },
+            ]
         },
         {
             text: '三方库',
