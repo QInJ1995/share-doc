@@ -35,16 +35,33 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
-                    text: 'v3.x 基本使用',
-                    link: 'docs/vue/Vuex/v3.x 基本使用'
+                    text: 'v3.x',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: '基本使用',
+                            link: 'docs/vue/Vuex/v3.x 基本使用'
+                        },
+                        {
+                            text: '源码分析',
+                            link: 'docs/vue/Vuex/v3.x 源码分析'
+                        },
+                    ]
                 },
                 {
-                    text: 'v4.x 基本使用',
-                    link: 'docs/vue/Vuex/v4.x 基本使用'
-                },
-                {
-                    text: '源码分析',
-                    link: 'docs/vue/Vuex/源码分析'
+                    text: 'v4.x',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: '基本使用',
+                            link: 'docs/vue/Vuex/v4.x 基本使用'
+                        },
+
+                        {
+                            text: '源码分析',
+                            link: 'docs/vue/Vuex/v4.x 源码分析'
+                        },
+                    ]
                 },
             ]
         },
@@ -53,16 +70,32 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
-                    text: 'v3.x 基本使用',
-                    link: 'docs/vue/Vue Router/v3.x 基本使用'
+                    text: 'v3.x',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: '基本使用',
+                            link: 'docs/vue/Vue Router/v3.x 基本使用'
+                        },
+                        {
+                            text: '源码分析',
+                            link: 'docs/vue/Vue Router/v3.x 源码分析'
+                        },
+                    ]
                 },
                 {
-                    text: 'v4.x 基本使用',
-                    link: 'docs/vue/Vue Router/v4.x 基本使用'
-                },
-                {
-                    text: '源码分析',
-                    link: 'docs/vue/Vue Router/源码分析'
+                    text: 'v4.x',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: '基本使用',
+                            link: 'docs/vue/Vue Router/v4.x 基本使用'
+                        },
+                        {
+                            text: '源码分析',
+                            link: 'docs/vue/Vue Router/v4.x 源码分析'
+                        },
+                    ]
                 },
             ]
         },
