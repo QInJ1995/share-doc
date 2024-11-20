@@ -22,21 +22,65 @@ export const sidebar = {
     ],
     '/docs/vue/': [
         {
-            text: '开始',
+            text: '文档',
             link: 'docs/vue/index'
+        },
+        {
+            text: 'Vue',
+            collapsed: true,
+            items: []
         },
         {
             text: 'Vuex',
             collapsed: true,
-            items: []
+            items: [
+                {
+                    text: 'v3.x 基本使用',
+                    link: 'docs/vue/Vuex/v3.x 基本使用'
+                },
+                {
+                    text: 'v4.x 基本使用',
+                    link: 'docs/vue/Vuex/v4.x 基本使用'
+                },
+                {
+                    text: '源码分析',
+                    link: 'docs/vue/Vuex/源码分析'
+                },
+            ]
         },
         {
             text: 'Vue Router',
             collapsed: true,
             items: [
                 {
-                    text: '基本使用',
-                    link: 'docs/vue/Vue Router/基本使用'
+                    text: 'v3.x 基本使用',
+                    link: 'docs/vue/Vue Router/v3.x 基本使用'
+                },
+                {
+                    text: 'v4.x 基本使用',
+                    link: 'docs/vue/Vue Router/v4.x 基本使用'
+                },
+                {
+                    text: '源码分析',
+                    link: 'docs/vue/Vue Router/源码分析'
+                },
+            ]
+        },
+        {
+            text: '测试',
+            collapsed: true,
+            items: [
+                {
+                    text: '单元测试',
+                    link: 'docs/vue/测试/单元测试'
+                },
+                {
+                    text: '端到端测试',
+                    link: 'docs/vue/测试/端到端测试'
+                },
+                {
+                    text: '样式测试',
+                    link: 'docs/vue/测试/样式测试'
                 },
             ]
         },
