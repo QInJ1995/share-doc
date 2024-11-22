@@ -174,6 +174,36 @@ export const sidebar = {
                             text: '循环控制',
                             link: 'docs/java/JavaSE/基础/循环控制'
                         },
+                        {
+                            text: '数组',
+                            link: 'docs/java/JavaSE/基础/数组'
+                        },
+                        {
+                            text: '方法',
+                            link: 'docs/java/JavaSE/基础/方法'
+                        },
+                        {
+                            text: '面向对象基础',
+                            link: 'docs/java/JavaSE/基础/面向对象基础'
+                        },
+                        {
+                            text: '常用API',
+                            link: 'docs/java/JavaSE/基础/常用API'
+                        },
+                        {
+                            text: '案例',
+                            collapsed: true,
+                            items: [
+                                {
+                                    text: '编程案例（专题）',
+                                    link: 'docs/java/JavaSE/基础/案例/编程案例（专题）'
+                                },
+                                {
+                                    text: '基础综合项目（ATM系统）',
+                                    link: 'docs/java/JavaSE/基础/案例/基础综合项目（ATM系统）'
+                                },
+                            ]
+                        },
                     ]
                 },
                 {
