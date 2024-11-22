@@ -32,7 +32,7 @@ features:
   - icon: {src: '/svg/features/java.svg', width: 32, height: 32}
     title: Java
     details: 跨平台，强类型，稳健无比
-    link: /guide/started
+    link: /docs/java/index
   - icon: {src: '/svg/features/ts.svg', width: 32, height: 32}
     title: TypScript
     details: 强类型，提升代码质量，便于维护

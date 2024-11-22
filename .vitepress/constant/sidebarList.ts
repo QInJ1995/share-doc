@@ -149,7 +149,63 @@ export const sidebar = {
         },
     ],
     '/docs/react/': [],
-    '/docs/java/': [],
+    '/docs/java/': [
+        {
+            text: '文档',
+            link: 'docs/java/index'
+        },
+        {
+            text: 'JavaSE',
+            collapsed: true,
+            items: [
+                {
+                    text: '基础',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: '基础语法',
+                            link: 'docs/java/JavaSE/基础/基础语法'
+                        },
+                        {
+                            text: '运算符',
+                            link: 'docs/java/JavaSE/基础/运算符'
+                        },
+                        {
+                            text: '循环控制',
+                            link: 'docs/java/JavaSE/基础/循环控制'
+                        },
+                    ]
+                },
+                {
+                    text: '进阶',
+                    collapsed: true,
+                    items: []
+                },
+            ]
+        },
+        {
+            text: 'JavaWeb',
+            collapsed: true,
+            items: [
+                {
+                    text: 'MySQL',
+                    link: ''
+                },
+                {
+                    text: 'JDBC',
+                    link: ''
+                },
+                {
+                    text: 'Maven基础',
+                    link: ''
+                },
+                {
+                    text: 'MyBatis',
+                    link: ''
+                },
+            ]
+        },
+    ],
     '/docs/javascript/': [
         {
             text: '开始',
