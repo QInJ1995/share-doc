@@ -290,7 +290,16 @@ export const sidebar = {
             items: [
                 {
                     text: 'MySQL',
-                    link: ''
+                    items: [
+                        {
+                            text: '基础操作',
+                            link: 'docs/java/JavaWeb/MySQL/基础操作'
+                        },
+                        {
+                            text: '数据库设计和多表操作',
+                            link: 'docs/java/JavaWeb/MySQL/数据库设计和多表操作'
+                        },
+                    ]
                 },
                 {
                     text: 'JDBC',
