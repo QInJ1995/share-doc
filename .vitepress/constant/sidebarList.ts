@@ -290,6 +290,7 @@ export const sidebar = {
             items: [
                 {
                     text: 'MySQL',
+                    collapsed: true,
                     items: [
                         {
                             text: '基础操作',
@@ -303,11 +304,17 @@ export const sidebar = {
                 },
                 {
                     text: 'JDBC',
-                    link: ''
+                    link: 'docs/java/JavaWeb/JDBC'
                 },
                 {
-                    text: 'Maven基础',
-                    link: ''
+                    text: 'Maven',
+                    collapsed: true,
+                    items: [
+                        {
+                            text: '基础',
+                            link: 'docs/java/JavaWeb/Maven/基础'
+                        }
+                    ]
                 },
                 {
                     text: 'MyBatis',
