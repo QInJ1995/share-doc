@@ -100,6 +100,20 @@ export const sidebar = {
             ]
         },
         {
+            text: '知识点',
+            collapsed: true,
+            items: [
+                {
+                    text: 'keep-alive',
+                    link: 'docs/vue/知识点/keep-alive'
+                },
+                {
+                    text: '＞＞＞、::v-deep、::v-deep()、:deep()的区别',
+                    link: 'docs/vue/知识点/＞＞＞、::v-deep、::v-deep()、:deep()的区别'
+                }
+            ]
+        },
+        {
             text: '测试',
             collapsed: true,
             items: [
@@ -138,12 +152,12 @@ export const sidebar = {
             ]
         },
         {
-            text: '通用组件',
-            collapsed: false,
+            text: '自定义组件',
+            collapsed: true,
             items: [
                 {
                     text: 'IconButtonList',
-                    link: 'docs/vue/通用组件/IconButtonList'
+                    link: 'docs/vue/自定义组件/IconButtonList'
                 },
             ]
         },
