@@ -7,7 +7,7 @@
 
 **1.1 StringBuilder方法演示**
 
-接下来我们用代码演示一下StringBuilder的用法
+接下来 用代码演示一下StringBuilder的用法
 
 ```java
 public class Test{
@@ -37,7 +37,7 @@ public class Test{
 }
 ```
 
-为什么要用StringBuilder对字符串进行操作呢？因为它的效率比String更高，我们可以下面两段代码验证一下。
+为什么要用StringBuilder对字符串进行操作呢？因为它的效率比String更高， 可以下面两段代码验证一下。
 
 ![1667402173587](/image/java/JavaSE/进阶/常见API/1667402173587.png)
 
@@ -45,7 +45,7 @@ public class Test{
 
 **1.2 StringBuilder应用案例**
 
-接下来，我们通过一个案例把StringBuilder运用下，案例需求如下图所示
+接下来， 通过一个案例把StringBuilder运用下，案例需求如下图所示
 
 代码如下
 
@@ -79,7 +79,7 @@ public class Test{
 
 ## 二、StringJoiner类
 
-接下来，我们学习一个类叫做StringJoiner，学习这个类干嘛用呢？是因为我们前面使用StringBuilder拼接字符串的时，代码写起来还是有一点麻烦，而StringJoiner号称是拼接神器，不仅效率高，而且代码简洁。
+接下来， 学习一个类叫做StringJoiner，学习这个类干嘛用呢？是因为 前面使用StringBuilder拼接字符串的时，代码写起来还是有一点麻烦，而StringJoiner号称是拼接神器，不仅效率高，而且代码简洁。
 
 下面演示一下StringJoiner的基本使用
 
@@ -206,7 +206,7 @@ public class SystemTest {
 
 ## 五、Runtime类
 
-接下来，我们再学习一个Java的运行时类，叫Runtime类。这个类可以用来获取JVM的一些信息，也可以用这个类去执行其他的程序。话不多少，上代码。
+接下来， 再学习一个Java的运行时类，叫Runtime类。这个类可以用来获取JVM的一些信息，也可以用这个类去执行其他的程序。话不多少，上代码。
 
 ```java
 /**
@@ -241,7 +241,7 @@ public class RuntimeTest {
 
 ## 六、BigDecimal类
 
-接下来我们学习的这个类叫BigDecimal，至于它是干什么用的，我们先不说。我们先看一段代码，看这个代码有什么问题？再说BigDeimal这个类是干什么用的，这样会更好理解一些。
+接下来 学习的这个类叫BigDecimal，至于它是干什么用的， 先不说。 先看一段代码，看这个代码有什么问题？再说BigDeimal这个类是干什么用的，这样会更好理解一些。
 
 ```java
 public class Test {
@@ -254,11 +254,11 @@ public class Test {
 }
 ```
 
-运行以上代码，我们会发现，结果并和我们想看到的不太一样。如下图所示
+运行以上代码， 会发现，结果并和 想看到的不太一样。如下图所示
 
 ![1667398959905](/image/java/JavaSE/进阶/常见API/1667398959905.png)
 
-为了解决计算精度损失的问题，Java给我们提供了BigDecimal类，它提供了一些方法可以对数据进行四则运算，而且不丢失精度，同时还可以保留指定的小数位。下面看代码，演示一下
+为了解决计算精度损失的问题，Java给 提供了BigDecimal类，它提供了一些方法可以对数据进行四则运算，而且不丢失精度，同时还可以保留指定的小数位。下面看代码，演示一下
 
 ```java
 public class Test2 {
@@ -319,7 +319,7 @@ public class Test2 {
 
 ## 五、Date类
 
-接下来，我们学习一下Date类，Java中是由这个类的对象用来表示日期或者时间。
+接下来， 学习一下Date类，Java中是由这个类的对象用来表示日期或者时间。
 
 Date对象记录的时间是用毫秒值来表示的。Java语言规定，1970年1月1日0时0分0秒认为是时间的起点，此时记作0，那么1000（1秒=1000毫秒）就表示1970年1月1日0时0分1秒，依次内推。
 
@@ -356,19 +356,19 @@ public class Test1Date {
 
 ## 六、SimpleDateFormat类
 
-前面我们打印Date对象时，发现打印输出的日期格式我们并不喜欢，是不是？你们喜欢那种格式呢？是不是像下面页面中这种格式啊？接下来我们学习的SimpleDateFormat类就可以转换Date对象表示日期时间的显示格式。
+前面 打印Date对象时，发现打印输出的日期格式 并不喜欢，是不是？你们喜欢那种格式呢？是不是像下面页面中这种格式啊？接下来 学习的SimpleDateFormat类就可以转换Date对象表示日期时间的显示格式。
 
-- 我们把Date对象转换为指定格式的日期字符串这个操作，叫做**日期格式化，**
+-  把Date对象转换为指定格式的日期字符串这个操作，叫做**日期格式化，**
 
 - 反过来把指定格式的日期符串转换为Date对象的操作，叫做**日期解析。**
 
 ![1667399510543](/image/java/JavaSE/进阶/常见API/1667399510543.png)
 
-接下来，我们先演示一下日期格式化，需要用到如下的几个方法
+接下来， 先演示一下日期格式化，需要用到如下的几个方法
 
 ![1667399804244](/image/java/JavaSE/进阶/常见API/1667399804244.png)
 
-注意：创建SimpleDateFormat对象时，在构造方法的参数位置传递日期格式，而日期格式是由一些特定的字母拼接而来的。我们需要记住常用的几种日期/时间格式
+注意：创建SimpleDateFormat对象时，在构造方法的参数位置传递日期格式，而日期格式是由一些特定的字母拼接而来的。 需要记住常用的几种日期/时间格式
 
 ```java
 字母    表示含义
@@ -462,7 +462,7 @@ public class Test3 {
 
 ## 七、Calendar类
 
-学完Date类和SimpleDateFormat类之后，我们再学习一个和日期相关的类，它是Calendar类。Calendar类表示日历，它提供了一些比Date类更好用的方法。
+学完Date类和SimpleDateFormat类之后， 再学习一个和日期相关的类，它是Calendar类。Calendar类表示日历，它提供了一些比Date类更好用的方法。
 
 比如下面的案例，用Date类就不太好做，而用Calendar就特别方便。因为Calendar类提供了方法可以直接对日历中的年、月、日、时、分、秒等进行运算。
 
@@ -540,7 +540,7 @@ public class Test {
 
 ## 九、JDK8日期、时间、日期时间
 
-接下来，我们学习一下JDK8新增的日期类。为什么以前的Date类就可以表示日期，为什么要有新增的日期类呢？原因如下
+接下来， 学习一下JDK8新增的日期类。为什么以前的Date类就可以表示日期，为什么要有新增的日期类呢？原因如下
 
 ![1667400465054](/image/java/JavaSE/进阶/常见API/1667400465054.png)
 
@@ -705,7 +705,7 @@ public class Test3_LocalDateTime {
 
 ## 十、JDK8日期（时区）
 
-接着，我们学习代表时区的两个类。由于世界各个国家与地区的经度不同，各地区的时间也有所不同，因此会划分为不同的时区。每一个时区的时间也不太一样。
+接着， 学习代表时区的两个类。由于世界各个国家与地区的经度不同，各地区的时间也有所不同，因此会划分为不同的时区。每一个时区的时间也不太一样。
 
 ![1667400888534](/image/java/JavaSE/进阶/常见API/1667400888534.png)
 
@@ -745,7 +745,7 @@ public class Test4_ZoneId_ZonedDateTime {
 
 ## 十一、JDK8日期（Instant类）
 
-接下来，我们来学习Instant这个类。通过获取Instant的对象可以拿到此刻的时间，该时间由两部分组成：从1970-01-01 00:00:00 开始走到此刻的总秒数+不够1秒的纳秒数。
+接下来， 来学习Instant这个类。通过获取Instant的对象可以拿到此刻的时间，该时间由两部分组成：从1970-01-01 00:00:00 开始走到此刻的总秒数+不够1秒的纳秒数。
 
 ![1667401284295](/image/java/JavaSE/进阶/常见API/1667401284295.png)
 
@@ -788,7 +788,7 @@ public class Test5_Instant {
 
 ## 十二、JDK8日期（格式化器）
 
-接下来，我们学习一个新增的日期格式化类，叫DateTimeFormater。它可以从来对日期进行格式化和解析。它代替了原来的SimpleDateFormat类。
+接下来， 学习一个新增的日期格式化类，叫DateTimeFormater。它可以从来对日期进行格式化和解析。它代替了原来的SimpleDateFormat类。
 
 ![1667401511710](/image/java/JavaSE/进阶/常见API/1667401511710.png)
 
@@ -861,7 +861,7 @@ public class Test7_Period {
 
 ## 十四、JDK8日期（Duration类）
 
-接下来，我们学习Duration类。它是用来表示两个时间对象的时间间隔。**可以用于计算两个时间对象相差的天数、小时数、分数、秒数、纳秒数；支持LocalTime、LocalDateTime、Instant等时间**
+接下来， 学习Duration类。它是用来表示两个时间对象的时间间隔。**可以用于计算两个时间对象相差的天数、小时数、分数、秒数、纳秒数；支持LocalTime、LocalDateTime、Instant等时间**
 
 ![1667401938724](/image/java/JavaSE/进阶/常见API/1667401938724.png)
 
