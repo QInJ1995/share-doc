@@ -104,6 +104,10 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
+                    text: '自定义指令',
+                    link: 'docs/vue/知识点/自定义指令'
+                },
+                {
                     text: 'keep-alive',
                     link: 'docs/vue/知识点/keep-alive'
                 },
