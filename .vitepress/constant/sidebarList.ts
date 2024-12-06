@@ -329,14 +329,21 @@ export const sidebar = {
     ],
     '/docs/javascript/': [
         {
-            text: '开始',
-            link: 'docs/javascript/index'
+            text: '文档',
+            link: 'docs/javascript/index',
         },
         {
-            text: '基础',
-            collapsed: false,
+            text: '常用API',
+            collapsed: true,
             items: [
-
+                {
+                    text: 'DOM',
+                    link: 'docs/javascript/常用API/DOM',
+                },
+                {
+                    text: 'BOM',
+                    link: 'docs/javascript/常用API/BOM'
+                },
             ]
         },
     ],
