@@ -112,8 +112,8 @@ export const sidebar = {
                     link: 'docs/vue/知识点/keep-alive'
                 },
                 {
-                    text: '＞＞＞、::v-deep、::v-deep()、:deep()的区别',
-                    link: 'docs/vue/知识点/＞＞＞、::v-deep、::v-deep()、:deep()的区别'
+                    text: '样式穿透',
+                    link: 'docs/vue/知识点/样式穿透'
                 }
             ]
         },
