@@ -8,3 +8,4 @@ cache
 *.local
 .vitepress/cache
 .vitepress/dist
+package-lock.json
