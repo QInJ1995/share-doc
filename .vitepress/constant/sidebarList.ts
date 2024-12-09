@@ -337,6 +337,14 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
+                    text: 'Array',
+                    link: 'docs/javascript/常用API/Array',
+                },
+                {
+                    text: 'Object',
+                    link: 'docs/javascript/常用API/Object',
+                },
+                {
                     text: 'DOM',
                     link: 'docs/javascript/常用API/DOM',
                 },
@@ -346,6 +354,22 @@ export const sidebar = {
                 },
             ]
         },
+        {
+            text: '知识点',
+            collapsed: true,
+            items: []
+        },
+        {
+            text: '解决方案',
+            collapsed: true,
+            items: [
+                {
+                    text: '大量接口请求并发控制',
+                    link: 'docs/javascript/解决方案/大量接口请求并发控制'
+                },
+            ]
+        },
+
     ],
     '/docs/typescript/': [
         {
