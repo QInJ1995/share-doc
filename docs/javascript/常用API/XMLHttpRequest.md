@@ -62,12 +62,15 @@ xhttp.onreadystatechange = function() {
 | [onreadystatechange](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readystatechange_event) | 定义当 readyState 属性发生变化时被调用的函数                                             |
 | [readyState](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState) | 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。0: 请求未初始化 1: 服务器连接已建立 2: 请求已接收 3: 请求处理中 4: 请求已完成，且响应已就绪 |
 | [response](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/response) | 返回一个 ArrayBuffer、Blob、Document，或 DOMString，具体是哪种类型取决于 XMLHttpRequest.responseType 的值。其中包含整个响应实体（response entity body） |
-| [responseType](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/responseType) | 一个用于定义响应类型的枚举值（enumerated value） |
+| [responseType](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/responseType) | 一个用于定义响应类型的枚举值（enumerated value）|
 | [responseText](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/responseText) | 以字符串返回响应数据 |
 | [responseXML](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/responseXML) | 以 XML 数据返回响应数据 |
 | [responseURL](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/responseURL) | 返回经过序列化（serialized）的响应 URL，如果该 URL 为空，则返回空字符串 |
 | [status](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/status) | 200: "OK" 404: 未找到页面 |
 | [statusText](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/statusText) | 返回状态文本（比如 "OK" 或 "Not Found"）|
+| [timeout](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/timeout) | 设置一个可选的异步请求超时时间（以毫秒为单位） |
+| [upload](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/upload) | 允许访问与请求关联的 XMLHttpRequestUpload 对象，使用它来跟踪请求的进度 |
+| [withCredentials](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/withCredentials) | 指示是否该使用类似 cookies、authorization headers（头部授权）或 TLS 客户端证书等身份验证来访问资源 |
 
 ### XMLHttpRequest 对象方法
 

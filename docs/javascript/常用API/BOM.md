@@ -112,6 +112,8 @@ history 对象允许操作浏览器的历史记录。
 |[history.back()](https://developer.mozilla.org/zh-CN/docs/Web/API/History/back) |加载历史记录中的前一个页面。|
 |[history.forward()](https://developer.mozilla.org/zh-CN/docs/Web/API/History/forward) |加载历史记录中的下一个页面。|
 |[history.go(n)](https://developer.mozilla.org/zh-CN/docs/Web/API/History/go) |加载历史记录中的指定页面（相对位置）。|
+|[history.pushState(state, title, url)](https://developer.mozilla.org/zh-CN/docs/Web/API/History/pushState) |向历史记录中添加一个新的状态。|
+|[history.replaceState(state, title, url)](https://developer.mozilla.org/zh-CN/docs/Web/API/History/replaceState) |替换当前的历史记录状态。|
 
 示例
 
@@ -124,6 +126,12 @@ history.forward();
 
 // 跳转到历史中的第 n 个页面
 history.go(-2); // 后退两页
+
+// 添加新状态
+history.pushState({ page: 1 }, "title 1", "?page=1");
+
+// 替换当前状态
+history.replaceState({ page: 2 }, "title 2", "?page=2");
 ```
 
 ## 位置对象（Location）
