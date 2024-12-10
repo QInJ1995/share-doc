@@ -337,12 +337,20 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
+                    text: 'Object',
+                    link: 'docs/javascript/常用API/Object',
+                },
+                {
                     text: 'Array',
                     link: 'docs/javascript/常用API/Array',
                 },
                 {
-                    text: 'Object',
-                    link: 'docs/javascript/常用API/Object',
+                    text: 'MutationObserver',
+                    link: 'docs/javascript/常用API/MutationObserver',
+                },
+                {
+                    text: 'XMLHttpRequest',
+                    link: 'docs/javascript/常用API/XMLHttpRequest',
                 },
                 {
                     text: 'DOM',
