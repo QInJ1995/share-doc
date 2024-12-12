@@ -28,7 +28,28 @@ export const sidebar = {
         {
             text: 'Vue',
             collapsed: true,
-            items: []
+            items: [
+                {
+                    text: 'v2.x',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: '基础教程',
+                            link: 'docs/vue/Vue/v2.x/基础教程.md'
+                        }
+                    ],
+                },
+                {
+                    text: 'v3.x',
+                    collapsed: false,
+                    items: [
+                        {
+                            text: '基础教程',
+                            link: 'docs/vue/Vue/v3.x/基础教程.md'
+                        }
+                    ],
+                },
+            ]
         },
         {
             text: 'Vuex',
