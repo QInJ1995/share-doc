@@ -139,6 +139,28 @@ export const sidebar = {
             ]
         },
         {
+            text: '开发技巧',
+            collapsed: true,
+            items: [
+                {
+                    text: '动态Watch',
+                    link: 'docs/vue/开发技巧/动态Watch'
+                },
+                {
+                    text: '@hook',
+                    link: 'docs/vue/开发技巧/@hook'
+                },
+                {
+                    text: 'Vue.mixin 全局混入',
+                    link: 'docs/vue/开发技巧/Vue.mixin 全局混入'
+                },
+                {
+                    text: 'Vue.util.defineReactive',
+                    link: 'docs/vue/开发技巧/Vue.util.defineReactive'
+                },
+            ],
+        },
+        {
             text: '测试',
             collapsed: true,
             items: [
