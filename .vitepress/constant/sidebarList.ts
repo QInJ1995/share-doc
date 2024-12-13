@@ -438,18 +438,28 @@ export const sidebar = {
             link: 'docs/node/index'
         },
     ],
+    '/docs/engineering/': [
+        {
+            text: '项目基建',
+            collapsed: true,
+            items: [
+                {
+                    text: 'TS+Vite 搭建插件库',
+                    link: 'docs/engineering/项目基建/TS+Vite 搭建插件库'
+                }
+            ]
+        },
+        {
+            text: '代码规范',
+            link: 'docs/engineering/代码规范'
+        },
+    ],
     '/docs/flutter/': [],
     '/docs/harmony/': [],
     '/docs/css/': [
         {
             text: '学习资源',
             link: 'docs/css/index'
-        },
-    ],
-    '/docs/engineering/': [
-        {
-            text: '代码规范',
-            link: 'docs/engineering/代码规范'
         },
     ],
     '/docs/tools/': [],
