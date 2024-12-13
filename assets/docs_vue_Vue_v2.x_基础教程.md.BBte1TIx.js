@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.lYqQAyNq.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/vue/Vue/v2.x/基础教程.md","filePath":"docs/vue/Vue/v2.x/基础教程.md"}'),o={name:"docs/vue/Vue/v2.x/基础教程.md"};function s(c,r,n,_,d,p){return a(),t("div")}const m=e(o,[["render",s]]);export{u as __pageData,m as default};
