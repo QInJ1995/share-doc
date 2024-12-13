@@ -1,6 +1,6 @@
 # Vue.mixin 全局混入
 
-<br/>
+
 
 在平时项目开发中，为了提取一些公共逻辑，会使用到`mixin`进行混入，它可以将一些定义的`method`、`data`、`computed`、生命周期钩子`created`、`mounted`等注入到组件中。
 

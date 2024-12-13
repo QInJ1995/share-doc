@@ -1,6 +1,6 @@
 # DOM
 
-<br/>
+
 DOM（文档对象模型，Document Object Model）是 HTML 和 XML 文档的编程接口，它将文档表示为一个结构化的节点树，开发者可以通过 DOM 操作文档的内容、结构和样式。
 
 DOM 的核心是 document 对象，它表示整个 HTML 或 XML 文档。通过 DOM API，开发者可以动态地添加、删除、修改文档中的内容和元素。
