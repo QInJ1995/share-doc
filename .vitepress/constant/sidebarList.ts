@@ -36,6 +36,10 @@ export const sidebar = {
                         {
                             text: '基础教程',
                             link: 'docs/vue/Vue/v2.x/基础教程.md'
+                        },
+                        {
+                            text: '进阶教程',
+                            link: 'docs/vue/Vue/v2.x/进阶教程.md'
                         }
                     ],
                 },
