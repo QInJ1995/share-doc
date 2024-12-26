@@ -50,9 +50,9 @@ features:
     details: 跨设备互联，智能生态，未来可期
     link: /guide/started
   - icon: {src: '/svg/features/engineering.svg', width: 32, height: 32}
-    title: 前端工程化
+    title: 工程化
     details: 提升效率，规范管理，协同开发
-    link: /docs/engineering/代码规范
+    link: /docs/engineering/index
 ---
 
 <script setup lang="ts">
