@@ -53,13 +53,17 @@ features:
     title: 工程化
     details: 提升效率，规范管理，协同开发
     link: /docs/engineering/index
+  - icon: {src: '/svg/features/operation.svg', width: 32, height: 32}
+    title: 运维
+    details: 监控自动化，备份恢复，高可用安全
+    link: /docs/operation/index
 ---
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { onMounted } from 'vue'
 import { fetchVersion } from '.vitepress/utils/fetchVersion.ts'
 
 onMounted(() => {
   fetchVersion()
 })
-</script>
+</script> -->

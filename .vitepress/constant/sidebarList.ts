@@ -448,6 +448,10 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
+                    text: 'Monorepo 项目搭建',
+                    link: 'docs/engineering/前端/Monorepo 项目搭建'
+                },
+                {
                     text: 'TS+Vite 搭建插件库',
                     link: 'docs/engineering/前端/TS+Vite 搭建插件库'
                 },
