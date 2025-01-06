@@ -13,8 +13,6 @@ Object(value)
 
 ### [Object.assign()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
-
-
 Object.assign() 静态方法将一个或者多个源对象中所有可枚举的自有属性复制到目标对象，并返回修改后的目标对象。
 
 ::: tip 备注
@@ -40,8 +38,6 @@ console.log(returnedTarget === target);
 ```
 
 ### [Object.create()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
-
-
 
 Object.create() 方法用于创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
 
@@ -71,8 +67,6 @@ me.printIntroduction();
 
 ### [Object.defineProperties()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties)
 
-
-
 Object.defineProperties() 静态方法直接在一个对象上定义新的属性或修改现有属性，并返回该对象。
 
 ```javascript
@@ -91,8 +85,6 @@ console.log(object1.property1);
 ```
 
 ### [Object.defineProperty()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-
-
 
 Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。
 
@@ -113,8 +105,6 @@ console.log(object1.property1);
 
 ### [Object.keys()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 
-
-
 Object.keys() 方法会返回一个由一个给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和正常循环遍历该对象时返回的顺序一致 。
 
 ```javascript
@@ -130,8 +120,6 @@ console.log(Object.keys(object1));
 
 ### [Object.values()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 
-
-
 Object.values() 方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for...in 循环还会枚举其原型链中的属性）。
 
 ```javascript
@@ -146,8 +134,6 @@ console.log(Object.values(object1)); // Expected output: Array ["somestring", 42
 
 ### [Object.entries()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/entries)
 
-
-
 Object.entries() 方法返回一个给定对象自身可枚举属性的键值对数组，其排列与使用 for...in 循环遍历该对象时返回的顺序一致（区别在于 for...in 循环还会枚举其原型链中的属性）。
 
 ```javascript
@@ -156,8 +142,6 @@ console.log(Object.entries(obj)); // [ ['foo', 'bar'], ['baz', 42] ]
 ```
 
 ### [Object.fromEntries()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries)
-
-
 
 Object.fromEntries() 方法把键值对列表转换为一个对象。
 
@@ -175,8 +159,6 @@ console.log(obj);
 
 ### [Object.getOwnPropertyDescriptor()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)
 
-
-
 Object.getOwnPropertyDescriptor() 方法返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上查找的属性）
 
 ```javascript
@@ -190,8 +172,6 @@ console.log(descriptor1); // Expected output: { value: 42, writable: true, enume
 ```
 
 ### [Object.getOwnPropertyDescriptors()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
-
-
 
 Object.getOwnPropertyDescriptors() 方法返回指定对象所有自身属性的描述符。
 
@@ -216,8 +196,6 @@ console.log(descriptors);
 
 ### [Object.getOwnPropertyNames()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
 
-
-
 Object.getOwnPropertyNames() 方法返回一个由指定对象的所有自身属性的属性名（包括不可枚举属性但不包括 Symbol 值作为名称的属性）组成的数组。
 
 ```javascript
@@ -234,8 +212,6 @@ console.log(objNames); // Expected output: ["0", "1", "2"]
 ```
 
 ### [Object.getOwnPropertySymbols()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols)
-
-
 
 Object.getOwnPropertySymbols() 方法返回一个给定对象自身的所有 Symbol 属性的数组。
 
@@ -263,8 +239,6 @@ console.log(objectSymbols);
 
 ### [Object.getPrototypeOf()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
 
-
-
 Object.getPrototypeOf() 方法返回指定对象的原型（即，内部的 [[Prototype]] 属性的值）。
 
 ```javascript
@@ -276,8 +250,6 @@ console.log(Object.getPrototypeOf(object1) === prototype1);
 ```
 
 ### [Object.is()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/is)
-
-
 
 Object.is() 方法判断两个值是否为同一个值。
 
@@ -304,8 +276,6 @@ Object.is(NaN, NaN); // true
 
 ### [Object.isExtensible()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isExtensible)
 
-
-
 Object.isExtensible() 方法判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。
 
 ```javascript
@@ -321,8 +291,6 @@ console.log(Object.isExtensible(emptyObject));
 ```
 
 ### [Object.isFrozen()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen)
-
-
 
 Object.isFrozen() 方法判断一个对象是否被冻结。如果参数对象的可配置性，可枚举性，或可写性任一属性被修改，或者新增了属性，那么对象将被认为不是冻结的，否则就是冻结的。
 
@@ -347,8 +315,6 @@ console.log(Object.isFrozen(obj3));
 ```
 
 ### [Object.isSealed()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isSealed)
-
-
 
 Object.isSealed() 方法判断一个对象是否被密封。如果参数对象的所有属性都是不可配置的，则返回 true；否则返回 false。
 
@@ -382,8 +348,6 @@ console.log(Object.isSealed(obj3));
 
 ### [Object.freeze()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
 
-
-
 Object.freeze() 方法可以冻结一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。freeze 返回和传入的参数相同的对象。
 
 ```javascript
@@ -400,8 +364,6 @@ console.log(obj.prop); // Expected output: 42
 ```
 
 ### [Object.seal()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/seal)
-
-
 
 Object.seal() 静态方法密封一个对象。密封一个对象会阻止其扩展并且使得现有属性不可配置。密封对象有一组固定的属性：不能添加新属性、不能删除现有属性或更改其可枚举性和可配置性、不能重新分配其原型。只要现有属性的值是可写的，它们仍然可以更改。seal() 返回传入的同一对象。
 
@@ -424,8 +386,6 @@ console.log(obj.prop); // Expected output: 33
 
 ### [Object.preventExtensions()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)
 
-
-
 Object.preventExtensions() 静态方法可以防止新属性被添加到对象中（即防止该对象被扩展）。它还可以防止对象的原型被重新指定。
 
 ```javascript
@@ -443,8 +403,6 @@ console.log(obj.prop2); // undefined
 
 ### [Object.setPrototypeOf()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
 
-
-
 Object.setPrototypeOf() 静态方法可以将一个指定对象的原型（即内部的 [[Prototype]] 属性）设置为另一个对象或者 null。
 
 ```javascript
@@ -458,8 +416,6 @@ console.log(obj.x); // Expected output: 10
 
 ### [Object.hasOwn()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn)
 
-
-
 如果指定的对象自身有指定的属性，则静态方法 Object.hasOwn() 返回 true。如果属性是继承的或者不存在，该方法返回 false。
 
 ```javascript
@@ -471,8 +427,6 @@ console.log(Object.hasOwn(obj, 'hasOwnProperty')); // false (hasOwnProperty 是�
 ```
 
 ### [Object.groupBy()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy)
-
-
 
 Object.groupBy() 静态方法根据提供的回调函数返回的字符串值对给定可迭代对象中的元素进行分组。返回的对象具有每个组的单独属性，其中包含组中的元素的数组。
 
@@ -531,8 +485,6 @@ const result2 = Object.groupBy(inventory, myCallback);
 
 ### [Object.prototype.hasOwnProperty()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
 
-
-
 hasOwnProperty() 方法会返回一个布尔值，指示对象自身属性中是否具有指定的属性（也就是，不会去查找原型链）。
 
 ::: tip 备注
@@ -555,8 +507,6 @@ console.log(object1.hasOwnProperty('hasOwnProperty'));
 
 ### [Object.prototype.isPrototypeOf()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf)
 
-
-
 isPrototypeOf() 方法用于测试一个对象是否存在于另一个对象的原型链上。
 
 ```javascript
@@ -576,8 +526,6 @@ console.log(Object.prototype.isPrototypeOf(baz)); // true
 ```
 
 ### [Object.prototype.propertyIsEnumerable()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
-
-
 
 propertyIsEnumerable() 方法返回一个布尔值，表示指定的属性名是否是当前对象的可枚举属性。
 
@@ -605,8 +553,6 @@ console.log(obj.propertyIsEnumerable('toString'));
 
 ### [Object.prototype.toLocaleString()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)
 
-
-
 toLocaleString() 方法返回一个表示对象的字符串。该方法旨在由派生对象重写，以达到其特定于语言环境的目的。
 
 ```javascript
@@ -622,8 +568,6 @@ console.log(number1.toLocaleString('de-DE'));
 ```
 
 ### [Object.prototype.toString()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
-
-
 
 toString() 方法返回一个表示该对象的字符串。该方法旨在重写（自定义）派生类对象的类型转换的逻辑。
 
@@ -643,8 +587,6 @@ console.log(dog1.toString());
 ```
 
 ### [Object.prototype.valueOf()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
-
-
 
 Object 实例的 valueOf() 方法将 this 值转换成对象。该方法旨在被派生对象重写，以实现自定义类型转换逻辑。
 

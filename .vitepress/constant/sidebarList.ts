@@ -392,6 +392,10 @@ export const sidebar = {
                     link: 'docs/javascript/常用API/Array',
                 },
                 {
+                    text: 'Reflect',
+                    link: 'docs/javascript/常用API/Reflect',
+                },
+                {
                     text: 'MutationObserver',
                     link: 'docs/javascript/常用API/MutationObserver',
                 },

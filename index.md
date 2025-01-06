@@ -44,7 +44,7 @@ features:
   - icon: {src: '/svg/features/flutter.svg', width: 32, height: 32}
     title: Flutter
     details: 跨平台开发，快速构建，美观流畅
-    link: /guide/started
+    link: /docs/flutter/index
   - icon: {src: '/svg/features/harmony.svg', width: 32, height: 32}
     title: 鸿蒙
     details: 跨设备互联，智能生态，未来可期
