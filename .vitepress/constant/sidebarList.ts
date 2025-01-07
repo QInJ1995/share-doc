@@ -516,7 +516,40 @@ export const sidebar = {
         }
 
     ],
-    '/docs/flutter/': [],
+    '/docs/flutter/': [
+        {
+            text: '快速搭建',
+            collapsed: true,
+            items: [
+                {
+                    text: '开发工具',
+                    link: 'docs/flutter/快速搭建/开发工具.md',
+                },
+                {
+                    text: 'Mac 安装和环境配置',
+                    link: 'docs/flutter/快速搭建/Mac 安装和环境配置.md',
+                },
+                {
+                    text: 'Windows 安装和环境配置',
+                    link: 'docs/flutter/快速搭建/Windows 安装和环境配置.md',
+                },
+            ]
+        },
+        {
+            text: 'Dart',
+            collapsed: true,
+            items: [
+                {
+                    text: '基础',
+                    link: 'docs/flutter/Dart/基础.md'
+                },
+                {
+                    text: '进阶',
+                    link: 'docs/flutter/Dart/进阶.md'
+                }
+            ],
+        }
+    ],
     '/docs/harmony/': [],
     '/docs/css/': [
         {

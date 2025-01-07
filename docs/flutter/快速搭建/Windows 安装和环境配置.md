@@ -1,31 +1,15 @@
-# 安装和环境配置
+# Windows 安装和环境配置
 
 详细可查阅[官网安装和环境配置教程](https://docs.flutter.cn/get-started/install)
 
-## 开发工具
-
-### Visual Studio Code
-
-插件:
-- Flutter
-- Dart
-- Flutter Widget Snippets
-- Awesome Flutter Snippets
-- Color Highlight
-- Image Preview
-
-### Android Studio
-
-## window 安装和环境配置
-
-### 安装 Flutter SDK
+## 安装 Flutter SDK
 
 - [使用 VS Code 安装 Flutter](https://docs.flutter.cn/get-started/install/windows/mobile#install-the-flutter-sdk)
 - [自行下载安装](https://docs.flutter.cn/get-started/install/windows/mobile#install-the-flutter-sdk)
 
-### 配置 Android 开发
+## 配置 Android 开发
 
-#### 在 Android Studio 中配置 Android toolchain
+### 在 Android Studio 中配置 Android toolchain
 
 要使用 Flutter 创建 Android 应用程序，请确认已安装以下 Android 组件。
 
@@ -119,7 +103,7 @@
 
 5. 单击 Create Device。
 
-显示 Virtual Device Configuration 的对话框。
+    显示 Virtual Device Configuration 的对话框。
 
 6. 在 Category 下选择 Phone 或 Tablet。
 
@@ -133,13 +117,13 @@
 
     1. 如果所需镜像的 Release Name 右侧有一个 Download 图标，请单击该图标。
 
-    显示 SDK Quickfix Installation 完成进度的对话框
+        显示 SDK Quickfix Installation 完成进度的对话框
 
     2. 下载完成后，单击 Finish。
 
 11. 单击 Next。
 
-Virtual Device Configuration 会显示它的 Verify Configuation 步骤。
+    Virtual Device Configuration 会显示它的 Verify Configuation 步骤。
 
 12. 如果要重命名 Android 虚拟设备 (AVD)，请更改 AVD Name 框中的值。
 
@@ -147,11 +131,11 @@ Virtual Device Configuration 会显示它的 Verify Configuation 步骤。
 
 14. 从 Graphics 下拉菜单中，选择 Hardware - GLES 2.0。
 
-这样就会开启 硬件加速 (hardware acceleration) 并提高渲染性能。
+    这样就会开启 硬件加速 (hardware acceleration) 并提高渲染性能。
 
 15. 检查你的 AVD 配置。如果已经完备，请单击 Finish。
 
-想要了解更多有关 AVD 的信息，请查阅 Managing AVDs。
+    想要了解更多有关 AVD 的信息，请查阅 Managing AVDs。
 
 16. 在 Device Manager 对话框中，单击所需 AVD 右侧的 Run 图标。模拟器启动并显示所选 Android 操作系统的版本和设备默认的画布。
 
@@ -184,18 +168,18 @@ c:\> flutter devices
 1. 打开一个高权限（管理员）的控制台窗口。
 2. 运行以下指令启用签名许可证。
 
-```bash
-C:> flutter doctor --android-licenses
-```
+    ```bash
+    C:> flutter doctor --android-licenses
+    ```
 
-如果你在其他时候已经同意了 Android Studio 许可证，该指令将会返回：
+    如果你在其他时候已经同意了 Android Studio 许可证，该指令将会返回：
 
-```bash
-[========================================] 100% Computing updates...
-All SDK package licenses accepted.
-```
+    ```bash
+    [========================================] 100% Computing updates...
+    All SDK package licenses accepted.
+    ```
 
-你可以跳过下一个步骤。
+    你可以跳过下一个步骤。
 
 3. 请仔细阅读每项许可条款后，再同意。
 
@@ -240,9 +224,9 @@ export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 source ~/.zshrc
 ```
 
-### 检查你的开发配置
+## 检查你的开发配置
 
-#### 运行 Flutter doctor
+### 运行 Flutter doctor
 
 `flutter doctor` 指令将检查 Windows 完整的 Flutter 开发环境的所有组件。
 
@@ -273,7 +257,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 ! Doctor found issues in 2 categories.
 ```
 
-#### 解决 Flutter doctor 的问题
+### 解决 Flutter doctor 的问题
 
 当 `flutter doctor` 指令返回错误时，可能是 Flutter、VS Code、Android Studio、连接的设备或者网络资源出错。
 
@@ -286,10 +270,3 @@ PS C:> flutter doctor -v
 查看输出结果，了解可能需要安装的其他软件或者需要执行的其他任务。
 
 如果你更改了 Flutter SDK 或其他相关组件的配置，请 再次运行 `flutter doctor` 来检查安装。
-
-
-
-
-
-
-
