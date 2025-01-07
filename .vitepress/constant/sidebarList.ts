@@ -548,6 +548,26 @@ export const sidebar = {
                     link: 'docs/flutter/Dart/进阶.md'
                 }
             ],
+        },
+        {
+            text: '常用API',
+            collapsed: true,
+            // items: [
+            //     {
+            //         text: '空安全适配指南',
+            //         link: 'docs/flutter/常用API/空安全适配指南.md'
+            //     },
+            // ],
+        },
+        {
+            text: '解决方案',
+            collapsed: true,
+            items: [
+                {
+                    text: '空安全适配指南',
+                    link: 'docs/flutter/解决方案/空安全适配指南.md'
+                },
+            ],
         }
     ],
     '/docs/harmony/': [],

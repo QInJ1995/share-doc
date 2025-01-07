@@ -6,6 +6,11 @@
 - [Flutter 中文网](https://flutterchina.club/)
 - [Flutter 社区](https://flutter.cn/community/)
 
+## API
+
+- [Flutter API](https://api.flutter.dev/)
+- [Dart Core](https://api.flutter.dev/flutter/dart-core/dart-core-library.html)
+
 ## 教程
 
 - [Flutter实战·第二版](https://book.flutterchina.club/)
