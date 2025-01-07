@@ -560,6 +560,16 @@ export const sidebar = {
             // ],
         },
         {
+            text: '三方库',
+            collapsed: true,
+            items: [
+                {
+                    text: 'Http',
+                    link: 'docs/flutter/三方库/Http.md'
+                },
+            ],
+        },
+        {
             text: '解决方案',
             collapsed: true,
             items: [
