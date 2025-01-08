@@ -16,51 +16,46 @@ Flutter官方推荐我们用sharedpreferences进行数据存储，类似于RN中
 
 1. 首先在pubspec.yaml文件中添加：
 
-```yaml
-dependencies:
-    shared_preferences: ^xxx
-```
+    ```yaml
+    dependencies:
+        shared_preferences: ^xxx
+    ```
 
-记得运行安装哦：flutter packages get
+    记得运行安装哦：flutter packages get
 
 2. 在需要用到的文件中导入：
 
-```dart
-import 'package:shared_preferences/shared_preferences.dart';
-```
+    ```dart
+    import 'package:shared_preferences/shared_preferences.dart';
+    ```
 
 3. 存储数据
 
-```dart
-final prefs = await SharedPreferences.getInstance();
+    ```dart
+    final prefs = await SharedPreferences.getInstance();
 
-// set value
-prefs.setInt('counter', counter);
-```
+    // set value
+    prefs.setInt('counter', counter);
+    ```
 
 4. 读取数据
 
-```dart
-final prefs = await SharedPreferences.getInstance();
+    ```dart
+    final prefs = await SharedPreferences.getInstance();
 
-// Try reading data from the counter key. If it does not exist, return 0.
-final counter = prefs.getInt('counter') ?? 0;
-```
+    // Try reading data from the counter key. If it does not exist, return 0.
+    final counter = prefs.getInt('counter') ?? 0;
+    ```
 
 5. 删除数据
 
-```dart
-final prefs = await SharedPreferences.getInstance();
-prefs.remove('counter');
-```
+    ```dart
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove('counter');
+    ```
 
 ## shared_preferences有那些常用的API
 
 ### 存储相关
 
 ### 读取相关
-
-
-
-
-

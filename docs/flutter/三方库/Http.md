@@ -149,6 +149,3 @@ setState(() {
     resultShow2 = map['msg'];
 });
 ```
-
-
-

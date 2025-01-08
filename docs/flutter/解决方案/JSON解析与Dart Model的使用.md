@@ -17,6 +17,7 @@ JSON数据，以及JSON数据处理有那些实用技巧呢？
 ### 将json string转成Map
 
 主要步骤：
+
 1. 导入dart:convert
     import 'dart:convert';
 2. 通过jsonDecode(jsonString)将json转成Map；
@@ -98,7 +99,6 @@ class Data {
 ## Dart Model的使用
 
 定义好Dart Model之后接下来我们来看下如何使用它：
-
 
 1. 使用dart:convert 中的jsonDecode将json string转成Map
 2. 通过DataModel.fromJson将Map转成Dart Model

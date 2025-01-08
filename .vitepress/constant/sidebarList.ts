@@ -518,6 +518,10 @@ export const sidebar = {
     ],
     '/docs/flutter/': [
         {
+            text: '文档',
+            link: 'docs/flutter/index'
+        },
+        {
             text: '快速搭建',
             collapsed: true,
             items: [
@@ -550,23 +554,51 @@ export const sidebar = {
             ],
         },
         {
-            text: '常用API',
-            collapsed: true,
-            // items: [
-            //     {
-            //         text: '空安全适配指南',
-            //         link: 'docs/flutter/常用API/空安全适配指南.md'
-            //     },
-            // ],
-        },
-        {
-            text: '三方库',
+            text: '常用Widget',
             collapsed: true,
             items: [
                 {
-                    text: 'Http',
-                    link: 'docs/flutter/三方库/Http.md'
+                    text: '文本Widget',
+                    link: 'docs/flutter/常用Widget/文本Widget.md'
                 },
+                {
+                    text: '布局Widget',
+                    link: 'docs/flutter/常用Widget/布局Widget.md'
+                },
+                {
+                    text: '容器Widget',
+                    link: 'docs/flutter/常用Widget/容器Widget.md'
+                },
+                {
+                    text: '导航Widget',
+                    link: 'docs/flutter/常用Widget/导航Widget.md'
+                },
+                {
+                    text: '交互Widget',
+                    link: 'docs/flutter/常用Widget/交互Widget.md'
+                },
+                {
+                    text: '动画Widget',
+                    link: 'docs/flutter/常用Widget/动画Widget.md'
+                },
+                {
+                    text: '自定义Widget',
+                    link: 'docs/flutter/常用Widget/自定义Widget.md'
+                },
+                {
+                    text: '其他Widget',
+                    link: 'docs/flutter/常用Widget/其他Widget.md'
+                },
+            ]
+        },
+        {
+            text: '常用API',
+            collapsed: true,
+        },
+        {
+            text: '知识点',
+            collapsed: true,
+            items: [
             ],
         },
         {
@@ -574,11 +606,42 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
+                    text: 'JSON解析与Dart Model的使用',
+                    link: 'docs/flutter/解决方案/JSON解析与Dart Model的使用.md'
+                },
+                {
+                    text: 'Future与FutureBuilder实用技巧',
+                    link: 'docs/flutter/解决方案/Future与FutureBuilder实用技巧.md'
+                },
+                {
+                    text: '基于shared_preferences的本地存储操作',
+                    link: 'docs/flutter/解决方案/基于shared_preferences的本地存储操作.md'
+                },
+                {
                     text: '空安全适配指南',
                     link: 'docs/flutter/解决方案/空安全适配指南.md'
                 },
             ],
-        }
+        },
+        {
+            text: '三方库',
+            collapsed: true,
+            items: [
+                {
+                    text: 'http',
+                    link: 'docs/flutter/三方库/http.md'
+                },
+                {
+                    text: 'hive',
+                    link: 'docs/flutter/三方库/hive.md'
+                },
+                {
+                    text: 'shared_preferences',
+                    link: 'docs/flutter/三方库/shared_preferences.md'
+                },
+            ],
+        },
+
     ],
     '/docs/harmony/': [],
     '/docs/css/': [
