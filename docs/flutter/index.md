@@ -5,6 +5,7 @@
 - [Flutter 官方文档](https://flutter.dev/docs)
 - [Flutter 中文网](https://flutterchina.club/)
 - [Flutter 社区](https://flutter.cn/community/)
+- [Flutter 官方issues](https://github.com/flutter/flutter/issues)
 
 ## API
 
