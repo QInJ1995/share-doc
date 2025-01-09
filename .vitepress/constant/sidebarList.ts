@@ -511,6 +511,10 @@ export const sidebar = {
                 {
                     text: '工作流',
                     link: 'docs/engineering/git/工作流'
+                },
+                {
+                    text: 'Commit Message 规范',
+                    link: 'docs/engineering/git/Commit Message 规范'
                 }
             ]
         }
@@ -599,6 +603,10 @@ export const sidebar = {
             text: '知识点',
             collapsed: true,
             items: [
+                {
+                    text: 'StatelessWidget与StatefulWidget开发指南',
+                    link: 'docs/flutter/知识点/StatelessWidget与StatefulWidget开发指南.md'
+                },
             ],
         },
         {
