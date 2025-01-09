@@ -585,6 +585,10 @@ export const sidebar = {
                     text: '图片和资产Widget',
                     link: 'docs/flutter/常用Widget/图片和资产Widget.md'
                 },
+                {
+                    text: '应用结构Widget',
+                    link: 'docs/flutter/常用Widget/应用结构Widget.md'
+                },
             ]
         },
         {

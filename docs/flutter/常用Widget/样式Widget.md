@@ -11,18 +11,7 @@ Padding(
 )
 ```
 
-## 2. [Margin](https://api.flutter.dev/flutter/widgets/Margin-class.html)
-
-为子组件添加外边距。
-
-```dart
-Margin(
-  margin: EdgeInsets.all(10),
-  child: Text("Hello World"),
-)
-```
-
-## 3. [Theme](https://api.flutter.dev/flutter/widgets/Theme-class.html)
+## 2. [Theme](https://api.flutter.dev/flutter/widgets/Theme-class.html)
 
 为子组件设置主题。
 
@@ -35,7 +24,7 @@ Theme(
 )
 ```
 
-## 4. [MediaQuery](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
+## 3. [MediaQuery](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
 
 获取设备信息。
 
