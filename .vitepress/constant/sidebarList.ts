@@ -570,28 +570,20 @@ export const sidebar = {
                     link: 'docs/flutter/常用Widget/布局Widget.md'
                 },
                 {
-                    text: '容器Widget',
-                    link: 'docs/flutter/常用Widget/容器Widget.md'
+                    text: '样式Widget',
+                    link: 'docs/flutter/常用Widget/样式Widget.md'
                 },
                 {
-                    text: '导航Widget',
-                    link: 'docs/flutter/常用Widget/导航Widget.md'
+                    text: '可滚动Widget',
+                    link: 'docs/flutter/常用Widget/可滚动Widget.md'
                 },
                 {
-                    text: '交互Widget',
-                    link: 'docs/flutter/常用Widget/交互Widget.md'
+                    text: '绘制和效果Widget',
+                    link: 'docs/flutter/常用Widget/绘制和效果Widget.md'
                 },
                 {
-                    text: '动画Widget',
-                    link: 'docs/flutter/常用Widget/动画Widget.md'
-                },
-                {
-                    text: '自定义Widget',
-                    link: 'docs/flutter/常用Widget/自定义Widget.md'
-                },
-                {
-                    text: '其他Widget',
-                    link: 'docs/flutter/常用Widget/其他Widget.md'
+                    text: '图片和资产Widget',
+                    link: 'docs/flutter/常用Widget/图片和资产Widget.md'
                 },
             ]
         },
