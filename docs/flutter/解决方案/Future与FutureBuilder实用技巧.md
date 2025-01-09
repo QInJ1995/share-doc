@@ -123,10 +123,10 @@ FutureBuilder是一个将异步操作和异步UI更新结合在一起的类，�
 这个builder函数接受两个参数`BuildContext context` 与 `AsyncSnapshot<T> snapshot`，它返回一个`widget`。`AsyncSnapshot`包含异步计算的信息，它具有以下属性：
 
 - connectionState：枚举ConnectionState的值，表示与异步计算的连接状态，ConnectionState有四个值：none，waiting，active和done；
-    - none：当前未连接到任何异步计算；
-    - waiting：连接到异步计算并等待交互；
-    - active：表示异步计算还在进行中；
-    - done：表示异步计算完成；
+  - none：当前未连接到任何异步计算；
+  - waiting：连接到异步计算并等待交互；
+  - active：表示异步计算还在进行中；
+  - done：表示异步计算完成；
 
 - data - 异步计算接收的最新数据；
 - error - 异步计算接收的最新错误对象；
@@ -193,7 +193,3 @@ class _FutureStudyState extends State<FutureStudy> {
     }
 }
 ```
-
-
-
-

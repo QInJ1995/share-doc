@@ -112,7 +112,7 @@ class MyStatefulWidgetState extends State<MyStatefulWidget> {
 2. 确定哪个对象管理widget的状态（对于StatefulWidget）
 
     在Flutter中，管理状态有三种主要方式：
-        - 每个widget管理自己的状态 
+        - 每个widget管理自己的状态
         - 父widget管理子widget的状态
         - 混合搭配管理的方法
 
@@ -120,14 +120,3 @@ class MyStatefulWidgetState extends State<MyStatefulWidget> {
         - 如果所讨论的状态是用户数据，例如复选框的已选中或未选中状态，或滑块的位置，则状态最好由父widget管理
         - 如果widget的状态取决于动作，例如动画，那么最好是由widget自身来管理状态
         - 如有还是不确定谁管理状态，请让父widget管理子widget的状态
-
-
-
-
-
-
-
-
-
-
-
