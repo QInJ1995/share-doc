@@ -2,13 +2,13 @@
 
 ## 什么是Http库
 
-Http库是Flutter社区开发的一个可组合的、跨平台的用于Flutter的网络请求插件。
+[`http`](https://pub.dev/packages/http)库是Flutter社区开发的一个可组合的、跨平台的用于Flutter的网络请求插件。
 
 ## 如何使用Http库
 
 ### 第一步：添加依赖
 
-在pubspec.yaml中引入[http](https://pub.dev/packages/http)插件
+在pubspec.yaml中引入`http`插件
 
 ```yaml
 dependencies:

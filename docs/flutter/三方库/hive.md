@@ -6,7 +6,7 @@
 
 ### 1.1 添加依赖
 
-要在 Flutter 中使用 Hive，你需要将 Hive 库添加到 `pubspec.yaml` 文件中。
+要在 Flutter 中使用 Hive，你需要将 [`hive`](https://pub.dev/packages/hive)，[`hive_flutter`](https://pub.dev/packages/hive_flutter) 库添加到 `pubspec.yaml` 文件中。
 
 打开 `pubspec.yaml` 文件，在 `dependencies` 中添加：
 
@@ -26,7 +26,7 @@ flutter pub get
 
 ### 1.2 添加 Hive 存储引擎
 
-Hive 默认使用内存存储，但如果你希望将数据保存在磁盘上，需要配置路径。在 `pubspec.yaml` 中添加 `path_provider` 库来获得设备的目录路径：
+Hive 默认使用内存存储，但如果你希望将数据保存在磁盘上，需要配置路径。在 `pubspec.yaml` 中添加 [`path_provider`](https://pub.dev/packages/path_provider) 库来获得设备的目录路径：
 
 ```yaml
 dependencies:

@@ -562,32 +562,32 @@ export const sidebar = {
             collapsed: true,
             items: [
                 {
-                    text: '文本Widget',
-                    link: 'docs/flutter/常用Widget/文本Widget.md'
+                    text: '文本',
+                    link: 'docs/flutter/常用Widget/文本.md'
                 },
                 {
-                    text: '布局Widget',
+                    text: '布局',
                     link: 'docs/flutter/常用Widget/布局Widget.md'
                 },
                 {
-                    text: '样式Widget',
+                    text: '样式',
                     link: 'docs/flutter/常用Widget/样式Widget.md'
                 },
                 {
-                    text: '可滚动Widget',
-                    link: 'docs/flutter/常用Widget/可滚动Widget.md'
+                    text: '可滚动',
+                    link: 'docs/flutter/常用Widget/可滚动.md'
                 },
                 {
-                    text: '绘制和效果Widget',
-                    link: 'docs/flutter/常用Widget/绘制和效果Widget.md'
+                    text: '绘制和效果',
+                    link: 'docs/flutter/常用Widget/绘制和效果.md'
                 },
                 {
-                    text: '图片和资产Widget',
-                    link: 'docs/flutter/常用Widget/图片和资产Widget.md'
+                    text: '图片和资产',
+                    link: 'docs/flutter/常用Widget/图片和资产.md'
                 },
                 {
-                    text: '应用结构Widget',
-                    link: 'docs/flutter/常用Widget/应用结构Widget.md'
+                    text: '应用结构',
+                    link: 'docs/flutter/常用Widget/应用结构.md'
                 },
             ]
         },
