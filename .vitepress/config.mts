@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { sidebar } from './constant/sidebarList'
+import sidebar from './constant/sidebar/index'
 
 export default defineConfig({
   title: '知识星球', // 标题
