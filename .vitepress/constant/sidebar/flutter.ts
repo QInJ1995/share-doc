@@ -64,8 +64,8 @@ export default [
                 link: 'docs/flutter/常用Widget/图片和资产.md'
             },
             {
-                text: '应用结构',
-                link: 'docs/flutter/常用Widget/应用结构.md'
+                text: '页面构建',
+                link: 'docs/flutter/常用Widget/页面构建.md'
             },
         ]
     },
@@ -128,6 +128,10 @@ export default [
             {
                 text: 'flutter_screenutil',
                 link: 'docs/flutter/三方库/flutter_screenutil.md'
+            },
+            {
+                text: 'carousel_slider',
+                link: 'docs/flutter/三方库/carousel_slider.md'
             },
             {
                 text: 'url_launcher',
