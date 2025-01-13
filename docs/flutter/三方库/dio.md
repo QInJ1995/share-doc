@@ -228,8 +228,3 @@ void main() async {
   print(response.rawData);
 }
 ```
-
-
-
-
-

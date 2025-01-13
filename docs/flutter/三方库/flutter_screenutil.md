@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-### 使用
+### 应用
 
 在 `build` 方法中，我们可以使用 `ScreenUtil` 提供的方法来获取屏幕尺寸、字体大小等：
 

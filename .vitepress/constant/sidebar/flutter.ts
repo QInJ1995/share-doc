@@ -88,6 +88,14 @@ export default [
         collapsed: true,
         items: [
             {
+                text: '屏幕适配指南',
+                link: 'docs/flutter/解决方案/屏幕适配指南.md'
+            },
+            {
+                text: '调用接口开发指南',
+                link: 'docs/flutter/解决方案/调用接口开发指南.md'
+            },
+            {
                 text: 'JSON解析与Dart Model的使用',
                 link: 'docs/flutter/解决方案/JSON解析与Dart Model的使用.md'
             },
@@ -109,6 +117,22 @@ export default [
         text: '三方库',
         collapsed: true,
         items: [
+            {
+                text: 'dio',
+                link: 'docs/flutter/三方库/dio.md'
+            },
+            {
+                text: 'flutter_hi_cache',
+                link: 'docs/flutter/三方库/flutter_hi_cache.md'
+            },
+            {
+                text: 'flutter_screenutil',
+                link: 'docs/flutter/三方库/flutter_screenutil.md'
+            },
+            {
+                text: 'url_launcher',
+                link: 'docs/flutter/三方库/url_launcher.md'
+            },
             {
                 text: 'http',
                 link: 'docs/flutter/三方库/http.md'
