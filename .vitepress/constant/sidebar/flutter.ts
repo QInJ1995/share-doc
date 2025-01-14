@@ -45,11 +45,11 @@ export default [
             },
             {
                 text: '布局',
-                link: 'docs/flutter/常用Widget/布局Widget.md'
+                link: 'docs/flutter/常用Widget/布局.md'
             },
             {
                 text: '样式',
-                link: 'docs/flutter/常用Widget/样式Widget.md'
+                link: 'docs/flutter/常用Widget/样式.md'
             },
             {
                 text: '可滚动',
@@ -80,6 +80,20 @@ export default [
             {
                 text: 'StatelessWidget与StatefulWidget开发指南',
                 link: 'docs/flutter/知识点/StatelessWidget与StatefulWidget开发指南.md'
+            },
+        ],
+    },
+    {
+        text: '开发技巧',
+        collapsed: true,
+        items: [
+            {
+                text: '滚动监听',
+                link: 'docs/flutter/开发技巧/滚动监听.md'
+            },
+            {
+                text: '移除顶部空白',
+                link: 'docs/flutter/开发技巧/移除顶部空白.md'
             },
         ],
     },
