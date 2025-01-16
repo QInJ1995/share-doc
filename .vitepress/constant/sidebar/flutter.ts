@@ -78,8 +78,8 @@ export default [
         collapsed: true,
         items: [
             {
-                text: 'StatelessWidget与StatefulWidget开发指南',
-                link: 'docs/flutter/知识点/StatelessWidget与StatefulWidget开发指南.md'
+                text: 'StatelessWidget与StatefulWidget区别',
+                link: 'docs/flutter/知识点/StatelessWidget与StatefulWidget区别.md'
             },
         ],
     },
@@ -95,6 +95,28 @@ export default [
                 text: '移除顶部空白',
                 link: 'docs/flutter/开发技巧/移除顶部空白.md'
             },
+        ],
+    },
+    {
+        text: '应用案例',
+        collapsed: true,
+        items: [
+            {
+                text: '基于ListView实现水平和垂直方式滚动的列表',
+                link: 'docs/flutter/应用案例/基于ListView实现水平和垂直方式滚动的列表.md'
+            },
+            {
+                text: '基于ExpansionTile实现可展开的列表',
+                link: 'docs/flutter/应用案例/基于ExpansionTile实现可展开的列表.md'
+            },
+            {
+                text: '基于GridView实现网格列表',
+                link: 'docs/flutter/应用案例/基于GridView实现网格列表.md'
+            },
+            {
+                text: '列表下拉刷新与上拉加载更多功能实现',
+                link: 'docs/flutter/应用案例/列表下拉刷新与上拉加载更多功能实现.md'
+            }
         ],
     },
     {
