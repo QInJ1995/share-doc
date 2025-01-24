@@ -81,7 +81,21 @@ export default [
                 text: 'StatelessWidget与StatefulWidget区别',
                 link: 'docs/flutter/知识点/StatelessWidget与StatefulWidget区别.md'
             },
+            {
+                text: 'Navigator页面跳转',
+                link: 'docs/flutter/知识点/Navigator页面跳转.md'
+            },
         ],
+    },
+    {
+        text: '常用封装',
+        collapsed: true,
+        items: [
+            {
+                text: 'NavigationService',
+                link: 'docs/flutter/常用封装类或方法/NavigationService.md'
+            },
+        ]
     },
     {
         text: '开发技巧',
@@ -104,6 +118,10 @@ export default [
             {
                 text: '基于ListView实现水平和垂直方式滚动的列表',
                 link: 'docs/flutter/应用案例/基于ListView实现水平和垂直方式滚动的列表.md'
+            },
+            {
+                text: 'H5开发',
+                link: 'docs/flutter/应用案例/H5开发.md'
             },
             {
                 text: '基于ExpansionTile实现可展开的列表',
@@ -184,6 +202,10 @@ export default [
             {
                 text: 'shared_preferences',
                 link: 'docs/flutter/三方库/shared_preferences.md'
+            },
+            {
+                text: 'webview_flutter',
+                link: 'docs/flutter/三方库/webview_flutter.md'
             },
         ],
     },
