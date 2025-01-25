@@ -56,5 +56,22 @@ export default [
             },
         ]
     },
-
+    {
+        text: '小技巧',
+        collapsed: true,
+        items: [
+            {
+                text: '巧用位运算',
+                link: 'docs/javascript/小技巧/巧用位运算'
+            },
+            {
+                text: '实现一个快速评分方法',
+                link: 'docs/javascript/小技巧/实现一个快速评分方法'
+            },
+            {
+                text: '开发报错处理',
+                link: 'docs/javascript/小技巧/开发报错处理'
+            },
+        ]
+    },
 ]
