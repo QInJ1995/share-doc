@@ -7,6 +7,14 @@
 - [使用 VS Code 安装 Flutter](https://docs.flutter.cn/get-started/install/windows/mobile#install-the-flutter-sdk)
 - [自行下载安装](https://docs.flutter.cn/get-started/install/windows/mobile#install-the-flutter-sdk)
 
+## 配置环境变量
+
+1. 例如将下载的 `Flutter SDK` 解压后的路径是：`C:\src\flutter`
+2. 打开环境变量设置
+   1. 找到系统变量中的`Path`，点击编辑
+   2. 点击新建，将`C:\src\flutter\bin`路径添加进去
+   3. 点击 确定 保存更改
+
 ## 配置 Android 开发
 
 ### 在 Android Studio 中配置 Android toolchain
