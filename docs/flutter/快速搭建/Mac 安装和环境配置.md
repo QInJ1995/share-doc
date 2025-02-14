@@ -62,7 +62,47 @@ echo $PATH
 
 打开 App Store，搜索 Xcode 并安装。
 
-### 安装 iOS 模拟器
+## 安装 CocoaPods 并配置
+
+CocoaPods 是一个用于管理 iOS 和 macOS 项目的依赖库的工具。在终端中运行以下命令来安装 CocoaPods：
+
+### 安装 Ruby
+
+CocoaPods 是用 Ruby 编写的，因此需要先安装 Ruby。macOS 通常自带 Ruby，但建议使用 Ruby 版本管理器（如 rbenv 或 rvm）来管理 Ruby 版本。
+
+```bash
+# 安装 rbenv
+brew install rbenv
+
+# 初始化 rbenv
+rbenv init
+
+# 安装指定版本的 Ruby
+rbenv install 3.0.0
+
+# 设置全局 Ruby 版本
+rbenv global 3.0.0
+```
+
+### 安装 CocoaPods
+
+使用 Ruby 的包管理器 gem 来安装 CocoaPods。
+
+```bash
+sudo gem install cocoapods
+```
+
+### 验证安装
+
+安装完成后，可以通过以下命令验证 CocoaPods 是否安装成功：
+
+```bash
+pod --version
+```
+
+如果输出了版本号，说明安装成功。
+
+## 安装 iOS 模拟器
 
 1. 打开 Xcode，点击顶部菜单栏的 `Xcode` -> `Setting`，在弹出的窗口中点击 `Components` 标签，然后安装 `Simulator`。
 2. 命令安装
