@@ -19,6 +19,10 @@ export default [
                 text: 'Windows 安装和环境配置',
                 link: 'docs/flutter/快速搭建/Windows 安装和环境配置.md',
             },
+            {
+                text: '项目运行',
+                link: 'docs/flutter/快速搭建/项目运行.md',
+            },
         ]
     },
     {
@@ -67,6 +71,18 @@ export default [
                 text: '页面构建',
                 link: 'docs/flutter/常用Widget/页面构建.md'
             },
+            {
+                text: '按钮',
+                link: 'docs/flutter/常用Widget/按钮.md'
+            },
+            {
+                text: '事件',
+                link: 'docs/flutter/常用Widget/事件.md'
+            },
+            {
+                text: '输入',
+                link: 'docs/flutter/常用Widget/输入.md'
+            },
         ]
     },
     {
@@ -93,7 +109,7 @@ export default [
         items: [
             {
                 text: 'NavigationService',
-                link: 'docs/flutter/常用封装类或方法/NavigationService.md'
+                link: 'docs/flutter/常用封装/NavigationService.md'
             },
         ]
     },
@@ -118,10 +134,6 @@ export default [
             {
                 text: '基于ListView实现水平和垂直方式滚动的列表',
                 link: 'docs/flutter/应用案例/基于ListView实现水平和垂直方式滚动的列表.md'
-            },
-            {
-                text: 'H5开发',
-                link: 'docs/flutter/应用案例/H5开发.md'
             },
             {
                 text: '基于ExpansionTile实现可展开的列表',
@@ -164,6 +176,10 @@ export default [
             {
                 text: '空安全适配指南',
                 link: 'docs/flutter/解决方案/空安全适配指南.md'
+            },
+            {
+                text: 'H5开发',
+                link: 'docs/flutter/解决方案/H5开发.md'
             },
         ],
     },

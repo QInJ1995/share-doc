@@ -38,6 +38,20 @@ export default [
                         link: 'docs/engineering/前端/Webpack/常用插件'
                     },
                 ]
+            },
+            {
+                text: '知识点',
+                collapsed: true,
+                items: [
+                    {
+                        text: 'Babel',
+                        link: 'docs/engineering/前端/知识点/Babel'
+                    },
+                    {
+                        text: 'SWC',
+                        link: 'docs/engineering/前端/知识点/SWC'
+                    },
+                ]
             }
         ]
     },
