@@ -17,4 +17,14 @@ export default [
             }
         ],
     },
+    {
+        text: '知识点',
+        collapsed: true,
+        items: [
+            {
+                text: '父子组件通讯',
+                link: 'docs/react/知识点/父子组件通讯'
+            },
+        ],
+    },
 ]
