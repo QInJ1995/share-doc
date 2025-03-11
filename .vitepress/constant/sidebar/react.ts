@@ -18,6 +18,36 @@ export default [
         ],
     },
     {
+        text: '常用hooks',
+        collapsed: true,
+        items: [
+            {
+                text: 'useState',
+                link: 'docs/react/常用hooks/useState'
+            },
+            {
+                text: 'useEffect',
+                link: 'docs/react/常用hooks/useEffect'
+            },
+            {
+                text: 'useLayoutEffect',
+                link: 'docs/react/常用hooks/useLayoutEffect'
+            },
+            {
+                text: 'useReducer',
+                link: 'docs/react/常用hooks/useReducer'
+            },
+            {
+                text: 'useSyncExternalStore',
+                link: 'docs/react/常用hooks/useSyncExternalStore'
+            },
+            {
+                text: 'useTransition',
+                link: 'docs/react/常用hooks/useTransition'
+            },
+        ],
+    },
+    {
         text: '知识点',
         collapsed: true,
         items: [
