@@ -45,6 +45,10 @@ export default [
                 text: 'useTransition',
                 link: 'docs/react/常用hooks/useTransition'
             },
+            {
+                text: 'useDeferredValue',
+                link: 'docs/react/常用hooks/useDeferredValue'
+            },
         ],
     },
     {
