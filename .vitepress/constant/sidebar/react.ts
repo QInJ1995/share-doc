@@ -49,6 +49,18 @@ export default [
                 text: 'useDeferredValue',
                 link: 'docs/react/常用hooks/useDeferredValue'
             },
+            {
+                text: 'useRef',
+                link: 'docs/react/常用hooks/useRef'
+            },
+            {
+                text: 'useImperativeHandle',
+                link: 'docs/react/常用hooks/useImperativeHandle'
+            },
+            {
+                text: 'useContext',
+                link: 'docs/react/常用hooks/useContext'
+            },
         ],
     },
     {
