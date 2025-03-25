@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress'
-import sidebar from './constant/sidebar/index'
+import { BASE_URL, SIDEBAR } from './constant/index'
 
 export default defineConfig({
   title: '知识星球', // 标题
   description: '知识星球', // 描述
-  base: '/share-doc/', // 根路径
+  base: BASE_URL, // 根路径
   head: [ // 网站图标
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/share-doc/svg/logo.svg' }], // svg格式
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: BASE_URL + 'svg/logo.svg' }], // svg格式
     // ['link', { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }], // ico格式
   ],
   appearance: true, // 是否启用暗黑模式 
@@ -42,7 +42,7 @@ export default defineConfig({
 
       },
     ],
-    sidebar, // 侧边栏
+    sidebar: SIDEBAR, // 侧边栏
     outline: { // 侧边栏标题
       level: [2, 4],
       label: '当前页'

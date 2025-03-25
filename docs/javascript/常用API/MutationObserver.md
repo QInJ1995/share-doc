@@ -2,7 +2,7 @@
 
 ## 简介
 
-[MutationObserver](http://127.0.0.1:5174/share-doc/docs/javascript/%E5%B8%B8%E7%94%A8API/MutationObserver) 是一个内置的 JavaScript 对象，用于监视 DOM 树的变化。它允许开发者在 DOM 树发生变化时执行特定的回调函数，从而实现对 DOM 的实时监控和响应。
+[MutationObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver) 是一个内置的 JavaScript 对象，用于监视 DOM 树的变化。它允许开发者在 DOM 树发生变化时执行特定的回调函数，从而实现对 DOM 的实时监控和响应。
 
 MutationObserver 的基本用法如下：
 
