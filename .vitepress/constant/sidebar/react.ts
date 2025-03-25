@@ -73,4 +73,14 @@ export default [
             },
         ],
     },
+    {
+        text: '源码分析',
+        collapsed: true,
+        items: [
+            {
+                text: '虚拟DOM',
+                link: 'docs/react/源码分析/虚拟DOM'
+            },
+        ],
+    },
 ]

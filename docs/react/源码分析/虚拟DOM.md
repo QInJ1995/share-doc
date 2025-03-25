@@ -95,5 +95,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ## 参考
 
-- [React Docs - Virtual DOM](https://react.dev/learn/optimizing-performance#virtual-dom)
-- [React Docs - JSX](https://react.dev/reference/react/jsx)
+- [React 官方文档 - Reconciliation](https://reactjs.org/docs/reconciliation.html)
+- [Build Your Own React](https://pomb.us/build-your-own-react/)
+- [React 源码解析 - 虚拟 DOM](https://zhuanlan.zhihu.com/p/20346379)
+- [The Inner Workings of Virtual DOM](https://medium.com/@gethylgeorge/the-inner-workings-of-virtual-dom-5f8e6f5f5b1d)
