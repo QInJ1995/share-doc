@@ -111,13 +111,21 @@ export default [
                 link: 'docs/vue/知识点/自定义指令'
             },
             {
+                text: 'filter(过滤器)',
+                link: 'docs/vue/知识点/filter(过滤器)'
+            },
+            {
+                text: '修饰符',
+                link: 'docs/vue/知识点/修饰符'
+            },
+            {
                 text: 'keep-alive',
                 link: 'docs/vue/知识点/keep-alive'
             },
             {
                 text: '样式穿透',
                 link: 'docs/vue/知识点/样式穿透'
-            }
+            },
         ]
     },
     {
