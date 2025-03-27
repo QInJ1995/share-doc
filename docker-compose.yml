@@ -1,47 +1,7 @@
 version: '3'
-
 services:
-  # 文档服务
   share-doc:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "80:80"
-    volumes:
-      - ./docs:/app/docs
-    restart: unless-stopped
-    networks:
-      - share-doc-network
-
-  # Nginx 反向代理
-  nginx:
-    image: nginx:alpine
+    build: .
     ports:
       - "8080:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/ssl:/etc/nginx/ssl  # SSL 证书目录
-    depends_on:
-      - share-doc
-    networks:
-      - share-doc-network
-    restart: unless-stopped
-
-  # Docker Registry 服务
-  registry:
-    image: registry:2
-    ports:
-      - "5000:5000"
-    volumes:
-      - registry_data:/var/lib/registry
-    networks:
-      - share-doc-network
-    restart: unless-stopped
-
-networks:
-  share-doc-network:
-    driver: bridge
-
-volumes:
-  registry_data: 
+    restart: always
