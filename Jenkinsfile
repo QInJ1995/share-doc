@@ -7,7 +7,6 @@ pipeline {
     
     environment {
         RECIPIENTS = '953373752@qq.com'
-        JOB_NAME
     }
     
     stages {
