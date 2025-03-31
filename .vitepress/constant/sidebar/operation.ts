@@ -19,11 +19,11 @@ export default [
         items: [
             {
                 text: '基础教程',
-                link: 'docs/operation/docker/基础教程.md'
+                link: 'docs/operation/Docker/教程/基础教程.md'
             },
             {
                 text: '进阶教程',
-                link: 'docs/operation/docker/进阶教程.md'
+                link: 'docs/operation/Docker/教程/进阶教程.md'
             }
         ],
     },

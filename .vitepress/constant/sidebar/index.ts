@@ -11,6 +11,7 @@ import harmony from './harmony'
 import css from './css'
 import tools from './tools'
 import plugin from './plugin'
+import operation from './operation'
 
 
 
@@ -28,4 +29,5 @@ export default {
     '/docs/css/': css,
     '/docs/tools/': tools,
     '/docs/plugin/': plugin,
+    '/docs/operation/': operation,
 }
