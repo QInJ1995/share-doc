@@ -2,6 +2,7 @@ version: '3'
 services:
   share-doc:
     build: .
+    image: share-doc:latest  # 添加这行指定镜像名
     ports:
       - "8080:80"
     restart: always

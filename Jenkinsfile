@@ -49,8 +49,12 @@ pipeline {
                     sh 'docker -v'
                     
                     sh 'docker-compose down'
+
+                    sh 'docker-compose build'
                     
                     sh 'docker-compose up -d'
+
+                    sh 'docker image prune -f'
                 }
             }
         }
