@@ -124,37 +124,23 @@ export default [
         collapsed: true,
         items: [
             {
-                text: 'MySQL',
-                collapsed: true,
-                items: [
-                    {
-                        text: '基础操作',
-                        link: 'docs/java/JavaWeb/MySQL/基础操作'
-                    },
-                    {
-                        text: '数据库设计和多表操作',
-                        link: 'docs/java/JavaWeb/MySQL/数据库设计和多表操作'
-                    },
-                ]
-            },
-            {
                 text: 'JDBC',
                 link: 'docs/java/JavaWeb/JDBC'
             },
+        ]
+    },
+    {
+        text: 'MyBatis',
+        link: ''
+    },
+    {
+        text: 'Maven',
+        collapsed: true,
+        items: [
             {
-                text: 'Maven',
-                collapsed: true,
-                items: [
-                    {
-                        text: '基础',
-                        link: 'docs/java/JavaWeb/Maven/基础'
-                    }
-                ]
-            },
-            {
-                text: 'MyBatis',
-                link: ''
-            },
+                text: '基础',
+                link: 'docs/java/Maven/基础'
+            }
         ]
     },
 ]
