@@ -49,11 +49,11 @@ features:
     title: 鸿蒙
     details: 跨设备互联，智能生态，未来可期
     link: /guide/started
-  - icon: {src: '/svg/features/harmony.svg', width: 32, height: 32}
+  - icon: {src: '/svg/features/database.svg', width: 32, height: 32}
     title: 数据库
     details: 高效存储、管理、检索数据的系统 
     link: /docs/database/index
-  - icon: {src: '/svg/features/database.svg', width: 32, height: 32}
+  - icon: {src: '/svg/features/engineering.svg', width: 32, height: 32}
     title: 工程化
     details: 提升效率，规范管理，协同开发
     link: /docs/engineering/index
