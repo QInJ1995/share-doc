@@ -219,7 +219,6 @@ System.out.println(students);
  想要告诉TreeSet集合按照指定的规则排序，有两种办法：
 
 > 第一种：让元素的类实现Comparable接口，重写compareTo方法
-
 > 第二种：在创建TreeSet集合时，通过构造方法传递Compartor比较器对象
 
 - **排序方式1：** 先来演示第一种排序方式
