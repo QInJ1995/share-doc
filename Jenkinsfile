@@ -10,61 +10,89 @@ pipeline {
     }
     
     stages {
-        stage('Checkout Code') {
+        stage('拉取远程代码') {
             steps {
                 script {
-                    if (fileExists("${env.WORKSPACE}/.git")) {
-                        echo "Existing repository found, pulling changes..."
-                        sh """
-                            rm -rf ${env.WORKSPACE}/*  # 删除工作空间下的所有文件和目录
-                            mkdir -p ${env.WORKSPACE}  # 重新创建工作空间目录
-                        """
-                        git credentialsId: 'gitee-up', url: 'https://gitee.com/QInJ1995/share-doc.git', branch: 'main'
-                    } else {
-                        echo "No repository found, cloning..."
-                        git credentialsId: 'gitee-up', url: 'https://gitee.com/QInJ1995/share-doc.git', branch: 'main'
-                    }
+                    // 拉取最新代码
+                    echo "拉取代码..."
+                    // 使用Git插件拉取代码
+                    git credentialsId: 'gitee-up', url: 'https://gitee.com/QInJ1995/share-doc.git', branch: 'main'
                 }
             }
         }
-
-        stage('Build Docs') {
+        stage('打包本地代码') {
             steps {
                 script {
+                    echo "检测打包环境..."
                     // 安装依赖并构建文档
                     sh '''
                         node --version
                         npm --version
                         pnpm --version
-                        pnpm install
-                        npm run docs:build
                     '''
+                    echo "安装依赖..."
+                    sh '''
+                        pnpm install
+                    '''
+                    echo "开始打包..."
+                    sh '''
+                        pnpm run docs:build
+                    '''
+                    echo "打包完成！"
                 }
             }
         }
 
-        stage('Deploy with Docker') {
+        stage('部署到Docker') {
             steps {
                 script {
-                    sh 'docker -v'
-                    
+                    echo "监测Docker环境..."
+                    sh '''
+                        docker -v
+                        docker-compose -v
+                    '''
+                    echo "移除旧的Docker容器..."
                     sh 'docker-compose down'
+                    echo "Docker容器已移除！"
 
+                    echo "构建新的Docker镜像..."
                     sh 'docker-compose build'
-                    
-                    sh 'docker-compose up -d'
+                    echo "Docker镜像已构建！"
 
-                    sh 'docker image prune -f'
+                    echo "启动Docker容器..."
+                    sh 'docker-compose up -d'
+                    echo "Docker容器已启动！"
                 }
             }
         }
     }
 
     post {
-
+        always {
+            // 刪除share-doc目錄下的所有文件和目錄
+            script {
+                echo "删除本地代码..."
+                sh """
+                    rm -rf ${env.WORKSPACE}/*
+                    mkdir -p ${env.WORKSPACE}
+                """
+                echo "本地代码已删除！"
+            }
+            // 清理Docker容器和镜像（可选）
+            script {
+                echo "清除 Docker 容器和镜像..."
+                sh 'docker system prune -f'
+                echo "Docker 容器和镜像已清除！"
+            }
+            // 清理Jenkins工作区（可选）
+            script {
+                echo "清除 Jenkins 工作区..."
+                cleanWs()
+            }
+        }
         failure {
             // 失败通知（可选）
-            echo "Pipeline failed!"
+            echo "构建失败！"
             emailext (
                 subject: "FAILED: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
                 body: """
@@ -78,7 +106,7 @@ pipeline {
         }
         success {
             // 成功通知（可选）
-            echo "Pipeline succeeded!"
+            echo "构建成功！"
             emailext (
                 subject: "SUCCESS: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
                 body: """
