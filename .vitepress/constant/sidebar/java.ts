@@ -124,14 +124,36 @@ export default [
         collapsed: true,
         items: [
             {
+                text: '概述',
+                link: 'docs/java/JavaWeb/概述'  
+            },
+            {
+                text: 'HTTP',
+                link: 'docs/java/JavaWeb/HTTP'
+            },
+            {
+                text: 'Tomcat',
+                link: 'docs/java/JavaWeb/Tomcat'
+            },
+            {
                 text: 'JDBC',
                 link: 'docs/java/JavaWeb/JDBC'
+            },
+            {
+                text: 'Servlet',
+                link: 'docs/java/JavaWeb/Servlet'
             },
         ]
     },
     {
         text: 'MyBatis',
-        link: ''
+        collapsed: true,
+        items: [
+            {
+                text: '基本使用',
+                link: 'docs/java/MyBatis/基本使用'
+            }
+        ]
     },
     {
         text: 'Maven',
