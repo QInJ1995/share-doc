@@ -34,6 +34,8 @@ pipeline {
                     sh '''
                         pnpm install
                     '''
+                    echo "依赖安装完成！"
+
                     echo "开始打包..."
                     sh '''
                         pnpm run docs:build
