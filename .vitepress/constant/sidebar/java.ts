@@ -125,7 +125,11 @@ export default [
         items: [
             {
                 text: '概述',
-                link: 'docs/java/JavaWeb/概述'  
+                link: 'docs/java/JavaWeb/概述'
+            },
+            {
+                text: 'JDBC',
+                link: 'docs/java/JavaWeb/JDBC'
             },
             {
                 text: 'HTTP',
@@ -136,12 +140,20 @@ export default [
                 link: 'docs/java/JavaWeb/Tomcat'
             },
             {
-                text: 'JDBC',
-                link: 'docs/java/JavaWeb/JDBC'
-            },
-            {
                 text: 'Servlet',
                 link: 'docs/java/JavaWeb/Servlet'
+            },
+            {
+                text: '请求与响应',
+                link: 'docs/java/JavaWeb/请求与响应'
+            },
+            {
+                text: 'JSP',
+                link: 'docs/java/JavaWeb/JSP'
+            },
+            {
+                text: '会话技术',
+                link: 'docs/java/JavaWeb/会话技术'
             },
         ]
     },
