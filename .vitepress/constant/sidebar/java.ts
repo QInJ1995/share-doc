@@ -155,6 +155,18 @@ export default [
                 text: '会话技术',
                 link: 'docs/java/JavaWeb/会话技术'
             },
+            {
+                text: '过滤器',
+                link: 'docs/java/JavaWeb/过滤器'
+            },
+            {
+                text: '监听器',
+                link: 'docs/java/JavaWeb/监听器'
+            },
+            {
+                text: 'AJAX',
+                link: 'docs/java/JavaWeb/AJAX'
+            },
         ]
     },
     {
