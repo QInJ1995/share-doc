@@ -29,27 +29,27 @@
 
 那么，JSP 能做什么呢？现在我们只用 `servlet` 实现功能，看存在什么问题。如下图所示，当我们登陆成功后，需要在页面上展示用户名
 
-<img src="/image/java/JavaWeb/JSP/image-20210818101320935.png" alt="image-20210818101320935" style="zoom:70%;" />
+![动态展示用户名](/image/java/JavaWeb/JSP/image-20210818101320935.png)
 
 上图的用户名是动态展示，也就是谁登陆就展示谁的用户名。只用 `servlet` 如何实现呢？在今天的资料里已经提供好了一个 `LoginServlet` ，该 `servlet` 就是实现这个功能的，现将资料中的 `LoginServlet.java` 拷贝到 `request-demo` 项目中来演示。接下来启动服务器并访问登陆页面
 
-<img src="/image/java/JavaWeb/JSP/image-20210818102205544.png" alt="image-20210818102205544" style="zoom:80%;" />
+![登陆页面](/image/java/JavaWeb/JSP/image-20210818102205544.png)
 
 输入了 `zhangsan` 用户的登陆信息后点击 `登陆` 按钮，就能看到如下图效果
 
-![image-20210818102313898](/image/java/JavaWeb/JSP/image-20210818102313898.png)
+![zhangsan登陆效果](/image/java/JavaWeb/JSP/image-20210818102313898.png)
 
 当然如果是 `lisi` 登陆的，在该页面展示的就是 `lisi,欢迎您`，动态的展示效果就实现了。那么 `LoginServlet` 到底是如何实现的，我们看看它里面的内容
 
-<img src="/image/java/JavaWeb/JSP/image-20210818102506754.png" alt="image-20210818102506754" style="zoom:70%;" />
+![LoginServlet代码](/image/java/JavaWeb/JSP/image-20210818102506754.png)
 
 上面的代码有大量使用到 `writer` 对象向页面写标签内容，这样我们的代码就显得很麻烦；将来如果展示的效果出现了问题，排错也显得有点力不从心。而 JSP 是如何解决这个问题的呢？在资料中也提供了一个 `login.jsp` 页面，该页面也能实现该功能，现将该页面拷贝到项目的 `webapp`下，需要修改 `login.html` 中表单数据提交的路径为下图
 
-<img src="/image/java/JavaWeb/JSP/image-20210818103127245.png" alt="image-20210818103127245" style="zoom:80%;" />
+![修改表单数据提交路径](/image/java/JavaWeb/JSP/image-20210818103127245.png)
 
 重新启动服务器并进行测试，发现也可以实现同样的功能。那么 `login.jsp` 又是如何实现的呢？那我们来看看 `login.jsp` 的代码
 
-<img src="/image/java/JavaWeb/JSP/image-20210818103352432.png" alt="image-20210818103352432" style="zoom:70%;" />
+![login.jsp代码](/image/java/JavaWeb/JSP/image-20210818103352432.png)
 
 上面代码可以看到里面基本都是 `HTML` 标签，而动态数据使用 Java 代码进行展示；这样操作看起来要比用 `servlet` 实现要舒服很多。
 
@@ -63,7 +63,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 创建一个maven的 web 项目，项目结构如下：
 
-<img src="/image/java/JavaWeb/JSP/image-20210818104316457.png" alt="image-20210818104316457" style="zoom:80%;" />
+![项目结构](/image/java/JavaWeb/JSP/image-20210818104316457.png)
 
 `pom.xml` 文件内容如下：
 
@@ -71,7 +71,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
@@ -124,7 +124,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 在项目的 `webapp` 下创建jsp页面
 
-<img src="/image/java/JavaWeb/JSP/image-20210818105519970.png" alt="image-20210818105519970" style="zoom:70%;" />
+![创建jsp页面](/image/java/JavaWeb/JSP/image-20210818105519970.png)
 
 通过上面方式创建一个名为 `hello.jsp` 的页面。
 
@@ -152,7 +152,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 启动服务器并在浏览器地址栏输入 `http://localhost:8080/jsp-demo/hello.jsp`，我们可以在页面上看到如下内容
 
-<img src="/image/java/JavaWeb/JSP/image-20210818110122438.png" alt="image-20210818110122438" style="zoom:70%;" />
+![hello.jsp页面内容](/image/java/JavaWeb/JSP/image-20210818110122438.png)
 
 同时也可以看到在 `idea` 的控制台看到输出的 `hello,jsp~` 内容。
 
@@ -162,7 +162,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 因为 ==JSP 本质上就是一个 Servlet。==接下来我们聊聊访问jsp时的流程
 
-<img src="/image/java/JavaWeb/JSP/image-20210818111039350.png" alt="image-20210818111039350" style="zoom:70%;" />
+![访问jsp时的流程](/image/java/JavaWeb/JSP/image-20210818111039350.png)
 
 1. 浏览器第一次访问 `hello.jsp` 页面
 2. `tomcat` 会将 `hello.jsp` 转换为名为 `hello_jsp.java` 的一个 `Servlet`
@@ -171,15 +171,15 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 我们可以到项目所在磁盘目录下找 `target\tomcat\work\Tomcat\localhost\jsp-demo\org\apache\jsp` 目录，而这个目录下就能看到转换后的 `servlet`
 
-<img src="/image/java/JavaWeb/JSP/image-20210818112613589.png" alt="image-20210818112613589" style="zoom:80%;" />
+![转换后的servlet](/image/java/JavaWeb/JSP/image-20210818112613589.png)
 
 打开 `hello_jsp.java` 文件，来查看里面的代码
 
-<img src="/image/java/JavaWeb/JSP/image-20210818112724462.png" alt="image-20210818112724462" style="zoom:80%;" />
+![hello_jsp.java代码](/image/java/JavaWeb/JSP/image-20210818112724462.png)
 
 由上面的类的继承关系可以看到继承了名为 `HttpJspBase` 这个类，那我们在看该类的继承关系。到资料中的找如下目录： `资料\tomcat源码\apache-tomcat-8.5.68-src\java\org\apache\jasper\runtime` ，该目录下就有 `HttpJspBase` 类，查看该类的继承关系
 
-<img src="/image/java/JavaWeb/JSP/image-20210818113118802.png" alt="image-20210818113118802" style="zoom:80%;" />
+![HttpJspBase类继承关系](/image/java/JavaWeb/JSP/image-20210818113118802.png)
 
 可以看到该类继承了 `HttpServlet` ；那么 `hello_jsp` 这个类就间接的继承了 `HttpServlet` ，也就说明 `hello_jsp` 是一个 `servlet`。
 
@@ -187,7 +187,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 而在 `_jspService()` 方法中可以看到往浏览器写标签的代码：
 
-<img src="/image/java/JavaWeb/JSP/image-20210818114008998.png" alt="image-20210818114008998" style="zoom:80%;" />
+![往浏览器写标签的代码](/image/java/JavaWeb/JSP/image-20210818114008998.png)
 
 以前我们自己写 `servlet` 时，这部分代码是由我们自己来写，现在有了 `jsp` 后，由tomcat完成这部分功能。
 
@@ -216,7 +216,7 @@ JSP 脚本有如下三个分类：
 
 通过浏览器访问 `hello.jsp` 后，查看转换的 `hello_jsp.java` 文件，i 变量定义在了 `_jspService()` 方法中
 
-<img src="/image/java/JavaWeb/JSP/image-20210818123606231.png" alt="image-20210818123606231" style="zoom:80%;" />
+![i变量定义在_jspService()方法中](/image/java/JavaWeb/JSP/image-20210818123606231.png)
 
 在 `hello.jsp` 中书写
 
@@ -227,7 +227,7 @@ JSP 脚本有如下三个分类：
 
 通过浏览器访问 `hello.jsp` 后，查看转换的 `hello_jsp.java` 文件，该脚本的内容被放在了 `out.print()` 中，作为参数
 
-<img src="/image/java/JavaWeb/JSP/image-20210818123820571.png" alt="image-20210818123820571" style="zoom:80%;" />
+![脚本内容被放在out.print()中](/image/java/JavaWeb/JSP/image-20210818123820571.png)
 
 在 `hello.jsp` 中书写
 
@@ -240,7 +240,7 @@ JSP 脚本有如下三个分类：
 
 通过浏览器访问 `hello.jsp` 后，查看转换的 `hello_jsp.java` 文件，该脚本的内容被放在了成员位置
 
-<img src="/image/java/JavaWeb/JSP/image-20210818123946272.png" alt="image-20210818123946272" style="zoom:80%;" />
+![脚本内容被放在成员位置](/image/java/JavaWeb/JSP/image-20210818123946272.png)
 
 ### 4.2  案例
 
@@ -248,7 +248,7 @@ JSP 脚本有如下三个分类：
 
 使用JSP脚本展示品牌数据
 
-<img src="/image/java/JavaWeb/JSP/image-20210818125203390.png" alt="image-20210818125203390" style="zoom:80%;" />
+![展示品牌数据](/image/java/JavaWeb/JSP/image-20210818125203390.png)
 
 说明：
 
@@ -506,7 +506,7 @@ JSP 脚本有如下三个分类：
 
 在浏览器地址栏输入 `http://localhost:8080/jsp-demo/brand.jsp` ，页面展示效果如下
 
-<img src="/image/java/JavaWeb/JSP/image-20210818145450748.png" alt="image-20210818145450748" style="zoom:70%;" />
+![展示效果](/image/java/JavaWeb/JSP/image-20210818145450748.png)
 
 ### 4.3  JSP 缺点
 
@@ -534,7 +534,7 @@ JSP 脚本有如下三个分类：
 
 由于上述的问题， ==JSP 已逐渐退出历史舞台，==以后开发更多的是使用 ==HTML +  Ajax== 来替代。Ajax 是我们后续会重点学习的技术。有个这个技术后，前端工程师负责前端页面开发，而后端工程师只负责前端代码开发。下来对技术的发展进行简单的说明
 
-<img src="/image/java/JavaWeb/JSP/image-20210818150346332.png" alt="image-20210818150346332" style="zoom:80%;" />
+![技术发展说明](/image/java/JavaWeb/JSP/image-20210818150346332.png)
 
 1. 第一阶段：使用 `servlet` 即实现逻辑代码编写，也对页面进行拼接。这种模式我们之前也接触过
 
@@ -542,7 +542,7 @@ JSP 脚本有如下三个分类：
 
 3. 第三阶段：使用 `Servlet` 进行逻辑代码开发，而使用 `JSP` 进行数据展示
 
-   <img src="/image/java/JavaWeb/JSP/image-20210818151232955.png" alt="image-20210818151232955" style="zoom:67%;" />
+   ![第三阶段](/image/java/JavaWeb/JSP/image-20210818151232955.png)
 
 4. 第四阶段：使用 `servlet` 进行后端逻辑代码开发，而使用 `HTML` 进行数据展示。而这里面就存在问题，`HTML` 是静态页面，怎么进行动态数据展示呢？这就是 `ajax` 的作用了。
 
@@ -610,7 +610,7 @@ EL 表达式的主要作用是 ==获取数据==。其实就是从域对象中获
 
 * 在浏览器的地址栏输入 `http://localhost:8080/jsp-demo/demo1` ，页面效果如下：
 
-  <img src="/image/java/JavaWeb/JSP/image-20210818152536484.png" alt="image-20210818152536484" style="zoom:80%;" />
+  ![页面效果](/image/java/JavaWeb/JSP/image-20210818152536484.png)
 
 ### 5.3  域对象
 
@@ -623,7 +623,7 @@ JavaWeb中有四大域对象，分别是：
 
 el 表达式获取数据，会依次从这4个域中寻找，直到找到为止。而这四个域对象的作用范围如下图所示
 
-<img src="/image/java/JavaWeb/JSP/image-20210818152857407.png" alt="image-20210818152857407" style="zoom:60%;" />
+![域对象作用范围](/image/java/JavaWeb/JSP/image-20210818152857407.png)
 
 例如： ${brands}，el 表达式获取数据，会先从page域对象中获取数据，如果没有再到 requet 域对象中获取数据，如果再没有再到 session 域对象中获取，如果还没有才会到 application 中获取数据。
 
@@ -646,7 +646,7 @@ JSP标准标签库(Jsp Standarded Tag Library) ，使用标签取代JSP页面上
 
 JSTL 提供了很多标签，如下图
 
-<img src="/image/java/JavaWeb/JSP/image-20210818153646575.png" alt="image-20210818153646575" style="zoom:80%;" />
+![JSTL标签](/image/java/JavaWeb/JSP/image-20210818153646575.png)
 
 我们只对两个最常用的标签进行讲解，`<c:forEach>` 标签和 `<c:if>` 标签。
 
@@ -854,7 +854,7 @@ MVC 是一种分层开发的模式，其中：
 
 * C：Controller，控制器，处理请求，调用模型和视图
 
-<img src="/image/java/JavaWeb/JSP/image-20210818163348642.png" alt="image-20210818163348642" style="zoom:70%;" />
+![MVC模式](/image/java/JavaWeb/JSP/image-20210818163348642.png)
 
 控制器（serlvlet）用来接收浏览器发送过来的请求，控制器调用模型（JavaBean）来获取数据，比如从数据库查询数据；控制器获取到数据后再交由视图（JSP）进行数据展示。
 
@@ -870,7 +870,7 @@ MVC 是一种分层开发的模式，其中：
 
 三层架构是将我们的项目分成了三个层面，分别是 `表现层`、`业务逻辑层`、`数据访问层`。
 
-<img src="/image/java/JavaWeb/JSP/image-20210818164301154.png" alt="image-20210818164301154" style="zoom:60%;" />
+![三层架构](/image/java/JavaWeb/JSP/image-20210818164301154.png)
 
 * 数据访问层：对数据库的CRUD基本操作
 * 业务逻辑层：对业务逻辑进行封装，组合数据访问层层中基本功能，形成复杂的业务逻辑功能。例如 `注册业务功能` ，我们会先调用 `数据访问层` 的 `selectByName()` 方法判断该用户名是否存在，如果不存在再调用 `数据访问层` 的 `insert()` 方法进行数据的添加操作
@@ -886,13 +886,13 @@ MVC 是一种分层开发的模式，其中：
 
 后期我们还会学习一些框架，不同的框架是对不同层进行封装的
 
-<img src="/image/java/JavaWeb/JSP/image-20210818165439826.png" alt="image-20210818165439826" style="zoom:60%;" />
+![框架封装](/image/java/JavaWeb/JSP/image-20210818165439826.png)
 
 ### 7.3  MVC 和 三层架构
 
 通过 MVC 和 三层架构 的学习，有些人肯定混淆了。那他们有什么区别和联系？
 
-<img src="/image/java/JavaWeb/JSP/image-20210818165808589.png" alt="image-20210818165808589" style="zoom:60%;" />
+![区别和联系](/image/java/JavaWeb/JSP/image-20210818165808589.png)
 
 如上图上半部分是 MVC 模式，上图下半部分是三层架构。 `MVC 模式` 中的 C（控制器）和 V（视图）就是 `三层架构` 中的表现层，而 `MVC 模式` 中的 M（模型）就是 `三层架构` 中的 业务逻辑层 和 数据访问层。
 
@@ -902,7 +902,7 @@ MVC 是一种分层开发的模式，其中：
 
 **需求：完成品牌数据的增删改查操作**
 
-<img src="/image/java/JavaWeb/JSP/image-20210818171702401.png" alt="image-20210818171702401" style="zoom:70%;" />
+![品牌数据增删改查](/image/java/JavaWeb/JSP/image-20210818171702401.png)
 
 这个功能我们之前一直在做，而这个案例是将今天学习的所有的内容（包含 MVC模式 和 三层架构）进行应用，并将整个流程贯穿起来。
 
@@ -941,7 +941,7 @@ MVC 是一种分层开发的模式，其中：
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://www.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example</groupId>
     <artifactId>brand-demo</artifactId>
@@ -1013,7 +1013,7 @@ MVC 是一种分层开发的模式，其中：
 
 创建不同的包结构，用来存储不同的类。包结构如下
 
-<img src="/image/java/JavaWeb/JSP/image-20210818173155335.png" alt="image-20210818173155335" style="zoom:80%;" />
+![包结构](/image/java/JavaWeb/JSP/image-20210818173155335.png)
 
 #### 8.1.3  创建表
 
@@ -1192,13 +1192,13 @@ public class Brand {
 
 ### 8.2  查询所有
 
-![image-20210818174441917](/image/java/JavaWeb/JSP/image-20210818174441917.png)
+![查询所有](/image/java/JavaWeb/JSP/image-20210818174441917.png)
 
 当我们点击 `index.html` 页面中的 `查询所有` 这个超链接时，就能查询到上图右半部分的数据。
 
 对于上述的功能，点击 `查询所有` 超链接是需要先请后端的 `servlet` ，由 `servlet` 跳转到对应的页面进行数据的动态展示。而整个流程如下图：
 
-<img src="/image/java/JavaWeb/JSP/image-20210818174800783.png" alt="image-20210818174800783" style="zoom:60%;" />
+![查询所有流程](/image/java/JavaWeb/JSP/image-20210818174800783.png)
 
 #### 8.2.1  编写BrandMapper
 
@@ -1355,7 +1355,7 @@ public class SelectAllServlet extends HttpServlet {
 
 启动服务器，并在浏览器输入 `http://localhost:8080/brand-demo/index.html`，看到如下 `查询所有` 的超链接，点击该链接就可以查询出所有的品牌数据
 
-![image-20210818182952394](/image/java/JavaWeb/JSP/image-20210818182952394.png)
+![查询所有超链接](/image/java/JavaWeb/JSP/image-20210818182952394.png)
 
 为什么出现这个问题呢？是因为查询到的字段名和实体类对象的属性名没有一一对应。相比看到这大家一定会解决了，就是在映射配置文件中使用 `resultMap` 标签定义映射关系。映射配置文件内容如下：
 
@@ -1387,15 +1387,15 @@ List<Brand> selectAll();
 
 重启服务器，再次访问就能看到我们想要的数据了
 
-![image-20210819190221889](/image/java/JavaWeb/JSP/image-20210819190221889.png)
+![查询结果](/image/java/JavaWeb/JSP/image-20210819190221889.png)
 
 ### 8.3  添加
 
-![image-20210819192049571](/image/java/JavaWeb/JSP/image-20210819192049571.png)
+![添加](/image/java/JavaWeb/JSP/image-20210819192049571.png)
 
 上图是做 添加 功能流程。点击 `新增` 按钮后，会先跳转到 `addBrand.jsp` 新增页面，在该页面输入要添加的数据，输入完毕后点击 `提交` 按钮，需要将数据提交到后端，而后端进行数据添加操作，并重新将所有的数据查询出来。整个流程如下：
 
-![image-20210819192737982](/image/java/JavaWeb/JSP/image-20210819192737982.png)
+![添加流程](/image/java/JavaWeb/JSP/image-20210819192737982.png)
 
 接下来我们根据流程来实现功能：
 
@@ -1541,19 +1541,19 @@ public class AddServlet extends HttpServlet {
 
  点击 `brand.jsp` 页面的 `新增` 按钮，会跳转到 `addBrand.jsp`页面
 
-<img src="/image/java/JavaWeb/JSP/image-20210819220701121.png" alt="image-20210819220701121" style="zoom:70%;" />
+![addBrand.jsp页面](/image/java/JavaWeb/JSP/image-20210819220701121.png)
 
 点击 `提交` 按钮，就能看到如下页面，里面就包含我们刚添加的数据
 
-![image-20210819220738074](/image/java/JavaWeb/JSP/image-20210819220738074.png)
+![添加的数据](/image/java/JavaWeb/JSP/image-20210819220738074.png)
 
 ### 8.4  修改
 
-![image-20210819223202473](/image/java/JavaWeb/JSP/image-20210819223202473.png)
+![修改](/image/java/JavaWeb/JSP/image-20210819223202473.png)
 
 点击每条数据后面的 `编辑` 按钮会跳转到修改页面，如下图：
 
-![image-20210819223314230](/image/java/JavaWeb/JSP/image-20210819223314230.png)
+![修改页面](/image/java/JavaWeb/JSP/image-20210819223314230.png)
 
 在该修改页面我们可以看到将 `编辑` 按钮所在行的数据 ==回显== 到表单，然后需要修改那个数据在表单中进行修改，然后点击 `提交` 的按钮将数据提交到后端，后端再将数据存储到数据库中。
 
@@ -1561,11 +1561,11 @@ public class AddServlet extends HttpServlet {
 
 #### 8.4.1  回显数据
 
-![image-20210819223830713](/image/java/JavaWeb/JSP/image-20210819223830713.png)
+![回显数据](/image/java/JavaWeb/JSP/image-20210819223830713.png)
 
 上图就是回显数据的效果。要实现这个效果，那当点击 `修改` 按钮时不能直接跳转到 `update.jsp` 页面，而是需要先带着当前行数据的 `id` 请求后端程序，后端程序根据 `id` 查询数据，将数据存储到域对象中跳转到 `update.jsp` 页面进行数据展示。整体流程如下
 
-<img src="/image/java/JavaWeb/JSP/image-20210819224243778.png" alt="image-20210819224243778" style="zoom:70%;" />
+![回显数据流程](/image/java/JavaWeb/JSP/image-20210819224243778.png)
 
 ##### 8.4.1.1  编写BrandMapper方法
 
@@ -1716,11 +1716,11 @@ public class SelectByIdServlet extends HttpServlet {
 
 做完回显数据后，接下来我们要做修改数据了，而下图是修改数据的效果：
 
-![image-20210819225948187](/image/java/JavaWeb/JSP/image-20210819225948187.png)
+![修改数据](/image/java/JavaWeb/JSP/image-20210819225948187.png)
 
 在修改页面进行数据修改，点击 `提交` 按钮，会将数据提交到后端程序，后端程序会对表中的数据进行修改操作，然后重新进行数据的查询操作。整体流程如下：
 
-<img src="/image/java/JavaWeb/JSP/image-20210819230242938.png" alt="image-20210819230242938" style="zoom:70%;" />
+![修改数据流程](/image/java/JavaWeb/JSP/image-20210819230242938.png)
 
 ##### 8.4.2.1  编写BrandMapper方法
 
