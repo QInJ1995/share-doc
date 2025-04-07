@@ -200,7 +200,23 @@ export default [
                     {
                         text: '依赖注入',
                         link: 'docs/java/Spring全家桶/Spring/依赖注入'
-                    }
+                    },
+                    {
+                        text: '第三方资源配置管理',
+                        link: 'docs/java/Spring全家桶/Spring/第三方资源配置管理'
+                    },
+                    {
+                        text: 'Spring容器',
+                        link: 'docs/java/Spring全家桶/Spring/Spring容器'
+                    },
+                    {
+                        text: 'Spring注解开发',
+                        link: 'docs/java/Spring全家桶/Spring/Spring注解开发'
+                    },
+                    {
+                        text: 'Spring整合其他技术',
+                        link: 'docs/java/Spring全家桶/Spring/Spring整合其他技术'
+                    },
                 ]
             },
             {
