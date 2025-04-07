@@ -217,6 +217,14 @@ export default [
                         text: 'Spring整合其他技术',
                         link: 'docs/java/Spring全家桶/Spring/Spring整合其他技术'
                     },
+                    {
+                        text: 'AOP',
+                        link: 'docs/java/Spring全家桶/Spring/AOP'
+                    },
+                    {
+                        text: '事务管理',
+                        link: 'docs/java/Spring全家桶/Spring/事务管理'
+                    },
                 ]
             },
             {
