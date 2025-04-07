@@ -170,6 +170,78 @@ export default [
         ]
     },
     {
+        text: 'Spring全家桶',
+        collapsed: true,
+        items: [
+            {
+                text: 'Spring',
+                collapsed: true,
+                items: [
+                    {
+                        text: 'Spring简介',
+                        link: 'docs/java/Spring全家桶/Spring/Spring简介'
+                    },
+                    {
+                        text: 'IOC和DI入门案例',
+                        link: 'docs/java/Spring全家桶/Spring/IOC和DI入门案例'
+                    },
+                    {
+                        text: 'Bean的基础配置',
+                        link: 'docs/java/Spring全家桶/Spring/Bean的基础配置'
+                    },
+                    {
+                        text: 'Bean的实例化',
+                        link: 'docs/java/Spring全家桶/Spring/Bean的实例化'
+                    },
+                    {
+                        text: 'Bean的生命周期',
+                        link: 'docs/java/Spring全家桶/Spring/Bean的生命周期'
+                    },
+                    {
+                        text: '依赖注入',
+                        link: 'docs/java/Spring全家桶/Spring/依赖注入'
+                    }
+                ]
+            },
+            {
+                text: 'SpringMVC',
+                collapsed: true,
+                items: [
+                    {
+                        text: 'SpringBoot概述',
+                        link: 'docs/java/Spring全家桶/SpringBoot/概述'
+                    },
+                    {
+                        text: 'SpringBoot核心',
+                        link: 'docs/java/Spring全家桶/SpringBoot/核心'
+                    },
+                    {
+                        text: 'SpringBoot整合',
+                        link: 'docs/java/Spring全家桶/SpringBoot/整合'
+                    },
+                ]
+            },
+            {
+                text: 'SpringBoot',
+                collapsed: true,
+                items: [
+                    {
+                        text: 'SpringCloud概述',
+                        link: 'docs/java/Spring全家桶/SpringCloud/概述'
+                    },
+                    {
+                        text: 'SpringCloud核心',
+                        link: 'docs/java/Spring全家桶/SpringCloud/核心'
+                    },
+                    {
+                        text: 'SpringCloud整合',
+                        link: 'docs/java/Spring全家桶/SpringCloud/整合'
+                    },
+                ]
+            },
+        ]
+    },
+    {
         text: 'MyBatis',
         collapsed: true,
         items: [
