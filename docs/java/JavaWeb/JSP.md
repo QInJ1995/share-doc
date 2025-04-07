@@ -11,7 +11,7 @@
 
 ==JSP（全称：Java Server Pages）：Java 服务端页面。==是一种动态的网页技术，其中既可以定义 HTML、JS、CSS等静态内容，还可以定义 Java代码的动态内容，也就是 `JSP = HTML + Java`。如下就是jsp代码
 
-```jsp
+```txt
 <html>
     <head>
         <title>Title</title>
@@ -132,7 +132,7 @@ JSP 作用：简化开发，避免了在Servlet中直接输出HTML标签。
 
 在 `hello.jsp` 页面中书写 `HTML` 标签和 `Java` 代码，如下
 
-```jsp
+```txt
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -207,7 +207,7 @@ JSP 脚本有如下三个分类：
 
 在 `hello.jsp` 中书写
 
-```jsp
+```txt
 <%
     System.out.println("hello,jsp~");
     int i = 3;
@@ -220,7 +220,7 @@ JSP 脚本有如下三个分类：
 
 在 `hello.jsp` 中书写
 
-```jsp
+```txt
 <%="hello"%>
 <%=i%>
 ```
@@ -231,7 +231,7 @@ JSP 脚本有如下三个分类：
 
 在 `hello.jsp` 中书写
 
-```jsp
+```txt
 <%!
     void  show(){}
  String name = "zhangsan";
@@ -261,7 +261,7 @@ JSP 脚本有如下三个分类：
 
 * 在项目的 `webapp` 中创建 `brand.jsp` ，并将 `brand.html`页面中的内容拷贝过来。`brand.jsp` 内容如下
 
-  ```jsp
+  ```txt
   <%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <!DOCTYPE html>
   <html lang="en">
@@ -323,7 +323,7 @@ JSP 脚本有如下三个分类：
 
 * 在 `brand.jsp` 中准备一些数据
 
-  ```jsp
+  ```txt
   <%
       // 查询数据库
       List<Brand> brands = new ArrayList<Brand>();
@@ -337,7 +337,7 @@ JSP 脚本有如下三个分类：
 
 * 将 `brand.jsp` 页面中的 `table` 标签中的数据改为动态的
 
-  ```jsp
+  ```txt
   <table border="1" cellspacing="0" width="800">
       <tr>
           <th>序号</th>
@@ -370,7 +370,7 @@ JSP 脚本有如下三个分类：
 
   上面的for循环需要将 `tr` 标签包裹起来，这样才能实现循环的效果，代码改进为
 
-  ```jsp
+  ```txt
   <table border="1" cellspacing="0" width="800">
       <tr>
           <th>序号</th>
@@ -408,7 +408,7 @@ JSP 脚本有如下三个分类：
 
   上面代码中的 `td` 标签中的数据都需要是动态的，所以还需要改进
 
-  ```jsp
+  ```txt
   <table border="1" cellspacing="0" width="800">
       <tr>
           <th>序号</th>
@@ -444,7 +444,7 @@ JSP 脚本有如下三个分类：
 
 #### 4.2.3  成品代码
 
-```jsp
+```txt
 <%@ page import="com.itheima.pojo.Brand" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
@@ -596,7 +596,7 @@ EL 表达式的主要作用是 ==获取数据==。其实就是从域对象中获
 
 * 在 `el-demo.jsp` 中通过 EL表达式 获取数据
 
-  ```jsp
+  ```txt
   <%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <html>
   <head>
@@ -633,7 +633,7 @@ el 表达式获取数据，会依次从这4个域中寻找，直到找到为止�
 
 JSP标准标签库(Jsp Standarded Tag Library) ，使用标签取代JSP页面上的Java代码。如下代码就是JSTL标签
 
-```jsp
+```txt
 <c:if test="${flag == 1}">
     男
 </c:if>
@@ -669,7 +669,7 @@ JSTL 使用也是比较简单的，分为如下步骤：
 
 * 在JSP页面上引入JSTL标签库
 
-  ```jsp
+  ```txt
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
   ```
 
@@ -681,7 +681,7 @@ JSTL 使用也是比较简单的，分为如下步骤：
 
 * 属性：test，用于定义条件表达式
 
-```jsp
+```txt
 <c:if test="${flag == 1}">
     男
 </c:if>
@@ -715,7 +715,7 @@ JSTL 使用也是比较简单的，分为如下步骤：
 
 * 定义 `jstl-if.jsp` 页面，在该页面使用 `<c:if>` 标签
 
-  ```jsp
+  ```txt
   <%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <html>
@@ -757,7 +757,7 @@ JSTL 使用也是比较简单的，分为如下步骤：
 
 如下代码，是从域对象中获取名为 brands 数据，该数据是一个集合；遍历遍历，并给该集合中的每一个元素起名为 `brand`，是 Brand对象。在循环里面使用 EL表达式获取每一个Brand对象的属性值
 
-```jsp
+```txt
 <c:forEach items="${brands}" var="brand">
     <tr align="center">
         <td>${brand.id}</td>
@@ -774,7 +774,7 @@ JSTL 使用也是比较简单的，分为如下步骤：
 
 * 定义名为 `jstl-foreach.jsp` 页面，内容如下：
 
-  ```jsp
+  ```txt
   <%@ page contentType="text/html;charset=UTF-8" language="java" %>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   
@@ -834,7 +834,7 @@ JSTL 使用也是比较简单的，分为如下步骤：
 
 从0循环到10，变量名是 `i` ，每次自增1
 
-```jsp
+```txt
 <c:forEach begin="0" end="10" step="1" var="i">
     ${i}
 </c:forEach>
@@ -1306,7 +1306,7 @@ public class SelectAllServlet extends HttpServlet {
 
 将资料 `资料\2. 品牌增删改查案例\静态页面` 下的 `brand.html` 页面拷贝到项目的 `webapp` 目录下，并将该页面改成 `brand.jsp` 页面，而 `brand.jsp` 页面在表格中使用 `JSTL` 和 `EL表达式` 从request域对象中获取名为 `brands` 的集合数据并展示出来。页面内容如下：
 
-```jsp
+```txt
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -1458,7 +1458,7 @@ void add(Brand brand);
 
 从资料 `资料\2. 品牌增删改查案例\静态页面` 中将 `addBrand.html` 页面拷贝到项目的 `webapp` 下，并改成 `addBrand.jsp` 动态页面
 
-```jsp
+```txt
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -1649,7 +1649,7 @@ public class SelectByIdServlet extends HttpServlet {
 
 * `input` 标签要进行数据回显，需要设置 `value` 属性
 
-  ```jsp
+  ```txt
   品牌名称：<input name="brandName" value="${brand.brandName}"><br>
   企业名称：<input name="companyName" value="${brand.companyName}"><br>
   排序：<input name="ordered" value="${brand.ordered}"><br>
@@ -1657,13 +1657,13 @@ public class SelectByIdServlet extends HttpServlet {
 
 * `textarea` 标签要进行数据回显，需要在标签体中使用 `EL表达式`
 
-  ```jsp
+  ```txt
   描述信息：<textarea rows="5" cols="20" name="description">${brand.description} </textarea><br>
   ```
 
 * 单选框使用 `if` 标签需要判断 `brand.status` 的值是 1 还是 0 在指定的单选框上使用 `checked` 属性，表示被选中状态
 
-  ```jsp
+  ```txt
   状态：
   <c:if test="${brand.status == 0}">
       <input type="radio" name="status" value="0" checked>禁用
@@ -1678,7 +1678,7 @@ public class SelectByIdServlet extends HttpServlet {
 
 综上，`update.jsp` 代码如下：
 
-```jsp
+```txt
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -1815,14 +1815,14 @@ public class UpdateServlet extends HttpServlet {
 
 针对这个问题，我们不希望页面将主键id展示给用户看，但是又希望在提交数据时能将主键id提交到后端。此时我们就想到了在学习 HTML 时学习的隐藏域，在 `update.jsp` 页面的表单中添加如下代码：
 
-```jsp
+```txt
 <%--隐藏域，提交id--%>
 <input type="hidden" name="id" value="${brand.id}">
 ```
 
 `update.jsp` 页面的最终代码如下：
 
-```jsp
+```txt
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
