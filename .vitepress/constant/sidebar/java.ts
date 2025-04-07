@@ -304,6 +304,10 @@ export default [
             {
                 text: '基本使用',
                 link: 'docs/java/MyBatis/基本使用'
+            },
+            {
+                text: 'MyBatisPlus',
+                link: 'docs/java/MyBatis/MyBatisPlus'
             }
         ]
     },
