@@ -232,16 +232,24 @@ export default [
                 collapsed: true,
                 items: [
                     {
-                        text: 'SpringBoot概述',
-                        link: 'docs/java/Spring全家桶/SpringBoot/概述'
+                        text: 'SpringMVC简介',
+                        link: 'docs/java/Spring全家桶/SpringMVC/SpringMVC简介'
                     },
                     {
-                        text: 'SpringBoot核心',
-                        link: 'docs/java/Spring全家桶/SpringBoot/核心'
+                        text: 'SpringMVC入门案例',
+                        link: 'docs/java/Spring全家桶/SpringMVC/SpringMVC入门案例'
                     },
                     {
-                        text: 'SpringBoot整合',
-                        link: 'docs/java/Spring全家桶/SpringBoot/整合'
+                        text: 'PostMan工具的使用',
+                        link: 'docs/java/Spring全家桶/SpringMVC/PostMan工具的使用'
+                    },
+                    {
+                        text: '请求与响应',
+                        link: 'docs/java/Spring全家桶/SpringMVC/请求与响应'
+                    },
+                    {
+                        text: 'Rest风格',
+                        link: 'docs/java/Spring全家桶/SpringMVC/Rest风格'
                     },
                 ]
             },
