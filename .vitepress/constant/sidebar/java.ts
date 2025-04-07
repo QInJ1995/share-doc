@@ -251,6 +251,30 @@ export default [
                         text: 'Rest风格',
                         link: 'docs/java/Spring全家桶/SpringMVC/Rest风格'
                     },
+                    {
+                        text: 'SSM整合',
+                        link: 'docs/java/Spring全家桶/SpringMVC/SSM整合'
+                    },
+                    {
+                        text: '表现层数据封装',
+                        link: 'docs/java/Spring全家桶/SpringMVC/表现层数据封装'
+                    },
+                    {
+                        text: '异常处理器',
+                        link: 'docs/java/Spring全家桶/SpringMVC/异常处理器'
+                    },
+                    {
+                        text: '项目异常处理方案',
+                        link: 'docs/java/Spring全家桶/SpringMVC/项目异常处理方案'
+                    },
+                    {
+                        text: 'SSM整合页面开发',
+                        link: 'docs/java/Spring全家桶/SpringMVC/SSM整合页面开发'
+                    },
+                    {
+                        text: '拦截器',
+                        link: 'docs/java/Spring全家桶/SpringMVC/拦截器'
+                    },
                 ]
             },
             {
