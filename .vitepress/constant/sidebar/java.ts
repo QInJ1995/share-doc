@@ -282,16 +282,16 @@ export default [
                 collapsed: true,
                 items: [
                     {
-                        text: 'SpringCloud概述',
-                        link: 'docs/java/Spring全家桶/SpringCloud/概述'
+                        text: 'SpringBoot简介',
+                        link: 'docs/java/Spring全家桶/SpringBoot/SpringBoot简介'
                     },
                     {
-                        text: 'SpringCloud核心',
-                        link: 'docs/java/Spring全家桶/SpringCloud/核心'
+                        text: '基础配置',
+                        link: 'docs/java/Spring全家桶/SpringBoot/基础配置'
                     },
                     {
-                        text: 'SpringCloud整合',
-                        link: 'docs/java/Spring全家桶/SpringCloud/整合'
+                        text: '整合第三方技术',
+                        link: 'docs/java/Spring全家桶/SpringBoot/整合第三方技术'
                     },
                 ]
             },
