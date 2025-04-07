@@ -314,6 +314,10 @@ export default [
             {
                 text: '基础',
                 link: 'docs/java/Maven/基础'
+            },
+            {
+                text: '进阶',
+                link: 'docs/java/Maven/进阶'
             }
         ]
     },
