@@ -1,12 +1,10 @@
-# TypeScript 工程配置
+# 第十章：工程配置
 
-让我们来了解如何配置 TypeScript 项目。
+## TypeScript 配置文件
 
-## tsconfig.json
+TypeScript 使用 `tsconfig.json` 文件来配置编译选项和项目设置。
 
-`tsconfig.json` 是 TypeScript 项目的配置文件，它指定了编译选项和项目文件。
-
-### 基本配置
+### 1. 基本配置
 
 ```json
 {
@@ -21,79 +19,216 @@
 }
 ```
 
-### 编译选项详解
+### 2. 编译选项详解
 
 #### 基本选项
 
-- `target`: 指定 ECMAScript 目标版本
-- `module`: 指定模块系统
-- `lib`: 指定要包含在编译中的库文件
-- `allowJs`: 允许编译 JavaScript 文件
-- `checkJs`: 在 .js 文件中报告错误
-- `jsx`: 指定 JSX 代码的生成方式
+```json
+{
+    "compilerOptions": {
+        // 指定 ECMAScript 目标版本
+        "target": "es5",
+        
+        // 指定模块系统
+        "module": "commonjs",
+        
+        // 指定库文件
+        "lib": ["es6", "dom"],
+        
+        // 允许编译 JavaScript 文件
+        "allowJs": true,
+        
+        // 检查 JavaScript 文件
+        "checkJs": true,
+        
+        // 生成声明文件
+        "declaration": true,
+        
+        // 生成 sourceMap
+        "sourceMap": true,
+        
+        // 输出目录
+        "outDir": "./dist",
+        
+        // 根目录
+        "rootDir": "./src",
+        
+        // 移除注释
+        "removeComments": true,
+        
+        // 不生成输出文件
+        "noEmit": true,
+        
+        // 导入帮助函数
+        "importHelpers": true,
+        
+        // 降级迭代器
+        "downlevelIteration": true,
+        
+        // 隔离模块
+        "isolatedModules": true
+    }
+}
+```
 
-#### 类型检查选项
+#### 严格类型检查选项
 
-- `strict`: 启用所有严格类型检查选项
-- `noImplicitAny`: 不允许隐式的 any 类型
-- `strictNullChecks`: 启用严格的 null 检查
-- `strictFunctionTypes`: 启用函数类型的严格检查
-- `strictBindCallApply`: 启用 bind、call 和 apply 的严格检查
-- `strictPropertyInitialization`: 启用类属性初始化的严格检查
+```json
+{
+    "compilerOptions": {
+        // 启用所有严格类型检查选项
+        "strict": true,
+        
+        // 不允许隐式的 any 类型
+        "noImplicitAny": true,
+        
+        // 不允许 null 和 undefined 赋值给其他类型
+        "strictNullChecks": true,
+        
+        // 不允许函数参数双向协变
+        "strictFunctionTypes": true,
+        
+        // 不允许 this 隐式 any
+        "strictBindCallApply": true,
+        
+        // 严格属性初始化检查
+        "strictPropertyInitialization": true,
+        
+        // 不允许未使用的局部变量
+        "noUnusedLocals": true,
+        
+        // 不允许未使用的参数
+        "noUnusedParameters": true,
+        
+        // 不允许有返回值的函数没有返回值
+        "noImplicitReturns": true,
+        
+        // 不允许 switch 语句贯穿
+        "noFallthroughCasesInSwitch": true
+    }
+}
+```
 
 #### 模块解析选项
 
-- `baseUrl`: 解析非相对模块名的基准目录
-- `paths`: 模块名到基于 baseUrl 的路径映射
-- `rootDirs`: 根文件夹列表
-- `typeRoots`: 类型声明文件目录列表
-- `types`: 需要包含的类型声明文件名列表
-
-#### Source Map 选项
-
-- `sourceMap`: 生成相应的 .map 文件
-- `inlineSourceMap`: 将 SourceMap 嵌入到生成的 JavaScript 文件中
-- `inlineSources`: 将源代码与 SourceMap 一起嵌入到生成的 JavaScript 文件中
-
-#### 其他选项
-
-- `experimentalDecorators`: 启用装饰器
-- `emitDecoratorMetadata`: 为装饰器生成元数据
-- `outDir`: 指定输出目录
-- `outFile`: 将输出文件合并为一个文件
-- `removeComments`: 删除所有注释
-- `noEmit`: 不生成输出文件
-
-## 项目结构
-
-### 基本结构
-
-```txt
-project/
-├── src/
-│   ├── index.ts
-│   ├── components/
-│   └── utils/
-├── tests/
-├── dist/
-├── node_modules/
-├── package.json
-└── tsconfig.json
+```json
+{
+    "compilerOptions": {
+        // 模块解析策略
+        "moduleResolution": "node",
+        
+        // 基础目录
+        "baseUrl": ".",
+        
+        // 路径映射
+        "paths": {
+            "*": ["*", "src/*"]
+        },
+        
+        // 根目录
+        "rootDirs": ["src", "generated"],
+        
+        // 类型声明文件
+        "typeRoots": ["./typings", "./node_modules/@types"],
+        
+        // 类型声明文件
+        "types": ["node", "lodash", "express"],
+        
+        // 允许从没有设置默认导出的模块中默认导入
+        "allowSyntheticDefaultImports": true,
+        
+        // 不把符号链接解析为真实路径
+        "preserveSymlinks": true
+    }
+}
 ```
 
-### 推荐的文件组织方式
+#### 源映射选项
 
-1. 按功能组织文件
-2. 使用模块化结构
-3. 分离测试文件
-4. 使用类型声明文件
+```json
+{
+    "compilerOptions": {
+        // 生成 sourceMap
+        "sourceMap": true,
+        
+        // 指定 sourceMap 的根路径
+        "sourceRoot": "",
+        
+        // 指定 map 文件的位置
+        "mapRoot": "",
+        
+        // 生成声明文件
+        "declaration": true,
+        
+        // 指定声明文件的目录
+        "declarationDir": "",
+        
+        // 生成声明文件的 sourceMap
+        "declarationMap": true,
+        
+        // 移除注释
+        "removeComments": true
+    }
+}
+```
 
-## 与构建工具集成
+#### 实验性选项
 
-### Webpack
+```json
+{
+    "compilerOptions": {
+        // 启用装饰器
+        "experimentalDecorators": true,
+        
+        // 为装饰器生成元数据
+        "emitDecoratorMetadata": true,
+        
+        // 启用 JSX
+        "jsx": "preserve"
+    }
+}
+```
+
+### 3. 项目引用
+
+TypeScript 3.0 引入了项目引用功能，允许将 TypeScript 程序分割成更小的部分：
+
+```json
+{
+    "compilerOptions": {
+        // ...
+    },
+    "references": [
+        { "path": "./shared" },
+        { "path": "./src" }
+    ]
+}
+```
+
+### 4. 文件包含和排除
+
+```json
+{
+    "compilerOptions": {
+        // ...
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
+```
+
+## 构建工具集成
+
+### 1. Webpack 配置
 
 ```javascript
-// webpack.config.js
+const path = require('path');
+
 module.exports = {
     entry: './src/index.ts',
     module: {
@@ -115,37 +250,72 @@ module.exports = {
 };
 ```
 
-### Babel
+### 2. Babel 配置
 
 ```json
-// .babelrc
 {
     "presets": [
         "@babel/preset-env",
         "@babel/preset-typescript"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread"
     ]
 }
 ```
 
-## 类型声明文件
+### 3. ESLint 配置
 
-### 创建类型声明文件
-
-```typescript
-// types.d.ts
-declare module "my-module" {
-    export function doSomething(): void;
+```json
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+    }
 }
 ```
 
-### 使用 DefinitelyTyped
+## 最佳实践
 
-```bash
-npm install --save-dev @types/lodash
+### 1. 项目结构
+
+```
+project/
+├── src/
+│   ├── components/
+│   ├── services/
+│   ├── models/
+│   ├── utils/
+│   └── index.ts
+├── tests/
+├── dist/
+├── node_modules/
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-## 下一步
+### 2. 配置建议
 
-- [最佳实践](./11-best-practices.md)
-- [常见问题](./12-faq.md)
-- [实战项目](./13-practical-projects.md)
+- 使用 `strict` 模式
+- 启用 `sourceMap`
+- 使用 `outDir` 指定输出目录
+- 使用 `include` 和 `exclude` 控制编译范围
+- 使用 `paths` 配置路径别名
+- 使用项目引用管理大型项目
+
+### 本章小结
+
+- 学习了 TypeScript 配置文件的结构和选项
+- 了解了各种编译选项的作用
+- 掌握了项目引用的使用方法
+- 理解了与构建工具的集成
+- 学习了项目配置的最佳实践
+
+在下一章中，我们将学习 TypeScript 的最佳实践。

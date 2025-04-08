@@ -1,132 +1,125 @@
-# TypeScript 高级类型
+# 第七章：高级类型
 
-让我们深入了解 TypeScript 中的一些高级类型特性。
+## 高级类型概述
 
-## 交叉类型
+TypeScript 提供了一些高级类型特性，可以帮助我们更好地处理复杂的类型场景。
+
+### 1. 交叉类型（Intersection Types）
+
+交叉类型是将多个类型合并为一个类型：
 
 ```typescript
-function extend<T, U>(first: T, second: U): T & U {
-    let result = <T & U>{};
-    for (let id in first) {
-        (<any>result)[id] = (<any>first)[id];
+interface Person {
+    name: string;
+}
+
+interface Employee {
+    employeeId: number;
+}
+
+type EmployeePerson = Person & Employee;
+
+const employee: EmployeePerson = {
+    name: "Alice",
+    employeeId: 123
+};
+```
+
+### 2. 联合类型（Union Types）
+
+联合类型表示一个值可以是几种类型之一：
+
+```typescript
+type Status = "success" | "error" | "warning";
+type Result = string | number;
+
+function handleResult(result: Result) {
+    if (typeof result === "string") {
+        return result.toUpperCase();
+    } else {
+        return result.toFixed(2);
     }
-    for (let id in second) {
-        if (!result.hasOwnProperty(id)) {
-            (<any>result)[id] = (<any>second)[id];
-        }
-    }
-    return result;
 }
 ```
 
-## 联合类型
+### 3. 类型保护（Type Guards）
+
+类型保护可以帮助我们在运行时检查类型：
 
 ```typescript
-function padLeft(value: string, padding: string | number) {
-    if (typeof padding === "number") {
-        return Array(padding + 1).join(" ") + value;
+function isString(value: any): value is string {
+    return typeof value === "string";
+}
+
+function processValue(value: string | number) {
+    if (isString(value)) {
+        return value.toUpperCase();
+    } else {
+        return value.toFixed(2);
     }
-    if (typeof padding === "string") {
-        return padding + value;
-    }
-    throw new Error(`Expected string or number, got '${padding}'.`);
 }
 ```
 
-## 类型保护
+### 4. 类型别名（Type Aliases）
 
-### typeof 类型保护
-
-```typescript
-function isNumber(x: any): x is number {
-    return typeof x === "number";
-}
-
-function isString(x: any): x is string {
-    return typeof x === "string";
-}
-```
-
-### instanceof 类型保护
-
-```typescript
-class Bird {
-    fly() {
-        console.log("bird fly");
-    }
-    layEggs() {
-        console.log("bird lay eggs");
-    }
-}
-
-class Fish {
-    swim() {
-        console.log("fish swim");
-    }
-    layEggs() {
-        console.log("fish lay eggs");
-    }
-}
-
-function getRandomPet(): Fish | Bird {
-    return Math.random() > 0.5 ? new Fish() : new Bird();
-}
-
-let pet = getRandomPet();
-
-if (pet instanceof Fish) {
-    pet.swim();
-}
-if (pet instanceof Bird) {
-    pet.fly();
-}
-```
-
-## 可以为 null 的类型
-
-```typescript
-let s = "foo";
-s = null; // 错误, 'null'不能赋值给'string'
-let sn: string | null = "bar";
-sn = null; // 可以
-
-sn = undefined; // error, 'undefined'不能赋值给'string | null'
-```
-
-## 类型别名
+类型别名可以给类型起一个新名字：
 
 ```typescript
 type Name = string;
 type NameResolver = () => string;
 type NameOrResolver = Name | NameResolver;
-```
 
-## 字符串字面量类型
-
-```typescript
-type Easing = "ease-in" | "ease-out" | "ease-in-out";
-```
-
-## 数字字面量类型
-
-```typescript
-function rollDice(): 1 | 2 | 3 | 4 | 5 | 6 {
-    return (Math.floor(Math.random() * 6) + 1) as 1 | 2 | 3 | 4 | 5 | 6;
+function getName(n: NameOrResolver): Name {
+    if (typeof n === "string") {
+        return n;
+    } else {
+        return n();
+    }
 }
 ```
 
-## 可辨识联合
+### 5. 字符串字面量类型
+
+字符串字面量类型允许我们指定字符串必须的固定值：
+
+```typescript
+type Easing = "ease-in" | "ease-out" | "ease-in-out";
+
+function animate(easing: Easing) {
+    if (easing === "ease-in") {
+        // ...
+    } else if (easing === "ease-out") {
+        // ...
+    } else {
+        // ...
+    }
+}
+```
+
+### 6. 数字字面量类型
+
+```typescript
+type Dice = 1 | 2 | 3 | 4 | 5 | 6;
+
+function rollDice(): Dice {
+    return (Math.floor(Math.random() * 6) + 1) as Dice;
+}
+```
+
+### 7. 可辨识联合（Discriminated Unions）
 
 ```typescript
 interface Square {
     kind: "square";
     size: number;
 }
+
 interface Rectangle {
     kind: "rectangle";
     width: number;
     height: number;
 }
+
 interface Circle {
     kind: "circle";
     radius: number;
@@ -134,7 +127,7 @@ interface Circle {
 
 type Shape = Square | Rectangle | Circle;
 
-function area(s: Shape) {
+function area(s: Shape): number {
     switch (s.kind) {
         case "square": return s.size * s.size;
         case "rectangle": return s.height * s.width;
@@ -143,7 +136,7 @@ function area(s: Shape) {
 }
 ```
 
-## 索引类型
+### 8. 索引类型（Index Types）
 
 ```typescript
 function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
@@ -154,25 +147,36 @@ interface Person {
     name: string;
     age: number;
 }
+
 let person: Person = {
-    name: 'Jarid',
+    name: "Jarid",
     age: 35
 };
-let strings: string[] = pluck(person, ['name']); // ok, string[]
+
+let strings: string[] = pluck(person, ["name"]); // ok, string[]
 ```
 
-## 映射类型
+### 9. 映射类型（Mapped Types）
 
 ```typescript
 type Readonly<T> = {
     readonly [P in keyof T]: T[P];
-}
+};
+
 type Partial<T> = {
     [P in keyof T]?: T[P];
-}
+};
+
+type Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+};
+
+type Record<K extends keyof any, T> = {
+    [P in K]: T;
+};
 ```
 
-## 条件类型
+### 10. 条件类型（Conditional Types）
 
 ```typescript
 type TypeName<T> =
@@ -182,10 +186,52 @@ type TypeName<T> =
     T extends undefined ? "undefined" :
     T extends Function ? "function" :
     "object";
+
+type T0 = TypeName<string>;  // "string"
+type T1 = TypeName<"a">;     // "string"
+type T2 = TypeName<true>;    // "boolean"
 ```
 
-## 下一步
+### 11. 预定义的条件类型
 
-- [模块和命名空间](./08-modules-namespaces.md)
-- [装饰器](./09-decorators.md)
-- [工程配置](./10-project-configuration.md)
+```typescript
+// Exclude<T, U> - 从 T 中排除可以赋值给 U 的类型
+type T0 = Exclude<"a" | "b" | "c", "a">;  // "b" | "c"
+
+// Extract<T, U> - 从 T 中提取可以赋值给 U 的类型
+type T1 = Extract<"a" | "b" | "c", "a" | "f">;  // "a"
+
+// NonNullable<T> - 从 T 中排除 null 和 undefined
+type T2 = NonNullable<string | number | undefined>;  // string | number
+
+// ReturnType<T> - 获取函数返回值类型
+type T3 = ReturnType<() => string>;  // string
+
+// InstanceType<T> - 获取构造函数类型的实例类型
+class C {
+    x = 0;
+    y = 0;
+}
+type T4 = InstanceType<typeof C>;  // C
+```
+
+### 12. 类型推断
+
+```typescript
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
+
+type T0 = ReturnType<() => string>;  // string
+type T1 = ReturnType<(s: string) => void>;  // void
+type T2 = ReturnType<<T>() => T>;  // {}
+```
+
+### 本章小结
+
+- 学习了交叉类型和联合类型
+- 了解了类型保护和类型别名
+- 掌握了字符串和数字字面量类型
+- 理解了可辨识联合的使用
+- 学习了索引类型和映射类型
+- 了解了条件类型和类型推断
+
+在下一章中，我们将学习 TypeScript 的模块和命名空间。

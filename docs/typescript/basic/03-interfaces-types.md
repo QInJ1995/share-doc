@@ -1,10 +1,10 @@
-# TypeScript 接口和类型
+# 第三章：接口和类型别名
 
-接口和类型是 TypeScript 中非常重要的概念，它们帮助我们定义数据的结构和约束。
+## 接口（Interface）
 
-## 接口 (Interface)
+接口是 TypeScript 中一个非常重要的概念，它用于定义对象的形状（shape）。
 
-### 基本接口
+### 1. 基本接口
 
 ```typescript
 interface Person {
@@ -12,121 +12,168 @@ interface Person {
     age: number;
 }
 
-function greet(person: Person) {
-    return `Hello, ${person.name}!`;
-}
+let person: Person = {
+    name: "Alice",
+    age: 30
+};
 ```
 
-### 可选属性
+### 2. 可选属性
+
+使用 `?` 标记可选属性：
 
 ```typescript
-interface SquareConfig {
-    color?: string;
-    width?: number;
+interface Person {
+    name: string;
+    age?: number;  // 可选属性
 }
+
+let person1: Person = {
+    name: "Bob"
+};
+
+let person2: Person = {
+    name: "Alice",
+    age: 30
+};
 ```
 
-### 只读属性
+### 3. 只读属性
+
+使用 `readonly` 关键字标记只读属性：
 
 ```typescript
 interface Point {
     readonly x: number;
     readonly y: number;
 }
+
+let p1: Point = { x: 10, y: 20 };
+p1.x = 5; // 错误！x 是只读的
 ```
 
-### 函数类型
+### 4. 函数类型
+
+接口也可以描述函数类型：
 
 ```typescript
 interface SearchFunc {
     (source: string, subString: string): boolean;
 }
 
-let mySearch: SearchFunc;
-mySearch = function(source: string, subString: string) {
+let mySearch: SearchFunc = function(source: string, subString: string) {
     return source.search(subString) > -1;
-}
+};
 ```
 
-### 可索引类型
+### 5. 可索引类型
+
+接口可以描述那些能够"通过索引得到"的类型：
 
 ```typescript
 interface StringArray {
     [index: number]: string;
 }
 
-let myArray: StringArray;
-myArray = ["Bob", "Fred"];
+let myArray: StringArray = ["Bob", "Fred"];
+let myStr: string = myArray[0];
 ```
 
-## 类型别名 (Type)
+### 6. 类类型
 
-### 基本类型别名
+接口可以用于描述类的公共部分：
+
+```typescript
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date): void;
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date = new Date();
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+}
+```
+
+## 类型别名（Type Aliases）
+
+类型别名是给类型起一个新名字，它和接口很相似，但有一些区别。
+
+### 1. 基本类型别名
 
 ```typescript
 type Name = string;
 type NameResolver = () => string;
 type NameOrResolver = Name | NameResolver;
+
+function getName(n: NameOrResolver): Name {
+    if (typeof n === "string") {
+        return n;
+    } else {
+        return n();
+    }
+}
 ```
 
-### 联合类型
+### 2. 接口 vs 类型别名
+
+#### 相似点：
+- 都可以描述对象或函数
+- 都可以扩展
+
+#### 不同点：
+- 接口可以重复声明，会自动合并
+- 类型别名不能重复声明
+- 类型别名可以使用联合类型和交叉类型
+- 接口可以使用 `extends` 和 `implements`
+
+### 3. 联合类型（Union Types）
 
 ```typescript
 type Status = "success" | "error" | "warning";
 type Result = string | number;
+
+function handleResult(result: Result) {
+    if (typeof result === "string") {
+        return result.toUpperCase();
+    } else {
+        return result.toFixed(2);
+    }
+}
 ```
 
-### 交叉类型
+### 4. 交叉类型（Intersection Types）
 
 ```typescript
-interface ErrorHandling {
-    success: boolean;
-    error?: { message: string };
+interface Person {
+    name: string;
 }
 
-interface ArtworksData {
-    artworks: { title: string }[];
+interface Employee {
+    employeeId: number;
 }
 
-type ArtworksResponse = ArtworksData & ErrorHandling;
+type EmployeePerson = Person & Employee;
+
+let employee: EmployeePerson = {
+    name: "Alice",
+    employeeId: 123
+};
 ```
 
-## 接口 vs 类型
-
-### 相同点
-
-1. 都可以用来描述对象或函数的形状
-2. 都可以扩展
-
-### 不同点
-
-1. 接口可以声明合并，类型不能
-2. 类型可以声明联合类型和元组类型
-3. 类型可以使用 typeof 获取实例类型
-
-## 接口继承
-
-```typescript
-interface Shape {
-    color: string;
-}
-
-interface Square extends Shape {
-    sideLength: number;
-}
-```
-
-## 类型断言
+### 5. 类型断言
 
 ```typescript
 interface Bird {
-    fly();
-    layEggs();
+    fly(): void;
+    layEggs(): void;
 }
 
 interface Fish {
-    swim();
-    layEggs();
+    swim(): void;
+    layEggs(): void;
 }
 
 function getSmallPet(): Fish | Bird {
@@ -136,11 +183,31 @@ function getSmallPet(): Fish | Bird {
 let pet = getSmallPet();
 if ((pet as Fish).swim) {
     (pet as Fish).swim();
+} else {
+    (pet as Bird).fly();
 }
 ```
 
-## 下一步
+### 6. 类型保护
 
-- [类和对象](./04-classes-objects.md)
-- [泛型](./06-generics.md)
-- [高级类型](./07-advanced-types.md)
+```typescript
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined;
+}
+
+if (isFish(pet)) {
+    pet.swim();
+} else {
+    pet.fly();
+}
+```
+
+### 本章小结
+
+- 学习了接口的基本概念和用法
+- 了解了类型别名的定义和使用
+- 掌握了联合类型和交叉类型
+- 理解了类型断言和类型保护
+- 了解了接口和类型别名的区别
+
+在下一章中，我们将学习 TypeScript 的类和对象。

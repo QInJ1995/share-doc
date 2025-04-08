@@ -1,10 +1,19 @@
-# TypeScript 最佳实践
-
-让我们来了解 TypeScript 开发中的一些最佳实践。
+# 第十一章：最佳实践
 
 ## 类型系统最佳实践
 
-### 避免使用 any 类型
+### 1. 使用严格的类型检查
+
+```typescript
+// 在 tsconfig.json 中启用严格模式
+{
+    "compilerOptions": {
+        "strict": true
+    }
+}
+```
+
+### 2. 避免使用 any 类型
 
 ```typescript
 // 不推荐
@@ -13,154 +22,213 @@ function processData(data: any) {
 }
 
 // 推荐
-function processData(data: unknown) {
-    if (typeof data === 'string') {
-        // ...
-    }
+interface Data {
+    id: number;
+    name: string;
+}
+
+function processData(data: Data) {
+    // ...
 }
 ```
 
-### 使用类型推断
+### 3. 使用类型推断
 
 ```typescript
 // 不推荐
-let x: number = 10;
+let name: string = "John";
+let age: number = 30;
 
 // 推荐
-let x = 10;
+let name = "John";
+let age = 30;
 ```
 
-### 使用接口而不是类型别名
+### 4. 使用类型别名和接口
 
 ```typescript
-// 不推荐
-type Point = {
-    x: number;
-    y: number;
-};
-
-// 推荐
-interface Point {
-    x: number;
-    y: number;
+// 使用接口定义对象形状
+interface User {
+    id: number;
+    name: string;
+    email: string;
 }
+
+// 使用类型别名定义联合类型
+type Status = "active" | "inactive" | "pending";
 ```
 
 ## 代码组织最佳实践
 
-### 使用模块化
+### 1. 模块化组织代码
 
 ```typescript
-// utils/math.ts
-export function add(a: number, b: number): number {
-    return a + b;
+// user.service.ts
+export class UserService {
+    // ...
 }
 
-// index.ts
-import { add } from './utils/math';
+// user.model.ts
+export interface User {
+    // ...
+}
+
+// user.controller.ts
+export class UserController {
+    // ...
+}
 ```
 
-### 使用命名空间
+### 2. 使用命名空间组织相关代码
 
 ```typescript
 namespace Validation {
     export interface StringValidator {
         isAcceptable(s: string): boolean;
     }
+    
+    export class EmailValidator implements StringValidator {
+        isAcceptable(s: string): boolean {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+        }
+    }
 }
+```
+
+### 3. 使用枚举代替魔法字符串
+
+```typescript
+// 不推荐
+const status = "active";
+
+// 推荐
+enum Status {
+    Active = "active",
+    Inactive = "inactive",
+    Pending = "pending"
+}
+
+const status = Status.Active;
 ```
 
 ## 错误处理最佳实践
 
-### 使用自定义错误类型
+### 1. 使用自定义错误类
 
 ```typescript
 class ValidationError extends Error {
     constructor(message: string) {
         super(message);
-        this.name = 'ValidationError';
+        this.name = "ValidationError";
     }
 }
 
-function validateInput(input: string): void {
-    if (!input) {
-        throw new ValidationError('Input cannot be empty');
+function validateUser(user: User) {
+    if (!user.email) {
+        throw new ValidationError("Email is required");
     }
 }
 ```
 
-### 使用 try-catch 块
+### 2. 使用 try-catch 处理错误
 
 ```typescript
 try {
-    validateInput('');
+    validateUser(user);
 } catch (error) {
     if (error instanceof ValidationError) {
-        console.error('Validation error:', error.message);
+        console.error("Validation error:", error.message);
     } else {
-        console.error('Unexpected error:', error);
+        console.error("Unexpected error:", error);
     }
 }
 ```
 
-## 性能最佳实践
+## 性能优化最佳实践
 
-### 避免不必要的类型断言
+### 1. 使用 const 和 readonly
+
+```typescript
+// 使用 const 声明常量
+const MAX_RETRIES = 3;
+
+// 使用 readonly 防止对象属性被修改
+interface Config {
+    readonly apiUrl: string;
+    readonly timeout: number;
+}
+```
+
+### 2. 避免不必要的类型断言
 
 ```typescript
 // 不推荐
-const element = document.getElementById('my-element') as HTMLElement;
+const element = document.getElementById("myElement") as HTMLElement;
 
 // 推荐
-const element = document.getElementById('my-element');
+const element = document.getElementById("myElement");
 if (element) {
     // 使用 element
 }
 ```
 
-### 使用 const 声明
+### 3. 使用类型保护
 
 ```typescript
-// 不推荐
-let PI = 3.14;
+function isString(value: unknown): value is string {
+    return typeof value === "string";
+}
 
-// 推荐
-const PI = 3.14;
+function processValue(value: unknown) {
+    if (isString(value)) {
+        // value 在这里被推断为 string 类型
+        console.log(value.toUpperCase());
+    }
+}
 ```
 
 ## 测试最佳实践
 
-### 使用类型安全的测试框架
+### 1. 使用类型安全的测试框架
 
 ```typescript
-import { expect } from 'chai';
-import { describe, it } from 'mocha';
+import { describe, it, expect } from "vitest";
 
-describe('Math functions', () => {
-    it('should add two numbers correctly', () => {
-        expect(add(1, 2)).to.equal(3);
+describe("UserService", () => {
+    it("should create a new user", () => {
+        const userService = new UserService();
+        const user = userService.createUser({
+            name: "John",
+            email: "john@example.com"
+        });
+        
+        expect(user).toBeDefined();
+        expect(user.name).toBe("John");
     });
 });
 ```
 
-### 编写类型声明测试
+### 2. 使用模拟和存根
 
 ```typescript
-// types.test.ts
-import { expectType } from 'tsd';
-
-expectType<string>(add(1, 2)); // 错误：类型不匹配
+class MockUserRepository implements UserRepository {
+    users: User[] = [];
+    
+    async findById(id: number): Promise<User | null> {
+        return this.users.find(user => user.id === id) || null;
+    }
+}
 ```
 
 ## 文档最佳实践
 
-### 使用 JSDoc 注释
+### 1. 使用 JSDoc 注释
 
 ```typescript
 /**
  * 计算两个数字的和
- * @param a - 第一个数字
- * @param b - 第二个数字
+ * @param a 第一个数字
+ * @param b 第二个数字
  * @returns 两个数字的和
  */
 function add(a: number, b: number): number {
@@ -168,42 +236,74 @@ function add(a: number, b: number): number {
 }
 ```
 
-### 编写类型声明文件
+### 2. 为复杂类型添加文档
 
 ```typescript
-// types.d.ts
-declare module 'my-module' {
-    export function doSomething(): void;
+/**
+ * 用户配置选项
+ */
+interface UserConfig {
+    /** 用户名 */
+    username: string;
+    /** 是否启用通知 */
+    notifications: boolean;
+    /** 主题设置 */
+    theme: "light" | "dark";
 }
 ```
 
-## 安全性最佳实践
+## 团队协作最佳实践
 
-### 使用 readonly 修饰符
+### 1. 使用 ESLint 和 Prettier
 
-```typescript
-interface Config {
-    readonly apiKey: string;
-    readonly endpoint: string;
-}
-```
-
-### 使用类型保护
-
-```typescript
-function isString(value: unknown): value is string {
-    return typeof value === 'string';
-}
-
-function processValue(value: unknown) {
-    if (isString(value)) {
-        // value 现在是 string 类型
+```json
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-explicit-any": "error"
     }
 }
 ```
 
-## 下一步
+### 2. 使用 Git Hooks
 
-- [常见问题](./12-faq.md)
-- [实战项目](./13-practical-projects.md)
-- [高级主题](./14-advanced-topics.md)
+```json
+{
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run test"
+        }
+    }
+}
+```
+
+### 3. 使用 TypeScript 项目引用
+
+```json
+{
+    "compilerOptions": {
+        // ...
+    },
+    "references": [
+        { "path": "./shared" },
+        { "path": "./src" }
+    ]
+}
+```
+
+### 本章小结
+
+- 学习了类型系统的最佳实践
+- 了解了代码组织的最佳实践
+- 掌握了错误处理的最佳实践
+- 理解了性能优化的最佳实践
+- 学习了测试和文档的最佳实践
+- 了解了团队协作的最佳实践
+
+在下一章中，我们将学习 TypeScript 的常见问题解答。

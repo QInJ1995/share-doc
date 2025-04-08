@@ -1,16 +1,19 @@
-# TypeScript 基础类型
+# 第二章：TypeScript 基本类型
 
-TypeScript 提供了多种基本数据类型，让我们来一一了解它们。
+## 基本类型介绍
 
-## 布尔类型 (boolean)
+TypeScript 提供了丰富的基本类型，让我们可以在代码中明确指定变量的类型。这有助于提高代码的可读性和可维护性。
+
+### 1. 布尔类型 (boolean)
 
 ```typescript
 let isDone: boolean = false;
+let isActive: boolean = true;
 ```
 
-## 数字类型 (number)
+### 2. 数字类型 (number)
 
-TypeScript 中的所有数字都是浮点数，支持二进制、八进制和十六进制：
+TypeScript 中的所有数字都是浮点数，支持二进制、八进制、十进制和十六进制字面量。
 
 ```typescript
 let decimal: number = 6;
@@ -19,7 +22,7 @@ let binary: number = 0b1010;
 let octal: number = 0o744;
 ```
 
-## 字符串类型 (string)
+### 3. 字符串类型 (string)
 
 ```typescript
 let color: string = "blue";
@@ -31,21 +34,21 @@ let age: number = 37;
 let sentence: string = `Hello, my name is ${fullName}. I'll be ${age + 1} years old next month.`;
 ```
 
-## 数组类型 (array)
+### 4. 数组类型 (array)
 
-有两种方式定义数组：
+TypeScript 有两种方式定义数组：
 
 ```typescript
 // 方式一：元素类型后接 []
-let list: number[] = [1, 2, 3];
+let list1: number[] = [1, 2, 3];
 
 // 方式二：使用数组泛型
-let list: Array<number> = [1, 2, 3];
+let list2: Array<number> = [1, 2, 3];
 ```
 
-## 元组类型 (tuple)
+### 5. 元组类型 (tuple)
 
-元组类型允许表示一个已知元素数量和类型的数组：
+元组类型允许表示一个已知元素数量和类型的数组。
 
 ```typescript
 let x: [string, number];
@@ -53,19 +56,29 @@ x = ["hello", 10]; // OK
 x = [10, "hello"]; // Error
 ```
 
-## 枚举类型 (enum)
+### 6. 枚举类型 (enum)
+
+枚举类型是对 JavaScript 标准数据类型的一个补充。
 
 ```typescript
-enum Color {Red, Green, Blue}
+enum Color {
+    Red,
+    Green,
+    Blue
+}
 let c: Color = Color.Green;
 
-// 可以手动设置枚举值
-enum Color {Red = 1, Green = 2, Blue = 4}
+// 也可以手动指定枚举值
+enum Color {
+    Red = 1,
+    Green = 2,
+    Blue = 4
+}
 ```
 
-## Any 类型
+### 7. Any 类型
 
-当不确定变量类型时，可以使用 any 类型：
+当我们不确定变量的类型时，可以使用 any 类型。
 
 ```typescript
 let notSure: any = 4;
@@ -73,26 +86,28 @@ notSure = "maybe a string instead";
 notSure = false;
 ```
 
-## Void 类型
+### 8. Void 类型
 
-表示没有任何类型，通常用于函数返回值：
+void 类型表示没有任何类型，通常用于函数返回值。
 
 ```typescript
 function warnUser(): void {
-    console.log("This is my warning message");
+    console.log("This is a warning message");
 }
 ```
 
-## Null 和 Undefined
+### 9. Null 和 Undefined
+
+TypeScript 中，`null` 和 `undefined` 有各自的类型。
 
 ```typescript
 let u: undefined = undefined;
 let n: null = null;
 ```
 
-## Never 类型
+### 10. Never 类型
 
-表示永不存在的值的类型：
+never 类型表示那些永不存在的值的类型。
 
 ```typescript
 function error(message: string): never {
@@ -105,9 +120,9 @@ function infiniteLoop(): never {
 }
 ```
 
-## 类型断言
+### 11. 类型断言
 
-类型断言有两种形式：
+类型断言可以用来告诉编译器"相信我，我知道自己在干什么"。
 
 ```typescript
 // 方式一：尖括号语法
@@ -119,8 +134,20 @@ let someValue: any = "this is a string";
 let strLength: number = (someValue as string).length;
 ```
 
-## 下一步
+### 类型推断
 
-- [接口和类型](./03-interfaces-types.md)
-- [类和对象](./04-classes-objects.md)
-- [函数](./05-functions.md)
+TypeScript 具有类型推断机制，可以根据上下文自动推断变量的类型。
+
+```typescript
+let x = 3; // TypeScript 会推断 x 的类型为 number
+let y = "hello"; // TypeScript 会推断 y 的类型为 string
+```
+
+### 本章小结
+
+- 学习了 TypeScript 的基本类型系统
+- 了解了各种类型的用法和特点
+- 掌握了类型断言的使用方法
+- 理解了类型推断的概念
+
+在下一章中，我们将学习 TypeScript 的接口和类型别名。

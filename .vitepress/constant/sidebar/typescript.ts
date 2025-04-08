@@ -9,7 +9,6 @@ export default [
             {
                 text: '基础篇',
                 items: [
-                    { text: '开始', link: 'docs/typescript/basic/00-index' },
                     { text: '介绍', link: 'docs/typescript/basic/01-introduction' },
                     { text: '基础类型', link: 'docs/typescript/basic/02-basic-types' },
                     { text: '接口与类型', link: 'docs/typescript/basic/03-interfaces-types' },
@@ -27,22 +26,24 @@ export default [
             {
                 text: '进阶篇',
                 items: [
-                    { text: '开始', link: 'docs/typescript/advanced/00-index' },
-                    { text: '类型编程', link: 'docs/typescript/advanced/01-type-programming' },
-                    { text: '类型推断', link: 'docs/typescript/advanced/02-type-inference' },
-                    { text: '类型兼容性', link: 'docs/typescript/advanced/03-type-compatibility' },
-                    { text: '高级装饰器', link: 'docs/typescript/advanced/04-advanced-decorators' },
-                    { text: '高级泛型', link: 'docs/typescript/advanced/05-advanced-generics' },
-                    { text: '高级类型编程', link: 'docs/typescript/advanced/06-advanced-type-programming' },
-                    { text: '类型兼容性', link: 'docs/typescript/advanced/07-type-compatibility' },
-                    { text: '类型守卫', link: 'docs/typescript/advanced/09-type-guards' }
+                    { text: '高级类型系统', link: 'docs/typescript/advanced/01-advanced-type-system' },
+                    { text: '高级泛型', link: 'docs/typescript/advanced/02-advanced-generics' },
+                    { text: '高级装饰器', link: 'docs/typescript/advanced/03-advanced-decorators' },
+                    { text: '异步编程', link: 'docs/typescript/advanced/04-advanced-async' },
+                    { text: '元编程', link: 'docs/typescript/advanced/05-advanced-metaprogramming' },
+                    { text: '设计模式', link: 'docs/typescript/advanced/06-advanced-design-patterns' },
+                    { text: '性能优化', link: 'docs/typescript/advanced/07-advanced-performance' },
+                    { text: '调试技巧', link: 'docs/typescript/advanced/08-advanced-debugging' },
+                    { text: '测试策略', link: 'docs/typescript/advanced/09-advanced-testing' },
+                    { text: '安全实践', link: 'docs/typescript/advanced/10-advanced-security' },
+                    { text: '性能调优', link: 'docs/typescript/advanced/11-advanced-performance' },
+                    { text: '调试进阶', link: 'docs/typescript/advanced/12-advanced-debugging' }
                 ]
             },
             {
                 text: '实战项目',
                 items: [
-                    { text: '开始', link: 'docs/typescript/projects/00-index' },
-                    { text: 'Todo 应用', link: 'docs/typescript/projects/01-todo-app' },
+                    { text: '待办事项应用', link: 'docs/typescript/projects/01-todo-app' },
                     { text: '天气应用', link: 'docs/typescript/projects/02-weather-app' },
                     { text: '聊天应用', link: 'docs/typescript/projects/03-chat-app' }
                 ]
