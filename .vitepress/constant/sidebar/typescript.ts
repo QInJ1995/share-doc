@@ -8,6 +8,7 @@ export default [
             },
             {
                 text: '基础篇',
+                collapsed: true,
                 items: [
                     { text: '介绍', link: 'docs/typescript/basic/01-introduction' },
                     { text: '基础类型', link: 'docs/typescript/basic/02-basic-types' },
@@ -25,6 +26,7 @@ export default [
             },
             {
                 text: '进阶篇',
+                collapsed: true,
                 items: [
                     { text: '高级类型系统', link: 'docs/typescript/advanced/01-advanced-type-system' },
                     { text: '高级泛型', link: 'docs/typescript/advanced/02-advanced-generics' },
@@ -42,6 +44,7 @@ export default [
             },
             {
                 text: '实战项目',
+                collapsed: true,
                 items: [
                     { text: '待办事项应用', link: 'docs/typescript/projects/01-todo-app' },
                     { text: '天气应用', link: 'docs/typescript/projects/02-weather-app' },

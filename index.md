@@ -48,7 +48,7 @@ features:
   - icon: {src: '/svg/features/harmony.svg', width: 32, height: 32}
     title: 鸿蒙
     details: 跨设备互联，智能生态，未来可期
-    link: /guide/started
+    link: /docs/harmony/index
   - icon: {src: '/svg/features/database.svg', width: 32, height: 32}
     title: 数据库
     details: 高效存储、管理、检索数据的系统 
