@@ -315,10 +315,3 @@ export class UsersController {
 1. 创建用户认证系统
 2. 实现微服务架构
 3. 构建 RESTful API
-
-## 下一步
-
-- 学习 Koa.js
-- 了解核心概念
-- 掌握中间件机制
-- 学习异步流程 

@@ -380,9 +380,3 @@ struct ReactiveExample {
   }
 }
 ```
-
-## 下一步
-
-- [生命周期](./lifecycle.md)
-- [系统能力](./system-capabilities.md)
-- [网络请求](./network-requests.md)

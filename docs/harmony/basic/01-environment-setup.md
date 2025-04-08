@@ -143,9 +143,3 @@
 - 设备连接失败
 - 编译错误
 - 运行时异常
-
-## 下一步
-
-- [ArkTS 语言基础](./arkts-basics.md)
-- [UI 开发基础](./ui-basics.md)
-- [状态管理](./state-management.md)

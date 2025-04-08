@@ -365,9 +365,3 @@ struct GestureExample {
   }
 }
 ```
-
-## 下一步
-
-- [状态管理](./state-management.md)
-- [生命周期](./lifecycle.md)
-- [系统能力](./system-capabilities.md)

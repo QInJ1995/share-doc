@@ -370,9 +370,3 @@ struct DataSubscription {
    - 避免在生命周期回调中执行耗时操作
    - 使用异步操作处理数据加载
    - 合理管理内存使用
-
-## 下一步
-
-- [系统能力](./system-capabilities.md)
-- [网络请求](./network-requests.md)
-- [数据持久化](./data-persistence.md)

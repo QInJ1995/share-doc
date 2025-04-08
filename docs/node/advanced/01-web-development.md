@@ -230,10 +230,3 @@ app.use(csrf({ cookie: true }));
 1. 实现一个简单的 RESTful API
 2. 创建一个实时聊天应用
 3. 实现用户认证中间件
-
-## 下一步
-
-- 学习数据库集成
-- 了解 MongoDB
-- 掌握 MySQL
-- 学习 Redis 

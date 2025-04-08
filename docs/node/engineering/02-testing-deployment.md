@@ -354,10 +354,3 @@ export class PerformanceMonitor {
 1. 编写单元测试
 2. 配置 CI/CD 流程
 3. 实现 Docker 部署
-
-## 下一步
-
-- 学习性能优化
-- 了解内存管理
-- 掌握缓存策略
-- 学习负载均衡 

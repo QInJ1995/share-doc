@@ -440,11 +440,13 @@ export const App: React.FC = () => {
 ## 运行项目
 
 1. 安装依赖：
+
 ```bash
 npm install
 ```
 
 2. 启动开发服务器：
+
 ```bash
 npm start
 ```
@@ -456,9 +458,3 @@ npm start
 3. 温度单位切换（摄氏/华氏）
 4. 错误处理和加载状态
 5. 响应式设计
-
-## 下一步
-
-- [聊天应用](./03-chat-app.md)
-- [电商网站](./04-ecommerce.md)
-- [博客系统](./05-blog-system.md) 

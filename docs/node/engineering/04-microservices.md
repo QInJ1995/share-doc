@@ -408,10 +408,3 @@ export class RabbitMQClient {
 2. 配置熔断器和限流器
 3. 实现 gRPC 服务通信
 4. 使用消息队列进行异步通信
-
-## 下一步
-
-- 学习容器化部署
-- 了解 Kubernetes
-- 掌握服务网格
-- 学习云原生架构 

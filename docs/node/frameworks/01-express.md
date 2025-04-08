@@ -202,7 +202,7 @@ app.get('/', (req, res) => {
 
 ### 2. 视图模板
 
-```ejs
+```txt
 <!-- views/index.ejs -->
 <!DOCTYPE html>
 <html>
@@ -275,10 +275,3 @@ app.post('/upload-multiple', upload.array('images', 5), (req, res) => {
 1. 创建 RESTful API
 2. 实现文件上传功能
 3. 构建用户认证系统
-
-## 下一步
-
-- 学习 Nest.js
-- 了解架构设计
-- 掌握依赖注入
-- 学习模块化 

@@ -354,11 +354,13 @@ export const App: React.FC = () => {
 ## 运行项目
 
 1. 安装依赖：
+
 ```bash
 npm install
 ```
 
 2. 启动开发服务器：
+
 ```bash
 npm start
 ```
@@ -370,9 +372,3 @@ npm start
 3. 删除待办事项
 4. 按状态筛选待办事项
 5. 数据持久化存储
-
-## 下一步
-
-- [天气查询应用](./02-weather-app.md)
-- [聊天应用](./03-chat-app.md)
-- [电商网站](./04-ecommerce.md) 

@@ -522,6 +522,7 @@ export class ChatService {
 ## 运行项目
 
 1. 启动服务器：
+
 ```bash
 cd server
 npm install
@@ -529,6 +530,7 @@ npm start
 ```
 
 2. 启动客户端：
+
 ```bash
 cd client
 npm install
@@ -542,9 +544,3 @@ npm start
 3. 消息历史记录
 4. 错误处理
 5. 响应式设计
-
-## 下一步
-
-- [电商网站](./04-ecommerce.md)
-- [博客系统](./05-blog-system.md)
-- [待办事项应用](./01-todo-app.md) 

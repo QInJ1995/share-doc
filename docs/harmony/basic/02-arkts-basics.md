@@ -300,9 +300,3 @@ namespace Validation {
   }
 }
 ```
-
-## 下一步
-
-- [UI 开发基础](./ui-basics.md)
-- [状态管理](./state-management.md)
-- [生命周期](./lifecycle.md)

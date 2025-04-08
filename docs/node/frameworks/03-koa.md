@@ -290,10 +290,3 @@ router.get('/users', async (ctx) => {
 1. 创建 RESTful API
 2. 实现用户认证
 3. 构建文件上传系统
-
-## 下一步
-
-- 学习 TypeScript
-- 了解类型系统
-- 掌握装饰器
-- 学习项目配置 

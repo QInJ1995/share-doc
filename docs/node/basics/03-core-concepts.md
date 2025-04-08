@@ -216,10 +216,3 @@ if (cluster.isMaster) {
 1. 实现一个简单的事件发射器
 2. 创建一个文件复制程序，使用流
 3. 实现一个简单的进程监控工具
-
-## 下一步
-
-- 学习 Web 开发基础
-- 了解 HTTP 协议
-- 掌握 RESTful API
-- 学习 WebSocket 

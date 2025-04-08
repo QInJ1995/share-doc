@@ -71,7 +71,7 @@ npm install -D typescript @types/express @types/node @types/mongoose @types/bcry
 
 ### 3. 环境变量配置
 
-```env
+```txt
 # .env
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/todo-app
@@ -522,10 +522,3 @@ volumes:
 2. 实现分页
 3. 优化查询
 4. 添加索引
-
-## 下一步
-
-- 添加前端界面
-- 实现实时更新
-- 添加文件上传
-- 集成第三方服务 
