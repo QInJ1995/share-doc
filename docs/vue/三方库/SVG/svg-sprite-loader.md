@@ -6,8 +6,8 @@ svg-sprite-loader 是一个 Webpack 加载器（loader），它的主要目的�
 
 ## 原理
 
-- 匹配svg，合成一个包含多个&lt;symbol&gt; 原素的SVG文件（原来的SVG替换成了&lt;symbol&gt;）。
-- 通过 &lt;use&gt; 使用&lt;symbol&gt; (eg. &lt;use xlink:href="#icon-id"&gt;&lt;/use&gt;)。
+- 匹配svg，合成一个包含多个`<symbol>` 原素的SVG文件（原来的SVG替换成了`<symbol>`）。
+- 通过 `<use>` 使用`<symbol>` (eg. `<use xlink:href="#icon-id">``</use>`)。
 
 ## 优点
 
@@ -193,7 +193,7 @@ module.exports = {
 - 在svg-sprite-loader 中添加packages等需要解析的SVG目录（include）
 - 在自动导入SVG的index.js 中添加packages等需要加载的SVG目录
 
-### 最终代码如下：
+### 最终代码如下
 
 webpack.config.js：
 
