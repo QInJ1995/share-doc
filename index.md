@@ -33,6 +33,10 @@ features:
     title: Java
     details: 跨平台，强类型，稳健无比
     link: /docs/java/index
+  - icon: {src: '/svg/features/python.svg', width: 32, height: 32}
+    title: python
+    details: 代码优雅，模块海量，AI 前沿，开发领航
+    link: /docs/python/index
   - icon: {src: '/svg/features/ts.svg', width: 32, height: 32}
     title: TypScript
     details: 强类型，提升代码质量，便于维护

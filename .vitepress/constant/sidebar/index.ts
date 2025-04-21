@@ -13,6 +13,7 @@ import tools from './tools'
 import plugin from './plugin'
 import operation from './operation'
 import database from './database'
+import python from './python'
 
 
 
@@ -32,4 +33,5 @@ export default {
     '/docs/plugin/': plugin,
     '/docs/operation/': operation,
     '/docs/database/': database,
+    '/doc/python/': python
 }
