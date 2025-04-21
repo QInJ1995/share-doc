@@ -33,5 +33,5 @@ export default {
     '/docs/plugin/': plugin,
     '/docs/operation/': operation,
     '/docs/database/': database,
-    '/doc/python/': python
+    '/docs/python/': python
 }
