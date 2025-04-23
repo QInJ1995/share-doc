@@ -193,6 +193,16 @@ export default [
         ]
     },
     {
+        text: '性能优化',
+        collapsed: true,
+        items: [
+            {
+                text: 'vue3对比vue2的效率提升',
+                link: 'docs/vue/性能优化/vue3对比vue2的效率提升'
+            },
+        ]
+    },
+    {
         text: '自定义组件',
         collapsed: true,
         items: [
