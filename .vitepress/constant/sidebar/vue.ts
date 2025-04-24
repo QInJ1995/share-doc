@@ -32,7 +32,37 @@ export default [
                     {
                         text: '进阶教程',
                         link: 'docs/vue/Vue/v3.x/进阶教程.md'
-                    }
+                    },
+                    {
+                        text: '知识讲解',
+                        collapsed: false,
+                        items: [
+                            {
+                                text: '效率的提升',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/效率的提升'
+                            },
+                            {
+                                text: 'API和数据响应式的变化',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/API和数据响应式的变化'
+                            },
+                            {
+                                text: '模板中的变化',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/模板中的变化'
+                            },
+                            {
+                                text: 'ReactivityApi',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/ReactivityApi'
+                            },
+                            {
+                                text: 'CompositionApi',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/CompositionApi'
+                            },
+                            {
+                                text: '共享数据',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/共享数据'
+                            },
+                        ]
+                    },
                 ],
             },
         ]
