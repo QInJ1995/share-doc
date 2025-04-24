@@ -35,7 +35,7 @@ export default [
                     },
                     {
                         text: '知识讲解',
-                        collapsed: false,
+                        collapsed: true,
                         items: [
                             {
                                 text: '效率的提升',
@@ -133,6 +133,32 @@ export default [
                         link: 'docs/vue/Vue Router/v4.x/源码分析'
                     },
                 ]
+            },
+        ]
+    },
+    {
+        text: 'Pinia',
+        collapsed: true,
+        items: [
+            {
+                text: 'Pinia基本概念',
+                link: 'docs/vue/Pinia/Pinia基本概念'
+            },
+            {
+                text: 'Pinia快速入门',
+                link: 'docs/vue/Pinia/Pinia快速入门'
+            },
+            {
+                text: '添加插件',
+                link: 'docs/vue/Pinia/添加插件'
+            },
+            {
+                text: '最佳实践与补充内容',
+                link: 'docs/vue/Pinia/最佳实践与补充内容'
+            },
+            {
+                text: 'Pinia部分源码解析',
+                link: 'docs/vue/Pinia/Pinia部分源码解析'
             },
         ]
     },
