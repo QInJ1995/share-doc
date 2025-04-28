@@ -32,7 +32,37 @@ export default [
                     {
                         text: '进阶教程',
                         link: 'docs/vue/Vue/v3.x/进阶教程.md'
-                    }
+                    },
+                    {
+                        text: '知识讲解',
+                        collapsed: true,
+                        items: [
+                            {
+                                text: '效率的提升',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/效率的提升'
+                            },
+                            {
+                                text: 'API和数据响应式的变化',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/API和数据响应式的变化'
+                            },
+                            {
+                                text: '模板中的变化',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/模板中的变化'
+                            },
+                            {
+                                text: 'ReactivityApi',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/ReactivityApi'
+                            },
+                            {
+                                text: 'CompositionApi',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/CompositionApi'
+                            },
+                            {
+                                text: '共享数据',
+                                link: 'docs/vue/Vue/v3.x/知识讲解/共享数据'
+                            },
+                        ]
+                    },
                 ],
             },
         ]
@@ -103,6 +133,32 @@ export default [
                         link: 'docs/vue/Vue Router/v4.x/源码分析'
                     },
                 ]
+            },
+        ]
+    },
+    {
+        text: 'Pinia',
+        collapsed: true,
+        items: [
+            {
+                text: 'Pinia基本概念',
+                link: 'docs/vue/Pinia/Pinia基本概念'
+            },
+            {
+                text: 'Pinia快速入门',
+                link: 'docs/vue/Pinia/Pinia快速入门'
+            },
+            {
+                text: '添加插件',
+                link: 'docs/vue/Pinia/添加插件'
+            },
+            {
+                text: '最佳实践与补充内容',
+                link: 'docs/vue/Pinia/最佳实践与补充内容'
+            },
+            {
+                text: 'Pinia部分源码解析',
+                link: 'docs/vue/Pinia/Pinia部分源码解析'
             },
         ]
     },
@@ -190,6 +246,16 @@ export default [
                     },
                 ]
             }
+        ]
+    },
+    {
+        text: '性能优化',
+        collapsed: true,
+        items: [
+            {
+                text: 'vue3对比vue2的效率提升',
+                link: 'docs/vue/性能优化/vue3对比vue2的效率提升'
+            },
         ]
     },
     {
