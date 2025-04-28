@@ -39,7 +39,7 @@ public class Test{
 
 为什么要用StringBuilder对字符串进行操作呢？因为它的效率比String更高， 可以下面两段代码验证一下。
 
-![1667402173587](/image/java/JavaSE/进阶/常见API/1667402173587.png)
+![1667402173587](https://lsky-pro.smartideahub.site:2083/qls/1667402173587.png)
 
 经过我的验证，直接使用Stirng拼接100万次，等了1分钟，还没结束，我等不下去了；但是使用StringBuilder做拼接，不到1秒钟出结果了。
 
@@ -256,7 +256,7 @@ public class Test {
 
 运行以上代码， 会发现，结果并和 想看到的不太一样。如下图所示
 
-![1667398959905](/image/java/JavaSE/进阶/常见API/1667398959905.png)
+![1667398959905](https://lsky-pro.smartideahub.site:2083/qls/1667398959905.png)
 
 为了解决计算精度损失的问题，Java给 提供了BigDecimal类，它提供了一些方法可以对数据进行四则运算，而且不丢失精度，同时还可以保留指定的小数位。下面看代码，演示一下
 
@@ -323,11 +323,11 @@ public class Test2 {
 
 Date对象记录的时间是用毫秒值来表示的。Java语言规定，1970年1月1日0时0分0秒认为是时间的起点，此时记作0，那么1000（1秒=1000毫秒）就表示1970年1月1日0时0分1秒，依次内推。
 
-![1667399304240](/image/java/JavaSE/进阶/常见API/1667399304240.png)
+![1667399304240](https://lsky-pro.smartideahub.site:2083/qls/1667399304240.png)
 
 下面是Date类的构造方法，和常见的成员方法，利用这些API写代码尝试一下
 
-![1667399443159](/image/java/JavaSE/进阶/常见API/1667399443159.png)
+![1667399443159](https://lsky-pro.smartideahub.site:2083/qls/1667399443159.png)
 
 ```java
 public class Test1Date {
@@ -362,11 +362,11 @@ public class Test1Date {
 
 - 反过来把指定格式的日期符串转换为Date对象的操作，叫做**日期解析。**
 
-![1667399510543](/image/java/JavaSE/进阶/常见API/1667399510543.png)
+![1667399510543](https://lsky-pro.smartideahub.site:2083/qls/1667399510543.png)
 
 接下来， 先演示一下日期格式化，需要用到如下的几个方法
 
-![1667399804244](/image/java/JavaSE/进阶/常见API/1667399804244.png)
+![1667399804244](https://lsky-pro.smartideahub.site:2083/qls/1667399804244.png)
 
 注意：创建SimpleDateFormat对象时，在构造方法的参数位置传递日期格式，而日期格式是由一些特定的字母拼接而来的。 需要记住常用的几种日期/时间格式
 
@@ -419,7 +419,7 @@ public class Test2SimpleDateFormat {
 
 > **日期格式化&解析案例**
 >
-> ![1667400116263](/image/java/JavaSE/进阶/常见API/1667400116263.png)
+> ![1667400116263](https://lsky-pro.smartideahub.site:2083/qls/1667400116263.png)
 
 ```java
 public class Test3 {
@@ -466,9 +466,9 @@ public class Test3 {
 
 比如下面的案例，用Date类就不太好做，而用Calendar就特别方便。因为Calendar类提供了方法可以直接对日历中的年、月、日、时、分、秒等进行运算。
 
-![1667400242406](/image/java/JavaSE/进阶/常见API/1667400242406.png)
+![1667400242406](https://lsky-pro.smartideahub.site:2083/qls/1667400242406.png)
 
-![1667400365583](/image/java/JavaSE/进阶/常见API/1667400365583.png)
+![1667400365583](https://lsky-pro.smartideahub.site:2083/qls/1667400365583.png)
 
 ```java
 public class Test4Calendar {
@@ -542,11 +542,11 @@ public class Test {
 
 接下来， 学习一下JDK8新增的日期类。为什么以前的Date类就可以表示日期，为什么要有新增的日期类呢？原因如下
 
-![1667400465054](/image/java/JavaSE/进阶/常见API/1667400465054.png)
+![1667400465054](https://lsky-pro.smartideahub.site:2083/qls/1667400465054.png)
 
 JDK8新增的日期类分得更细致一些，比如表示年月日用LocalDate类、表示时间秒用LocalTime类、而表示年月日时分秒用LocalDateTime类等；除了这些类还提供了对时区、时间间隔进行操作的类等。它们几乎把对日期/时间的所有操作都通过了API方法，用起来特别方便。
 
-![1667400655334](/image/java/JavaSE/进阶/常见API/1667400655334.png)
+![1667400655334](https://lsky-pro.smartideahub.site:2083/qls/1667400655334.png)
 
 先学习表示日期、时间、日期时间的类；有LocalDate、LocalTime、以及LocalDateTime类。仔细阅读代码，你会发现这三个类的用法套路都是一样的。
 
@@ -707,7 +707,7 @@ public class Test3_LocalDateTime {
 
 接着， 学习代表时区的两个类。由于世界各个国家与地区的经度不同，各地区的时间也有所不同，因此会划分为不同的时区。每一个时区的时间也不太一样。
 
-![1667400888534](/image/java/JavaSE/进阶/常见API/1667400888534.png)
+![1667400888534](https://lsky-pro.smartideahub.site:2083/qls/1667400888534.png)
 
 ```java
 public class Test4_ZoneId_ZonedDateTime {
@@ -747,11 +747,11 @@ public class Test4_ZoneId_ZonedDateTime {
 
 接下来， 来学习Instant这个类。通过获取Instant的对象可以拿到此刻的时间，该时间由两部分组成：从1970-01-01 00:00:00 开始走到此刻的总秒数+不够1秒的纳秒数。
 
-![1667401284295](/image/java/JavaSE/进阶/常见API/1667401284295.png)
+![1667401284295](https://lsky-pro.smartideahub.site:2083/qls/1667401284295.png)
 
 该类提供的方法如下图所示，可以用来获取当前时间，也可以对时间进行加、减、获取等操作。
 
-![1667401373923](/image/java/JavaSE/进阶/常见API/1667401373923.png)
+![1667401373923](https://lsky-pro.smartideahub.site:2083/qls/1667401373923.png)
 
 **作用：可以用来记录代码的执行时间，或用于记录用户操作某个事件的时间点。**
 
@@ -790,11 +790,11 @@ public class Test5_Instant {
 
 接下来， 学习一个新增的日期格式化类，叫DateTimeFormater。它可以从来对日期进行格式化和解析。它代替了原来的SimpleDateFormat类。
 
-![1667401511710](/image/java/JavaSE/进阶/常见API/1667401511710.png)
+![1667401511710](https://lsky-pro.smartideahub.site:2083/qls/1667401511710.png)
 
 需要用到的方法，如下图所示
 
-![1667401564173](/image/java/JavaSE/进阶/常见API/1667401564173.png)
+![1667401564173](https://lsky-pro.smartideahub.site:2083/qls/1667401564173.png)
 
 接下来，将上面的方法用代码来演示一下
 
@@ -833,11 +833,11 @@ public class Test6_DateTimeFormatter {
 
 其中Period用来计算日期间隔（年、月、日），Duration用来计算时间间隔（时、分、秒、纳秒）
 
-![1667401637360](/image/java/JavaSE/进阶/常见API/1667401637360.png)
+![1667401637360](https://lsky-pro.smartideahub.site:2083/qls/1667401637360.png)
 
 先来演示Period类的用法，它的方法如下图所示。可以用来计算两个日期之间相隔的年、相隔的月、相隔的日。**只能两个计算LocalDate对象之间的间隔**
 
-![1667401886743](/image/java/JavaSE/进阶/常见API/1667401886743.png)
+![1667401886743](https://lsky-pro.smartideahub.site:2083/qls/1667401886743.png)
 
 ```java
 /**
@@ -863,7 +863,7 @@ public class Test7_Period {
 
 接下来， 学习Duration类。它是用来表示两个时间对象的时间间隔。**可以用于计算两个时间对象相差的天数、小时数、分数、秒数、纳秒数；支持LocalTime、LocalDateTime、Instant等时间**
 
-![1667401938724](/image/java/JavaSE/进阶/常见API/1667401938724.png)
+![1667401938724](https://lsky-pro.smartideahub.site:2083/qls/1667401938724.png)
 
 ```java
 public class Test8_Duration {

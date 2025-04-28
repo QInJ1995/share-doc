@@ -8,21 +8,21 @@
 
 大家都应该去过银行的ATM机上取过钱，每次取钱的时候，首先需要用户把卡插入机器，然后机器会自动读取你的卡号，由用户输入密码，如果密码校验通过，就会进入ATM机的主操作界面：**有查询、取款、存款、转账等业务功能**，用户选择哪个功能就执行对应预先设定好的程序。
 
-![1662625958924](/image/java/JavaSE/基础/案例/1662625958924.png)
+![1662625958924](https://lsky-pro.smartideahub.site:2083/qls/1662625958924.png)
 
 由于没有图形化界面编程，所以 是做不出界面效果的，但是 可以在控制台模拟ATM机的各项功能。
 
 如下图所示：运行程序时，进入登录界面，在此界面可以登录、或者开户。
 
-![1662626798467](/image/java/JavaSE/基础/案例/1662626798467.png)
+![1662626798467](https://lsky-pro.smartideahub.site:2083/qls/1662626798467.png)
 
 - 在登录界面，如果用户录入2就进入**用户开户**的功能：如下图所示
 
-![1662626997850](/image/java/JavaSE/基础/案例/1662626997850.png)
+![1662626997850](https://lsky-pro.smartideahub.site:2083/qls/1662626997850.png)
 
 - 在登录界面，如果用户录入1就进入**用户登录**的功能：如下图所示：
 
-![1662627257875](/image/java/JavaSE/基础/案例/1662627257875.png)
+![1662627257875](https://lsky-pro.smartideahub.site:2083/qls/1662627257875.png)
 
 可能会觉得这个案例功能怎么这么多啊！ 太复杂了，其实也没你想得那么复杂。接下来，我将手把手带领大家把这个ATM系统完成。
 
@@ -30,11 +30,11 @@
 
 如下图所示：该项目涵盖了 前面所学习的所有知识点，包括面向对象编程、集合容器的使用、流程控制、常用的API（比如String的运用）等。
 
-![1662627473765](/image/java/JavaSE/基础/案例/1662627473765.png)
+![1662627473765](https://lsky-pro.smartideahub.site:2083/qls/1662627473765.png)
 
 **3. 完成ATM系统， 能收获什么**
 
-![1662628227117](/image/java/JavaSE/基础/案例/1662628227117.png)
+![1662628227117](https://lsky-pro.smartideahub.site:2083/qls/1662628227117.png)
 
 ## 二、项目架构搭建、欢迎界面设计
 
@@ -159,7 +159,7 @@ public class ATM {
 
 接下来， 完成**开户功能**的实现。需求如下：
 
-![1662629404170](/image/java/JavaSE/基础/案例/1662629404170.png)
+![1662629404170](https://lsky-pro.smartideahub.site:2083/qls/1662629404170.png)
 
 为了系统的代码结构更加清晰，在ATM类中，写一个开户的方法。
 
@@ -286,7 +286,7 @@ private String createCardId(){
 
 写完生成卡号的功能后，在开户功能的`TODO`位置，调用生成卡号的功能，并且将生成的卡号设置到账户对象中。
 
-![1662643802111](/image/java/JavaSE/基础/案例/1662643802111.png)
+![1662643802111](https://lsky-pro.smartideahub.site:2083/qls/1662643802111.png)
 
 ## 五、登录功能
 
@@ -350,7 +350,7 @@ private void login(){
 
 登录成功之后，需要显示登录后的用户操作界面。效果如下
 
-![1662627257875](/image/java/JavaSE/基础/案例/1662627257875.png)
+![1662627257875](https://lsky-pro.smartideahub.site:2083/qls/1662627257875.png)
 
 写成一个方法，用来展示登录成功的操作界面，代码如下：
 
@@ -404,7 +404,7 @@ private void showUserCommand(){
 
 写好用户操作界面的方法之后，再到登录成功的位置调用，登录成功后，马上显示用户操作界面。刚才在哪里打了一个`TODO`标记的，回去找找。
 
-![1662644255745](/image/java/JavaSE/基础/案例/1662644255745.png)
+![1662644255745](https://lsky-pro.smartideahub.site:2083/qls/1662644255745.png)
 
 到这里，登录功能就写好了。
 
@@ -412,7 +412,7 @@ private void showUserCommand(){
 
 - 查询账户：在用户操作界面，选择1查询当前账户信息。效果如下：
 
-![1662645452619](/image/java/JavaSE/基础/案例/1662645452619.png)
+![1662645452619](https://lsky-pro.smartideahub.site:2083/qls/1662645452619.png)
 
 登录成功的时候，已经把当前账户对象用一个成员变量存储了 ，所以直接按照如下格式打印账户对象的属性信息即可。
 
@@ -434,11 +434,11 @@ private void showLoginAccount(){
 
 写好方法之后，到用户操作界面调用。如下图所示
 
-![1662645669483](/image/java/JavaSE/基础/案例/1662645669483.png)
+![1662645669483](https://lsky-pro.smartideahub.site:2083/qls/1662645669483.png)
 
 - 退出功能：其实就是将ATM系统中，在用户界面选择6时，直接结束程序。
 
-![1662645798025](/image/java/JavaSE/基础/案例/1662645798025.png)
+![1662645798025](https://lsky-pro.smartideahub.site:2083/qls/1662645798025.png)
 
 ## 七、存款
 
@@ -465,7 +465,7 @@ private void depositMoney() {
 
 写好存款的方法之后，在`case 2:`的下面调用`depositMoney()`方法
 
-![1662779078001](/image/java/JavaSE/基础/案例/1662779078001.png)
+![1662779078001](https://lsky-pro.smartideahub.site:2083/qls/1662779078001.png)
 
 到这里，存款功能就写好了。
 
@@ -529,7 +529,7 @@ private void drawMoney() {
 
 写好取钱方法之后，在`case 3:`的位置调用`drawMoney()`方法
 
-![1662779472588](/image/java/JavaSE/基础/案例/1662779472588.png)
+![1662779472588](https://lsky-pro.smartideahub.site:2083/qls/1662779472588.png)
 
 ## 九、转账
 
@@ -624,7 +624,7 @@ private void transferMoney() {
 
 写好修改转账功能之后，在`case 4:`这里调用。如下：
 
-![1662780740132](/image/java/JavaSE/基础/案例/1662780740132.png)
+![1662780740132](https://lsky-pro.smartideahub.site:2083/qls/1662780740132.png)
 
 到这里，转账功能就写好了。
 
@@ -683,7 +683,7 @@ private void updatePassWord() {
 
 写好修改密码的功能之后。在`case 5:`的位置调用`updatePassWord()`方法。如下图所示
 
-![1662781272258](/image/java/JavaSE/基础/案例/1662781272258.png)
+![1662781272258](https://lsky-pro.smartideahub.site:2083/qls/1662781272258.png)
 
 好了，到这里修改密码的功能就写好了。
 
@@ -733,7 +733,7 @@ private boolean deleteAccount() {
 
 代码如下
 
-![1662792538291](/image/java/JavaSE/基础/案例/1662792538291.png)
+![1662792538291](https://lsky-pro.smartideahub.site:2083/qls/1662792538291.png)
 
 ---
 

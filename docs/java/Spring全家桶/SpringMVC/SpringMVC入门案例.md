@@ -2,7 +2,7 @@
 
 因为SpringMVC是一个Web框架，将来是要替换之前我们所使用的Servlet,所以我们先来回顾下以前Servlet是如何进行开发的?
 
-![1651596381129](/image/java/Spring全家桶/SpringMVC/1651596381129.png)
+![1651596381129](https://lsky-pro.smartideahub.site:2083/qls/1651596381129.png)
 
 1.浏览器发送请求到Tomcat服务器
 
@@ -12,7 +12,7 @@
 
 那么对于SpringMVC程序的流程会是什么样的呢?
 
-![1651596361174](/image/java/Spring全家桶/SpringMVC/1651596361174.png)
+![1651596361174](https://lsky-pro.smartideahub.site:2083/qls/1651596361174.png)
 
 1.浏览器发送请求到Tomcat服务器
 
@@ -49,11 +49,11 @@
 
 打开IDEA,创建一个新的web项目
 
-![1630428920116](/image/java/Spring全家桶/SpringMVC/1630428920116.png)
+![1630428920116](https://lsky-pro.smartideahub.site:2083/qls/1630428920116.png)
 
 因为使用骨架创建的项目结构不完整，需要手动补全
 
-![1630429288339](/image/java/Spring全家桶/SpringMVC/1630429288339.png)
+![1630429288339](https://lsky-pro.smartideahub.site:2083/qls/1630429288339.png)
 
 将pom.xml中多余的内容删除掉，再添加SpringMVC需要的依赖
 
@@ -170,17 +170,17 @@ public class ServletContainersInitConfig extends AbstractDispatcherServletInitia
 
 ### 步骤5:配置Tomcat环境
 
-![1630430302683](/image/java/Spring全家桶/SpringMVC/1630430302683.png)
+![1630430302683](https://lsky-pro.smartideahub.site:2083/qls/1630430302683.png)
 
 ### 步骤6:启动运行项目
 
-![1630430345246](/image/java/Spring全家桶/SpringMVC/1630430345246.png)
+![1630430345246](https://lsky-pro.smartideahub.site:2083/qls/1630430345246.png)
 
 ### 步骤7:浏览器访问
 
 浏览器输入`http://localhost/save`进行访问，可以看得如下内容
 
-![1651602301329](/image/java/Spring全家桶/SpringMVC/1651602301329.png)
+![1651602301329](https://lsky-pro.smartideahub.site:2083/qls/1651602301329.png)
 
 至此SpringMVC的入门案例就已经完成。
 
@@ -254,7 +254,7 @@ SpringMVC入门程序开发总结(1+N)
   
     * 重启服务器，访问`http://localhost/delete`,可以看得如下效果:
   
-    ![1651602676209](/image/java/Spring全家桶/SpringMVC/1651602676209.png)
+    ![1651602676209](https://lsky-pro.smartideahub.site:2083/qls/1651602676209.png)
 
 最后针对本案例中出现的Tomcat的Servlet容器配置再来总结下:
 
@@ -270,7 +270,7 @@ SpringMVC入门程序开发总结(1+N)
 
 为了更好的使用SpringMVC,我们将SpringMVC的使用过程总共分两个阶段来分析，分别是`启动服务器初始化过程`和`单次请求过程`
 
-![1630432494752](/image/java/Spring全家桶/SpringMVC/1630432494752.png)
+![1630432494752](https://lsky-pro.smartideahub.site:2083/qls/1630432494752.png)
 
 ### 启动服务器初始化过程
 
@@ -282,7 +282,7 @@ SpringMVC入门程序开发总结(1+N)
 
 3. 加载SpringMvcConfig配置类
 
-   ![1630433335744](/image/java/Spring全家桶/SpringMVC/1630433335744.png)
+   ![1630433335744](https://lsky-pro.smartideahub.site:2083/qls/1630433335744.png)
 
 4. 执行@ComponentScan加载对应的bean
 
@@ -290,13 +290,13 @@ SpringMVC入门程序开发总结(1+N)
 
 5. 加载UserController，每个@RequestMapping的名称对应一个具体的方法
 
-   ![1630433398932](/image/java/Spring全家桶/SpringMVC/1630433398932.png)
+   ![1630433398932](https://lsky-pro.smartideahub.site:2083/qls/1630433398932.png)
 
    * 此时就建立了 `/save` 和 save方法的对应关系
 
 6. 执行getServletMappings方法，定义所有的请求都通过SpringMVC
 
-   ![1630433510528](/image/java/Spring全家桶/SpringMVC/1630433510528.png)
+   ![1630433510528](https://lsky-pro.smartideahub.site:2083/qls/1630433510528.png)
 
    * `/`代表所拦截请求的路径规则，只有被拦截后才能交给SpringMVC来处理请求
 
@@ -319,7 +319,7 @@ SpringMVC入门程序开发总结(1+N)
 
 我们先来看下目前我们的项目目录结构:
 
-![1630459727575](/image/java/Spring全家桶/SpringMVC/1630459727575.png)
+![1630459727575](https://lsky-pro.smartideahub.site:2083/qls/1630459727575.png)
 
 * config目录存入的是配置类,写过的配置类有:
 
@@ -343,11 +343,11 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
 
 在SpringMVC的配置类`SpringMvcConfig`中使用注解`@ComponentScan`，我们只需要将其扫描范围设置到controller即可，如
 
-![1630460319004](/image/java/Spring全家桶/SpringMVC/1630460319004.png)
+![1630460319004](https://lsky-pro.smartideahub.site:2083/qls/1630460319004.png)
 
 在Spring的配置类`SpringConfig`中使用注解`@ComponentScan`,当时扫描的范围中其实是已经包含了controller,如:
 
-![1630460408159](/image/java/Spring全家桶/SpringMVC/1630460408159.png)
+![1630460408159](https://lsky-pro.smartideahub.site:2083/qls/1630460408159.png)
 
 从包结构来看的话，Spring已经多把SpringMVC的controller类也给扫描到，所以针对这个问题该如何解决，就是咱们接下来要学习的内容。
 
@@ -511,7 +511,7 @@ controller、service和dao这些类都需要被容器管理成bean对象，那�
 
 最终创建好的项目结构如下:
 
-![1630461261820](/image/java/Spring全家桶/SpringMVC/1630461261820.png)
+![1630461261820](https://lsky-pro.smartideahub.site:2083/qls/1630461261820.png)
 
 ### 设置bean加载控制
 
@@ -569,7 +569,7 @@ public class App{
 
 如果被排除了，该方法执行就会报bean未被定义的错误
 
-![1630462200947](/image/java/Spring全家桶/SpringMVC/1630462200947.png)
+![1630462200947](https://lsky-pro.smartideahub.site:2083/qls/1630462200947.png)
 
 ==注意:测试的时候，需要把SpringMvcConfig配置类上的@ComponentScan注解注释掉，否则不会报错==
 

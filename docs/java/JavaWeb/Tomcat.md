@@ -6,7 +6,7 @@
 
 Web服务器是一个应该程序（==软件==），对HTTP协议的操作进行封装，使得程序员不必直接对协议进行操作，让Web开发更加便捷。主要功能是"提供网上信息浏览服务"。
 
-![1627058356051](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627058356051.png)
+![1627058356051](https://lsky-pro.smartideahub.site:2083/qls/1627058356051.png)
 
  Web服务器是安装在服务器端的一款软件，将来我们把自己写的Web项目部署到Web Tomcat服务器软件中，当Web服务器软件启动后，部署在Web服务器软件中的页面就可以直接通过浏览器来访问了。
 
@@ -19,7 +19,7 @@ Web服务器是一个应该程序（==软件==），对HTTP协议的操作进行
 
 上述内容在演示的时候，使用的是Apache下的Tomcat软件，至于Tomcat软件如何使用，后面会详细的讲到。而对于Web服务器来说，实现的方案有很多，Tomcat只是其中的一种，而除了Tomcat以外，还有很多优秀的Web服务器，比如:
 
-![1627060368806](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627060368806.png)
+![1627060368806](https://lsky-pro.smartideahub.site:2083/qls/1627060368806.png)
 
 Tomcat就是一款软件，我们主要是以学习如何去使用为主。具体我们会从以下这些方向去学习:
 
@@ -49,7 +49,7 @@ Tomcat的相关概念:
 
 **Tomcat的LOGO**
 
-![1627176045795](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627176045795.png)
+![1627176045795](https://lsky-pro.smartideahub.site:2083/qls/1627176045795.png)
 
 **小结**
 
@@ -71,7 +71,7 @@ Tomcat总共分两部分学习，先来学习Tomcat的基本使用，包括Tomca
 
 直接从官网下载
 
-![1627178001030](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627178001030.png)
+![1627178001030](https://lsky-pro.smartideahub.site:2083/qls/1627178001030.png)
 
 大家可以自行下载，也可以直接使用资料中已经下载好的资源，
 
@@ -89,7 +89,7 @@ Tomcat是绿色版,直接解压即可
 
 * 打开`apache-tomcat-8.5.68`目录就能看到如下目录结构，每个目录中包含的内容需要认识下,
 
-  ![1627178815892](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627178815892.png)
+  ![1627178815892](https://lsky-pro.smartideahub.site:2083/qls/1627178815892.png)
 
   bin:目录下有两类文件，一种是以`.bat`结尾的，是Windows系统的可执行文件，一种是以`.sh`结尾的，是Linux系统的可执行文件。
 
@@ -105,15 +105,15 @@ Tomcat是绿色版,直接解压即可
 
 双击: bin\startup.bat
 
-![1627179006011](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627179006011.png)
+![1627179006011](https://lsky-pro.smartideahub.site:2083/qls/1627179006011.png)
 
 启动后，通过浏览器访问 `http://localhost:8080`能看到Apache Tomcat的内容就说明Tomcat已经启动成功。
 
-![1627199957728](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627199957728.png)
+![1627199957728](https://lsky-pro.smartideahub.site:2083/qls/1627199957728.png)
 
 ==注意==: 启动的过程中，控制台有中文乱码，需要修改conf/logging.prooperties
 
-![1627199827589](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627199827589.png)
+![1627199827589](https://lsky-pro.smartideahub.site:2083/qls/1627199827589.png)
 
 ### 关闭
 
@@ -129,7 +129,7 @@ Tomcat是绿色版,直接解压即可
 
 * Tomcat默认的端口是8080，要想修改Tomcat启动的端口号，需要修改 conf/server.xml
 
-![1627200509883](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627200509883.png)
+![1627200509883](https://lsky-pro.smartideahub.site:2083/qls/1627200509883.png)
 
 > 注: HTTP协议默认端口号为80，如果将Tomcat端口号改为80，则将来访问Tomcat时，将不用输入端口号。
 
@@ -137,11 +137,11 @@ Tomcat是绿色版,直接解压即可
 
 * Tomcat的端口号取值范围是0-65535之间任意未被占用的端口，如果设置的端口号被占用，启动的时候就会包如下的错误
 
-  ![1627200780590](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627200780590.png)
+  ![1627200780590](https://lsky-pro.smartideahub.site:2083/qls/1627200780590.png)
 
 * Tomcat启动的时候，启动窗口一闪而过: 需要检查JAVA_HOME环境变量是否正确配置
 
-![1627201248802](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627201248802.png)
+![1627201248802](https://lsky-pro.smartideahub.site:2083/qls/1627201248802.png)
 
 ### 部署
 
@@ -151,7 +151,7 @@ Tomcat是绿色版,直接解压即可
 
   * 通过浏览器访问`http://localhost/hello/a.html`，能看到下面的内容就说明项目已经部署成功。
 
-    ![1627201572748](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627201572748.png)
+    ![1627201572748](https://lsky-pro.smartideahub.site:2083/qls/1627201572748.png)
 
     但是呢随着项目的增大，项目中的资源也会越来越多，项目在拷贝的过程中也会越来越费时间，该如何解决呢?
 
@@ -163,7 +163,7 @@ Tomcat是绿色版,直接解压即可
 
   * 通过浏览器访问`http://localhost/haha/a.html`，能看到下面的内容就说明项目已经部署成功。
 
-    ![1627201868752](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627201868752.png)
+    ![1627201868752](https://lsky-pro.smartideahub.site:2083/qls/1627201868752.png)
 
 至此，Tomcat的部署就已经完成了，至于如何获得项目对应的war包，后期我们会借助于IDEA工具来生成。
 
@@ -179,11 +179,11 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 * Maven Web项目结构: 开发中的项目
 
-  ![1627202865978](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627202865978.png)
+  ![1627202865978](https://lsky-pro.smartideahub.site:2083/qls/1627202865978.png)
 
 * 开发完成部署的Web项目
 
-  ![1627202903750](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627202903750.png)
+  ![1627202903750](https://lsky-pro.smartideahub.site:2083/qls/1627202903750.png)
 
   * 开发项目通过执行Maven打包命令==package==,可以获取到部署的Web项目目录
   * 编译后的Java字节码文件和resources的资源文件，会被放到WEB-INF下的classes目录下
@@ -211,27 +211,27 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 1. 创建Maven项目
 
-   ![1627227574092](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627227574092.png)
+   ![1627227574092](https://lsky-pro.smartideahub.site:2083/qls/1627227574092.png)
 
 2. 选择使用Web项目骨架
 
-   ![1627227650406](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627227650406.png)
+   ![1627227650406](https://lsky-pro.smartideahub.site:2083/qls/1627227650406.png)
 
 3. 输入Maven项目坐标创建项目
 
-   ![1627228065007](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627228065007.png)
+   ![1627228065007](https://lsky-pro.smartideahub.site:2083/qls/1627228065007.png)
 
 4. 确认Maven相关的配置信息后，完成项目创建
 
-   ![1627228413280](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627228413280.png)
+   ![1627228413280](https://lsky-pro.smartideahub.site:2083/qls/1627228413280.png)
 
 5. 删除pom.xml中多余内容，只留下面的这些内容，注意打包方式 jar和war的区别
 
-   ![1627228584625](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627228584625.png)
+   ![1627228584625](https://lsky-pro.smartideahub.site:2083/qls/1627228584625.png)
 
 6. 补齐Maven Web项目缺失的目录结构，默认没有java和resources目录，需要手动完成创建补齐，最终的目录结果如下
 
-   ![1627228673162](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627228673162.png)
+   ![1627228673162](https://lsky-pro.smartideahub.site:2083/qls/1627228673162.png)
 
 **不使用骨架**
 
@@ -251,31 +251,31 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 1. 创建Maven项目
 
-   ![1627229111549](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229111549.png)
+   ![1627229111549](https://lsky-pro.smartideahub.site:2083/qls/1627229111549.png)
 
 2. 选择不使用Web项目骨架
 
-   ![1627229137316](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229137316.png)
+   ![1627229137316](https://lsky-pro.smartideahub.site:2083/qls/1627229137316.png)
 
 3. 输入Maven项目坐标创建项目
 
-   ![1627229371251](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229371251.png)
+   ![1627229371251](https://lsky-pro.smartideahub.site:2083/qls/1627229371251.png)
 
 4. 在pom.xml设置打包方式为war,默认是不写代表打包方式为jar
 
-   ![1627229428161](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229428161.png)
+   ![1627229428161](https://lsky-pro.smartideahub.site:2083/qls/1627229428161.png)
 
 5. 补齐Maven Web项目缺失webapp的目录结构
 
-   ![1627229584134](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229584134.png)
+   ![1627229584134](https://lsky-pro.smartideahub.site:2083/qls/1627229584134.png)
 
 6. 补齐Maven Web项目缺失WEB-INF/web.xml的目录结构
 
-   ![1627229676800](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229676800.png)
+   ![1627229676800](https://lsky-pro.smartideahub.site:2083/qls/1627229676800.png)
 
 7. 补充完后，最终的项目结构如下:
 
-   ![1627229478030](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229478030.png)
+   ![1627229478030](https://lsky-pro.smartideahub.site:2083/qls/1627229478030.png)
 
 上述两种方式，创建的web项目，都不是很全，需要手动补充内容，至于最终采用哪种方式来创建Maven Web项目，都是可以的，根据各自的喜好来选择使用即可。
 
@@ -285,11 +285,11 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 2.掌握使用骨架的方式创建Maven Web项目
 
-![1627204022604](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627204022604.png)
+![1627204022604](https://lsky-pro.smartideahub.site:2083/qls/1627204022604.png)
 
 > 3.掌握不使用骨架的方式创建Maven Web项目
 
-![1627204076090](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627204076090.png)
+![1627204076090](https://lsky-pro.smartideahub.site:2083/qls/1627204076090.png)
 
 ## IDEA使用Tomcat
 
@@ -305,19 +305,19 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 1. 打开添加本地Tomcat的面板
 
-   ![1627229992900](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627229992900.png)
+   ![1627229992900](https://lsky-pro.smartideahub.site:2083/qls/1627229992900.png)
 
 2. 指定本地Tomcat的具体路径
 
-   ![1627230313062](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627230313062.png)
+   ![1627230313062](https://lsky-pro.smartideahub.site:2083/qls/1627230313062.png)
 
 3. 修改Tomcat的名称，此步骤可以不改，只是让名字看起来更有意义，HTTP port中的端口也可以进行修改，比如把8080改成80
 
-   ![1627230366658](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627230366658.png)
+   ![1627230366658](https://lsky-pro.smartideahub.site:2083/qls/1627230366658.png)
 
 4. 将开发项目部署项目到Tomcat中
 
-   ![1627230913259](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627230913259.png)
+   ![1627230913259](https://lsky-pro.smartideahub.site:2083/qls/1627230913259.png)
 
    扩展内容： xxx.war和 xxx.war exploded这两种部署项目模式的区别?
 
@@ -330,19 +330,19 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 5. 部署成功后，就可以启动项目，为了能更好的看到启动的效果，可以在webapp目录下添加a.html页面
 
-   ![1627233265351](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627233265351.png)
+   ![1627233265351](https://lsky-pro.smartideahub.site:2083/qls/1627233265351.png)
 
 6. 启动成功后，可以通过浏览器进行访问测试
 
-   ![1627232743706](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627232743706.png)
+   ![1627232743706](https://lsky-pro.smartideahub.site:2083/qls/1627232743706.png)
 
 7. 最终的注意事项
 
-   ![1627232916624](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627232916624.png)
+   ![1627232916624](https://lsky-pro.smartideahub.site:2083/qls/1627232916624.png)
 
 至此，IDEA中集成本地Tomcat进行项目部署的内容我们就介绍完了，整体步骤如下，大家需要按照流程进行部署操作练习。
 
-![1627205657117](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627205657117.png)
+![1627205657117](https://lsky-pro.smartideahub.site:2083/qls/1627205657117.png)
 
 ### 3.4.2 Tomcat Maven插件
 
@@ -365,13 +365,13 @@ Web项目的结构分为:开发中的项目和开发完可以部署的Web项目,
 
 2. 使用Maven Helper插件快速启动项目，选中项目，右键-->Run Maven --> tomcat7:run
 
-![1627233963315](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627233963315.png)
+![1627233963315](https://lsky-pro.smartideahub.site:2083/qls/1627233963315.png)
 
 ==注意:==
 
 * 如果选中项目并右键点击后，看不到Run Maven和Debug Maven，这个时候就需要在IDEA中下载Maven Helper插件，具体的操作方式为: File --> Settings --> Plugins --> Maven Helper ---> Install,安装完后按照提示重启IDEA，就可以看到了。
 
-![1627234184076](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627234184076.png)
+![1627234184076](https://lsky-pro.smartideahub.site:2083/qls/1627234184076.png)
 
 * Maven Tomcat插件目前只有Tomcat7版本，没有更高的版本可以使用
 * 使用Maven Tomcat插件，要想修改Tomcat的端口和访问路径，可以直接修改pom.xml

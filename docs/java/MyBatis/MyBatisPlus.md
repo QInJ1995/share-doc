@@ -18,9 +18,9 @@ MyBatisPlus环境搭建的步骤？
 
 ##### ①：创建新模块，选择Spring初始化，并配置模块相关基础信息
 
-##### ![image-20210801175555953](/image/java/MyBatis/image-20210801175555953.png) ②：选择当前模块需要使用的技术集（仅保留JDBC）
+##### ![image-20210801175555953](https://lsky-pro.smartideahub.site:2083/qls/image-20210801175555953.png) ②：选择当前模块需要使用的技术集（仅保留JDBC）
 
-![image-20210801175658648](/image/java/MyBatis/image-20210801175658648.png)
+![image-20210801175658648](https://lsky-pro.smartideahub.site:2083/qls/image-20210801175658648.png)
 
 ##### ③：手动添加MyBatisPlus起步依赖
 
@@ -154,7 +154,7 @@ public class Mybatisplus01QuickstartApplicationTests {
 
 ### 1. MyBatisPlus的CRUD操作
 
-![image-20210815150629727](/image/java/MyBatis/image-20210815150629727.png)
+![image-20210815150629727](https://lsky-pro.smartideahub.site:2083/qls/image-20210815150629727.png)
 
 ```java
 package com.itheima;
@@ -266,7 +266,7 @@ public class User {
 
 #### 3.1 分页功能接口
 
-![image-20210801180723261](/image/java/MyBatis/image-20210801180723261.png)
+![image-20210801180723261](https://lsky-pro.smartideahub.site:2083/qls/image-20210801180723261.png)
 
 #### 3.2 MyBatisPlus分页使用
 
@@ -333,7 +333,7 @@ mybatis-plus:
 
 ##### 3.4.1 取消初始化spring日志打印
 
-![image-20210815153626017](/image/java/MyBatis/image-20210815153626017.png)
+![image-20210815153626017](https://lsky-pro.smartideahub.site:2083/qls/image-20210815153626017.png)
 
 做法：在resources下新建一个logback.xml文件，名称固定，内容如下：
 
@@ -348,7 +348,7 @@ mybatis-plus:
 
 ##### 3.4.2 取消SpringBoot启动banner图标
 
-![image-20210815153930073](/image/java/MyBatis/image-20210815153930073.png)
+![image-20210815153930073](https://lsky-pro.smartideahub.site:2083/qls/image-20210815153930073.png)
 
 ```yaml
 spring:
@@ -358,7 +358,7 @@ spring:
 
 ##### 3.4.3 取消MybatisPlus启动banner图标
 
-![image-20210815154115368](/image/java/MyBatis/image-20210815154115368.png)
+![image-20210815154115368](https://lsky-pro.smartideahub.site:2083/qls/image-20210815154115368.png)
 
 ```yaml
 # mybatis-plus日志控制台输出
@@ -375,7 +375,7 @@ mybatis-plus:
 
 - MyBatisPlus将书写复杂的SQL查询条件进行了封装，使用编程的形式完成查询条件的组合
 
-![image-20210801181232962](/image/java/MyBatis/image-20210801181232962.png)
+![image-20210801181232962](https://lsky-pro.smartideahub.site:2083/qls/image-20210801181232962.png)
 
 #### 1.1 条件查询
 
@@ -439,7 +439,7 @@ System.out.println(userList);
 
 如下搜索场景，在多条件查询中，有条件的值为空应该怎么解决？
 
-![image-20210801182004226](/image/java/MyBatis/image-20210801182004226.png)
+![image-20210801182004226](https://lsky-pro.smartideahub.site:2083/qls/image-20210801182004226.png)
 
 ##### 1.3.1 if语句控制条件追加
 
@@ -587,25 +587,25 @@ System.out.println(maps);
 
 - 在模型类属性上方，使用**@TableField**属性注解，通过==**value**==属性，设置当前属性对应的数据库表中的字段关系。
 
-![image-20210801182722773](/image/java/MyBatis/image-20210801182722773.png)
+![image-20210801182722773](https://lsky-pro.smartideahub.site:2083/qls/image-20210801182722773.png)
 
 #### 4.2 问题二：编码中添加了数据库中未定义的属性
 
 - 在模型类属性上方，使用**@TableField**注解，通过**==exist==**属性，设置属性在数据库表字段中是否存在，默认为true。此属性无法与value合并使用。
 
-![image-20210801182809131](/image/java/MyBatis/image-20210801182809131.png)
+![image-20210801182809131](https://lsky-pro.smartideahub.site:2083/qls/image-20210801182809131.png)
 
 #### 4.3 问题三：采用默认查询开放了更多的字段查看权限
 
 - 在模型类属性上方，使用**@TableField**注解，通过**==select==**属性：设置该属性是否参与查询。此属性与select()映射配置不冲突。
 
-![image-20210801220534494](/image/java/MyBatis/image-20210801220534494.png)
+![image-20210801220534494](https://lsky-pro.smartideahub.site:2083/qls/image-20210801220534494.png)
 
 #### 4.4 问题四：表名与编码开发设计不同步
 
 - 在`<u>`**模型类**`</u>`上方，使用**@TableName**注解，通过**==value==**属性，设置当前类对应的数据库表名称。
 
-![image-20210801220807882](/image/java/MyBatis/image-20210801220807882.png)
+![image-20210801220807882](https://lsky-pro.smartideahub.site:2083/qls/image-20210801220807882.png)
 
 ```java
 @Data
@@ -656,7 +656,7 @@ public class User {
 
     ​ **type**：设置主键属性的生成策略，值参照IdType枚举值
 
-    ![image-20210801192449901](/image/java/MyBatis/image-20210801192449901.png)
+    ![image-20210801192449901](https://lsky-pro.smartideahub.site:2083/qls/image-20210801192449901.png)
 
 #### 1.2 全局策略配置
 
@@ -670,11 +670,11 @@ mybatis-plus:
 
 ##### id生成策略全局配置
 
-![image-20210801183128266](/image/java/MyBatis/image-20210801183128266.png)
+![image-20210801183128266](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183128266.png)
 
 ##### 表名前缀全局配置
 
-![image-20210801183157694](/image/java/MyBatis/image-20210801183157694.png)
+![image-20210801183157694](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183157694.png)
 
 ### 2. 多记录操作（批量Delete/Select）
 
@@ -682,7 +682,7 @@ mybatis-plus:
 
 MyBatisPlus是否支持批量操作？
 
-![image-20210801183334584](/image/java/MyBatis/image-20210801183334584.png)
+![image-20210801183334584](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183334584.png)
 
 #### 2.1 按照主键删除多条记录
 
@@ -717,13 +717,13 @@ userDao.selectBatchIds(list);
 
 - 逻辑删除：为数据设置是否可用状态字段，删除时设置状态字段为不可用状态，数据保留在数据库中
 
-![image-20210801183459750](/image/java/MyBatis/image-20210801183459750.png)
+![image-20210801183459750](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183459750.png)
 
 #### 3.1 逻辑删除案例
 
 ##### ①：数据库表中添加逻辑删除标记字段
 
-![image-20210801183545635](/image/java/MyBatis/image-20210801183545635.png)
+![image-20210801183545635](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183545635.png)
 
 ##### ②：实体类中添加对应字段，并设定当前字段为逻辑删除标记字段
 
@@ -763,7 +763,7 @@ mybatis-plus:
 
 **逻辑删除本质：逻辑删除的本质其实是修改操作。如果加了逻辑删除字段，查询数据时也会自动带上逻辑删除字段。**
 
-![image-20210801223228871](/image/java/MyBatis/image-20210801223228871.png)
+![image-20210801223228871](https://lsky-pro.smartideahub.site:2083/qls/image-20210801223228871.png)
 
 ### 4. 乐观锁（Update）
 
@@ -773,13 +773,13 @@ mybatis-plus:
 
 - 业务并发现象带来的问题：秒杀
 
-![image-20210801183851887](/image/java/MyBatis/image-20210801183851887.png)
+![image-20210801183851887](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183851887.png)
 
 #### 4.1 乐观锁案例
 
 ##### ①：数据库表中添加锁标记字段
 
-![image-20210801183929041](/image/java/MyBatis/image-20210801183929041.png)
+![image-20210801183929041](https://lsky-pro.smartideahub.site:2083/qls/image-20210801183929041.png)
 
 ##### ②：实体类中添加对应字段，并设定当前字段为逻辑删除标记字段
 
@@ -856,7 +856,7 @@ public void testUpdate() {
 }
 ```
 
-![image-20210801223855681](/image/java/MyBatis/image-20210801223855681.png)
+![image-20210801223855681](https://lsky-pro.smartideahub.site:2083/qls/image-20210801223855681.png)
 
 ## 五、快速开发-代码生成器
 
@@ -868,11 +868,11 @@ public void testUpdate() {
 
 - Mapper接口模板
 
-![image-20210801224114650](/image/java/MyBatis/image-20210801224114650.png)
+![image-20210801224114650](https://lsky-pro.smartideahub.site:2083/qls/image-20210801224114650.png)
 
 - 实体对象类模板
 
-![image-20210801184632944](/image/java/MyBatis/image-20210801184632944.png)
+![image-20210801184632944](https://lsky-pro.smartideahub.site:2083/qls/image-20210801184632944.png)
 
 ### 2. 工程搭建和基本代码编写
 

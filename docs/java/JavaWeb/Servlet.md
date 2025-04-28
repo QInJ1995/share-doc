@@ -2,7 +2,7 @@
 
 ## 简介
 
-![1627234763207](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627234763207.png)
+![1627234763207](https://lsky-pro.smartideahub.site:2083/qls/1627234763207.png)
 
 * Servlet是JavaWeb最为核心的内容，它是Java提供的一门==动态==web资源开发技术。
 
@@ -10,7 +10,7 @@
 
 * Servlet是JavaEE规范之一，其实就是一个接口，将来我们需要定义Servlet类实现Servlet接口，并由web服务器运行Servlet
 
-  ![1627234972853](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627234972853.png)
+  ![1627234972853](https://lsky-pro.smartideahub.site:2083/qls/1627234972853.png)
 
 介绍完Servlet是什么以后，接下来我们就按照`快速入门`->`执行流程`->`生命周期`->`体系结构`->`urlPattern配置`->`XML配置`的学习步骤，一步步完成对Servlet的知识学习，首选我们来通过一个入门案例来快速把Servlet用起来。
 
@@ -89,7 +89,7 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
 
 要想回答上述问题，我们就需要对Servlet的执行流程进行一个学习。
 
-![1627236923139](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627236923139.png)
+![1627236923139](https://lsky-pro.smartideahub.site:2083/qls/1627236923139.png)
 
 * 浏览器发出`http://localhost:8080/web-demo/demo1`请求，从请求中可以解析出三部分内容，分别是`localhost:8080`、`web-demo`、`demo1`
   * 根据`localhost:8080`可以找到要访问的Tomcat Web服务器
@@ -199,7 +199,7 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
 
   ==注意:如何才能让Servlet中的destroy方法被执行？==
 
-  ![1627239292226](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627239292226.png)
+  ![1627239292226](https://lsky-pro.smartideahub.site:2083/qls/1627239292226.png)
 
 在Terminal命令行中，先使用`mvn tomcat7:run`启动，然后再使用`ctrl+c`关闭tomcat
 
@@ -331,7 +331,7 @@ getServletInfo()和getServletConfig()这两个方法使用的不是很多，大�
 
 要想解决上面的问题，我们需要先对Servlet的体系结构进行下了解:
 
-![1627240593506](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627240593506.png)
+![1627240593506](https://lsky-pro.smartideahub.site:2083/qls/1627240593506.png)
 
 因为我们将来开发B/S架构的web项目，都是针对HTTP协议，所以我们自定义Servlet,会通过继承==HttpServlet==
 
@@ -580,7 +580,7 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
 * 一个Servlet,可以配置多个urlPattern
 
-  ![1627272805178](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627272805178.png)
+  ![1627272805178](https://lsky-pro.smartideahub.site:2083/qls/1627272805178.png)
 
   ```java
   package com.itheima.web;
@@ -612,7 +612,7 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
   * 精确匹配
 
-    ![1627273174144](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627273174144.png)
+    ![1627273174144](https://lsky-pro.smartideahub.site:2083/qls/1627273174144.png)
 
     ```java
     /**
@@ -637,7 +637,7 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
   * 目录匹配
 
-    ![1627273184095](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627273184095.png)
+    ![1627273184095](https://lsky-pro.smartideahub.site:2083/qls/1627273184095.png)
 
     ```java
     package com.itheima.web;
@@ -676,7 +676,7 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
   * 扩展名匹配
 
-    ![1627273194118](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627273194118.png)
+    ![1627273194118](https://lsky-pro.smartideahub.site:2083/qls/1627273194118.png)
 
     ```java
     package com.itheima.web;
@@ -709,15 +709,15 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
     1. 如果路径配置的不是扩展名，那么在路径的前面就必须要加`/`否则会报错
 
-    ![1627274483755](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627274483755.png)
+    ![1627274483755](https://lsky-pro.smartideahub.site:2083/qls/1627274483755.png)
 
     2. 如果路径配置的是`*.do`,那么在*.do的前面不能加`/`,否则会报错
 
-    ![1627274368245](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627274368245.png)
+    ![1627274368245](https://lsky-pro.smartideahub.site:2083/qls/1627274368245.png)
 
   * 任意匹配
 
-    ![1627273201370](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627273201370.png)
+    ![1627273201370](https://lsky-pro.smartideahub.site:2083/qls/1627273201370.png)
 
     ```java
     package com.itheima.web;

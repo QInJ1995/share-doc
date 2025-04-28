@@ -253,7 +253,7 @@
 
 最终创建好的项目结构如下:
 
-![1630503741455](/image/java/Spring全家桶/SpringMVC/1630503741455.png)
+![1630503741455](https://lsky-pro.smartideahub.site:2083/qls/1630503741455.png)
 
 ### 思路分析
 
@@ -294,7 +294,7 @@ public class UserController {
 
   * 如果发送的不是POST请求，比如发送GET请求，则会报错
 
-    ![1630505392070](/image/java/Spring全家桶/SpringMVC/1630505392070.png)
+    ![1630505392070](https://lsky-pro.smartideahub.site:2083/qls/1630505392070.png)
 
 #### 删除
 
@@ -342,7 +342,7 @@ public class UserController {
 
 (1)如果方法形参的名称和路径`{}`中的值不一致，该怎么办?
 
-![1630506231379](/image/java/Spring全家桶/SpringMVC/1630506231379.png)
+![1630506231379](https://lsky-pro.smartideahub.site:2083/qls/1630506231379.png)
 
 (2)如果有多个参数需要传递该如何编写?
 
@@ -384,7 +384,7 @@ public class UserController {
 
 * 访问并携带参数:
 
-  ![1630506507096](/image/java/Spring全家桶/SpringMVC/1630506507096.png)
+  ![1630506507096](https://lsky-pro.smartideahub.site:2083/qls/1630506507096.png)
 
 #### 根据ID查询
 
@@ -465,7 +465,7 @@ public String delete(==@PathVariable== Integer ==id==){
 
 做完了RESTful的开发，你会发现==好麻烦==，麻烦在哪?
 
-![1630507339724](/image/java/Spring全家桶/SpringMVC/1630507339724.png)
+![1630507339724](https://lsky-pro.smartideahub.site:2083/qls/1630507339724.png)
 
 问题1：每个方法的@RequestMapping注解中都定义了访问路径/books，重复性太高。
 
@@ -562,11 +562,11 @@ public class BookController {
 
 需求一:图片列表查询，从后台返回数据，将数据展示在页面上
 
-![1630508310063](/image/java/Spring全家桶/SpringMVC/1630508310063.png)
+![1630508310063](https://lsky-pro.smartideahub.site:2083/qls/1630508310063.png)
 
 需求二:新增图片，将新增图书的数据传递到后台，并在控制台打印
 
-![1630508367105](/image/java/Spring全家桶/SpringMVC/1630508367105.png)
+![1630508367105](https://lsky-pro.smartideahub.site:2083/qls/1630508367105.png)
 
 **说明:**此次案例的重点是在SpringMVC中如何使用RESTful实现前后台交互，所以本案例并没有和数据库进行交互，所有数据使用`假`数据来完成开发。
 
@@ -701,7 +701,7 @@ public class BookController {
 
 最终创建好的项目结构如下:
 
-![1630508864017](/image/java/Spring全家桶/SpringMVC/1630508864017.png)
+![1630508864017](https://lsky-pro.smartideahub.site:2083/qls/1630508864017.png)
 
 ### 后台接口开发
 
@@ -759,11 +759,11 @@ public class BookController {
 }
 ```
 
-![1630509266954](/image/java/Spring全家桶/SpringMVC/1630509266954.png)
+![1630509266954](https://lsky-pro.smartideahub.site:2083/qls/1630509266954.png)
 
 测试查询
 
-![20210805140307371](/image/java/Spring全家桶/SpringMVC/image-20210805140307371.png)
+![20210805140307371](https://lsky-pro.smartideahub.site:2083/qls/image-20210805140307371.png)
 
 ### 页面访问处理
 
@@ -771,23 +771,23 @@ public class BookController {
 
 将`资料\功能页面`下的所有内容拷贝到项目的`webapp`目录下
 
-![1630510166433](/image/java/Spring全家桶/SpringMVC/1630510166433.png)
+![1630510166433](https://lsky-pro.smartideahub.site:2083/qls/1630510166433.png)
 
 #### 步骤2:访问pages目录下的books.html
 
 打开浏览器输入`http://localhost/pages/books.html`
 
-![1630510225182](/image/java/Spring全家桶/SpringMVC/1630510225182.png)
+![1630510225182](https://lsky-pro.smartideahub.site:2083/qls/1630510225182.png)
 
 (1)出现错误的原因?
 
-![1630510264650](/image/java/Spring全家桶/SpringMVC/1630510264650.png)
+![1630510264650](https://lsky-pro.smartideahub.site:2083/qls/1630510264650.png)
 
 SpringMVC拦截了静态资源，根据/pages/books.html去controller找对应的方法，找不到所以会报404的错误。
 
 (2)SpringMVC为什么会拦截静态资源呢?
 
-![1630510397429](/image/java/Spring全家桶/SpringMVC/1630510397429.png)
+![1630510397429](https://lsky-pro.smartideahub.site:2083/qls/1630510397429.png)
 
 (3)解决方案?
 

@@ -109,7 +109,7 @@ public class App {
 
 ### 运行结果
 
-![image-20210729184337603](/image/java/Spring全家桶/Spring/image-20210729184337603.png)
+![image-20210729184337603](https://lsky-pro.smartideahub.site:2083/qls/image-20210729184337603.png)
 
 ## DI入门案例【重点】
 
@@ -191,4 +191,4 @@ public class BookServiceImpl implements BookService {
 
 ### 图解演示
 
-![image-20210729183104748](/image/java/Spring全家桶/Spring/image-20210729183104748.png)
+![image-20210729183104748](https://lsky-pro.smartideahub.site:2083/qls/image-20210729183104748.png)

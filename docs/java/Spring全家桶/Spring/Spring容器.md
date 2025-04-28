@@ -54,7 +54,7 @@ BookDao bookDao = ctx.getBean(BookDao.class);
 
 ### 容器类层次结构
 
-![image-20210730102842030](/image/java/Spring全家桶/Spring/image-20210730102842030.png)
+![image-20210730102842030](https://lsky-pro.smartideahub.site:2083/qls/image-20210730102842030.png)
 
 ### BeanFactory
 
@@ -82,8 +82,8 @@ bookDao.save();
 
 ### bean相关
 
-![image-20210730103438742](/image/java/Spring全家桶/Spring/image-20210730103438742.png)
+![image-20210730103438742](https://lsky-pro.smartideahub.site:2083/qls/image-20210730103438742.png)
 
 ### 依赖注入相关
 
-![image-20210730103701525](/image/java/Spring全家桶/Spring/image-20210730103701525.png)
+![image-20210730103701525](https://lsky-pro.smartideahub.site:2083/qls/image-20210730103701525.png)

@@ -31,7 +31,7 @@
 
 #### 1.2.1 创建工程，添加依赖和插件
 
-![image-20210805164125741](/image/java/Spring全家桶/SpringMVC/image-20210805164125741.png)
+![image-20210805164125741](https://lsky-pro.smartideahub.site:2083/qls/image-20210805164125741.png)
 
 ```xml
 <dependencies>
@@ -427,6 +427,6 @@ public class BookServiceTest {
 
 - 测试保存图书
 
-![image-20210805165801606](/image/java/Spring全家桶/SpringMVC/image-20210805165801606.png)
+![image-20210805165801606](https://lsky-pro.smartideahub.site:2083/qls/image-20210805165801606.png)
 
 > 这里就以保存图书为例，其他接口同学们自己测试

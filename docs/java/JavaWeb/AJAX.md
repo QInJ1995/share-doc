@@ -14,21 +14,21 @@ AJAX 作用有以下两方面：
 
 我们先来看之前做功能的流程，如下图：
 
-![image-20210823235114367](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210823235114367.png)
+![image-20210823235114367](https://lsky-pro.smartideahub.site:2083/qls/image-20210823235114367.png)
 
 如上图，`Servlet` 调用完业务逻辑层后将数据存储到域对象中，然后跳转到指定的 `jsp` 页面，在页面上使用 `EL表达式` 和 `JSTL` 标签库进行数据的展示。
 
 而我们学习了AJAX 后，就可以==使用AJAX和服务器进行通信，以达到使用 HTML+AJAX来替换JSP页面==了。如下图，浏览器发送请求servlet，servlet 调用完业务逻辑层后将数据直接响应回给浏览器页面，页面使用 HTML 来进行数据展示。
 
-![image-20210823235006847](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210823235006847.png)
+![image-20210823235006847](https://lsky-pro.smartideahub.site:2083/qls/image-20210823235006847.png)
 
 2. **异步交互**：可以在==不重新加载整个页面==的情况下，与服务器交换数据并==更新部分网页==的技术，如：搜索联想、用户名是否可用校验，等等…
 
-![image-20210824000706401](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824000706401.png)
+![image-20210824000706401](https://lsky-pro.smartideahub.site:2083/qls/image-20210824000706401.png)
 
 上图所示的效果我们经常见到，在我们输入一些关键字（例如 `奥运`）后就会在下面联想出相关的内容，而联想出来的这部分数据肯定是存储在百度的服务器上，而我们并没有看出页面重新刷新，这就是 ==更新局部页面== 的效果。再如下图：
 
-![image-20210824001015706](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824001015706.png)
+![image-20210824001015706](https://lsky-pro.smartideahub.site:2083/qls/image-20210824001015706.png)
 
 我们在用户名的输入框输入用户名，当输入框一失去焦点，如果用户名已经被占用就会在下方展示提示的信息；在这整个过程中也没有页面的刷新，只是在局部展示出了提示信息，这就是 ==更新局部页面== 的效果。
 
@@ -38,13 +38,13 @@ AJAX 作用有以下两方面：
 
 * 同步发送请求过程如下
 
-![image-20210824001443897](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824001443897.png)
+![image-20210824001443897](https://lsky-pro.smartideahub.site:2083/qls/image-20210824001443897.png)
 
 ​ 浏览器页面在发送请求给服务器，在服务器处理请求的过程中，浏览器页面不能做其他的操作。只能等到服务器响应结束后才能，浏览器页面才能继续做其他的操作。
 
 * 异步发送请求过程如下
 
-  ![image-20210824001608916](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824001608916.png)
+  ![image-20210824001608916](https://lsky-pro.smartideahub.site:2083/qls/image-20210824001608916.png)
 
   浏览器页面发送请求给服务器，在服务器处理请求的过程中，浏览器页面还可以做其他的操作。
 
@@ -145,21 +145,21 @@ public class AjaxServlet extends HttpServlet {
 
 在浏览器地址栏输入 `http://localhost:8080/ajax-demo/01-ajax-demo1.html` ，在 `01-ajax-demo1.html`加载的时候就会发送 `ajax` 请求，效果如下
 
-![image-20210824005956117](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824005956117.png)
+![image-20210824005956117](https://lsky-pro.smartideahub.site:2083/qls/image-20210824005956117.png)
 
 我们可以通过 `开发者模式` 查看发送的 AJAX 请求。在浏览器上按 `F12` 快捷键
 
-![image-20210824010247642](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824010247642.png)
+![image-20210824010247642](https://lsky-pro.smartideahub.site:2083/qls/image-20210824010247642.png)
 
 这个是查看所有的请求，如果我们只是想看 异步请求的话，点击上图中 `All` 旁边的 `XHR`，会发现只展示 Type 是 `xhr` 的请求。如下图：
 
-![image-20210824010438260](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824010438260.png)
+![image-20210824010438260](https://lsky-pro.smartideahub.site:2083/qls/image-20210824010438260.png)
 
 ## 案例
 
 需求：在完成用户注册时，当用户名输入框失去焦点时，校验用户名是否在数据库已存在
 
-![image-20210824201415745](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210824201415745.png)
+![image-20210824201415745](https://lsky-pro.smartideahub.site:2083/qls/image-20210824201415745.png)
 
 ### 分析
 
@@ -174,7 +174,7 @@ public class AjaxServlet extends HttpServlet {
 
 整体流程如下：
 
-![image-20210829183854285](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210829183854285.png)
+![image-20210829183854285](https://lsky-pro.smartideahub.site:2083/qls/image-20210829183854285.png)
 
 ### 后端实现
 
@@ -516,7 +516,7 @@ axios.post("http://localhost:8080/ajax-demo/axiosServlet","username=zhangsan").t
 
 作用：由于其语法格式简单，层次结构鲜明，现多用于作为==数据载体==，在网络中进行数据传输。如下图所示就是服务端给浏览器响应的数据，这个数据比较简单，如果现需要将 JAVA 对象中封装的数据响应回给浏览器的话，应该以何种数据传输呢？
 
-![image-20210830232718632](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210830232718632.png)
+![image-20210830232718632](https://lsky-pro.smartideahub.site:2083/qls/image-20210830232718632.png)
 
 大家还记得 `ajax` 的概念吗？ 是 ==异步的 JavaScript 和 xml==。这里的 xml就是以前进行数据传递的方式，如下：
 
@@ -589,7 +589,7 @@ var jsonStr = '{"name":"zhangsan","age":23,"addr":["北京","上海","西安"]}'
 
 通过浏览器打开，页面效果如下图所示
 
-![image-20210831223339530](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831223339530.png)
+![image-20210831223339530](https://lsky-pro.smartideahub.site:2083/qls/image-20210831223339530.png)
 
 现在我们需要获取到该 `JSON` 串中的 `name` 属性值，应该怎么处理呢？
 
@@ -676,7 +676,7 @@ axios({
 
 学习完 json 后，接下来聊聊 json 的作用。以后我们会以 json 格式的数据进行前后端交互。前端发送请求时，如果是复杂的数据就会以 json 提交给后端；而后端如果需要响应一些复杂的数据时，也需要以 json 格式将数据响应回给浏览器。
 
-![image-20210831104901912](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831104901912.png)
+![image-20210831104901912](https://lsky-pro.smartideahub.site:2083/qls/image-20210831104901912.png)
 
 在后端我们就需要重点学习以下两部分操作：
 
@@ -752,21 +752,21 @@ axios({
 
 使用Axios + JSON 完成品牌列表数据查询和添加。页面效果还是下图所示：
 
-![image-20210830234803335](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210830234803335.png)
+![image-20210830234803335](https://lsky-pro.smartideahub.site:2083/qls/image-20210830234803335.png)
 
 ### 查询所有功能
 
-![image-20210831085332612](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831085332612.png)
+![image-20210831085332612](https://lsky-pro.smartideahub.site:2083/qls/image-20210831085332612.png)
 
 如上图所示就该功能的整体流程。前后端需以 JSON 格式进行数据的传递；由于此功能是查询所有的功能，前端发送 ajax 请求不需要携带参数，而后端响应数据需以如下格式的 json 数据
 
-![image-20210831090839336](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831090839336.png)
+![image-20210831090839336](https://lsky-pro.smartideahub.site:2083/qls/image-20210831090839336.png)
 
 #### 环境准备
 
 将 `02-AJAX\04-资料\3. 品牌列表案例\初始工程` 下的 `brand-demo` 工程拷贝到我们自己 `工作空间` ，然后再将项目导入到我们自己的 Idea 中。工程目录结构如下：
 
-![image-20210831091604457](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831091604457.png)
+![image-20210831091604457](https://lsky-pro.smartideahub.site:2083/qls/image-20210831091604457.png)
 
 ==注意：==
 
@@ -846,11 +846,11 @@ axios({
 
 在 `then` 中的回调函数中通过 `resp.data` 可以获取响应回来的数据，而数据格式如下
 
-![image-20210831093617083](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831093617083.png)
+![image-20210831093617083](https://lsky-pro.smartideahub.site:2083/qls/image-20210831093617083.png)
 
 现在我们需要拼接字符串，将下面表格中的所有的 `tr` 拼接到一个字符串中，然后使用 `document.getElementById("brandTable").innerHTML = 拼接好的字符串`  就可以动态的展示出用户想看到的数据
 
-![image-20210831093938057](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831093938057.png)
+![image-20210831093938057](https://lsky-pro.smartideahub.site:2083/qls/image-20210831093938057.png)
 
 而表头行是固定的，所以先定义初始值是表头行数据的字符串，如下
 
@@ -964,19 +964,19 @@ document.getElementById("brandTable").innerHTML = tableData;
 
 ### 添加品牌功能
 
-![image-20210831100117014](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831100117014.png)
+![image-20210831100117014](https://lsky-pro.smartideahub.site:2083/qls/image-20210831100117014.png)
 
 如上所示，当我们点击 `新增` 按钮，会跳转到 `addBrand.html` 页面。在 `addBrand.html` 页面输入数据后点击 `提交` 按钮，就会将数据提交到后端，而后端将数据保存到数据库中。
 
 具体的前后端交互的流程如下：
 
-![image-20210831100329698](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831100329698.png)
+![image-20210831100329698](https://lsky-pro.smartideahub.site:2083/qls/image-20210831100329698.png)
 
 ==说明：==
 
 前端需要将用户输入的数据提交到后端，这部分数据需要以 json 格式进行提交，数据格式如下：
 
-![image-20210831101234467](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831101234467.png)
+![image-20210831101234467](https://lsky-pro.smartideahub.site:2083/qls/image-20210831101234467.png)
 
 #### 后端实现
 
@@ -1074,7 +1074,7 @@ formData.brandName = brandName;
 
 ==说明：其他的输入框都用同样的方式获取并赋值。==但是有一个比较特殊，就是状态数据，如下图是页面内容
 
-![image-20210831103843798](/image/java/JavaWeb/Filter&Listener&Ajax/image-20210831103843798.png)
+![image-20210831103843798](https://lsky-pro.smartideahub.site:2083/qls/image-20210831103843798.png)
 
 我们需要判断哪儿个被选中，再将选中的单选框数据赋值给 `formData` 对象的 `status` 属性，代码实现如下：
 

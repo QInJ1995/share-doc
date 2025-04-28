@@ -10,7 +10,7 @@
 
 下面 用代码来演示一下：**遍历、拷贝、排序等操作**。需要用到的方法如下
 
-![1667458681721](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667458681721.png)
+![1667458681721](https://lsky-pro.smartideahub.site:2083/qls/1667458681721.png)
 
 ```java
 /**
@@ -101,7 +101,7 @@ public class ArraysTest2 {
 }
 ```
 
-![1667459056681](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667459056681.png)
+![1667459056681](https://lsky-pro.smartideahub.site:2083/qls/1667459056681.png)
 
 上面的代码为什么会报错呢？因为Arrays根本就不知道按照什么规则进行排序。为了让Arrays知道按照什么规则排序， 有如下的两种办法。
 
@@ -403,7 +403,7 @@ public class Test1 {
 
 现在，我想要把下图中Lambda表达式的方法体，用一个静态方法代替
 
-![1667464274934](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667464274934.png)
+![1667464274934](https://lsky-pro.smartideahub.site:2083/qls/1667464274934.png)
 
 准备另外一个类CompareByData类，用于封装Lambda表达式的方法体代码；
 
@@ -432,11 +432,11 @@ Arrays.sort(students, CompareByData::compareByAge);
 
 还是基于上面的案例， 现在来学习一下实例方法的引用。现在，我想要把下图中Lambda表达式的方法体，用一个实例方法代替。
 
-![1667464274934](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667464274934.png)
+![1667464274934](https://lsky-pro.smartideahub.site:2083/qls/1667464274934.png)
 
 在CompareByData类中，再添加一个实例方法，用于封装Lambda表达式的方法体
 
-![1667464896645](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667464896645.png)
+![1667464896645](https://lsky-pro.smartideahub.site:2083/qls/1667464896645.png)
 
 接下来， 把Lambda表达式的方法体，改用对象调用方法
 
@@ -580,7 +580,7 @@ public class Test3 {
 
 当然 现在并不会学习非常复杂的算法，万丈高楼平地起， 现在只需要学习几种常见的基础算法就可以了。而且Java语言本身就内置了一些基础算法给 使用，实际上自己也不会去写这些算法。
 
-![1667402734025](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667402734025.png)
+![1667402734025](https://lsky-pro.smartideahub.site:2083/qls/1667402734025.png)
 
 ### 1.2 冒泡排序
 
@@ -588,7 +588,7 @@ public class Test3 {
 
 排序算法有很多种， 这里只学习比较简单的两种，一种是冒泡排序，一种是选择排序。学习算法 先要搞清楚算法的流程，然后再去“推敲“如何写代码。（**注意，我这里用的次是推敲，也就是说算法这样的代码并不是一次成型的，是需要反复修改才能写好的**）。
 
-![1667403334232](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667403334232.png)
+![1667403334232](https://lsky-pro.smartideahub.site:2083/qls/1667403334232.png)
 
 先来学习冒泡排序，先来介绍一下，冒泡排序的流程
 
@@ -600,7 +600,7 @@ public class Test3 {
    第三轮比较 1次
 ```
 
-![1667403618904](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667403618904.png)
+![1667403618904](https://lsky-pro.smartideahub.site:2083/qls/1667403618904.png)
 
 ```java
 public class Test1 {
@@ -636,7 +636,7 @@ public class Test1 {
 
 所以 先分析选择排序算法的流程：选择排序的核心思路是，每一轮选定一个固定的元素，和其他的每一个元素进行比较；经过几轮比较之后，每一个元素都能比较到了。
 
-![1667467347586](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667467347586.png)
+![1667467347586](https://lsky-pro.smartideahub.site:2083/qls/1667467347586.png)
 
 接下来，按照选择排序的流程编写代码
 
@@ -673,7 +673,7 @@ ublic class Test2 {
 
 **先聊一聊基本查找：**假设 要查找的元素是81，如果是基本查找的话，只能从0索引开始一个一个往后找，但是如果元素比较多，你要查找的元素比较靠后的话，这样查找的此处就比较多。性能比较差。
 
-![1667467611576](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667467611576.png)
+![1667467611576](https://lsky-pro.smartideahub.site:2083/qls/1667467611576.png)
 
 **再讲二分查找**：二分查找的主要特点是，每次查找能排除一般元素，这样效率明显提高。**但是二分查找要求比较苛刻，它要求元素必须是有序的，否则不能进行二分查找。**
 
@@ -692,7 +692,7 @@ ublic class Test2 {
 注意：一搬查找一次肯定是不够的，所以需要把第1步和第2步循环来做，只到left>end就结束，如果最后还没有找到目标元素，就返回-1.
 ```
 
-![1667468412882](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667468412882.png)
+![1667468412882](https://lsky-pro.smartideahub.site:2083/qls/1667468412882.png)
 
 ```java
 /**
@@ -742,7 +742,7 @@ public class Test3 {
 >
 > 正则表达式的作用2：可以从一段文本中查找满足要求的内容
 
-![1667468712516](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667468712516.png)
+![1667468712516](https://lsky-pro.smartideahub.site:2083/qls/1667468712516.png)
 
 ### 5.1 正则表达式初体验
 
@@ -787,13 +787,13 @@ public static boolean checkQQ1(String qq){
 
 前面 已经体验到了正则表达式，可以简化校验数据的代码书写。这里需要用到一个方法叫`matches(String regex)`。这个方法时属于String类的方法。
 
-![1667469085970](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667469085970.png)
+![1667469085970](https://lsky-pro.smartideahub.site:2083/qls/1667469085970.png)
 
 这个方法是用来匹配一个字符串是否匹配正则表达式的规则，参数需要调用者传递一个正则表达式。但是正则表达式不能乱写，是有特定的规则的。
 
 下面 就学习一下，正则表达式的规则。从哪里学呢？在API中有一个类叫做Pattern， 可以到API文档中搜索，关于正则表达式的规则，这个类都告诉 了。我这里把常用的已经给大家整理好了。
 
-![1667469259345](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667469259345.png)
+![1667469259345](https://lsky-pro.smartideahub.site:2083/qls/1667469259345.png)
 
  将这些规则，在代码中演示一下
 
@@ -950,7 +950,7 @@ public class RegexTest3 {
 
  还是通过一个案例给大家做演示：案例需求如下
 
-![1667469722842](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667469722842.png)
+![1667469722842](https://lsky-pro.smartideahub.site:2083/qls/1667469722842.png)
 
 ```java
 /**
@@ -990,7 +990,7 @@ public class RegexTest4 {
 
 接下来， 学习一下正则表达式的另外两个功能，替换、分割的功能。需要注意的是这几个功能需要用到Stirng类中的方法。这两个方法其实 之前学过，只是当时没有学正则表达式而已。
 
-![1667469943451](/image/java/JavaSE/进阶/常见API、Lambda、算法、正则/1667469943451.png)
+![1667469943451](https://lsky-pro.smartideahub.site:2083/qls/1667469943451.png)
 
 ```java
 /**

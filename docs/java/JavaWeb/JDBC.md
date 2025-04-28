@@ -16,7 +16,7 @@
 >
 > 全称：( Java DataBase Connectivity ) Java 数据库连接
 
-![image-20210725130537815](/image/java/JavaWeb/JDBC/image-20210725130537815.png)
+![image-20210725130537815](https://lsky-pro.smartideahub.site:2083/qls/image-20210725130537815.png)
 
 我们开发的同一套Java代码是无法操作不同的关系型数据库，因为每一个关系型数据库的底层实现细节都不一样。如果这样，问题就很大了，在公司中可以在开发阶段使用的是MySQL数据库，而上线时公司最终选用oracle数据库，我们就需要对代码进行大批量修改，这显然并不是我们想看到的。我们要做到的是同一套Java代码操作不同的关系型数据库，而此时sun公司就指定了一套标准接口（JDBC），JDBC中定义了所有操作关系型数据库的规则。众所周知接口是无法直接使用的，我们需要使用接口的实现类，而这套实现类（称之为：驱动）就由各自的数据库厂商给出。
 
@@ -33,13 +33,13 @@
 
 以后编写操作数据库的代码只需要面向JDBC（接口），操作哪儿个关系型数据库就需要导入该数据库的驱动包，如需要操作MySQL数据库，就需要再项目中导入MySQL数据库的驱动包。如下图就是MySQL驱动包
 
-![image-20210725133015535](/image/java/JavaWeb/JDBC/image-20210725133015535.png)
+![image-20210725133015535](https://lsky-pro.smartideahub.site:2083/qls/image-20210725133015535.png)
 
 ## 2，JDBC快速入门
 
 先来看看通过Java操作数据库的流程
 
-![image-20210725163745153](/image/java/JavaWeb/JDBC/image-20210725163745153.png)
+![image-20210725163745153](https://lsky-pro.smartideahub.site:2083/qls/image-20210725163745153.png)
 
 第一步：编写Java代码
 
@@ -53,7 +53,7 @@
 
 * 创建工程，导入驱动jar包
 
-  ![image-20210725133015535](/image/java/JavaWeb/JDBC/image-20210725133015535.png)
+  ![image-20210725133015535](https://lsky-pro.smartideahub.site:2083/qls/image-20210725133015535.png)
 
 * 注册驱动
 
@@ -96,36 +96,36 @@
 
 * 创建新的空的项目
 
-![image-20210725165156501](/image/java/JavaWeb/JDBC/image-20210725165156501.png)
+![image-20210725165156501](https://lsky-pro.smartideahub.site:2083/qls/image-20210725165156501.png)
 
 * 定义项目的名称，并指定位置
 
-![image-20210725165220829](/image/java/JavaWeb/JDBC/image-20210725165220829.png)
+![image-20210725165220829](https://lsky-pro.smartideahub.site:2083/qls/image-20210725165220829.png)
 
 * 对项目进行设置，JDK版本、编译版本
 
-![image-20210725165349564](/image/java/JavaWeb/JDBC/image-20210725165349564.png)
+![image-20210725165349564](https://lsky-pro.smartideahub.site:2083/qls/image-20210725165349564.png)
 
 * 创建模块，指定模块的名称及位置
 
-![image-20210725165536898](/image/java/JavaWeb/JDBC/image-20210725165536898.png)
+![image-20210725165536898](https://lsky-pro.smartideahub.site:2083/qls/image-20210725165536898.png)
 
 * 导入驱动包
 
   将mysql的驱动包放在模块下的lib目录（随意命名）下，并将该jar包添加为库文件
 
-![image-20210725165657556](/image/java/JavaWeb/JDBC/image-20210725165657556.png)
+![image-20210725165657556](https://lsky-pro.smartideahub.site:2083/qls/image-20210725165657556.png)
 
 * 在添加为库文件的时候，有如下三个选项
   * Global Library  ： 全局有效
   * Project Library :   项目有效
   * Module Library ： 模块有效
 
-![image-20210725165751273](/image/java/JavaWeb/JDBC/image-20210725165751273.png)
+![image-20210725165751273](https://lsky-pro.smartideahub.site:2083/qls/image-20210725165751273.png)
 
 * 在src下创建类
 
-![image-20210725170004319](/image/java/JavaWeb/JDBC/image-20210725170004319.png)
+![image-20210725170004319](https://lsky-pro.smartideahub.site:2083/qls/image-20210725170004319.png)
 
 * 编写代码如下
 
@@ -166,7 +166,7 @@ DriverManager（驱动管理类）作用：
 
 * 注册驱动
 
-  ![image-20210725171339346](/image/java/JavaWeb/JDBC/image-20210725171339346.png)
+  ![image-20210725171339346](https://lsky-pro.smartideahub.site:2083/qls/image-20210725171339346.png)
 
   registerDriver方法是用于注册驱动的，但是我们之前做的入门案例并不是这样写的。而是如下实现
 
@@ -176,7 +176,7 @@ DriverManager（驱动管理类）作用：
 
   我们查询MySQL提供的Driver类，看它是如何实现的，源码如下：
 
-  ![image-20210725171635432](/image/java/JavaWeb/JDBC/image-20210725171635432.png)
+  ![image-20210725171635432](https://lsky-pro.smartideahub.site:2083/qls/image-20210725171635432.png)
 
   在该类中的静态代码块中已经执行了 `DriverManager` 对象的 `registerDriver()` 方法进行驱动的注册了，那么我们只需要加载 `Driver` 类，该静态代码块就会执行。而 `Class.forName("com.mysql.jdbc.Driver");` 就可以加载 `Driver` 类。
 
@@ -187,7 +187,7 @@ DriverManager（驱动管理类）作用：
 
 * 获取数据库连接
 
-  ![image-20210725171355278](/image/java/JavaWeb/JDBC/image-20210725171355278.png)
+  ![image-20210725171355278](https://lsky-pro.smartideahub.site:2083/qls/image-20210725171355278.png)
 
   参数说明：
 
@@ -255,17 +255,17 @@ Connection几口中定义了3个对应的方法：
 
 * 开启事务
 
-  ![image-20210725173444628](/image/java/JavaWeb/JDBC/image-20210725173444628.png)
+  ![image-20210725173444628](https://lsky-pro.smartideahub.site:2083/qls/image-20210725173444628.png)
 
   参与autoCommit 表示是否自动提交事务，true表示自动提交事务，false表示手动提交事务。而开启事务需要将该参数设为为false。
 
 * 提交事务
 
-  ![image-20210725173618636](/image/java/JavaWeb/JDBC/image-20210725173618636.png)
+  ![image-20210725173618636](https://lsky-pro.smartideahub.site:2083/qls/image-20210725173618636.png)
 
 * 回滚事务
 
-  ![image-20210725173648674](/image/java/JavaWeb/JDBC/image-20210725173648674.png)
+  ![image-20210725173648674](https://lsky-pro.smartideahub.site:2083/qls/image-20210725173648674.png)
 
 具体代码实现如下：
 
@@ -327,11 +327,11 @@ Statement对象的作用就是用来执行SQL语句。而针对不同类型的SQ
 
 * 执行DDL、DML语句
 
-  ![image-20210725175151272](/image/java/JavaWeb/JDBC/image-20210725175151272.png)
+  ![image-20210725175151272](https://lsky-pro.smartideahub.site:2083/qls/image-20210725175151272.png)
 
 * 执行DQL语句
 
-  ![image-20210725175131533](/image/java/JavaWeb/JDBC/image-20210725175131533.png)
+  ![image-20210725175131533](https://lsky-pro.smartideahub.site:2083/qls/image-20210725175131533.png)
 
   该方法涉及到了 `ResultSet` 对象，而这个对象我们还没有学习，一会再重点讲解。
 
@@ -442,7 +442,7 @@ ResultSet  executeQuery(sql)：执行DQL 语句，返回 ResultSet 对象
 
 如下图为执行SQL语句后的结果
 
-![image-20210725181320813](/image/java/JavaWeb/JDBC/image-20210725181320813.png)
+![image-20210725181320813](https://lsky-pro.smartideahub.site:2083/qls/image-20210725181320813.png)
 
 一开始光标指定于第一行前，如图所示红色箭头指向于表头行。当我们调用了 `next()` 方法后，光标就下移到第一行数据，并且方法返回true，此时就可以通过 `getInt("id")` 获取当前行id字段的值，也可以通过 `getString("name")` 获取当前行name字段的值。如果想获取下一行的数据，继续调用 `next()`  方法，以此类推。
 
@@ -508,7 +508,7 @@ public void testResultSet() throws  Exception {
 
 * 需求：查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中
 
-  ![image-20210725182352433](/image/java/JavaWeb/JDBC/image-20210725182352433.png)
+  ![image-20210725182352433](https://lsky-pro.smartideahub.site:2083/qls/image-20210725182352433.png)
 
 * 代码实现
 
@@ -597,27 +597,27 @@ create database test;
 
 在命令提示符中运行今天资料下的 `day03-JDBC\资料\2. sql注入演示\sql.jar` 这个jar包。
 
-![image-20210725184701026](/image/java/JavaWeb/JDBC/image-20210725184701026.png)
+![image-20210725184701026](https://lsky-pro.smartideahub.site:2083/qls/image-20210725184701026.png)
 
 此时我们就能在数据库中看到user表
 
-![image-20210725184817731](/image/java/JavaWeb/JDBC/image-20210725184817731.png)
+![image-20210725184817731](https://lsky-pro.smartideahub.site:2083/qls/image-20210725184817731.png)
 
 接下来在浏览器的地址栏输入 `localhost:8080/login.html` 就能看到登录页面
 <!-- 接下来在浏览器的地址栏输入 `localhost:8080/login.html` 就能看到如下页面 -->
 
-<!-- <img src="/image/java/JavaWeb/JDBC/image-20210725185024731.png" alt="image-20210725185024731" style="zoom:80%;" /> -->
+<!-- <img src="https://lsky-pro.smartideahub.site:2083/qls/image-20210725185024731.png" alt="image-20210725185024731" style="zoom:80%;" /> -->
 
 我们就可以在登录页面输入用户名和密码进行登陆。用户名和密码输入正确就登陆成功，跳转到首页。用户名和密码输入错误则给出错误提示
 <!-- 我们就可以在如上图中输入用户名和密码进行登陆。用户名和密码输入正确就登陆成功，跳转到首页。用户名和密码输入错误则给出错误提示，如下图 -->
 
-<!-- <img src="/image/java/JavaWeb/JDBC/image-20210725185320875.png" alt="image-20210725185320875" style="zoom:80%;" /> -->
+<!-- <img src="https://lsky-pro.smartideahub.site:2083/qls/image-20210725185320875.png" alt="image-20210725185320875" style="zoom:80%;" /> -->
 
 但是我可以通过输入一些特殊的字符登陆到首页。
 
 用户名随意写，密码写成 `' or '1' ='1`
 
-<!-- <img src="/image/java/JavaWeb/JDBC/image-20210725185603112.png" alt="image-20210725185603112" style="zoom:80%;" /> -->
+<!-- <img src="https://lsky-pro.smartideahub.site:2083/qls/image-20210725185603112.png" alt="image-20210725185603112" style="zoom:80%;" /> -->
 
 这就是SQL注入漏洞，也是很危险的。当然现在市面上的系统都不会存在这种问题了，所以大家也不要尝试用这种方式去试其他的系统。
 
@@ -755,7 +755,7 @@ select * from tb_user where username = 'sjdljfld' and password = '\'or \'1\' = \
 > * 预编译SQL，性能更高
 > * 防止SQL注入：==将敏感字符进行转义==
 
-![image-20210725195756848](/image/java/JavaWeb/JDBC/image-20210725195756848.png)
+![image-20210725195756848](https://lsky-pro.smartideahub.site:2083/qls/image-20210725195756848.png)
 
 Java代码操作数据库流程如图所示：
 
@@ -853,7 +853,7 @@ Java代码操作数据库流程如图所示：
 
 * 执行SQL语句，查看 `D:\mysql.log` 日志如下:
 
-  ![image-20210725202829738](/image/java/JavaWeb/JDBC/image-20210725202829738.png)
+  ![image-20210725202829738](https://lsky-pro.smartideahub.site:2083/qls/image-20210725202829738.png)
 
   上图中第三行中的 `Prepare` 是对SQL语句进行预编译。第四行和第五行是执行了两次SQL语句，而第二次执行前并没有对SQL进行预编译。
 
@@ -881,7 +881,7 @@ Java代码操作数据库流程如图所示：
 
 而数据库使用了数据库连接池后，就能达到Connection对象的复用，如下图
 
-![image-20210725210432985](/image/java/JavaWeb/JDBC/image-20210725210432985.png)
+![image-20210725210432985](https://lsky-pro.smartideahub.site:2083/qls/image-20210725210432985.png)
 
 连接池是在一开始就创建好了一些连接（Connection）对象存储起来。用户需要连接数据库时，不需要自己创建连接，而只需要从连接池中获取一个连接进行使用，使用完毕后再将连接对象归还给连接池；这样就可以起到资源重用，也节省了频繁创建连接销毁连接所花费的时间，从而提升了系统响应的速度。
 
@@ -921,11 +921,11 @@ Java代码操作数据库流程如图所示：
 
 现在通过代码实现，首先需要先将druid的jar包放到项目下的lib下并添加为库文件
 
-![image-20210725212911980](/image/java/JavaWeb/JDBC/image-20210725212911980.png)
+![image-20210725212911980](https://lsky-pro.smartideahub.site:2083/qls/image-20210725212911980.png)
 
 项目结构如下：
 
-![image-20210725213210091](/image/java/JavaWeb/JDBC/image-20210725213210091.png)
+![image-20210725213210091](https://lsky-pro.smartideahub.site:2083/qls/image-20210725213210091.png)
 
 编写配置文件如下：
 

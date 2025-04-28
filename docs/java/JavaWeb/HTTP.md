@@ -9,7 +9,7 @@ HyperText Transfer Protocol，超文本传输协议，规定了浏览器和服�
 * 数据传输的规则指的是请求数据和响应数据需要按照指定的格式进行传输。
 * 如果想知道具体的格式，可以打开浏览器，点击`F12`打开开发者工具，点击`Network`来查看某一次请求的请求数据和响应数据具体的格式内容，如下图所示:
 
-![1627046235092](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627046235092.png)
+![1627046235092](https://lsky-pro.smartideahub.site:2083/qls/1627046235092.png)
 
 > 注意:在浏览器中如果看不到上述内容，需要清除浏览器的浏览数据。chrome浏览器可以使用ctrl+shift+Del进行清除。
 
@@ -48,7 +48,7 @@ HTTP协议有它自己的一些特点，分别是:
 
 请求数据总共分为三部分内容，分别是==请求行==、==请求头==、==请求体==
 
-![1627050004221](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627050004221.png)
+![1627050004221](https://lsky-pro.smartideahub.site:2083/qls/1627050004221.png)
 
 * 请求行: HTTP请求中的第一行数据，请求行包含三块内容，分别是 GET[请求方式] /[请求URL路径] HTTP/1.1[HTTP协议及版本]
 
@@ -76,7 +76,7 @@ HTTP协议有它自己的一些特点，分别是:
 
 * 请求体: POST请求的最后一部分，存储请求参数
 
-   ![1627050930378](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627050930378.png)
+   ![1627050930378](https://lsky-pro.smartideahub.site:2083/qls/1627050930378.png)
 
    如上图红线框的内容就是请求体的内容，请求体和请求头之间是有一个空行隔开。此时浏览器发送的是POST请求，为什么不能使用GET呢?这时就需要回顾GET和POST两个请求之间的区别了:
 
@@ -87,15 +87,15 @@ HTTP协议有它自己的一些特点，分别是:
 
 把 `代码\http` 拷贝到IDEA的工作目录中，比如`D:\workspace\web`目录，
 
-![1627278511902](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627278511902.png)
+![1627278511902](https://lsky-pro.smartideahub.site:2083/qls/1627278511902.png)
 
 使用IDEA打开
 
-![1627278583127](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627278583127.png)
+![1627278583127](https://lsky-pro.smartideahub.site:2083/qls/1627278583127.png)
 
 打开后，可以点击项目中的`html\19-表单验证.html`，使用浏览器打开，通过修改页面中form表单的method属性来测试GET请求和POST请求的参数携带方式。
 
-![1627278725007](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627278725007.png)
+![1627278725007](https://lsky-pro.smartideahub.site:2083/qls/1627278725007.png)
 
 **小结**:
 
@@ -109,7 +109,7 @@ HTTP协议有它自己的一些特点，分别是:
 
 响应数据总共分为三部分内容，分别是==响应行==、==响应头==、==响应体==
 
-![1627053710214](/image/java/JavaWeb/HTTP&Tomcat&Servlet/1627053710214.png)
+![1627053710214](https://lsky-pro.smartideahub.site:2083/qls/1627053710214.png)
 
 * 响应行：响应数据的第一行,响应行包含三块内容，分别是 HTTP/1.1[HTTP协议及版本] 200[响应状态码] ok[状态码的描述]
 

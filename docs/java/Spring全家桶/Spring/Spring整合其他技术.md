@@ -10,17 +10,17 @@ mybatis进行数据层操作的核心对象是谁？
 
 #### 1.1.1 MyBatis程序核心对象分析
 
-![image-20210730114303147](/image/java/Spring全家桶/Spring/image-20210730114303147.png)
+![image-20210730114303147](https://lsky-pro.smartideahub.site:2083/qls/image-20210730114303147.png)
 
 #### 1.1.2 整合MyBatis
 
 - 使用SqlSessionFactoryBean封装SqlSessionFactory需要的环境信息
 
-![image-20210730114342060](/image/java/Spring全家桶/Spring/image-20210730114342060.png)
+![image-20210730114342060](https://lsky-pro.smartideahub.site:2083/qls/image-20210730114342060.png)
 
 - 使用MapperScannerConfigurer加载Dao接口，创建代理对象保存到IOC容器中
 
-![image-20210730114356175](/image/java/Spring全家桶/Spring/image-20210730114356175.png)
+![image-20210730114356175](https://lsky-pro.smartideahub.site:2083/qls/image-20210730114356175.png)
 
 ### 代码实现
 
@@ -243,4 +243,4 @@ public class AccountServiceTest {
 
 **==注意：junit的依赖至少要是4.12版本,可以是4.13等版本,否则出现如下异常：==**
 
-![image-20200831155517797](/image/java/Spring全家桶/Spring/image-20200831155517797.png)
+![image-20200831155517797](https://lsky-pro.smartideahub.site:2083/qls/image-20200831155517797.png)

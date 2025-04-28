@@ -10,17 +10,17 @@ SpringMVC的HelloWord程序大家还记得吗？
 
 - 原生开发SpringMVC程序过程
 
-![image-20210811205020792](/image/java/Spring全家桶/SpringBoot/image-20210811205020792.png)
+![image-20210811205020792](https://lsky-pro.smartideahub.site:2083/qls/image-20210811205020792.png)
 
 ### 入门案例开发步骤
 
 ①：创建新模块，选择Spring初始化，并配置模块相关基础信息
 
-![image-20210811183922621](/image/java/Spring全家桶/SpringBoot/image-20210811183922621.png)
+![image-20210811183922621](https://lsky-pro.smartideahub.site:2083/qls/image-20210811183922621.png)
 
  ②：选择当前模块需要使用的技术集
 
-![image-20210811183956586](/image/java/Spring全家桶/SpringBoot/image-20210811183956586.png)
+![image-20210811183956586](https://lsky-pro.smartideahub.site:2083/qls/image-20210811183956586.png)
 
  ③：开发控制器类
 
@@ -38,7 +38,7 @@ public class BookController {
 
 ④：运行自动生成的Application类
 
-![image-20210811184126747](/image/java/Spring全家桶/SpringBoot/image-20210811184126747.png)
+![image-20210811184126747](https://lsky-pro.smartideahub.site:2083/qls/image-20210811184126747.png)
 
 - 最简SpringBoot程序所包含的基础文件
 
@@ -76,7 +76,7 @@ public class Application {
 
 - Spring程序与SpringBoot程序对比
 
-![image-20210811184326884](/image/java/Spring全家桶/SpringBoot/image-20210811184326884.png)
+![image-20210811184326884](https://lsky-pro.smartideahub.site:2083/qls/image-20210811184326884.png)
 
 **注意事项：**
 
@@ -84,7 +84,7 @@ public class Application {
 
 ### 基于SpringBoot官网创建项目
 
-![image-20210811184424903](/image/java/Spring全家桶/SpringBoot/image-20210811184424903.png)
+![image-20210811184424903](https://lsky-pro.smartideahub.site:2083/qls/image-20210811184424903.png)
 
 ### SpringBoot项目快速启动
 

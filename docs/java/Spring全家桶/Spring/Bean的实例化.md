@@ -48,7 +48,7 @@ public class AppForInstanceBook {
 
 - 运行结果
 
-![image-20210729194137151](/image/java/Spring全家桶/Spring/image-20210729194137151.png)
+![image-20210729194137151](https://lsky-pro.smartideahub.site:2083/qls/image-20210729194137151.png)
 
 ==注意：无参构造方法如果不存在，将抛出异常`BeanCreationException`==
 
@@ -86,7 +86,7 @@ public class OrderDaoFactory {
 <bean id="orderDao" class="com.itheima.factory.OrderDaoFactory" factory-method="getOrderDao"/>
 ```
 
-![image-20210729195248948](/image/java/Spring全家桶/Spring/image-20210729195248948.png)
+![image-20210729195248948](https://lsky-pro.smartideahub.site:2083/qls/image-20210729195248948.png)
 
 - AppForInstanceOrder测试类
 
@@ -104,7 +104,7 @@ public class AppForInstanceOrder {
 
 - 运行结果
 
-![image-20210729195009198](/image/java/Spring全家桶/Spring/image-20210729195009198.png)
+![image-20210729195009198](https://lsky-pro.smartideahub.site:2083/qls/image-20210729195009198.png)
 
 ### 实例工厂方式
 
@@ -141,7 +141,7 @@ public class UserDaoFactory {
 <bean id="userDao" factory-method="getUserDao" factory-bean="userFactory"/>
 ```
 
-![image-20210729200203249](/image/java/Spring全家桶/Spring/image-20210729200203249.png)
+![image-20210729200203249](https://lsky-pro.smartideahub.site:2083/qls/image-20210729200203249.png)
 
 - AppForInstanceUser测试类
 
@@ -162,7 +162,7 @@ public class AppForInstanceUser {
 
 - 运行结果
 
-![image-20210729200240820](/image/java/Spring全家桶/Spring/image-20210729200240820.png)
+![image-20210729200240820](https://lsky-pro.smartideahub.site:2083/qls/image-20210729200240820.png)
 
 ### 实现FactoryBean\<T>方式【扩展,了解】
 

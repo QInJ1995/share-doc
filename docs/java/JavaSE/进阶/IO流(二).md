@@ -10,7 +10,7 @@
 
 先类学习字符流中的FileReader类，这是字符输入流，用来将文件中的字符数据读取到程序中来。
 
-![1667914646397](/image/java/JavaSE/进阶/IO流(二)/1667914646397.png)
+![1667914646397](https://lsky-pro.smartideahub.site:2083/qls/1667914646397.png)
 
 FileReader读取文件的步骤如下：
 
@@ -20,11 +20,11 @@ FileReader读取文件的步骤如下：
 第三步：调用close()方法关闭流
 ```
 
-![1667914727332](/image/java/JavaSE/进阶/IO流(二)/1667914727332.png)
+![1667914727332](https://lsky-pro.smartideahub.site:2083/qls/1667914727332.png)
 
 需要用到的方法：先通过构造器创建对象，再通过read方法读取数据（**注意：两个read方法的返回值，含义不一样**）
 
-![1667915012716](/image/java/JavaSE/进阶/IO流(二)/1667915012716.png)
+![1667915012716](https://lsky-pro.smartideahub.site:2083/qls/1667915012716.png)
 
 ```java
 /**
@@ -61,7 +61,7 @@ public class FileReaderTest1 {
 
 在上节课， 学习了FileReader，它可以将文件中的字符数据读取到程序中来。接下来， 就要学习FileWriter了，它可以将程序中的字符数据写入文件。
 
-![1667915174777](/image/java/JavaSE/进阶/IO流(二)/1667915174777.png)
+![1667915174777](https://lsky-pro.smartideahub.site:2083/qls/1667915174777.png)
 
 FileWriter往文件中写字符数据的步骤如下：
 
@@ -73,7 +73,7 @@ FileWriter往文件中写字符数据的步骤如下：
 
 需要用到的方法如下：构造器是用来创建FileWriter对象的，有了对象才能调用write方法写数据到文件。
 
-![1667915265102](/image/java/JavaSE/进阶/IO流(二)/1667915265102.png)
+![1667915265102](https://lsky-pro.smartideahub.site:2083/qls/1667915265102.png)
 
 接下来，用代码演示一下：
 
@@ -167,13 +167,13 @@ fw.close(); //会先刷新，再关流
 
 但是需要注意的是，关闭流之后，就不能在对流进行操作了。否则会出异常
 
-![1667915749299](/image/java/JavaSE/进阶/IO流(二)/1667915749299.png)
+![1667915749299](https://lsky-pro.smartideahub.site:2083/qls/1667915749299.png)
 
 ## 二、缓冲流
 
 学习完字符流之后，接下来 学习一下缓冲流。 还是先来认识一下缓存流，再来说一下它的作用。缓冲流有四种，如下图所示
 
-![1667915902693](/image/java/JavaSE/进阶/IO流(二)/1667915902693.png)
+![1667915902693](https://lsky-pro.smartideahub.site:2083/qls/1667915902693.png)
 
 **缓冲流的作用**：可以对原始流进行包装，提高原始流读写数据的性能。
 
@@ -183,15 +183,15 @@ fw.close(); //会先刷新，再关流
 
 - **读数据时：**它先用原始字节输入流一次性读取8KB的数据存入缓冲流内部的数组中（ps: 先一次多囤点货），再从8KB的字节数组中读取一个字节或者多个字节（把消耗屯的货）。
 
-![1667916051946](/image/java/JavaSE/进阶/IO流(二)/1667916051946.png)
+![1667916051946](https://lsky-pro.smartideahub.site:2083/qls/1667916051946.png)
 
 - **写数据时：** 它是先把数据写到缓冲流内部的8BK的数组中（ps: 先攒一车货），等数组存满了，再通过原始的字节输出流，一次性写到目标文件中去（把囤好的货，一次性运走）。
 
-![1667916766340](/image/java/JavaSE/进阶/IO流(二)/1667916766340.png)
+![1667916766340](https://lsky-pro.smartideahub.site:2083/qls/1667916766340.png)
 
 在创建缓冲字节流对象时，需要封装一个原始流对象进来。构造方法如下
 
-![1667916924862](/image/java/JavaSE/进阶/IO流(二)/1667916924862.png)
+![1667916924862](https://lsky-pro.smartideahub.site:2083/qls/1667916924862.png)
 
 如果 用缓冲流复制文件，代码写法如下:
 
@@ -226,19 +226,19 @@ public class BufferedInputStreamTest1 {
 
 接下来， 学习另外两个缓冲流——字符缓冲流。它的原理和字节缓冲流是类似的，它底层也会有一个8KB的数组，但是这里是字符数组。字符缓冲流也不能单独使用，它需要依赖于原始字符流一起使用。
 
-![1667918228776](/image/java/JavaSE/进阶/IO流(二)/1667918228776.png)
+![1667918228776](https://lsky-pro.smartideahub.site:2083/qls/1667918228776.png)
 
 - **BufferedReader读数据时：**它先原始字符输入流一次性读取8KB的数据存入缓冲流内部的数组中（ps: 先一次多囤点货），再从8KB的字符数组中读取一个字符或者多个字符（把消耗屯的货）。
 
-![1667918633907](/image/java/JavaSE/进阶/IO流(二)/1667918633907.png)
+![1667918633907](https://lsky-pro.smartideahub.site:2083/qls/1667918633907.png)
 
 创建BufferedReader对象需要用到BufferedReader的构造方法，内部需要封装一个原始的字符输入流， 可以传入FileReader.
 
-![1667919020690](/image/java/JavaSE/进阶/IO流(二)/1667919020690.png)
+![1667919020690](https://lsky-pro.smartideahub.site:2083/qls/1667919020690.png)
 
 而且BufferedReader还要特有的方法，一次可以读取文本文件中的一行
 
-![1667919061356](/image/java/JavaSE/进阶/IO流(二)/1667919061356.png)
+![1667919061356](https://lsky-pro.smartideahub.site:2083/qls/1667919061356.png)
 
 使用BufferedReader读取数据的代码如下
 
@@ -273,15 +273,15 @@ public class BufferedReaderTest2 {
 
 - **BufferedWriter写数据时：** 它是先把数据写到字符缓冲流内部的8BK的数组中（ps: 先攒一车货），等数组存满了，再通过原始的字符输出流，一次性写到目标文件中去（把囤好的货，一次性运走）。如下图所示
 
-![1667918775445](/image/java/JavaSE/进阶/IO流(二)/1667918775445.png)
+![1667918775445](https://lsky-pro.smartideahub.site:2083/qls/1667918775445.png)
 
 创建BufferedWriter对象时需要用到BufferedWriter的构造方法，而且内部需要封装一个原始的字符输出流， 这里可以传递FileWriter。
 
-![1667919195054](/image/java/JavaSE/进阶/IO流(二)/1667919195054.png)
+![1667919195054](https://lsky-pro.smartideahub.site:2083/qls/1667919195054.png)
 
 而且BufferedWriter新增了一个功能，可以用来写一个换行符
 
-![1667919243053](/image/java/JavaSE/进阶/IO流(二)/1667919243053.png)
+![1667919243053](https://lsky-pro.smartideahub.site:2083/qls/1667919243053.png)
 
 接下来，用代码演示一下，使用BufferedWriter往文件中写入字符数据。
 
@@ -376,7 +376,7 @@ InputStreamReader也是不能单独使用的，它内部需要封装一个InputS
 
 > 需求： 可以先准备一个GBK格式的文件，然后使用下面的代码进行读取，看是是否有乱码。
 
-![1667922646132](/image/java/JavaSE/进阶/IO流(二)/1667922646132.png)
+![1667922646132](https://lsky-pro.smartideahub.site:2083/qls/1667922646132.png)
 
 ```java
 public class InputStreamReaderTest2 {
@@ -444,7 +444,7 @@ public class OutputStreamWriterTest3 {
 
 打印流有两个，一个是字节打印流PrintStream，一个是字符打印流PrintWriter，如下图所示
 
-![1667923225787](/image/java/JavaSE/进阶/IO流(二)/1667923225787.png)
+![1667923225787](https://lsky-pro.smartideahub.site:2083/qls/1667923225787.png)
 
 **PrintStream和PrintWriter的用法是一样的，所以这里就一块演示了。**
 
@@ -508,13 +508,13 @@ public class PrintTest2 {
 
 接下 再学习一种流，这种流在开发中偶尔也会用到。比如， 想把数据和数据的类型一并写到文件中去，读取的时候也将数据和数据类型一并读出来。这就可以用到数据流，有两个DataInputStream和DataOutputStream.
 
-![1667924066920](/image/java/JavaSE/进阶/IO流(二)/1667924066920.png)
+![1667924066920](https://lsky-pro.smartideahub.site:2083/qls/1667924066920.png)
 
 ### 5.1 DataOutputStream类
 
  先学习DataOutputStream类，它也是一种包装流，创建DataOutputStream对象时，底层需要依赖于一个原始的OutputStream流对象。然后调用它的wirteXxx方法，写的是特定类型的数据。
 
-![1667924147403](/image/java/JavaSE/进阶/IO流(二)/1667924147403.png)
+![1667924147403](https://lsky-pro.smartideahub.site:2083/qls/1667924147403.png)
 
 代码如下：往文件中写整数、小数、布尔类型数据、字符串数据
 
@@ -542,7 +542,7 @@ public class DataOutputStreamTest1 {
 
 学习完DataOutputStream后，再学习DataIntputStream类，它也是一种包装流，创建DataInputStream对象时，底层需要依赖于一个原始的InputStream流对象。然后调用它的readXxx()方法就可以读取特定类型的数据。
 
-![1667924375953](/image/java/JavaSE/进阶/IO流(二)/1667924375953.png)
+![1667924375953](https://lsky-pro.smartideahub.site:2083/qls/1667924375953.png)
 
 代码如下：读取文件中特定类型的数据（整数、小数、字符串等）
 
@@ -575,7 +575,7 @@ public class DataInputStreamTest2 {
 
 还有最后一个流要学习，叫做序列化流。序列化流是干什么用的呢？  知道字节流是以字节为单位来读写数据、字符流是按照字符为单位来读写数据、而对象流是以对象为单位来读写数据。也就是把对象当做一个整体，可以写一个对象到文件，也可以从文件中把对象读取出来。
 
-![1667924794181](/image/java/JavaSE/进阶/IO流(二)/1667924794181.png)
+![1667924794181](https://lsky-pro.smartideahub.site:2083/qls/1667924794181.png)
 
 这里有一个新词 序列化，第一次听可能还比较陌生，解释一下
 
@@ -649,7 +649,7 @@ public class Test1ObjectOutputStream {
 
 **注意：写到文件中的对象，是不能用记事本打开看的。因为对象本身就不是文本数据，打开是乱码**
 
-![1667925212261](/image/java/JavaSE/进阶/IO流(二)/1667925212261.png)
+![1667925212261](https://lsky-pro.smartideahub.site:2083/qls/1667925212261.png)
 
 怎样才能读懂文件中的对象是什么呢？这里必须用反序列化，自己写代码读。
 
@@ -685,7 +685,7 @@ public class Test2ObjectInputStream {
 
 这里介绍一个jar包中提供的工具类叫FileUtils，它的部分功能如下，很方便，你一看名字就知道怎么用了。
 
-![1667925627850](/image/java/JavaSE/进阶/IO流(二)/1667925627850.png)
+![1667925627850](https://lsky-pro.smartideahub.site:2083/qls/1667925627850.png)
 
 在写代码之前，先需要引入jar包，具体步骤如下
 
