@@ -59,7 +59,16 @@ export default [
         text: '后端',
         collapsed: true,
         items: [
-
+            {
+                text: 'Java',
+                collapsed: true,
+                items: [
+                    {
+                        text: 'SpringBoot项目搭建',
+                        link: 'docs/engineering/后端/Java/SpringBoot项目搭建.md'
+                    },
+                ]
+            },
         ]
     },
     {
