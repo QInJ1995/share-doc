@@ -54,6 +54,24 @@ export default [
                 ]
             },
             {
+                text: 'Rollup',
+                collapsed: true,
+                items: [
+                    {
+                        text: '基础教程',
+                        link: 'docs/engineering/前端/Rollup/基础教程'
+                    },
+                    {
+                        text: '进阶教程',
+                        link: 'docs/engineering/前端/Rollup/进阶教程'
+                    },
+                    {
+                        text: '常用插件',
+                        link: 'docs/engineering/前端/Rollup/常用插件'
+                    },
+                ]
+            },
+            {
                 text: '代码规范',
                 collapsed: true,
                 items: [
