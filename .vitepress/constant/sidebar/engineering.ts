@@ -18,6 +18,24 @@ export default [
                 ]
             },
             {
+                text: 'Vite',
+                collapsed: true,
+                items: [
+                    {
+                        text: '基础教程',
+                        link: 'docs/engineering/前端/Vite/基础教程'
+                    },
+                    {
+                        text: '进阶教程',
+                        link: 'docs/engineering/前端/Vite/进阶教程'
+                    },
+                    {
+                        text: '常用插件',
+                        link: 'docs/engineering/前端/Vite/常用插件'
+                    },
+                ]
+            },
+            {
                 text: 'Webpack',
                 collapsed: true,
                 items: [
