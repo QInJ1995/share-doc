@@ -15,10 +15,6 @@ export default [
                         text: 'TS+Vite 搭建插件库',
                         link: 'docs/engineering/前端/项目搭建/TS+Vite 搭建插件库'
                     },
-                    {
-                        text: '代码规范',
-                        link: 'docs/engineering/前端/项目搭建/代码规范'
-                    },
                 ]
             },
             {
@@ -40,16 +36,34 @@ export default [
                 ]
             },
             {
-                text: '知识点',
+                text: '代码规范',
+                collapsed: true,
+                items: [
+                    {
+                        text: 'ESLint',
+                        link: 'docs/engineering/前端/代码规范/ESLint'
+                    },
+                    {
+                        text: 'Prettier',
+                        link: 'docs/engineering/前端/代码规范/Prettier'
+                    },
+                    {
+                        text: 'Husky+lint-staged+commitlint+ESLint+Prettier整合',
+                        link: 'docs/engineering/前端/代码规范/Husky+lint-staged+commitlint+ESLint+Prettier整合'
+                    },
+                ]
+            },
+            {
+                text: '代码转换',
                 collapsed: true,
                 items: [
                     {
                         text: 'Babel',
-                        link: 'docs/engineering/前端/知识点/Babel'
+                        link: 'docs/engineering/前端/代码转换/Babel'
                     },
                     {
                         text: 'SWC',
-                        link: 'docs/engineering/前端/知识点/SWC'
+                        link: 'docs/engineering/前端/代码转换/SWC'
                     },
                 ]
             }
