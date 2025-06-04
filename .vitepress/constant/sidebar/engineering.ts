@@ -72,6 +72,16 @@ export default [
                 ]
             },
             {
+                text: '工具库',
+                collapsed: true,
+                items: [
+                    {
+                        text: '拖拽库',
+                        link: 'docs/engineering/前端/工具库/拖拽库'
+                    },
+                ]
+            },
+            {
                 text: '代码规范',
                 collapsed: true,
                 items: [
