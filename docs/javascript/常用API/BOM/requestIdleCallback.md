@@ -1,6 +1,6 @@
 # requestIdleCallback
 
-`requestIdleCallback` 是一个浏览器 API，它允许开发者在浏览器空闲时执行后台任务，而不会影响用户的交互。它可以用于执行那些不需要立即完成的任务，从而提高应用的性能和响应速度。
+[`requestIdleCallback`](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback) 是一个浏览器 API，它允许开发者在浏览器空闲时执行后台任务，而不会影响用户的交互。它可以用于执行那些不需要立即完成的任务，从而提高应用的性能和响应速度。
 
 ## 基本用法
 
@@ -78,10 +78,17 @@ requestIdleCallback(processTasks);
 - `requestIdleCallback` 并不保证回调函数会立即执行，尤其是在浏览器繁忙时。因此，不适合用于需要精确时序的任务。
 - 在某些情况下，浏览器可能不会触发空闲回调，例如页面隐藏或浏览器标签页不活跃时。
 
+## 使用场景
+
+1. 非紧急任务（如日志上报、数据同步、预加载）
+2. 避免影响 UI 渲染（不会卡顿）
+3. Web3 DApp（如区块链数据同步、NFT 预加载）
+
 ## 总结
 
 `requestIdleCallback` 是一个强大的工具，可以帮助开发者在浏览器空闲时执行后台任务，从而提高应用的性能和响应速度。通过合理使用 `requestIdleCallback`，我们可以确保关键任务的优先级，同时在空闲时间处理非关键性任务。
 
-## 参考
+## 相关资源
 
-- [MDN - requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
+- [requestIdleCallback 官方文档](https://w3c.github.io/requestidlecallback/)

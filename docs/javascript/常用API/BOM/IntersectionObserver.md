@@ -140,6 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
+## 主要用途
+
+1. 懒加载（Lazy Loading） ：当图片或组件进入视口时才加载，提高性能。
+2. 无限滚动（Infinite Scroll） ：监测滚动到底部，自动加载新内容。
+3. 动画触发：当元素进入视口时，触发 CSS 动画或 JavaScript 事件。
+4. 广告曝光统计：检测广告是否被用户看到，以进行数据分析。
+
 ## 相关资源
 
 - [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver)
