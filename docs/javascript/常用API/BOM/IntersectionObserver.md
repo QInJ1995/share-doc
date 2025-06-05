@@ -1,6 +1,6 @@
 # IntersectionObserver
 
-IntersectionObserver 是一个现代的 Web API，用于监测元素是否进入视口（viewport）或与其他元素相交。它提供了一种高效的方式来检测元素的可见性，而不需要监听滚动事件或使用其他性能较差的方法。
+[IntersectionObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver) 是一个现代的 Web API，用于监测元素是否进入视口（viewport）或与其他元素相交。它提供了一种高效的方式来检测元素的可见性，而不需要监听滚动事件或使用其他性能较差的方法。
 
 ## 基本用法
 
