@@ -4,11 +4,11 @@
 
 本节学习起来会更轻松一些，有一些语法知识只需要了解一下就可以了，因为实际工作用得并不多。
 
- 先来了解第一个语法知识，内部类。
+先来了解第一个语法知识，内部类。
 
 ## 一、内部类
 
- 内部类是类中的五大成分之一（成员变量、方法、构造器、内部类、代码块），如果一个类定义在另一个类的内部，这个类就是内部类。
+内部类是类中的五大成分之一（成员变量、方法、构造器、内部类、代码块），如果一个类定义在另一个类的内部，这个类就是内部类。
 
 当一个类的内部，包含一个完整的事物，且这个事物没有必要单独设计时，就可以把这个事物设计成内部类。
 
@@ -18,14 +18,14 @@
 public class Car{
  //内部类
     public class Engine{
-        
+
     }
 }
 ```
 
 内部类有四种形式，分别是成员内部类、静态内部类、局部内部类、匿名内部类。
 
- 先来学习成员内部类
+先来学习成员内部类
 
 ### 1.1 成员内部类
 
@@ -127,7 +127,7 @@ public class Outer{
                 System.out.println("Inner...show");
             }
         }
-        
+
         //局部内部类只能在方法中创建对象，并使用
         Inner in = new Inner();
         in.show();
@@ -141,7 +141,7 @@ public class Outer{
 
 接下来学习一种再实际开发中用得最多的一种内部类，叫匿名内部类。相比于前面几种内部类，匿名内部类就比较重要的。
 
- 还是先认识一下什么是匿名内部类？
+还是先认识一下什么是匿名内部类？
 
 匿名内部类是一种特殊的局部内部类；所谓匿名，指的是程序员不需要为这个类声明名字。
 
@@ -184,7 +184,7 @@ public class Test{
 
 需要注意的是，匿名内部类在编写代码时没有名字，编译后系统会为自动为匿名内部类生产字节码，字节码的名称会以`外部类$1.class`的方法命名
 
-![1665658585267](https://lsky-pro.smartideahub.site:2083/qls/1665658585267.png)
+![1665658585267](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665658585267.png)
 
 **匿名内部类的作用：简化了创建子类对象、实现类对象的书写格式。**
 
@@ -209,7 +209,7 @@ public class Test{
             }
         };
         go(s1);
-        
+
         Swimming s1 = new Swimming(){
             public void swim(){
                 System.out.println("猴子游泳也还行");
@@ -244,7 +244,7 @@ public enum 枚举类名{
 
 其实枚举项就表示枚举类的对象，只是这些对象在定义枚举类时就预先写好了，以后就只能用这几个固定的对象。
 
- 用代码演示一下，定义一个枚举类A，在枚举类中定义三个枚举项X, Y, Z
+用代码演示一下，定义一个枚举类A，在枚举类中定义三个枚举项X, Y, Z
 
 ```java
 public enum A{
@@ -267,9 +267,9 @@ public class Test{
 
 刚才说，枚举项实际上是枚举类的对象，这一点其实可以通过反编译的形式来验证（需要用到反编译的命令，这里不能直接将字节码拖进idea反编译）
 
-![1665669996020](https://lsky-pro.smartideahub.site:2083/qls/1665669996020.png)
+![1665669996020](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665669996020.png)
 
- 会看到，枚举类A是用class定义的，说明枚举确实是一个类，而且X，Y，Z都是A类的对象；而且每一个枚举项都是被`public static final`修饰，所以被可以类名调用，而且不能更改。
+会看到，枚举类A是用class定义的，说明枚举确实是一个类，而且X，Y，Z都是A类的对象；而且每一个枚举项都是被`public static final`修饰，所以被可以类名调用，而且不能更改。
 
 #### 2.1.2 枚举深入
 
@@ -279,19 +279,19 @@ public class Test{
 public enum A{
     //定义枚举项
     X,Y,Z("张三"); //枚举项后面加括号，就是在执行枚举类的带参数构造方法。
-    
+
     //定义空构造器
     public A(){
-        
+
     }
-    
+
     //成员变量
     private String name;
     //定义带参数构造器
     public A(String name){
         this.name=name;
     }
-    
+
     //成员方法
     public String getName(){
         return name;
@@ -306,9 +306,9 @@ public enum A{
 
 刚才 认识了一下什么是枚举，接下来 看一下枚举在实际中的运用，枚举的应用场景是这样的：**枚举一般表示一组信息，然后作为参数进行传输。**
 
- 来看一个案例。比如 现在有这么一个应用，用户进入应用时，需要让用户选择是女生、还是男生，然后系统会根据用户选择的是男生，还是女生推荐不同的信息给用户观看。
+来看一个案例。比如 现在有这么一个应用，用户进入应用时，需要让用户选择是女生、还是男生，然后系统会根据用户选择的是男生，还是女生推荐不同的信息给用户观看。
 
-![1665670887179](https://lsky-pro.smartideahub.site:2083/qls/1665670887179.png)
+![1665670887179](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665670887179.png)
 
 这里 就可以先定义一个枚举类，用来表示男生、或者女生
 
@@ -326,7 +326,7 @@ public class Test{
         //调用方法，传递男生
         provideInfo(Constant.BOY);
     }
-    
+
     public static void provideInfo(Constant c){
         switch(c){
             case BOY:
@@ -350,15 +350,15 @@ public class Test{
 
 比如 前面学过的ArrayList类就是一个泛型类， 可以打开API文档看一下ArrayList类的声明。
 
-![1665671616852](https://lsky-pro.smartideahub.site:2083/qls/1665671616852.png)
+![1665671616852](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665671616852.png)
 
 ArrayList集合的设计者在定义ArrayList集合时，就已经明确ArrayList集合时给别人装数据用的，但是别人用ArrayList集合时候，装什么类型的数据他不知道，所以就用一个`<E>`表示元素的数据类型。
 
 当别人使用ArrayList集合创建对象时，`new ArrayList<String>`就表示元素为String类型，`new ArrayList<Integer>`表示元素为Integer类型。
 
-![1665671987771](https://lsky-pro.smartideahub.site:2083/qls/1665671987771.png)
+![1665671987771](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665671987771.png)
 
- 总结一下泛型的作用、本质：
+总结一下泛型的作用、本质：
 
 - **泛型的好处：在编译阶段可以避免出现一些非法的数据。**
 
@@ -373,7 +373,7 @@ ArrayList集合的设计者在定义ArrayList集合时，就已经明确ArrayLis
 ```java
 //这里的<T,W>;其实指的就是类型变量，可以是一个，也可以是多个。
 public class 类名<T,W>;{
-    
+
 }
 ```
 
@@ -386,13 +386,13 @@ public class MyArrayList<E>;{
     private Object[] array = new Object[10];
     //定一个索引，方便对数组进行操作
     private int index;
-    
+
     //添加元素
     public void add(E e){
         array[index]=e;
         index++;
     }
-    
+
     //获取元素
     public E get(int index){
         return (E)array[index];
@@ -410,13 +410,13 @@ public class Test{
         //此时添加元素时，只能添加String类型
         list.add("张三");
         list.add("李四");
-        
+
          //2.确定MyArrayList集合中，元素类型为Integer类型
         MyArrayList<Integer> list1 = new MyArrayList<>();
         //此时添加元素时，只能添加String类型
         list.add(100);
         list.add(200);
-        
+
     }
 }
 ```
@@ -430,7 +430,7 @@ public class Test{
 ```java
 //这里的类型变量，一般是一个字母，比如<E>
 public interface 接口名<类型变量>{
-    
+
 }
 ```
 
@@ -446,16 +446,16 @@ public class Teacher{
 
 ```java
 public class Student{
-    
+
 }
 ```
 
- 定义一个`Data<T>`泛型接口，T表示接口中要处理数据的类型。
+定义一个`Data<T>`泛型接口，T表示接口中要处理数据的类型。
 
 ```java
 public interface Data<T>{
     public void add(T t);
-    
+
     public ArrayList<T> getByName(String name);
 }
 ```
@@ -467,11 +467,11 @@ public interface Data<T>{
 //接口中add和getByName方法上的T也都会变成Teacher类型
 public class TeacherData implements Data<Teacher>{
     public void add(Teacher t){
-        
+
     }
-    
+
     public ArrayList<Teacher> getByName(String name){
-        
+
     }
 }
 ```
@@ -483,11 +483,11 @@ public class TeacherData implements Data<Teacher>{
 //接口中add和getByName方法上的T也都会变成Student类型
 public class StudentData implements Data<Student>{
     public void add(Student t){
-        
+
     }
-    
+
     public ArrayList<Student> getByName(String name){
-        
+
     }
 }
 ```
@@ -500,13 +500,13 @@ public class StudentData implements Data<Student>{
 
 ```java
 public <泛型变量,泛型变量> 返回值类型 方法名(形参列表){
-    
+
 }
 ```
 
 下图中在返回值类型和修饰符之间有`<T>`定义的才是泛型方法。
 
-![1665750638693](https://lsky-pro.smartideahub.site:2083/qls/1665750638693.png)
+![1665750638693](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665750638693.png)
 
 接下 看一个泛型方法的案例
 
@@ -515,11 +515,11 @@ public class Test{
     public static void main(String[] args){
         //调用test方法，传递字符串数据，那么test方法的泛型就是String类型
         String rs = test("test");
-    
+
         //调用test方法，传递Dog对象，那么test方法的泛型就是Dog类型
-     Dog d = test(new Dog()); 
+     Dog d = test(new Dog());
     }
-    
+
     //这是一个泛型方法<T>表示一个不确定的数据类型，由调用者确定
     public static <T> test(T t){
         return t;
@@ -551,30 +551,30 @@ public class Test{
         test1(list1);
         test1(list2);
         test1(list3);
-        
+
         //2.集合中的元素只能是Car或者Car的子类类型，才能被test2方法接收
         ArrayList<Car> list4 = new ArrayList<>();
         ArrayList<BWM> list5 = new ArrayList<>();
         test2(list4);
         test2(list5);
-        
+
         //2.集合中的元素只能是Car或者Car的父类类型，才能被test3方法接收
         ArrayList<Car> list6 = new ArrayList<>();
         ArrayList<Object> list7 = new ArrayList<>;();
         test3(list6);
         test3(list7);
     }
-    
+
     public static void test1(ArrayList<?> list){
-        
+
     }
-    
+
     public static void test2(ArrayList<? extends Car> list){
-        
+
     }
-    
+
     public static void test3(ArrayList<? super Car> list){
-        
+
     }
 }
 ```
@@ -585,29 +585,29 @@ public class Test{
 
 把下面的代码的字节码进行反编译
 
-![1665752105271](https://lsky-pro.smartideahub.site:2083/qls/1665752105271.png)
+![1665752105271](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665752105271.png)
 
 下面是反编译之后的代码， 发现ArrayList后面没有泛型
 
-![1665752037764](https://lsky-pro.smartideahub.site:2083/qls/1665752037764.png)
+![1665752037764](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665752037764.png)
 
 ## 四、常用API
 
 到目前位置 关于面向对象的语法知识就全部学习完了。接下来 就可以拿着这些语法知识，去学习一个一个的API方法，掌握的API方法越多，那么Java的编程能力就越强。
 
- API（Application Programming interface）意思是应用程序编程接口，说人话就是Java帮 写好的一些程序，如：类、方法等， 直接拿过来用就可以解决一些问题。
+API（Application Programming interface）意思是应用程序编程接口，说人话就是Java帮 写好的一些程序，如：类、方法等， 直接拿过来用就可以解决一些问题。
 
-![1665752705389](https://lsky-pro.smartideahub.site:2083/qls/1665752705389.png)
+![1665752705389](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665752705389.png)
 
- 要学习那些API呢？把下面一种图中的所有类的常用方法学会了，那 JavaSE进阶的课程就算你全学会了。
+要学习那些API呢？把下面一种图中的所有类的常用方法学会了，那 JavaSE进阶的课程就算你全学会了。
 
-![1665752813753](https://lsky-pro.smartideahub.site:2083/qls/1665752813753.png)
+![1665752813753](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665752813753.png)
 
 很多初学者给我反应的问题是，这些API一听就会，但是就是记住不！送一句话**，**
 
 **“千里之行始于足下，多记、多查、多些代码、孰能生巧！”**
 
-![1665752883617](https://lsky-pro.smartideahub.site:2083/qls/1665752883617.png)
+![1665752883617](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665752883617.png)
 
 ### 4.1 Object类
 
@@ -615,15 +615,15 @@ public class Test{
 
 按照下图的提示，可以搜索到你想要找的类
 
-![1665753230409](https://lsky-pro.smartideahub.site:2083/qls/1665753230409.png)
+![1665753230409](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665753230409.png)
 
- 找到Object类的下面两个方法
+找到Object类的下面两个方法
 
-![1665753282718](https://lsky-pro.smartideahub.site:2083/qls/1665753282718.png)
+![1665753282718](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665753282718.png)
 
 - **4.1.1 toString()方法**
 
- 先来学习toString()方法。
+先来学习toString()方法。
 
 ```java
 public String toString()
@@ -637,7 +637,7 @@ public String toString()
 public class Student{
     private String name;
     private int age;
-    
+
     public Student(String name, int age){
         this.name=name;
         this.age=age;
@@ -651,14 +651,14 @@ public class Student{
 public class Test{
     public static void main(String[] args){
         Student s1 = new Student("赵敏",23);
-        System.out.println(s1.toString()); 
+        System.out.println(s1.toString());
     }
 }
 ```
 
 打印结果如下
 
-![1665753662732](https://lsky-pro.smartideahub.site:2083/qls/1665753662732.png)
+![1665753662732](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665753662732.png)
 
 如果，在Student类重写toString()方法，那么 可以返回对象的属性值，代码如下
 
@@ -666,12 +666,12 @@ public class Test{
 public class Student{
     private String name;
     private int age;
-    
+
     public Student(String name, int age){
         this.name=name;
         this.age=age;
     }
-    
+
     @Override
     public String toString(){
         return "Student{name=‘"+name+"’, age="+age+"}";
@@ -681,7 +681,7 @@ public class Student{
 
 运行测试类，结果如下
 
-![1665754067446](https://lsky-pro.smartideahub.site:2083/qls/1665754067446.png)
+![1665754067446](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665754067446.png)
 
 #### 4.1.2 equals(Object o)方法
 
@@ -692,14 +692,14 @@ public boolean equals(Object o)
     判断此对象与参数对象是否"相等"
 ```
 
- 写一个测试类，测试一下
+写一个测试类，测试一下
 
 ```java
 public class Test{
  public static void main(String[] args){
         Student s1 = new Student("赵薇",23);
         Student s2 = new Student("赵薇",23);
-        
+
         //equals本身也是比较对象的地址，和"=="没有区别
         System.out.println(s1.equals(s2)); //false
          //"=="比较对象的地址
@@ -714,17 +714,17 @@ public class Test{
 public class Student{
     private String name;
     private int age;
-    
+
     public Student(String name, int age){
         this.name=name;
         this.age=age;
     }
-    
+
     @Override
     public String toString(){
         return "Student{name=‘"+name+"’, age="+age+"}";
     }
-    
+
     //重写equals方法，按照对象的属性值进行比较
     @Override
     public boolean equals(Object o) {
@@ -741,7 +741,7 @@ public class Student{
 
 再运行测试类，效果如下
 
-![1665754859931](https://lsky-pro.smartideahub.site:2083/qls/1665754859931.png)
+![1665754859931](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665754859931.png)
 
 总结一下Object的toString方法和equals方法
 
@@ -749,7 +749,7 @@ public class Student{
 public String toString()
     返回对象的字符串表示形式。默认的格式是：“包名.类名@哈希值16进制”
     【子类重写后，返回对象的属性值】
-    
+
 public boolean equals(Object o)
     判断此对象与参数对象是否"相等"。默认比较对象的地址值，和"=="没有区别
     【子类重写后，比较对象的属性值】
@@ -803,22 +803,22 @@ public class Test {
         System.out.println(u2.getId());
         System.out.println(u2.getUsername());
         System.out.println(u2.getPassword());
-        System.out.println(u2.getScores()); 
+        System.out.println(u2.getScores());
     }
 }
 ```
 
- 发现，克隆得到的对象u2它的属性值和原来u1对象的属性值是一样的。
+发现，克隆得到的对象u2它的属性值和原来u1对象的属性值是一样的。
 
-![1665757008178](https://lsky-pro.smartideahub.site:2083/qls/1665757008178.png)
+![1665757008178](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665757008178.png)
 
 上面演示的克隆方式，是一种浅克隆的方法，浅克隆的意思：**拷贝出来的对象封装的数据与原对象封装的数据一模一样（引用类型拷贝的是地址值）**。如下图所示
 
-![1665757187877](https://lsky-pro.smartideahub.site:2083/qls/1665757187877.png)
+![1665757187877](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665757187877.png)
 
 还有一种拷贝方式，称之为深拷贝，拷贝原理如下图所示
 
-![1665757265609](https://lsky-pro.smartideahub.site:2083/qls/1665757265609.png)
+![1665757265609](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665757265609.png)
 
 下面演示一下深拷贝User对象
 
@@ -852,13 +852,13 @@ public class User implements Cloneable{
 }
 ```
 
-![1665757536274](https://lsky-pro.smartideahub.site:2083/qls/1665757536274.png)
+![1665757536274](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665757536274.png)
 
 ### 4.2 Objects类
 
 Objects是一个工具类，提供了一些方法可以对任意对象进行操作。主要方法如下
 
-![1665760840329](https://lsky-pro.smartideahub.site:2083/qls/1665760840329.png)
+![1665760840329](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665760840329.png)
 
 下面写代码演示一下这几个方法
 
@@ -867,16 +867,16 @@ public class Test{
     public static void main(String[] args){
         String s1 = null;
         String s2 = "test";
-        
+
         //这里会出现NullPointerException异常，调用者不能为null
         System.out.println(s1.equals(s2));
         //此时不会有NullPointerException异常，底层会自动先判断空
         System.out.println(Objects.equals(s1,s2));
-        
+
         //判断对象是否为null，等价于==
         System.out.println(Objects.isNull(s1)); //true
         System.out.println(s1==null); //true
-        
+
         //判断对象是否不为null，等价于!=
         System.out.println(Objects.nonNull(s2)); //true
         System.out.println(s2!=null); //true
@@ -890,16 +890,16 @@ public class Test{
 
 Java中8种基本数据类型都用一个包装类与之对一个，如下图所示
 
-![1665758797003](https://lsky-pro.smartideahub.site:2083/qls/1665758797003.png)
+![1665758797003](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1665758797003.png)
 
- 学习包装类，主要学习两点：
+学习包装类，主要学习两点：
 
- 1. 创建包装类的对象方式、自动装箱和拆箱的特性；
- 2. 利用包装类提供的方法对字符串和基本类型数据进行相互转换
+1.  创建包装类的对象方式、自动装箱和拆箱的特性；
+2.  利用包装类提供的方法对字符串和基本类型数据进行相互转换
 
 #### 4.3.1 创建包装类对象
 
- 先来学习，创建包装类对象的方法，以及包装类的一个特性叫自动装箱和自动拆箱。 以Integer为例，其他的可以自己学，都是类似的。
+先来学习，创建包装类对象的方法，以及包装类的一个特性叫自动装箱和自动拆箱。 以Integer为例，其他的可以自己学，都是类似的。
 
 ```java
 //1.创建Integer对象，封装基本类型数据10

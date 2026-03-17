@@ -2,15 +2,15 @@
 
 ## 简介
 
-![1627234763207](https://lsky-pro.smartideahub.site:2083/qls/1627234763207.png)
+![1627234763207](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627234763207.png)
 
-* Servlet是JavaWeb最为核心的内容，它是Java提供的一门==动态==web资源开发技术。
+- Servlet是JavaWeb最为核心的内容，它是Java提供的一门==动态==web资源开发技术。
 
-* 使用Servlet就可以实现，根据不同的登录用户在页面上动态显示不同内容。
+- 使用Servlet就可以实现，根据不同的登录用户在页面上动态显示不同内容。
 
-* Servlet是JavaEE规范之一，其实就是一个接口，将来我们需要定义Servlet类实现Servlet接口，并由web服务器运行Servlet
+- Servlet是JavaEE规范之一，其实就是一个接口，将来我们需要定义Servlet类实现Servlet接口，并由web服务器运行Servlet
 
-  ![1627234972853](https://lsky-pro.smartideahub.site:2083/qls/1627234972853.png)
+  ![1627234972853](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627234972853.png)
 
 介绍完Servlet是什么以后，接下来我们就按照`快速入门`->`执行流程`->`生命周期`->`体系结构`->`urlPattern配置`->`XML配置`的学习步骤，一步步完成对Servlet的知识学习，首选我们来通过一个入门案例来快速把Servlet用起来。
 
@@ -89,15 +89,15 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
 
 要想回答上述问题，我们就需要对Servlet的执行流程进行一个学习。
 
-![1627236923139](https://lsky-pro.smartideahub.site:2083/qls/1627236923139.png)
+![1627236923139](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627236923139.png)
 
-* 浏览器发出`http://localhost:8080/web-demo/demo1`请求，从请求中可以解析出三部分内容，分别是`localhost:8080`、`web-demo`、`demo1`
-  * 根据`localhost:8080`可以找到要访问的Tomcat Web服务器
-  * 根据`web-demo`可以找到部署在Tomcat服务器上的web-demo项目
-  * 根据`demo1`可以找到要访问的是项目中的哪个Servlet类，根据@WebServlet后面的值进行匹配
-* 找到ServletDemo1这个类后，Tomcat Web服务器就会为ServletDemo1这个类创建一个对象，然后调用对象中的service方法
-  * ServletDemo1实现了Servlet接口，所以类中必然会重写service方法供Tomcat Web服务器进行调用
-  * service方法中有ServletRequest和ServletResponse两个参数，ServletRequest封装的是请求数据，ServletResponse封装的是响应数据，后期我们可以通过这两个参数实现前后端的数据交互
+- 浏览器发出`http://localhost:8080/web-demo/demo1`请求，从请求中可以解析出三部分内容，分别是`localhost:8080`、`web-demo`、`demo1`
+  - 根据`localhost:8080`可以找到要访问的Tomcat Web服务器
+  - 根据`web-demo`可以找到部署在Tomcat服务器上的web-demo项目
+  - 根据`demo1`可以找到要访问的是项目中的哪个Servlet类，根据@WebServlet后面的值进行匹配
+- 找到ServletDemo1这个类后，Tomcat Web服务器就会为ServletDemo1这个类创建一个对象，然后调用对象中的service方法
+  - ServletDemo1实现了Servlet接口，所以类中必然会重写service方法供Tomcat Web服务器进行调用
+  - service方法中有ServletRequest和ServletResponse两个参数，ServletRequest封装的是请求数据，ServletResponse封装的是响应数据，后期我们可以通过这两个参数实现前后端的数据交互
 
 **小结**
 
@@ -119,15 +119,14 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
 
 要想回答上述问题，我们就需要对Servlet的生命周期进行一个学习。
 
-* 生命周期: 对象的生命周期指一个对象从被创建到被销毁的整个过程。
+- 生命周期: 对象的生命周期指一个对象从被创建到被销毁的整个过程。
 
-* Servlet运行在Servlet容器(web服务器)中，其生命周期由容器来管理，分为4个阶段：
-
+- Servlet运行在Servlet容器(web服务器)中，其生命周期由容器来管理，分为4个阶段：
   1. ==加载和实例化==：默认情况下，当Servlet第一次被访问时，由容器创建Servlet对象
 
   ```xml
   默认情况，Servlet会在第一次访问被容器创建，但是如果创建Servlet比较耗时的话，那么第一个访问的人等待的时间就比较长，用户的体验就比较差，那么我们能不能把Servlet的创建放到服务器启动的时候来创建，具体如何来配置?
-  
+
   @WebServlet(urlPatterns = "/demo1",loadOnStartup = 1)
   loadOnstartup的取值有两类情况
    （1）负整数:第一次访问时创建Servlet对象
@@ -138,11 +137,11 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
   3. ==请求处理==：==每次==请求Servlet时，Servlet容器都会调用Servlet的==service()==方法对请求进行处理
   4. ==服务终止==：当需要释放内存或者容器关闭时，容器就会调用Servlet实例的==destroy()==方法完成资源的释放。在destroy()方法调用之后，容器会释放这个Servlet实例，该实例随后会被Java的垃圾收集器所回收
 
-* 通过案例演示下上述的生命周期
+- 通过案例演示下上述的生命周期
 
   ```java
   package com.itheima.web;
-  
+
   import javax.servlet.*;
   import javax.servlet.annotation.WebServlet;
   import java.io.IOException;
@@ -151,7 +150,7 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
   */
   @WebServlet(urlPatterns = "/demo2",loadOnStartup = 1)
   public class ServletDemo2 implements Servlet {
-  
+
       /**
        *  初始化方法
        *  1.调用时机：默认情况下，Servlet被第一次访问时，调用
@@ -163,7 +162,7 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
       public void init(ServletConfig config) throws ServletException {
           System.out.println("init...");
       }
-  
+
       /**
        * 提供服务
        * 1.调用时机:每一次Servlet被访问时，调用
@@ -176,7 +175,7 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
       public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
           System.out.println("servlet hello world~");
       }
-  
+
       /**
        * 销毁方法
        * 1.调用时机：内存释放或者服务器关闭的时候，Servlet对象会被销毁，调用
@@ -188,18 +187,18 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
       public ServletConfig getServletConfig() {
           return null;
       }
-  
+
       public String getServletInfo() {
           return null;
       }
-  
-  
+
+
   }
   ```
 
   ==注意:如何才能让Servlet中的destroy方法被执行？==
 
-  ![1627239292226](https://lsky-pro.smartideahub.site:2083/qls/1627239292226.png)
+  ![1627239292226](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627239292226.png)
 
 在Terminal命令行中，先使用`mvn tomcat7:run`启动，然后再使用`ctrl+c`关闭tomcat
 
@@ -213,13 +212,13 @@ Servlet程序已经能正常运行，但是我们需要思考个问题: 我们�
 
 2. Servlet生命周期中涉及到的三个方法，这三个方法是什么?什么时候被调用?调用几次?
 
->涉及到三个方法，分别是 init()、service()、destroy()
+> 涉及到三个方法，分别是 init()、service()、destroy()
 >
->init方法在Servlet对象被创建的时候执行，只执行1次
+> init方法在Servlet对象被创建的时候执行，只执行1次
 >
->service方法在Servlet被访问的时候调用，每访问1次就调用1次
+> service方法在Servlet被访问的时候调用，每访问1次就调用1次
 >
->destroy方法在Servlet对象被销毁的时候调用，只执行1次
+> destroy方法在Servlet对象被销毁的时候调用，只执行1次
 
 ## 方法介绍
 
@@ -227,37 +226,37 @@ Servlet中总共有5个方法，我们已经介绍过其中的三个，剩下的
 
 我们先来回顾下前面讲的三个方法，分别是:
 
-* 初始化方法，在Servlet被创建时执行，只执行一次
+- 初始化方法，在Servlet被创建时执行，只执行一次
 
 ```java
-void init(ServletConfig config) 
+void init(ServletConfig config)
 ```
 
-* 提供服务方法， 每次Servlet被访问，都会调用该方法
+- 提供服务方法， 每次Servlet被访问，都会调用该方法
 
 ```java
 void service(ServletRequest req, ServletResponse res)
 ```
 
-* 销毁方法，当Servlet被销毁时，调用该方法。在内存释放或服务器关闭时销毁Servlet
+- 销毁方法，当Servlet被销毁时，调用该方法。在内存释放或服务器关闭时销毁Servlet
 
 ```java
-void destroy() 
+void destroy()
 ```
 
 剩下的两个方法是:
 
-* 获取Servlet信息
+- 获取Servlet信息
 
 ```java
-String getServletInfo() 
+String getServletInfo()
 //该方法用来返回Servlet的相关信息，没有什么太大的用处，一般我们返回一个空字符串即可
 public String getServletInfo() {
     return "";
 }
 ```
 
-* 获取ServletConfig对象
+- 获取ServletConfig对象
 
 ```java
 ServletConfig getServletConfig()
@@ -294,7 +293,7 @@ public class ServletDemo3 implements Servlet {
     public ServletConfig getServletConfig() {
         return servletConfig;
     }
-    
+
     /**
      * 提供服务
      * 1.调用时机:每一次Servlet被访问时，调用
@@ -316,7 +315,7 @@ public class ServletDemo3 implements Servlet {
     public void destroy() {
         System.out.println("destroy...");
     }
-    
+
     public String getServletInfo() {
         return "";
     }
@@ -331,7 +330,7 @@ getServletInfo()和getServletConfig()这两个方法使用的不是很多，大�
 
 要想解决上面的问题，我们需要先对Servlet的体系结构进行下了解:
 
-![1627240593506](https://lsky-pro.smartideahub.site:2083/qls/1627240593506.png)
+![1627240593506](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627240593506.png)
 
 因为我们将来开发B/S架构的web项目，都是针对HTTP协议，所以我们自定义Servlet,会通过继承==HttpServlet==
 
@@ -353,21 +352,21 @@ public class ServletDemo4 extends HttpServlet {
 }
 ```
 
-* 要想发送一个GET请求，请求该Servlet，只需要通过浏览器发送`http://localhost:8080/web-demo/demo4`,就能看到doGet方法被执行了
-* 要想发送一个POST请求，请求该Servlet，单单通过浏览器是无法实现的，这个时候就需要编写一个form表单来发送请求，在webapp下创建一个`a.html`页面，内容如下:
+- 要想发送一个GET请求，请求该Servlet，只需要通过浏览器发送`http://localhost:8080/web-demo/demo4`,就能看到doGet方法被执行了
+- 要想发送一个POST请求，请求该Servlet，单单通过浏览器是无法实现的，这个时候就需要编写一个form表单来发送请求，在webapp下创建一个`a.html`页面，内容如下:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="/web-demo/demo4" method="post">
-        <input name="username"/><input type="submit"/>
+      <input name="username" /><input type="submit" />
     </form>
-</body>
+  </body>
 </html>
 ```
 
@@ -531,19 +530,19 @@ protected void service(HttpServletRequest req, HttpServletResponse resp)
 
         } else if (method.equals(METHOD_POST)) {
             doPost(req, resp);
-            
+
         } else if (method.equals(METHOD_PUT)) {
             doPut(req, resp);
-            
+
         } else if (method.equals(METHOD_DELETE)) {
             doDelete(req, resp);
-            
+
         } else if (method.equals(METHOD_OPTIONS)) {
             doOptions(req,resp);
-            
+
         } else if (method.equals(METHOD_TRACE)) {
             doTrace(req,resp);
-            
+
         } else {
             //
             // Note that this means NO servlet supports whatever
@@ -554,7 +553,7 @@ protected void service(HttpServletRequest req, HttpServletResponse resp)
             Object[] errArgs = new Object[1];
             errArgs[0] = method;
             errMsg = MessageFormat.format(errMsg, errArgs);
-            
+
             resp.sendError(HttpServletResponse.SC_NOT_IMPLEMENTED, errMsg);
         }
     }
@@ -578,26 +577,26 @@ protected void service(HttpServletRequest req, HttpServletResponse resp)
 
 Servlet类编写好后，要想被访问到，就需要配置其访问路径（==urlPattern==）
 
-* 一个Servlet,可以配置多个urlPattern
+- 一个Servlet,可以配置多个urlPattern
 
-  ![1627272805178](https://lsky-pro.smartideahub.site:2083/qls/1627272805178.png)
+  ![1627272805178](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627272805178.png)
 
   ```java
   package com.itheima.web;
-  
+
   import javax.servlet.ServletRequest;
   import javax.servlet.ServletResponse;
   import javax.servlet.annotation.WebServlet;
-  
+
   /**
   * urlPattern: 一个Servlet可以配置多个访问路径
   */
   @WebServlet(urlPatterns = {"/demo7","/demo8"})
   public class ServletDemo7 extends MyHttpServlet {
-  
+
       @Override
       protected void doGet(ServletRequest req, ServletResponse res) {
-          
+
           System.out.println("demo7 get...");
       }
       @Override
@@ -608,11 +607,10 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
   在浏览器上输入`http://localhost:8080/web-demo/demo7`,`http://localhost:8080/web-demo/demo8`这两个地址都能访问到ServletDemo7的doGet方法。
 
-* ==urlPattern配置规则==
+- ==urlPattern配置规则==
+  - 精确匹配
 
-  * 精确匹配
-
-    ![1627273174144](https://lsky-pro.smartideahub.site:2083/qls/1627273174144.png)
+    ![1627273174144](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627273174144.png)
 
     ```java
     /**
@@ -621,10 +619,10 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
      */
     @WebServlet(urlPatterns = "/user/select")
     public class ServletDemo8 extends MyHttpServlet {
-    
+
         @Override
         protected void doGet(ServletRequest req, ServletResponse res) {
-    
+
             System.out.println("demo8 get...");
         }
         @Override
@@ -635,27 +633,27 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
     访问路径`http://localhost:8080/web-demo/user/select`
 
-  * 目录匹配
+  - 目录匹配
 
-    ![1627273184095](https://lsky-pro.smartideahub.site:2083/qls/1627273184095.png)
+    ![1627273184095](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627273184095.png)
 
     ```java
     package com.itheima.web;
-    
+
     import javax.servlet.ServletRequest;
     import javax.servlet.ServletResponse;
     import javax.servlet.annotation.WebServlet;
-    
+
     /**
      * UrlPattern:
      * * 目录匹配: /user/*
      */
     @WebServlet(urlPatterns = "/user/*")
     public class ServletDemo9 extends MyHttpServlet {
-    
+
         @Override
         protected void doGet(ServletRequest req, ServletResponse res) {
-    
+
             System.out.println("demo9 get...");
         }
         @Override
@@ -667,34 +665,33 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
     访问路径`http://localhost:8080/web-demo/user/任意`
 
     ==思考:==
-
     1. 访问路径`http://localhost:8080/web-demo/user`是否能访问到demo9的doGet方法?
     2. 访问路径`http://localhost:8080/web-demo/user/a/b`是否能访问到demo9的doGet方法?
     3. 访问路径`http://localhost:8080/web-demo/user/select`是否能访问到demo9还是demo8的doGet方法?
 
     答案是: 能、能、demo8，进而我们可以得到的结论是`/user/*`中的`/*`代表的是零或多个层级访问目录同时精确匹配优先级要高于目录匹配。
 
-  * 扩展名匹配
+  - 扩展名匹配
 
-    ![1627273194118](https://lsky-pro.smartideahub.site:2083/qls/1627273194118.png)
+    ![1627273194118](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627273194118.png)
 
     ```java
     package com.itheima.web;
-    
+
     import javax.servlet.ServletRequest;
     import javax.servlet.ServletResponse;
     import javax.servlet.annotation.WebServlet;
-    
+
     /**
      * UrlPattern:
      * * 扩展名匹配: *.do
      */
     @WebServlet(urlPatterns = "*.do")
     public class ServletDemo10 extends MyHttpServlet {
-    
+
         @Override
         protected void doGet(ServletRequest req, ServletResponse res) {
-    
+
             System.out.println("demo10 get...");
         }
         @Override
@@ -706,36 +703,34 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
     访问路径`http://localhost:8080/web-demo/任意.do`
 
     ==注意==:
-
     1. 如果路径配置的不是扩展名，那么在路径的前面就必须要加`/`否则会报错
 
-    ![1627274483755](https://lsky-pro.smartideahub.site:2083/qls/1627274483755.png)
+    ![1627274483755](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627274483755.png)
+    2. 如果路径配置的是`*.do`,那么在\*.do的前面不能加`/`,否则会报错
 
-    2. 如果路径配置的是`*.do`,那么在*.do的前面不能加`/`,否则会报错
+    ![1627274368245](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627274368245.png)
 
-    ![1627274368245](https://lsky-pro.smartideahub.site:2083/qls/1627274368245.png)
+  - 任意匹配
 
-  * 任意匹配
-
-    ![1627273201370](https://lsky-pro.smartideahub.site:2083/qls/1627273201370.png)
+    ![1627273201370](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1627273201370.png)
 
     ```java
     package com.itheima.web;
-    
+
     import javax.servlet.ServletRequest;
     import javax.servlet.ServletResponse;
     import javax.servlet.annotation.WebServlet;
-    
+
     /**
      * UrlPattern:
      * * 任意匹配： /
      */
     @WebServlet(urlPatterns = "/")
     public class ServletDemo11 extends MyHttpServlet {
-    
+
         @Override
         protected void doGet(ServletRequest req, ServletResponse res) {
-    
+
             System.out.println("demo11 get...");
         }
         @Override
@@ -748,37 +743,36 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
     ```java
     package com.itheima.web;
-    
+
     import javax.servlet.ServletRequest;
     import javax.servlet.ServletResponse;
     import javax.servlet.annotation.WebServlet;
-    
+
     /**
      * UrlPattern:
      * * 任意匹配： /*
      */
     @WebServlet(urlPatterns = "/*")
     public class ServletDemo12 extends MyHttpServlet {
-    
+
         @Override
         protected void doGet(ServletRequest req, ServletResponse res) {
-    
+
             System.out.println("demo12 get...");
         }
         @Override
         protected void doPost(ServletRequest req, ServletResponse res) {
         }
     }
-    
+
     ```
 
     访问路径`<http://localhost:8080/demo-web/任意>`
 
     ==注意:==`/`和`/*`的区别?
-
     1. 当我们的项目中的Servlet配置了 "/",会覆盖掉tomcat中的DefaultServlet,当其他的url-pattern都匹配不上时都会走这个Servlet
 
-    2. 当我们的项目中配置了"/*",意味着匹配任意访问路径
+    2. 当我们的项目中配置了"/\*",意味着匹配任意访问路径
 
     3. DefaultServlet是用来处理静态资源，如果配置了"/"会把默认的覆盖掉，就会引发请求静态资源的时候没有走默认的而是走了自定义的Servlet类，最终导致静态资源不能被访问
 
@@ -786,7 +780,7 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
 1. urlPattern总共有四种配置方式，分别是精确匹配、目录匹配、扩展名匹配、任意匹配
 
-2. 五种配置的优先级为 精确匹配 > 目录匹配> 扩展名匹配 > /* > / ,无需记，以最终运行结果为准。
+2. 五种配置的优先级为 精确匹配 > 目录匹配> 扩展名匹配 > /\* > / ,无需记，以最终运行结果为准。
 
 ## XML配置
 
@@ -794,7 +788,7 @@ Servlet类编写好后，要想被访问到，就需要配置其访问路径（=
 
 对于XML的配置步骤有两步:
 
-* 编写Servlet类
+- 编写Servlet类
 
 ```java
 package com.itheima.web;
@@ -816,7 +810,7 @@ public class ServletDemo13 extends MyHttpServlet {
 }
 ```
 
-* 在web.xml中配置该Servlet
+- 在web.xml中配置该Servlet
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -824,10 +818,10 @@ public class ServletDemo13 extends MyHttpServlet {
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    
-    
-    
-    <!-- 
+
+
+
+    <!--
         Servlet 全类名
     -->
     <servlet>
@@ -837,7 +831,7 @@ public class ServletDemo13 extends MyHttpServlet {
         <servlet-class>com.itheima.web.ServletDemo13</servlet-class>
     </servlet>
 
-    <!-- 
+    <!--
         Servlet 访问路径
     -->
     <servlet-mapping>

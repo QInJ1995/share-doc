@@ -2,7 +2,7 @@
 
 看到SpringMVC这个名字我们会发现其中包含Spring,那么SpringMVC和Spring之间的会有关系么?答案是肯定有，SpringMVC隶属于Spring，是Spring技术中的一部分。那么SpringMVC到底是用来做什么的呢?
 
-* 回想web阶段，我们学习过Servlet,而SpringMVC与Servlet技术功能等同，均属于web层或者说表现层开发技术。
+- 回想web阶段，我们学习过Servlet,而SpringMVC与Servlet技术功能等同，均属于web层或者说表现层开发技术。
 
 那么既然已经有了Servlet为什么还需要花时间再学习一个SpringMVC技术?要回答这个问题，我们就需要搞清楚SpringMVC与Servlet相比，有什么优势:
 
@@ -10,9 +10,9 @@
 
 将资料中的项目导入到IDEA中，打开后格式如下:
 
-![1651590778564](https://lsky-pro.smartideahub.site:2083/qls/1651590778564.png)
+![1651590778564](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1651590778564.png)
 
-* UserSaveServlet:使用Servlet开发的用户新增模块
+- UserSaveServlet:使用Servlet开发的用户新增模块
 
 ```java
 @WebServlet("/user/save")
@@ -36,7 +36,7 @@ public class UserSaveServlet extends HttpServlet{
 }
 ```
 
-* UserUpdateServlet:使用Servlet开发的用户修改模块
+- UserUpdateServlet:使用Servlet开发的用户修改模块
 
 ```java
 @WebServlet("/user/update")
@@ -59,7 +59,7 @@ public class UserUpdateServlet extends HttpServlet{
 }
 ```
 
-* UserDeleteServlet:使用Servlet开发的用户删除模块
+- UserDeleteServlet:使用Servlet开发的用户删除模块
 
 ```java
 @WebServlet("/user/delete")
@@ -83,7 +83,7 @@ public class UserDeleteServlet extends HttpServlet {
 }
 ```
 
-* UserDeleteServlet:使用Servlet开发的用户查询模块
+- UserDeleteServlet:使用Servlet开发的用户查询模块
 
 ```java
 @WebServlet("/user/select")
@@ -109,7 +109,7 @@ public class UserSelectServlet extends HttpServlet{
 
 启动项目，测试结果如下:
 
-![1651591732224](https://lsky-pro.smartideahub.site:2083/qls/1651591732224.png)
+![1651591732224](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1651591732224.png)
 
 上面就是通过Servlet的方式来实现的用户模块的增删改查功能。那么如果使用SpringMVC来开发相同的功能，做出来是什么样子的呢?
 
@@ -151,7 +151,7 @@ public class UserController {
 
 启动项目，测试结果如下:
 
-![1651592524644](https://lsky-pro.smartideahub.site:2083/qls/1651592524644.png)
+![1651592524644](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1651592524644.png)
 
 通过两种技术对相同功能的实现，我们会发现打印输出的结果是一样的，但是对比编写的代码会发现SpringMVC这种开发方式==更简单、更高效==。
 
@@ -159,11 +159,11 @@ public class UserController {
 
 学习之前大家需要记住一件事是，SpringMVC是用来替换Servlet的，所以Servlet能实现的，SpringMVC就能实现，主要学习的内容包含如下模块:
 
-* SpringMVC简介
-* ==请求与响应==
-* ==REST风格==
-* ==SSM整合(注解版)==
-* 拦截器
+- SpringMVC简介
+- ==请求与响应==
+- ==REST风格==
+- ==SSM整合(注解版)==
+- 拦截器
 
 SpringMVC简介：主要是来认识下到底什么是SpringMVC。
 
@@ -184,11 +184,11 @@ SSM整合：是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来�
 
 下面我们就进入SpringMVC这一章内容的学习，在这一章中，我们主要学习如下内容:
 
-* SpringMVC概述
-* 入门案例
-* 入门案例工作流程分析
-* Controller加载控制
-* PostMan
+- SpringMVC概述
+- 入门案例
+- 入门案例工作流程分析
+- Controller加载控制
+- PostMan
 
 本章的核心内容为:`入门案例`和`入门案例工作流程分析`。
 
@@ -196,36 +196,35 @@ SSM整合：是把咱们所学习的SpringMVC+Spring+Mybatis整合在一起来�
 
 我们要学习的SpringMVC究竟是一门什么技术呢?
 
-![1651595619453](https://lsky-pro.smartideahub.site:2083/qls/1651595619453.png)
+![1651595619453](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1651595619453.png)
 
 当前WEB程序的工作流程:
 
 三层架构
 
-* web程序通过浏览器访问前端页面，发送异步请求到后端服务器
+- web程序通过浏览器访问前端页面，发送异步请求到后端服务器
 
-* 后台服务器采用三层架构进行功能开发
-  * 表现层负责接收请求和数据然后将数据转交给业务层
-  * 业务层负责调用数据层完成数据库表的增删改查，并将结果返给表现层
-  * 表现层将数据转换成json格式返回给前端
+- 后台服务器采用三层架构进行功能开发
+  - 表现层负责接收请求和数据然后将数据转交给业务层
+  - 业务层负责调用数据层完成数据库表的增删改查，并将结果返给表现层
+  - 表现层将数据转换成json格式返回给前端
 
-* 前端页面将数据进行解析最终展示给用户。
+- 前端页面将数据进行解析最终展示给用户。
 
 表现层与数据层的技术选型:
 
-* 数据层采用Mybatis框架
-* 变现层采用SpringMVC框架，SpringMVC==主要==负责的内容有:
-  * controller如何接收请求和数据
-  * 如何将请求和数据转发给业务层
-  * 如何将响应数据转换成json发回到前端
+- 数据层采用Mybatis框架
+- 变现层采用SpringMVC框架，SpringMVC==主要==负责的内容有:
+  - controller如何接收请求和数据
+  - 如何将请求和数据转发给业务层
+  - 如何将响应数据转换成json发回到前端
 
 介绍了这么多，最后我们来对SpringMVC一个概述:
 
-* SpringMVC是一种基于Java实现MVC模型的轻量级Web框架
+- SpringMVC是一种基于Java实现MVC模型的轻量级Web框架
 
-* 优点
-
-  * 使用简单、开发便捷(相比于Servlet)
-  * 灵活性强
+- 优点
+  - 使用简单、开发便捷(相比于Servlet)
+  - 灵活性强
 
   这里所说的优点，就需要我们再使用的过程中慢慢体会。

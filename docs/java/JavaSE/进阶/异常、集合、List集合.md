@@ -6,35 +6,35 @@
 
 接下来，学习一下异常，学习异常有利于 处理程序中可能出现的问题。先认识一下，什么是异常？
 
- 阅读下面的代码，通过这段代码来认识异常。  调用一个方法时，经常一部小心就出异常了，然后在控制台打印一些异常信息。其实打印的这些异常信息，就叫做异常。
+阅读下面的代码，通过这段代码来认识异常。 调用一个方法时，经常一部小心就出异常了，然后在控制台打印一些异常信息。其实打印的这些异常信息，就叫做异常。
 
 那肯定有人就纳闷了，我写代码天天出异常，我知道这是异常啊！ 这里学习异常，其实是为了告诉你异常是怎么产生的？只有你知道异常是如何产生的，才能避免出现异常。以及产生异常之后如何处理。
 
-![1667312695257](https://lsky-pro.smartideahub.site:2083/qls/1667312695257.png)
+![1667312695257](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667312695257.png)
 
 因为写代码时经常会出现问题，Java的设计者们早就为 写好了很多个异常类，来描述不同场景下的问题。而有些类是有共性的所以就有了异常的继承体系
 
-![1667313423356](https://lsky-pro.smartideahub.site:2083/qls/1667313423356.png)
+![1667313423356](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667313423356.png)
 
 > **先来演示一个运行时异常产生**
 
 ```java
 int[] arr = {11,22,33};
 //5是一个不存在的索引，所以此时产生ArrayIndexOutOfBoundsExcpetion
-System.out.println(arr[5]); 
+System.out.println(arr[5]);
 ```
 
 下图是API中对ArrayIndexOutOfBoundsExcpetion类的继承体系，以及告诉 它在什么情况下产生。
 
-![1667313567748](https://lsky-pro.smartideahub.site:2083/qls/1667313567748.png)
+![1667313567748](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667313567748.png)
 
 > **再来演示一个编译时异常**
 
- 在调用SimpleDateFormat对象的parse方法时，要求传递的参数必须和指定的日期格式一致，否则就会出现异常。 Java比较贴心，它为了更加强烈的提醒方法的调用者，设计了编译时异常，它把异常的提醒提前了，你调用方法是否真的有问题，只要可能有问题就给你报出异常提示（红色波浪线）。
+在调用SimpleDateFormat对象的parse方法时，要求传递的参数必须和指定的日期格式一致，否则就会出现异常。 Java比较贴心，它为了更加强烈的提醒方法的调用者，设计了编译时异常，它把异常的提醒提前了，你调用方法是否真的有问题，只要可能有问题就给你报出异常提示（红色波浪线）。
 
- **编译时异常的目的：意思就是告诉你，你小子注意了！！，这里小心点容易出错，仔细检查一下**
+**编译时异常的目的：意思就是告诉你，你小子注意了！！，这里小心点容易出错，仔细检查一下**
 
-![1667313705048](https://lsky-pro.smartideahub.site:2083/qls/1667313705048.png)
+![1667313705048](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667313705048.png)
 
 有人说，我检查过了，我确认我的代码没问题，为了让它不报错，继续将代码写下去。 这里有两种解决方案。
 
@@ -75,7 +75,7 @@ public class ExceptionTest1 {
 
 经过刚才的学习已经认识了什么是异常了，但是无法为这个世界上的全部问题都提供异常类，如果企业自己的某种问题，想通过异常来表示，那就需要自己来定义异常类了。
 
- 通过一个实际场景，来给大家演示自定义异常。
+通过一个实际场景，来给大家演示自定义异常。
 
 > 需求：写一个saveAge(int age)方法，在方法中对参数age进行判断，如果age<0或者>=150就认为年龄不合法，如果年龄不合法，就给调用者抛出一个年龄非法异常。
 >
@@ -128,7 +128,7 @@ public class ExceptionTest2 {
 ```java
 1.如果自定义异常类继承Excpetion，则是编译时异常。
  特点：方法中抛出的是编译时异常，必须在方法上使用throws声明，强制调用者处理。
- 
+
 2.如果自定义异常类继承RuntimeException，则运行时异常。
  特点：方法中抛出的是运行时异常，不需要在方法上用throws声明。
 ```
@@ -141,9 +141,9 @@ public class ExceptionTest2 {
 
 此时比较好的做法就是：1.将异常捕获，将比较友好的信息显示给用户看；2.尝试重新执行，看是是否能修复这个问题。
 
-![1667315686041](https://lsky-pro.smartideahub.site:2083/qls/1667315686041.png)
+![1667315686041](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667315686041.png)
 
- 看一个代码，main方法调用test1方法，test1方法调用test2方法，test1和test2方法中多有扔异常。
+看一个代码，main方法调用test1方法，test1方法调用test2方法，test1和test2方法中多有扔异常。
 
 - 第一种处理方式是，在main方法中对异常进行try...catch捕获处理了，给出友好提示。
 
@@ -218,19 +218,19 @@ public class ExceptionTest4 {
 
 前面已经学习过了ArrayList集合，但是除了ArrayList集合，Java还提供了很多种其他的集合，如下图所示：
 
-![1666154871520](https://lsky-pro.smartideahub.site:2083/qls/1666154871520.png)
+![1666154871520](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666154871520.png)
 
 我想你的第一感觉是这些集合好多呀！但是， 学习时会对这些集合进行分类学习，如下图所示：一类是单列集合元素是一个一个的，另一类是双列集合元素是一对一对的。
 
-![1666154948620](https://lsky-pro.smartideahub.site:2083/qls/1666154948620.png)
+![1666154948620](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666154948620.png)
 
 在今天的课程中，主要学习Collection单列集合。Collection是单列集合的根接口，Collection接口下面又有两个子接口List接口、Set接口，List和Set下面分别有不同的实现类，如下图所示：
 
-![1666155169359](https://lsky-pro.smartideahub.site:2083/qls/1666155169359.png)
+![1666155169359](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666155169359.png)
 
 上图中各种集合的特点如下图所示：
 
-![1666155218956](https://lsky-pro.smartideahub.site:2083/qls/1666155218956.png)
+![1666155218956](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666155218956.png)
 
 可以自己写代码验证一下，各种集合的特点
 
@@ -241,7 +241,7 @@ list.add("java1");
 list.add("java2");
 list.add("java1");
 list.add("java2");
-System.out.println(list); //[java1, java2, java1, java2] 
+System.out.println(list); //[java1, java2, java1, java2]
 
 HashSet<String> list = new HashSet<>(); //存取顺序不一致，不重复，无索引
 list.add("java1");
@@ -249,7 +249,7 @@ list.add("java2");
 list.add("java1");
 list.add("java2");
 list.add("java3");
-System.out.println(list); //[java3, java2, java1] 
+System.out.println(list); //[java3, java2, java1]
 ```
 
 ### 2.2 Collection集合的常用方法
@@ -278,7 +278,7 @@ System.out.println(c.remove("java1")); //true
 System.out.println(c); //打印: [java1,java2, java2, java3]
 
 //5.public void clear(): 清空集合的元素
-c.clear(); 
+c.clear();
 System.out.println(c); //打印：[]
 
 //6.public boolean isEmpty(): 判断集合是否为空 是空返回true 反之返回false
@@ -305,17 +305,17 @@ System.out.println(c1); //[java1, java2, java3, java4]
 
 最后， 总结一下Collection集合的常用功能有哪些，ArrayList、LinkedList、HashSet、LinkedHashSet、TreeSet集合都可以调用下面的方法。
 
-![1666158266534](https://lsky-pro.smartideahub.site:2083/qls/1666158266534.png)
+![1666158266534](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666158266534.png)
 
 ## 三、Collection遍历方式
 
-接下来学习一下Collection集合的遍历方式。有人说：“集合的遍历之前不是学过吗？就用普通的for循环啊? “  没错！之前是学过集合遍历，但是之前学习过的遍历方式，只能遍历List集合，不能遍历Set集合，因为以前的普通for循环遍历需要索引，只有List集合有索引，而Set集合没有索引。
+接下来学习一下Collection集合的遍历方式。有人说：“集合的遍历之前不是学过吗？就用普通的for循环啊? “ 没错！之前是学过集合遍历，但是之前学习过的遍历方式，只能遍历List集合，不能遍历Set集合，因为以前的普通for循环遍历需要索引，只有List集合有索引，而Set集合没有索引。
 
 所以 需要有一种通用的遍历方式，能够遍历所有集合。
 
 ### 3.1 迭代器遍历集合
 
- 接下来学习的迭代器就是一种集合的通用遍历方式。
+接下来学习的迭代器就是一种集合的通用遍历方式。
 
 代码写法如下：
 
@@ -347,11 +347,11 @@ while(it.hasNext()){
 - 调用next()方法获取元素，并将当月元素指向下一个位置，
 - 等下次循环时，则获取下一个元素，依此内推
 
-![1666162606524](https://lsky-pro.smartideahub.site:2083/qls/1666162606524.png)
+![1666162606524](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666162606524.png)
 
 最后， 再总结一下，使用迭代器遍历集合用到哪些方法
 
-![1666162899638](https://lsky-pro.smartideahub.site:2083/qls/1666162899638.png)
+![1666162899638](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666162899638.png)
 
 ### 3.2 增强for遍历集合
 
@@ -359,7 +359,7 @@ while(it.hasNext()){
 
 格式如下：
 
-![1666163065998](https://lsky-pro.smartideahub.site:2083/qls/1666163065998.png)
+![1666163065998](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666163065998.png)
 
 需要注意的是，增强for不光可以遍历集合，还可以遍历数组。接下来 用代码演示一em.o下：
 
@@ -372,7 +372,7 @@ c.add("灭绝");
 
 //1.使用增强for遍历集合
 for(String s: c){
-    System.out.println(s); 
+    System.out.println(s);
 }
 
 //2.再尝试使用增强for遍历数组
@@ -386,9 +386,9 @@ for(String name: arr){
 
 在JDK8版本以后还提供了一个forEach方法也可以遍历集合，如果下图所示：
 
-![1666163351517](https://lsky-pro.smartideahub.site:2083/qls/1666163351517.png)
+![1666163351517](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666163351517.png)
 
- 发现forEach方法的参数是一个Consumer接口，而Consumer是一个函数式接口，所以可以传递Lambda表达式
+发现forEach方法的参数是一个Consumer接口，而Consumer是一个函数式接口，所以可以传递Lambda表达式
 
 ```java
 Collection<String> c = new ArrayList<>();
@@ -415,7 +415,7 @@ c.forEach(s->System.out.println(s)); //[赵敏, 小昭, 素素, 灭绝]
 
 接下来， 看一个案例，在集合中存储自定义的对象，并遍历。具体要求如下
 
-![1666164331639](https://lsky-pro.smartideahub.site:2083/qls/1666164331639.png)
+![1666164331639](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666164331639.png)
 
 首先， 得写一个电影类，用来描述每一步电影应该有哪些信息。
 
@@ -445,7 +445,7 @@ public class Test{
         movies.add(new MOvie("《肖申克的救赎》", 9.7, "罗宾斯"));
         movies.add(new MOvie("《霸王别姬》", 9.6, "张国荣、张丰毅"));
         movies.add(new MOvie("《阿甘正传》", 9.5, "汤姆汉克斯"));
-        
+
         for(Movie movie : movies){
             System.out.println("电影名：" + movie.getName());
             System.out.println("评分：" + movie.getScore());
@@ -457,19 +457,19 @@ public class Test{
 
 以上代码的内存原理如下图所示：当往集合中存对象时，实际上存储的是对象的地址值
 
-![1666165033103](https://lsky-pro.smartideahub.site:2083/qls/1666165033103.png)
+![1666165033103](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666165033103.png)
 
 ## 四、List系列集合
 
 前面 已经把Collection通用的功能学习完了，接下来 学习Collection下面的一个子体系List集合。如下图所示：
 
-![1666165150752](https://lsky-pro.smartideahub.site:2083/qls/1666165150752.png)
+![1666165150752](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666165150752.png)
 
 ### 4.1 List集合的常用方法
 
 List集合是索引的，所以多了一些有索引操作的方法，如下图所示：
 
-![1666165187815](https://lsky-pro.smartideahub.site:2083/qls/1666165187815.png)
+![1666165187815](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666165187815.png)
 
 接下来， 用代码演示一下这几个方法的效果
 
@@ -479,7 +479,7 @@ List<String> list = new ArrayList<>();
 list.add("蜘蛛精");
 list.add("至尊宝");
 list.add("至尊宝");
-list.add("牛夫人"); 
+list.add("牛夫人");
 System.out.println(list); //[蜘蛛精, 至尊宝, 至尊宝, 牛夫人]
 
 //2.public void add(int index, E element): 在某个索引位置插入元素
@@ -542,15 +542,15 @@ list.forEach(s->System.out.println(s));
 
 ArrayList集合底层是基于数组结构实现的，也就是说当你往集合容器中存储元素时，底层本质上是往数组中存储元素。 特点如下：
 
-![1666166151267](https://lsky-pro.smartideahub.site:2083/qls/1666166151267.png)
+![1666166151267](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666166151267.png)
 
- 知道数组的长度是固定的，但是集合的长度是可变的，这是怎么做到的呢？原理如下：
+知道数组的长度是固定的，但是集合的长度是可变的，这是怎么做到的呢？原理如下：
 
-![1666166661149](https://lsky-pro.smartideahub.site:2083/qls/1666166661149.png)
+![1666166661149](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666166661149.png)
 
 数组扩容，并不是在原数组上扩容（原数组是不可以扩容的），底层是创建一个新数组，然后把原数组中的元素全部复制到新数组中去。
 
-![1666166956907](https://lsky-pro.smartideahub.site:2083/qls/1666166956907.png)
+![1666166956907](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666166956907.png)
 
 ### 4.4 LinkedList底层原理
 
@@ -558,23 +558,23 @@ ArrayList集合底层是基于数组结构实现的，也就是说当你往集�
 
 LinkedList底层是链表结构，链表结构是由一个一个的节点组成，一个节点由数据值、下一个元素的地址组成。如下图所示
 
-![1666167170415](https://lsky-pro.smartideahub.site:2083/qls/1666167170415.png)
+![1666167170415](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666167170415.png)
 
 假如，现在要在B节点和D节点中间插入一个元素，只需要把B节点指向D节点的地址断掉，重新指向新的节点地址就可以了。如下图所示：
 
-![1666167298885](https://lsky-pro.smartideahub.site:2083/qls/1666167298885.png)
+![1666167298885](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666167298885.png)
 
 假如，现在想要把D节点删除，只需要让C节点指向E节点的地址，然后把D节点指向E节点的地址断掉。此时D节点就会变成垃圾，会把垃圾回收器清理掉。
 
-![1666167419164](https://lsky-pro.smartideahub.site:2083/qls/1666167419164.png)
+![1666167419164](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666167419164.png)
 
 上面的链表是单向链表，它的方向是从头节点指向尾节点的，只能从左往右查找元素，这样查询效率比较慢；还有一种链表叫做双向链表，不光可以从做往右找，还可以从右往左找。如下图所示：
 
-![1666167523139](https://lsky-pro.smartideahub.site:2083/qls/1666167523139.png)
+![1666167523139](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666167523139.png)
 
 LinkedList集合是基于双向链表实现了，所以相对于ArrayList新增了一些可以针对头尾进行操作的方法，如下图示所示：
 
-![1666167572387](https://lsky-pro.smartideahub.site:2083/qls/1666167572387.png)
+![1666167572387](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666167572387.png)
 
 ### 4.5 LinkedList集合的应用场景
 
@@ -582,7 +582,7 @@ LinkedList集合是基于双向链表实现了，所以相对于ArrayList新增�
 
 - 先来认识一下队列结构，队列结构你可以认为是一个上端开口，下端也开口的管子的形状。元素从上端入队列，从下端出队列。
 
-![1666167793391](https://lsky-pro.smartideahub.site:2083/qls/1666167793391.png)
+![1666167793391](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666167793391.png)
 
 入队列可以调用LinkedList集合的addLast方法，出队列可以调用removeFirst()方法.
 
@@ -607,11 +607,11 @@ System.out.println(queue.removeFirst()); //第1号人
 
   元素永远是上端进，也从上端出，先进入的元素会压在最底下，所以**栈结构的特点是先进后出，后进先出**
 
-![1666168222486](https://lsky-pro.smartideahub.site:2083/qls/1666168222486.png)
+![1666168222486](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666168222486.png)
 
 有没有感觉栈结构很像，手枪的子弹夹呀！！第一个压进入的子弹在最底下，最后一个才能打出来，最后一个压进入的子弹在最顶上，第一个打出来。
 
-![1666168656191](https://lsky-pro.smartideahub.site:2083/qls/1666168656191.png)
+![1666168656191](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666168656191.png)
 
 接着， 就用LinkedList来模拟下栈结构，代码如下：
 

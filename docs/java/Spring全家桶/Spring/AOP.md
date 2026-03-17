@@ -19,7 +19,7 @@
 
 ### AOP中的核心概念【理解】
 
-![image-20210730144903209](https://lsky-pro.smartideahub.site:2083/qls/image-20210730144903209.png)
+![image-20210730144903209](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730144903209.png)
 
 - 连接点（JoinPoint）：正在执行的方法，例如：update()、delete()、select()等都是连接点。
 - 切入点（Pointcut）：进行功能增强了的方法，例如:update()、delete()方法，select()方法没有被增强所以不是切入点，但是是连接点。
@@ -74,7 +74,7 @@
 </dependencies>
 ```
 
-![image-20210730150138448](https://lsky-pro.smartideahub.site:2083/qls/image-20210730150138448.png)
+![image-20210730150138448](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730150138448.png)
 
 #### 【第二步】定义dao接口与实现类
 
@@ -129,7 +129,7 @@ public class MyAdvice {
 }
 ```
 
-![image-20210730154740528](https://lsky-pro.smartideahub.site:2083/qls/image-20210730154740528.png)
+![image-20210730154740528](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730154740528.png)
 
 #### 【第五步】在配置类中进行Spring注解包扫描和开启AOP功能
 
@@ -154,7 +154,7 @@ public class App {
 }
 ```
 
-![image-20210730151347354](https://lsky-pro.smartideahub.site:2083/qls/image-20210730151347354.png)
+![image-20210730151347354](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730151347354.png)
 
 ## AOP工作流程【理解】
 
@@ -192,7 +192,7 @@ public class App {
 }
 ```
 
-![image-20210730152631741](https://lsky-pro.smartideahub.site:2083/qls/image-20210730152631741.png)
+![image-20210730152631741](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730152631741.png)
 
 ## AOP切入点表达式
 
@@ -205,7 +205,6 @@ public class App {
 - 切入点：要进行增强的方法
 
 - 切入点表达式：要进行增强的方法的描述方式
-
   - 描述方式一：执行com.itheima.dao包下的BookDao接口中的无参数update方法
 
   ```java
@@ -218,7 +217,7 @@ public class App {
   execution(void com.itheima.dao.impl.BookDaoImpl.update())
   ```
 
-- 切入点表达式标准格式：动作关键字(访问修饰符  返回值  包名.类/接口名.方法名(参数) 异常名）
+- 切入点表达式标准格式：动作关键字(访问修饰符 返回值 包名.类/接口名.方法名(参数) 异常名）
 
   ```
   execution(public User com.itheima.service.UserService.findById(int))
@@ -259,7 +258,7 @@ execution（public User com..UserService.findById(..))
 execution(* *..*Service+.*(..))
 ```
 
-<!-- ![image-20210730153824117](https://lsky-pro.smartideahub.site:2083/qls/image-20210730153824117.png) -->
+<!-- ![image-20210730153824117](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730153824117.png) -->
 
 ### 书写技巧
 
@@ -465,7 +464,7 @@ public class AccountServiceTestCase {
 }
 ```
 
-![image-20210730164219555](https://lsky-pro.smartideahub.site:2083/qls/image-20210730164219555.png)
+![image-20210730164219555](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730164219555.png)
 
 ### AOP切入点数据获取
 
@@ -562,7 +561,7 @@ public Object around(ProceedingJoinPoint pjp)  {
 
 需求：对百度网盘分享链接输入密码时尾部多输入的空格做兼容处理
 
-![image-20210731193059709](https://lsky-pro.smartideahub.site:2083/qls/image-20210731193059709.png)
+![image-20210731193059709](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210731193059709.png)
 
 分析：
 ①：在业务方法执行之前对所有的输入参数进行格式处理——trim()
@@ -606,7 +605,7 @@ public class ResourcesDaoImpl implements ResourcesDao {
 @Component
 @Aspect
 public class DataAdvice {
-    
+
     @Pointcut("execution(boolean com.itheima.service.*Service.*(*,*))")
     private void servicePt(){}
 
@@ -664,22 +663,17 @@ public class App {
 
 #### 切入点表达式语法
 
-- 切入点表达式标准格式：动作关键字(访问修饰符  返回值  包名.类/接口名.方法名（参数）异常名)
-  - execution(* com.itheima.service.*Service.*(..))
+- 切入点表达式标准格式：动作关键字(访问修饰符 返回值 包名.类/接口名.方法名（参数）异常名)
+  - execution(* com.itheima.service.*Service.\*(..))
 - 切入点表达式描述通配符：
   - 作用：用于快速描述，范围描述
-  - *：匹配任意符号（常用）
+  - \*：匹配任意符号（常用）
   - .. ：匹配多个连续的任意符号（常用）
   - +：匹配子类类型
 
 - 切入点表达式书写技巧
 
-  1.按标准规范开发
-  2.查询操作的返回值建议使用\*匹配
-  3.减少使用..的形式描述包
-  4.对接口进行描述，使用\*表示模块名，例如UserService的匹配描述为*Service
-  5.方法名书写保留动词，例如get，使用\*表示名词，例如getById匹配描述为getBy\*
-  6.参数根据实际情况灵活调整
+  1.按标准规范开发2.查询操作的返回值建议使用\*匹配3.减少使用..的形式描述包4.对接口进行描述，使用\*表示模块名，例如UserService的匹配描述为\*Service 5.方法名书写保留动词，例如get，使用\*表示名词，例如getById匹配描述为getBy\* 6.参数根据实际情况灵活调整
 
 #### 五种通知类型
 

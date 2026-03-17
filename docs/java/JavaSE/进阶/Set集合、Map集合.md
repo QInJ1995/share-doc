@@ -6,7 +6,7 @@
 
 Set集合是属于Collection体系下的另一个分支，它的特点如下图所示
 
-![1666169984705](https://lsky-pro.smartideahub.site:2083/qls/1666169984705-1667311908041.png)
+![1666169984705](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666169984705-1667311908041.png)
 
 下面 用代码简单演示一下，每一种Set集合的特点。
 
@@ -33,16 +33,16 @@ HashSet集合底层是基于哈希表实现的，哈希表根据JDK版本的不�
 - JDK8以前：哈希表 = 数组+链表
 - JDK8以后：哈希表 = 数组+链表+红黑树
 
-![1666170451762](https://lsky-pro.smartideahub.site:2083/qls/1666170451762-1667311904484.png)
+![1666170451762](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666170451762-1667311904484.png)
 
- 发现往HashSet集合中存储元素时，底层调用了元素的两个方法：一个是hashCode方法获取元素的hashCode值（哈希值）；另一个是调用了元素的equals方法，用来比较新添加的元素和集合中已有的元素是否相同。
+发现往HashSet集合中存储元素时，底层调用了元素的两个方法：一个是hashCode方法获取元素的hashCode值（哈希值）；另一个是调用了元素的equals方法，用来比较新添加的元素和集合中已有的元素是否相同。
 
 - 只有新添加元素的hashCode值和集合中以后元素的hashCode值相同、新添加的元素调用equals方法和集合中已有元素比较结果为true, 才认为元素重复。
 - 如果hashCode值相同，equals比较不同，则以链表的形式连接在数组的同一个索引为位置（如上图所示）
 
 在JDK8开始后，为了提高性能，当链表的长度超过8时，就会把链表转换为红黑树，如下图所示：
 
-![1666171011761](https://lsky-pro.smartideahub.site:2083/qls/1666171011761-1667311900100.png)
+![1666171011761](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666171011761-1667311900100.png)
 
 ### 1.3 HashSet去重原理
 
@@ -55,7 +55,7 @@ public class Student{
     private String name; //姓名
     private int age; //年龄
     private double height; //身高
- 
+
     //无参数构造方法
     public Student(){}
     //全参数构造方法
@@ -65,7 +65,7 @@ public class Student{
         this.height=height;
     }
     //...get、set、toString()方法自己补上..
-    
+
     //按快捷键生成hashCode和equals方法
     //alt+insert 选择 hashCode and equals
     @Override
@@ -103,12 +103,12 @@ public class Test{
         Student s2 = new Student("蜘蛛精",23, 169.6);
         Student s3 = new Student("蜘蛛精",23, 169.6);
         Student s4 = new Student("牛魔王",48, 169.6);
-        
+
         students.add(s1);
         students.add(s2);
         students.add(s3);
         students.add(s4);
-        
+
         for(Student s : students){
             System.out.println(s);
         }
@@ -128,7 +128,7 @@ Student{name='蜘蛛精', age=23, height=169.6}
 
 接下来， 再学习一个HashSet的子类LinkedHashSet类。LinkedHashSet它底层采用的是也是哈希表结构，只不过额外新增了一个双向链表来维护元素的存取顺序。如下下图所示：
 
-![1666171776819](https://lsky-pro.smartideahub.site:2083/qls/1666171776819-1667311894748.png)
+![1666171776819](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666171776819-1667311894748.png)
 
 每次添加元素，就和上一个元素用双向链表连接一下。第一个添加的元素是双向链表的头节点，最后一个添加的元素是双向链表的尾节点。
 
@@ -142,12 +142,12 @@ public class Test{
         Student s2 = new Student("蜘蛛精",23, 169.6);
         Student s3 = new Student("蜘蛛精",23, 169.6);
         Student s4 = new Student("牛魔王",48, 169.6);
-        
+
         students.add(s1);
         students.add(s2);
         students.add(s3);
         students.add(s4);
-        
+
         for(Student s : students){
             System.out.println(s);
         }
@@ -209,14 +209,14 @@ students.add(s1);
 students.add(s2);
 students.add(s3);
 students.add(s4);
-System.out.println(students); 
+System.out.println(students);
 ```
 
 此时运行代码，会直接报错。原因是TreeSet不知道按照什么条件对Student对象来排序。
 
-![1666172629095](https://lsky-pro.smartideahub.site:2083/qls/1666172629095-1667311889347.png)
+![1666172629095](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666172629095-1667311889347.png)
 
- 想要告诉TreeSet集合按照指定的规则排序，有两种办法：
+想要告诉TreeSet集合按照指定的规则排序，有两种办法：
 
 > 第一种：让元素的类实现Comparable接口，重写compareTo方法
 > 第二种：在创建TreeSet集合时，通过构造方法传递Compartor比较器对象
@@ -239,7 +239,7 @@ public class Student implements Comparable<Student>{
         this.height=height;
     }
     //...get、set、toString()方法自己补上..
-    
+
     //第二步：重写compareTo方法
     //按照年龄进行比较，只需要在方法中让this.age和o.age相减就可以。
     /*
@@ -277,7 +277,7 @@ Set<Student> students = new TreeSet<>(new Comparator<Student>{
     @Override
     public int compare(Student o1, Student o2){
         //需求：按照学生的身高排序
-        return Double.compare(o1,o2); 
+        return Double.compare(o1,o2);
     }
 });
 
@@ -292,14 +292,14 @@ students.add(s1);
 students.add(s2);
 students.add(s3);
 students.add(s4);
-System.out.println(students); 
+System.out.println(students);
 ```
 
 ### 1.6 总结Collection集合
 
 最后，将所有的Collection集合总结一下，要求大家掌握每一种集合的特点，以及他们的体系结构。
 
-![1666174020172](https://lsky-pro.smartideahub.site:2083/qls/1666174020172-1667311882030.png)
+![1666174020172](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666174020172-1667311882030.png)
 
 好了，关于Collection集合，到这里就学习完了。
 
@@ -307,7 +307,7 @@ System.out.println(students);
 
 学完Collection集合后，还有一个小问题需要补充说明一下，那就是在使用迭代器遍历集合时，可能存在并发修改异常。
 
- 先把这个异常用代码演示出来，再解释一下为什么会有这个异常产生
+先把这个异常用代码演示出来，再解释一下为什么会有这个异常产生
 
 ```java
 List<String> list = new ArrayList<>();
@@ -332,7 +332,7 @@ System.out.println(list);
 
 运行上面的代码，会出现下面的异常。这就是并发修改异常
 
-![1666174432223](https://lsky-pro.smartideahub.site:2083/qls/1666174432223-1667311876805.png)
+![1666174432223](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1666174432223-1667311876805.png)
 
 为什么会出现这个异常呢？那是因为迭代器遍历机制，规定迭代器遍历集合的同时，不允许集合自己去增删元素，否则就会出现这个异常。
 
@@ -369,7 +369,6 @@ System.out.println(list);
 首先， 来学习一下可变参数。关于可变参数 首先要知道它是什么，然后要知道它的本质。搞清楚这两个问题，可变参数就算你学明白了。
 
 > - **可变参数是一种特殊的形式参数，定义在方法、构造器的形参列表处，它可以让方法接收多个同类型的实际参数。**
->
 > - **可变参数在方法内部，本质上是一个数组**
 
 接下来， 编写代码来演示一下
@@ -378,16 +377,16 @@ System.out.println(list);
 public class ParamTest{
     public static void main(String[] args){
         //不传递参数，下面的nums长度则为0, 打印元素是[]
-        test(); 
-        
+        test();
+
         //传递3个参数，下面的nums长度为3，打印元素是[10, 20, 30]
-        test(10,20,30); 
-        
-        //传递一个数组，下面数组长度为4，打印元素是[10,20,30,40] 
+        test(10,20,30);
+
+        //传递一个数组，下面数组长度为4，打印元素是[10,20,30,40]
         int[] arr = new int[]{10,20,30,40}
-        test(arr); 
+        test(arr);
     }
-    
+
     public static void test(int...nums){
         //可变参数在方法内部，本质上是一个数组
         System.out.println(nums.length);
@@ -400,12 +399,11 @@ public class ParamTest{
 最后还有一些错误写法，需要让大家写代码时注意一下，不要这么写哦！！！
 
 > - **一个形参列表中，只能有一个可变参数；否则会报错**
->
 > - **一个形参列表中如果多个参数，可变参数需要写在最后；否则会报错**
 
-![1667194652653](https://lsky-pro.smartideahub.site:2083/qls/1667194652653.png)
+![1667194652653](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667194652653.png)
 
-![1667194696892](https://lsky-pro.smartideahub.site:2083/qls/1667194696892.png)
+![1667194696892](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667194696892.png)
 
 ### 2.2 Collections工具类
 
@@ -413,9 +411,9 @@ public class ParamTest{
 
 注意Collections并不是集合，它比Collection多了一个s，一般后缀为s的类很多都是工具类。这里的Collections是用来操作Collection的工具类。它提供了一些好用的静态方法，如下
 
-![1667195108724](https://lsky-pro.smartideahub.site:2083/qls/1667195108724.png)
+![1667195108724](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667195108724.png)
 
- 把这些方法用代码来演示一下：
+把这些方法用代码来演示一下：
 
 ```java
 public class CollectionsTest{
@@ -424,11 +422,11 @@ public class CollectionsTest{
         List<String> names = new ArrayList<>();
         Collections.addAll(names, "张三","王五","李四", "张麻子");
         System.out.println(names);
-        
+
         //2.public static void shuffle(List<?> list)：对集合打乱顺序
         Collections.shuffle(names);
         System.out.println(names);
-        
+
         //3.public static <T> void short(List<T list): 对List集合排序
         List<Integer> list = new ArrayList<>();
         list.add(3);
@@ -451,7 +449,7 @@ public class Student implements Comparable<Student>{
     private String name;
     private int age;
     private double height;
-    
+
      //排序时：底层会自动调用此方法，this和o表示需要比较的两个对象
     @Override
     public int compareTo(Student o){
@@ -461,7 +459,7 @@ public class Student implements Comparable<Student>{
         //如果返回0：说明左边对象的年龄和右边对象的年龄相同
         return this.age - o.age;
     }
-    
+
     //...getter、setter、constructor..
 }
 ```
@@ -480,10 +478,10 @@ students.add(new Student("至尊宝",26,169.5));
 原理：sort方法底层会遍历students集合中的每一个元素，采用排序算法，将任意两个元素两两比较；
  每次比较时，会用一个Student对象调用compareTo方法和另一个Student对象进行比较；
  根据compareTo方法返回的结果是正数、负数，零来决定谁大，谁小，谁相等，重新排序元素的位置
- 
+
  注意：这些都是sort方法底层自动完成的，想要完全理解，必须要懂排序算法才行；
 */
-Collections.sort(students); 
+Collections.sort(students);
 System.out.println(students);
 ```
 
@@ -494,7 +492,7 @@ System.out.println(students);
 原理：sort方法底层会遍历students集合中的每一个元素，采用排序算法，将任意两个元素两两比较；
  每次比较，会将比较的两个元素传递给Comparator比较器对象的compare方法的两个参数o1和o2,
  根据compare方法的返回结果是正数，负数，或者0来决定谁大，谁小，谁相等，重新排序元素的位置
- 
+
  注意：这些都是sort方法底层自动完成的，不需要 完全理解，想要理解它必须要懂排序算法才行.
 */
 Collections.sort(students, new Comparator<Student>(){
@@ -502,15 +500,15 @@ Collections.sort(students, new Comparator<Student>(){
     public int compare(Student o1, Student o2){
         return o1.getAge()-o2.getAge();
     }
-}); 
+});
 System.out.println(students);
 ```
 
 ### 2.3 斗地主案例
 
-![1667306432458](https://lsky-pro.smartideahub.site:2083/qls/1667306432458.png)
+![1667306432458](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667306432458.png)
 
- 先分析一下业务需求：
+先分析一下业务需求：
 
 - 总共有54张牌，每一张牌有花色和点数两个属性、为了排序还可以再加一个序号
 - 点数可以是：`“3”,"4","5","6","7","8","9","10","J","Q","K","A","2"`
@@ -607,66 +605,66 @@ public class Room {
 
 > **最后完成第三步，定义一个启动游戏的方法，完成洗牌、发牌、捋牌、看牌的业务逻辑**
 
-  ```java
+```java
 /**
 * 游戏启动
 */
 public void start() {
-    // 1、洗牌： allCards
-    Collections.shuffle(allCards);
-    System.out.println("洗牌后：" + allCards);
+  // 1、洗牌： allCards
+  Collections.shuffle(allCards);
+  System.out.println("洗牌后：" + allCards);
 
-    // 2、发牌，首先肯定要定义 三个玩家。 List(ArrayList)  Set(TreeSet)
-    List<Card> linHuChong = new ArrayList<>();
-    List<Card> jiuMoZhi = new ArrayList<>();
-    List<Card> renYingYing = new ArrayList<>();
-    // 正式发牌给这三个玩家，依次发出51张牌，剩余3张做为底牌。
-    // allCards = [♥3, ♣10, ♣4, ♥K, ♦Q, ♣2, 🃏, ♣8, ....
-    //             0     1   2   3   4   5   6 ...   % 3
-    for (int i = 0; i < allCards.size() - 3; i++) {
-        Card c = allCards.get(i);
-        // 判断牌发给谁
-        if(i % 3 == 0){
-            // 请啊冲接牌
-            linHuChong.add(c);
-        }else if(i % 3 == 1){
-            // 请啊鸠来接牌
-            jiuMoZhi.add(c);
-        }else if(i % 3 == 2){
-            // 请盈盈接牌
-            renYingYing.add(c);
-        }
-    }
+  // 2、发牌，首先肯定要定义 三个玩家。 List(ArrayList)  Set(TreeSet)
+  List<Card> linHuChong = new ArrayList<>();
+  List<Card> jiuMoZhi = new ArrayList<>();
+  List<Card> renYingYing = new ArrayList<>();
+  // 正式发牌给这三个玩家，依次发出51张牌，剩余3张做为底牌。
+  // allCards = [♥3, ♣10, ♣4, ♥K, ♦Q, ♣2, 🃏, ♣8, ....
+  //             0     1   2   3   4   5   6 ...   % 3
+  for (int i = 0; i < allCards.size() - 3; i++) {
+      Card c = allCards.get(i);
+      // 判断牌发给谁
+      if(i % 3 == 0){
+          // 请啊冲接牌
+          linHuChong.add(c);
+      }else if(i % 3 == 1){
+          // 请啊鸠来接牌
+          jiuMoZhi.add(c);
+      }else if(i % 3 == 2){
+          // 请盈盈接牌
+          renYingYing.add(c);
+      }
+  }
 
-    // 3、对3个玩家的牌进行排序
-    sortCards(linHuChong);
-    sortCards(jiuMoZhi);
-    sortCards(renYingYing);
-    // 4、看牌
-    System.out.println("啊冲：" + linHuChong);
-    System.out.println("啊鸠：" + jiuMoZhi);
-    System.out.println("盈盈：" + renYingYing);
-    List<Card> lastThreeCards = allCards.subList(allCards.size() - 3, allCards.size()); // 51 52 53
-    System.out.println("底牌：" + lastThreeCards);
-    jiuMoZhi.addAll(lastThreeCards);
-    sortCards(jiuMoZhi);
-    System.out.println("啊鸠抢到地主后：" + jiuMoZhi);
+  // 3、对3个玩家的牌进行排序
+  sortCards(linHuChong);
+  sortCards(jiuMoZhi);
+  sortCards(renYingYing);
+  // 4、看牌
+  System.out.println("啊冲：" + linHuChong);
+  System.out.println("啊鸠：" + jiuMoZhi);
+  System.out.println("盈盈：" + renYingYing);
+  List<Card> lastThreeCards = allCards.subList(allCards.size() - 3, allCards.size()); // 51 52 53
+  System.out.println("底牌：" + lastThreeCards);
+  jiuMoZhi.addAll(lastThreeCards);
+  sortCards(jiuMoZhi);
+  System.out.println("啊鸠抢到地主后：" + jiuMoZhi);
 }
 
 /**
-     * 集中进行排序
-     * @param cards
-     */
+   * 集中进行排序
+   * @param cards
+   */
 private void sortCards(List<Card> cards) {
-    Collections.sort(cards, new Comparator<Card>() {
-        @Override
-        public int compare(Card o1, Card o2) {
-            // return o1.getSize() - o2.getSize(); // 升序排序
-            return o2.getSize() - o1.getSize(); // 降序排序
-        }
-    });
+  Collections.sort(cards, new Comparator<Card>() {
+      @Override
+      public int compare(Card o1, Card o2) {
+          // return o1.getSize() - o2.getSize(); // 升序排序
+          return o2.getSize() - o1.getSize(); // 降序排序
+      }
+  });
 }
-  ```
+```
 
 不要忘记了写测试类了，
 
@@ -692,7 +690,7 @@ public class GameDemo {
 
 所有的Map集合有如下的特点：**键不能重复，值可以重复，每一个键只能找到自己对应的值。**
 
-![1667308368751](https://lsky-pro.smartideahub.site:2083/qls/1667308368751.png)
+![1667308368751](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667308368751.png)
 
 下面 先写一个Map集合，保存几个键值对，体验一下Map集合的特点
 
@@ -720,7 +718,7 @@ public class MapTest1 {
 
 Map集合也有很多种，在Java中使用不同的类来表示的，每一种Map集合其键的特点是有些差异的，值是键的一个附属值，所以 只关注键的特点就可以了。
 
-![1667308506610](https://lsky-pro.smartideahub.site:2083/qls/1667308506610.png)
+![1667308506610](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667308506610.png)
 
 关于Map集合是什么，以及Map集合的体系 先了解到这里，接下来就具体学习一下Map集合的通用方法。
 
@@ -728,7 +726,7 @@ Map集合也有很多种，在Java中使用不同的类来表示的，每一种M
 
 上节课 已经认识了Map集合，接下来 学习一下Map集合提供了那些方法供 使用。由于Map是所有双列集合的父接口，所以 只需要学习Map接口中每一个方法是什么含义，那么所有的Map集合方法你就都会用了。
 
-![1667308854001](https://lsky-pro.smartideahub.site:2083/qls/1667308854001.png)
+![1667308854001](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667308854001.png)
 
 ```java
 public class MapTest2 {
@@ -799,7 +797,7 @@ public class MapTest2 {
 
 Map集合一共有三种遍历方式， 先来学习第一种，他需要用到下面的两个方法
 
-![1667308962740](https://lsky-pro.smartideahub.site:2083/qls/1667308962740.png)
+![1667308962740](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667308962740.png)
 
 ```java
 /**
@@ -840,7 +838,7 @@ public class MapTest1 {
 
 **这里Map集合的第二种方式，是直接获取每一个Entry对象，把Entry存储扫Set集合中去，再通过Entry对象获取键和值。**
 
-![1667309587178](https://lsky-pro.smartideahub.site:2083/qls/1667309587178.png)
+![1667309587178](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667309587178.png)
 
 ```java
 /**
@@ -859,7 +857,7 @@ public class MapTest2 {
         // entry = (蜘蛛精=169.8)
         // entry = (牛魔王=183.6)
         // ...
-  
+
         // 1、调用Map集合提供entrySet方法，把Map集合转换成键值对类型的Set集合
         Set<Map.Entry<String, Double>> entries = map.entrySet();
         for (Map.Entry<String, Double> entry : entries) {
@@ -875,7 +873,7 @@ public class MapTest2 {
 
 Map集合的第三种遍历方式，需要用到下面的一个方法forEach，而这个方法是JDK8版本以后才有的。调用起来非常简单，最好是结合的lambda表达式一起使用。
 
-![1667309230571](https://lsky-pro.smartideahub.site:2083/qls/1667309230571.png)
+![1667309230571](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667309230571.png)
 
 ```java
 /**
@@ -911,7 +909,7 @@ public class MapTest3 {
 
 学习完Map集合的基本用法之后，接下来 做一个综合案例，将Map集合运用一下。
 
-![1667311182716](https://lsky-pro.smartideahub.site:2083/qls/1667311182716.png)
+![1667311182716](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667311182716.png)
 
 先分析需求，再考虑怎么用代码实现
 

@@ -2,7 +2,7 @@
 
 ## 一、今日内容介绍、API概述
 
- 前面已经学习了面向对象编程，使用面向编程这个套路， 需要自己写类，然后创建对象来解决问题。但是在以后的实际开发中，更多的时候， 是利用面向编程这种套路，使用别人已经写好的类来编程的。
+前面已经学习了面向对象编程，使用面向编程这个套路， 需要自己写类，然后创建对象来解决问题。但是在以后的实际开发中，更多的时候， 是利用面向编程这种套路，使用别人已经写好的类来编程的。
 
 这就是 今天要学习的内容——常用API（全称是Application Program Interface 应用程序接口），说人话就是：**别人写好的一些程序，给咱们程序员直接拿去调用。**
 
@@ -13,17 +13,17 @@ Java官方其实已经给 写好了很多很多类，每一个类中又提供了
 
 像这样的类还有很多，Java把这些类是干什么用的、类中的每一个方法是什么含义，编写成了文档， 把这个文档称之为API文档。
 
-![1662602386634](https://lsky-pro.smartideahub.site:2083/qls/1662602386634.png)
+![1662602386634](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662602386634.png)
 
-**1.  为什么要学习别人写好的程序呢？**
+**1. 为什么要学习别人写好的程序呢？**
 
-​  在行业中有这么一句话：“不要重复造轮子”。这里所说的轮子就是别人已经写过的程序。意思就是不要写重复的程序，因为程序是用来解决问题的，如果这个问题别人已经解决过，并且这个解决方案也得到了市场认可，那就不用再自己重复写这个程序了。
+​ 在行业中有这么一句话：“不要重复造轮子”。这里所说的轮子就是别人已经写过的程序。意思就是不要写重复的程序，因为程序是用来解决问题的，如果这个问题别人已经解决过，并且这个解决方案也得到了市场认可，那就不用再自己重复写这个程序了。
 
-​  Java已经发展了20多年，在这20多年里，已经积累类了很多问题的解决方案，基本上现在 遇到的问题，在这20多年里，早就有人解决过。
+​ Java已经发展了20多年，在这20多年里，已经积累类了很多问题的解决方案，基本上现在 遇到的问题，在这20多年里，早就有人解决过。
 
-​  所以 把面向对象的高级知识学习完之后，Java语言的语法知识就已经学习完了。剩下的所有内容都是是学习一个一个的API，通过调用API提供的方法来解决实际问题。
+​ 所以 把面向对象的高级知识学习完之后，Java语言的语法知识就已经学习完了。剩下的所有内容都是是学习一个一个的API，通过调用API提供的方法来解决实际问题。
 
-**2.  要学习哪些API**
+**2. 要学习哪些API**
 
 Java的API文档中，有那么多的类，是所有的类都要学习吗？并不是 ，虽然Java提供了很多个类，但是并不是所有类都得到了市场认可， 只学习一些在工作中常用的就行。
 
@@ -31,31 +31,31 @@ Java的API文档中，有那么多的类，是所有的类都要学习吗？并�
 
 **3. 今天 主要学习两个类，一个是String类、还有一个是ArrayList类。**
 
-![1662605214383](https://lsky-pro.smartideahub.site:2083/qls/1662605214383.png)
+![1662605214383](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605214383.png)
 
 字符串的应用场景是非常多的，可以说是无处不在。
 
 比如，在用户登录时，需要对用户名和密码进行校验，这里的用户名和密码都是String
 
-![1662605347797](https://lsky-pro.smartideahub.site:2083/qls/1662605347797.png)
+![1662605347797](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605347797.png)
 
 再比如，在和网友聊天时，其实输入的文字就是一个一个字符串
 
-![1662605396550](https://lsky-pro.smartideahub.site:2083/qls/1662605396550.png)
+![1662605396550](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605396550.png)
 
 再比如，在百度上搜索时，搜素的关键词，也是字符串
 
-![1662605442842](https://lsky-pro.smartideahub.site:2083/qls/1662605442842.png)
+![1662605442842](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605442842.png)
 
 学习完String类之后，还会学习一个类ArrayList
 
-![1662605519698](https://lsky-pro.smartideahub.site:2083/qls/1662605519698.png)
+![1662605519698](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605519698.png)
 
 大家知道数组是一个容器，有数组干嘛还要集合呢？ 因为数字的长度是固定的，一旦创建不可改变。
 
 比如数组的长度为3，想要存储第4个元素就存不进去了。
 
-![1662605575865](https://lsky-pro.smartideahub.site:2083/qls/1662605575865.png)
+![1662605575865](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605575865.png)
 
 使用集合就可以解决上面的问题，集合可以根据需要想存多少个元素就存多少个元素。
 
@@ -67,7 +67,7 @@ Java的API文档中，有那么多的类，是所有的类都要学习吗？并�
 
 包其实类似于文件夹，一个包中可以放多个类文件。如下图所示
 
-![1662605881879](https://lsky-pro.smartideahub.site:2083/qls/1662605881879.png)
+![1662605881879](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605881879.png)
 
 建包的语法格式：
 
@@ -76,7 +76,7 @@ Java的API文档中，有那么多的类，是所有的类都要学习吗？并�
 package com.test.javabean;
 
 public class 类名{
-    
+
 }
 ```
 
@@ -100,25 +100,25 @@ public class 类名{
 
 比如：在用户登录时，用户输入的用户名和密码送到后台，需要和正确的用户名和密码进行校验，这就需要用到String类提供的比较功能。
 
-![1662605347797](https://lsky-pro.smartideahub.site:2083/qls/1662605347797.png)
+![1662605347797](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605347797.png)
 
 再比如：在直播留言时，有些人可能不太文明说了一些脏话，后台检测到你输入的是脏话，就会用`***`把脏话屏蔽掉。这也需要用到String类提供的替换功能
 
-![1662605396550](https://lsky-pro.smartideahub.site:2083/qls/1662605396550.png)
+![1662605396550](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662605396550.png)
 
 Java为了方便 处理字符串，所以给 提供了一个String类来代表字符串，这个类就是`java.lang`包下。
 
 按照面向对象的编程思想，对于字符串的操作，只需要创建字符串对象，用字符串对象封装字符串数据，然后调用String类的方法就可以了。
 
-![1662607669465](https://lsky-pro.smartideahub.site:2083/qls/1662607669465.png)
+![1662607669465](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662607669465.png)
 
-----
+---
 
 ### 2. String创建对象
 
 接下来 打开String类的API，看一下String类的对象如何创建。如下图所示
 
-![1662607801186](https://lsky-pro.smartideahub.site:2083/qls/1662607801186.png)
+![1662607801186](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662607801186.png)
 
 String类的API中，有这么一句话：“Java程序中的所有字符串字面值（如"abc"）都是字符串的实例实现”。这里所说的实例实现，其实指的就是字符串对象。
 
@@ -134,9 +134,9 @@ String s2 = "爱坤程序员"; //这里的“爱坤程序员”也是一个字�
 
 - 创建String对象还有第二种方式，就是利用String类的构造方法创建String类的对象。
 
-![1662608166502](https://lsky-pro.smartideahub.site:2083/qls/1662608166502.png)
+![1662608166502](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662608166502.png)
 
- 前面学习过类的构造方法，执行构造方法需要用到new关键字。`new String(参数)`就是在执行String类的构造方法。
+前面学习过类的构造方法，执行构造方法需要用到new关键字。`new String(参数)`就是在执行String类的构造方法。
 
 下面 演示通过String类的构造方法，创建String类的对象
 
@@ -178,7 +178,7 @@ System.out.println(rs4);
 
 这里已经将String类的常用方法挑出来了， 先快速的认识一下。为什么是快速认识一下呢？因为API真正的作用是来解决业务需求的，如果不解决业务需求，只是记API是很难记住的。
 
-![1662609378727](https://lsky-pro.smartideahub.site:2083/qls/1662609378727.png)
+![1662609378727](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662609378727.png)
 
 所以API的正确打开方式是，先找到这个类，把这个类中的方法先用代码快速过一遍，有一个大概印象就行。然后再具体的案例中，选择你需要的方法来用就行。
 
@@ -232,7 +232,7 @@ public class StringDemo2 {
         String rs2 = s3.substring(5);
         System.out.println(rs2);
 
-        // 8、把字符串中的某个内容替换成新内容，并返回新的字符串对象给 
+        // 8、把字符串中的某个内容替换成新内容，并返回新的字符串对象给
         String info = "这个电影简直是个垃圾，垃圾电影！！";
         String rs3 = info.replace("垃圾", "**");
         System.out.println(rs3);
@@ -249,7 +249,7 @@ public class StringDemo2 {
         System.out.println(rs4.startsWith("张三"));
         System.out.println(rs4.startsWith("张三2"));
 
-        // 11、把字符串按照某个指定内容分割成多个字符串，放到一个字符串数组中返回给 
+        // 11、把字符串按照某个指定内容分割成多个字符串，放到一个字符串数组中返回给
         String rs5 = "张无忌,周芷若,殷素素,赵敏";
         String[] names = rs5.split(",");
         for (int i = 0; i < names.length; i++) {
@@ -269,17 +269,17 @@ public class StringDemo2 {
 
 所以把字符串原理性的内容，就当做注意事项来学习一下。一共有下面的2点：
 
-![1662610060051](https://lsky-pro.smartideahub.site:2083/qls/1662610060051.png)
+![1662610060051](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662610060051.png)
 
 - **注意事项1：String类的对象是不可变的对象**
 
- 先看一段代码，分析这段代码的结果
+先看一段代码，分析这段代码的结果
 
-![1662610347618](https://lsky-pro.smartideahub.site:2083/qls/1662610347618.png)
+![1662610347618](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662610347618.png)
 
 以上代码中，先定义了一个String变量 name第一次赋值为`“爱坤”;` 然后对`name`变量记录的字符串进行两次拼接，第一次拼接`“程序员”`，第二次拼接`“播妞”`； 发现得到的结果是：`爱坤程序员播妞`
 
-这里问题就来了，你不是是说：**String类的对象是不可变的字符串对象吗？**我看name的值变了呀！！！![1662610591674](https://lsky-pro.smartideahub.site:2083/qls/1662610591674.png)
+这里问题就来了，你不是是说：**String类的对象是不可变的字符串对象吗？**我看name的值变了呀！！！![1662610591674](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662610591674.png)
 
 下面 就解释一下，String是不可变对象到底是什么含义。
 
@@ -287,11 +287,11 @@ public class StringDemo2 {
 
 执行第一句话时，会在堆内存的常量池中，创建一个字符串对象`“爱坤”`，然后把`“爱坤”`的地址赋值给`String name`
 
-![1662610697641](https://lsky-pro.smartideahub.site:2083/qls/1662610697641.png)
+![1662610697641](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662610697641.png)
 
 当执行第二句话时，又会再堆内存的常量池中创建一个字符串`“程序员”`，和`“爱坤”`拼接，拼接之后还会产生一个新的字符串对象`”爱坤程序员“`，然后将新产生的`“爱坤程序员”`对象的地址赋值给`String name`变量。
 
-![1662610978351](https://lsky-pro.smartideahub.site:2083/qls/1662610978351.png)
+![1662610978351](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662610978351.png)
 
 此时你会发现，之前创建的字符串对象`“爱坤”`内容确实是没有改变的。所以说String的对象是不可变的。
 
@@ -299,9 +299,9 @@ public class StringDemo2 {
   1. 只要是以`“...”`方式写出的字符串对象，会存储到字符串常量池，且相同内容的字符串只存储一份。如下图一所示
   2. 但通过`new`方式创建字符串对象，每new一次都会产生一个新的对象放在堆内存中。如下图二所示
 
-![           ](https://lsky-pro.smartideahub.site:2083/qls/1662618688215.png)
+![           ](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662618688215.png)
 
-![1662618651517](https://lsky-pro.smartideahub.site:2083/qls/1662618651517.png)
+![1662618651517](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662618651517.png)
 
 - 总结一下，字符串的注意事项。
 
@@ -315,7 +315,7 @@ public class StringDemo2 {
 
 接下来给大家做一个案例，使用字符串的功能完成登录案例。案例需求如下：
 
-![1662618819077](https://lsky-pro.smartideahub.site:2083/qls/1662618819077.png)
+![1662618819077](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662618819077.png)
 
 ```java
 分析一下完成案例的步骤：
@@ -376,7 +376,7 @@ public class StringTest4 {
 
 接下来学习一个再工作中也比较常见的案例，使用String来开发验证码。需求如下：
 
-![1662619371060](https://lsky-pro.smartideahub.site:2083/qls/1662619371060.png)
+![1662619371060](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662619371060.png)
 
 ```java
 根据需求分析，步骤如下：
@@ -406,8 +406,8 @@ public class StringTest5 {
        1、设计一个方法，返回指定位数的验证码
      */
     public static String createCode(int n){
-        // 2、定义2个变量 
-        //一个是记住最终产生的随机验证码 
+        // 2、定义2个变量
+        //一个是记住最终产生的随机验证码
         //一个是记住可能用到的全部字符
         String code = "";
         String data = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -440,11 +440,11 @@ ArrayList表示一种集合，它是一个容器，用来装数据的，类似�
 
 然后集合有很多种，而ArrayList只是众多集合中的一种，跟多的集合 在就业班的课程中再学习。如下图所示：
 
-![1662620084702](https://lsky-pro.smartideahub.site:2083/qls/1662620084702.png)
+![1662620084702](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662620084702.png)
 
 集合该怎么学呢？1. 首先你要会创建集合对象，2. 然后能够调用集合提供的方法对容器中的数据进行增删改查，3. 最后知道集合的一些特点就可以了。
 
-![1662620152564](https://lsky-pro.smartideahub.site:2083/qls/1662620152564.png)
+![1662620152564](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662620152564.png)
 
 ### 2. ArrayList常用方法
 
@@ -454,7 +454,7 @@ ArrayList表示一种集合，它是一个容器，用来装数据的，类似�
 
 - 第二步：调用ArrayList类的常用方法对容器中的数据进行操作。常用方法如下：
 
-![1662620389155](https://lsky-pro.smartideahub.site:2083/qls/1662620389155.png)
+![1662620389155](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662620389155.png)
 
 接下来 把ArrayList集合的这些方法快速的熟悉一下：
 
@@ -485,7 +485,7 @@ public class ArrayListDemo1 {
         // 4、获取集合的大小（返回集合中存储的元素个数）
         System.out.println(list.size());
 
-        // 5、根据索引删除集合中的某个元素值，会返回被删除的元素值给 
+        // 5、根据索引删除集合中的某个元素值，会返回被删除的元素值给
         System.out.println(list.remove(1));
         System.out.println(list);
 
@@ -500,7 +500,7 @@ public class ArrayListDemo1 {
         System.out.println(list.remove("爱坤"));
         System.out.println(list);
 
-        // 7、修改某个索引位置处的数据，修改后会返回原来的值给 
+        // 7、修改某个索引位置处的数据，修改后会返回原来的值给
         System.out.println(list.set(1, "爱坤程序员"));
         System.out.println(list);
     }
@@ -511,9 +511,9 @@ public class ArrayListDemo1 {
 
 接下来， 学习一个ArrayList的应用案例，需求如下：
 
-![1662620686208](https://lsky-pro.smartideahub.site:2083/qls/1662620686208.png)
+![1662620686208](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662620686208.png)
 
- 分析一下这个案例的步骤该如何实现：
+分析一下这个案例的步骤该如何实现：
 
 ```java
 1.用户可以选购多个商品，可以创建一个ArrayList集合，存储这些商品
@@ -540,7 +540,7 @@ public class ArrayListTest2 {
         list.add("枸杞子");
         System.out.println(list);
         //运行结果如下： [Java入门, 宁夏枸杞, 黑枸杞, 人字拖, 特级枸杞, 枸杞子]
-       
+
         // 2、开始完成需求：从集合中找出包含枸杞的数据并删除它
         for (int i = 0; i < list.size(); i++) {
             // i = 0 1 2 3 4 5
@@ -560,7 +560,7 @@ public class ArrayListTest2 {
 
 运行完上面代码， 会发现，删除后的集合中，竟然还有`黑枸杞`，`枸杞子`在集合中。这是为什么呢？
 
-![1662621705234](https://lsky-pro.smartideahub.site:2083/qls/1662621705234.png)
+![1662621705234](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662621705234.png)
 
 枸杞子被保留下来，原理是一样的。可以自行分析。
 
@@ -568,7 +568,7 @@ public class ArrayListTest2 {
 
 - **集合删除元素方式一**：每次删除完元素后，让控制循环的变量`i--`就可以了；如下图所示
 
-![1662622656784](https://lsky-pro.smartideahub.site:2083/qls/1662622656784.png)
+![1662622656784](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662622656784.png)
 
 具体代码如下：
 
@@ -590,13 +590,13 @@ System.out.println(list);
 
 - **集合删除元素方式二**： 只需要倒着遍历集合，在遍历过程中删除元素就可以了
 
-![1662623052476](https://lsky-pro.smartideahub.site:2083/qls/1662623052476.png)
+![1662623052476](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662623052476.png)
 
-![1662623321970](https://lsky-pro.smartideahub.site:2083/qls/1662623321970.png)
+![1662623321970](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662623321970.png)
 
-![1662623468659](https://lsky-pro.smartideahub.site:2083/qls/1662623468659.png)
+![1662623468659](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662623468659.png)
 
-![1662623624269](https://lsky-pro.smartideahub.site:2083/qls/1662623624269.png)
+![1662623624269](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662623624269.png)
 
 具体代码如下：
 
@@ -622,7 +622,7 @@ System.out.println(list);
 
 接下来 做个案例，用来往集合中存储自定义的对象，先阅读下面的案例需求：
 
-![1662623794937](https://lsky-pro.smartideahub.site:2083/qls/1662623794937.png)
+![1662623794937](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662623794937.png)
 
 分析需求发现：
 
@@ -689,10 +689,10 @@ public class FoodManager{
     //为了存储多个菜品，预先创建一个ArrayList集合；
     //上架菜品时，其实就是往集合中添加菜品对象
     //浏览菜品时，其实就是遍历集合中的菜品对象，并打印菜品对象的属性信息。
-    private ArrayList<Food> foods = new ArrayList<>(); 
+    private ArrayList<Food> foods = new ArrayList<>();
     //为了在下面的多个方法中，能够使用键盘录入，提前把Scanner对象创建好；
     private Scanner sc = new Scanner(System.in);
-   
+
     /**
      1、商家上架菜品
      */
@@ -776,6 +776,6 @@ public class Test {
 
 运行结果如下：需要用户输入add、query或者exit，选择进入不同的功能。
 
-![1662624841469](https://lsky-pro.smartideahub.site:2083/qls/1662624841469.png)
+![1662624841469](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1662624841469.png)
 
 好了，如果你能够把这个案例写出来，说明你对面向对象的思维封装数据，以及使用ArrayList容器存储数据，并对数据进行处理这方面的知识已经运用的很熟悉了。

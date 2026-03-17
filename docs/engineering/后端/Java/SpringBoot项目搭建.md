@@ -6,7 +6,7 @@
 
 访问地址：<https://start.spring.io/>
 
-[Snipaste_2025-04-29_10-02-54](https://lsky-pro.smartideahub.site:2083/qls/Snipaste_2025-04-29_10-02-54.png)
+[Snipaste_2025-04-29_10-02-54](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/Snipaste_2025-04-29_10-02-54.png)
 
 然后点击页面底部的 "Generate" 按钮，下载一个压缩包（如 demo.zip）。
 

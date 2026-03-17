@@ -8,9 +8,9 @@
 
 所以，接下来 正式学习一下字符集。先来了解一下字符集的来历。
 
- 知道计算机是美国人发明的，由于计算机能够处理的数据只能是0和1组成的二进制数据，为了让计算机能够处理字符，于是美国人就把他们会用到的每一个字符进行了编码（**所谓编码，就是为一个字符编一个二进制数据**），如下图所示：
+知道计算机是美国人发明的，由于计算机能够处理的数据只能是0和1组成的二进制数据，为了让计算机能够处理字符，于是美国人就把他们会用到的每一个字符进行了编码（**所谓编码，就是为一个字符编一个二进制数据**），如下图所示：
 
-![1667738471094](https://lsky-pro.smartideahub.site:2083/qls/1667738471094.png)
+![1667738471094](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667738471094.png)
 
 美国人常用的字符有英文字母、标点符号、数字以及一些特殊字符，这些字符一共也不到128个，所以他们用1个字节来存储1字符就够了。 美国人把他们用到的字符和字符对应的编码总结成了一张码表，这张码表叫做ASCII码表（也叫ASCII字符集）。
 
@@ -31,7 +31,7 @@
 - 1. 如果是存储字母，采用1个字节来存储，一共8位，其中第1位是0
   2. 如果是存储汉字，采用2个字节来存储，一共16位，其中第1位是1
 
-![1667739473545](https://lsky-pro.smartideahub.site:2083/qls/1667739473545.png)
+![1667739473545](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667739473545.png)
 
 **当读取文件中的字符时，通过识别读取到的第1位是0还是1来判断是字母还是汉字**
 
@@ -46,7 +46,7 @@
 
 在Unicode字符集中，采用一个字符4个字节的编码方案，又造成另一个问题：如果是说英语的国家，他们只需要用到26大小写字母，加上一些标点符号就够了，本身一个字节就可以表示完，用4个字节就有点浪费。
 
-于是又对Unicode字符集中的字符进行了重新编码，一共设计了三种编码方案。分别是UTF-32、UTF-16、UTF-8;  **其中比较常用的编码方案是UTF-8**
+于是又对Unicode字符集中的字符进行了重新编码，一共设计了三种编码方案。分别是UTF-32、UTF-16、UTF-8; **其中比较常用的编码方案是UTF-8**
 
 下面 详细介绍一下UTF-8这种编码方案的特点。
 
@@ -118,7 +118,7 @@ IO流的作用：就是可以对文件或者网络中的数据进行读、写的
 - 把程序中的数据写入磁盘、网络中，用到的是输出流。
 - **简单记：输入流（读数据）、输出流（写数据）**
 
-![1667822945208](https://lsky-pro.smartideahub.site:2083/qls/1667822945208.png)
+![1667822945208](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667822945208.png)
 
 IO流在Java中有很多种，不同的流来干不同的事情。Java把各种流用不同的类来表示，这些流的继承体系如下图所示：
 
@@ -128,17 +128,17 @@ IO流分为两大派系：
  2.字符流：字符流由分为字符输入流、字符输出流
 ```
 
-![1667823186345](https://lsky-pro.smartideahub.site:2083/qls/1667823186345.png)
+![1667823186345](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667823186345.png)
 
 ### 2.2 FileInputStream读取一个字节
 
 在上节课认识了什么是IO流，接下来 学习字节流中的字节输入流，用InputStream来表示。但是InputStream是抽象类， 用的是它的子类，叫FileInputStream。
 
-![1667823371395](https://lsky-pro.smartideahub.site:2083/qls/1667823371395.png)
+![1667823371395](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667823371395.png)
 
 需要用到的方法如下图所示：有构造方法、成员方法
 
-![1667823417184](https://lsky-pro.smartideahub.site:2083/qls/1667823417184.png)
+![1667823417184](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667823417184.png)
 
 使用FileInputStream读取文件中的字节数据，步骤如下
 
@@ -165,7 +165,7 @@ public class FileInputStreamTest1 {
         while ((b = is.read()) != -1){
             System.out.print((char) b);
         }
-        
+
         //3、流使用完毕之后，必须关闭！释放系统资源！
         is.close();
     }
@@ -240,9 +240,9 @@ abcde
 
 前面 到的读取方式，不管是一次读取一个字节，还是一次读取多个字节，都有可能有乱码。那么接下来 介绍一种，不出现乱码的读取方式。
 
- 可以一次性读取文件中的全部字节，然后把全部字节转换为一个字符串，就不会有乱码了。
+可以一次性读取文件中的全部字节，然后把全部字节转换为一个字符串，就不会有乱码了。
 
-![1667830119965](https://lsky-pro.smartideahub.site:2083/qls/1667830119965.png)
+![1667830119965](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667830119965.png)
 
 ```java
 // 1、一次性读取完文件的全部字节到一个字节数组中去。
@@ -258,10 +258,10 @@ int len = is.read(buffer);
 System.out.println(new String(buffer));
 
 //3、关闭流
-is.close(); 
+is.close();
 ```
 
-![1667830186936](https://lsky-pro.smartideahub.site:2083/qls/1667830186936.png)
+![1667830186936](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667830186936.png)
 
 ```java
 // 1、一次性读取完文件的全部字节到一个字节数组中去。
@@ -273,7 +273,7 @@ byte[] buffer = is.readAllBytes();
 System.out.println(new String(buffer));
 
 //3、关闭流
-is.close(); 
+is.close();
 ```
 
 最后，还是要注意一个问题：**一次读取所有字节虽然可以解决乱码问题，但是文件不能过大，如果文件过大，可能导致内存溢出。**
@@ -284,7 +284,7 @@ is.close();
 
 往文件中写数据需要用到OutputStream下面的一个子类FileOutputStream。写输入的流程如下图所示
 
-![1667830581838](https://lsky-pro.smartideahub.site:2083/qls/1667830581838.png)
+![1667830581838](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667830581838.png)
 
 使用FileOutputStream往文件中写数据的步骤如下：
 
@@ -331,7 +331,7 @@ public class FileOutputStreamTest4 {
 
 ### 2.6 字节流复制文件
 
- 在前面已经把字节输入流和字节输出流都学习完了。现在 就可以用这两种流配合起来使用，做一个文件复制的综合案例。
+在前面已经把字节输入流和字节输出流都学习完了。现在 就可以用这两种流配合起来使用，做一个文件复制的综合案例。
 
 比如： 要复制一张图片，从磁盘`D:/resource/meinv.png`的一个位置，复制到`C:/data/meinv.png`位置。
 
@@ -343,7 +343,7 @@ public class FileOutputStreamTest4 {
 3.然后再使用FileOutputStream把字节数组中的有效元素，写入到目标文件中
 ```
 
-![1667830863144](https://lsky-pro.smartideahub.site:2083/qls/1667830863144.png)
+![1667830863144](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667830863144.png)
 
 代码如下：
 
@@ -379,9 +379,9 @@ public class CopyTest5 {
 
 前面 已经学习了字节流，也强调过，流使用完之后一定要释放资源。但是 之前的代码并不是很专业。
 
-![1667831281147](https://lsky-pro.smartideahub.site:2083/qls/1667831281147.png)
+![1667831281147](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667831281147.png)
 
- 现在知道这个问题了，那这个问题怎么解决呢？ 在JDK7以前，和JDK7以后分别给出了不同的处理方案。
+现在知道这个问题了，那这个问题怎么解决呢？ 在JDK7以前，和JDK7以后分别给出了不同的处理方案。
 
 ### 3.1 JDK7以前的资源释放
 

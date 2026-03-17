@@ -2,23 +2,22 @@
 
 对于Rest风格，我们需要学习的内容包括:
 
-* REST简介
-* REST入门案例
-* REST快速开发
-* 案例:基于RESTful页面数据交互
+- REST简介
+- REST入门案例
+- REST快速开发
+- 案例:基于RESTful页面数据交互
 
 ## REST简介
 
-* ==REST==（Representational State Transfer），表现形式状态转换,它是一种软件架构==风格==
+- ==REST==（Representational State Transfer），表现形式状态转换,它是一种软件架构==风格==
 
   当我们想表示一个网络资源的时候，可以使用两种方式:
-
-  * 传统风格资源描述形式
-    * `http://localhost/user/getById?id=1` 查询id为1的用户信息
-    * `http://localhost/user/saveUser` 保存用户信息
-  * REST风格描述形式
-    * `http://localhost/user/1`
-    * `http://localhost/user`
+  - 传统风格资源描述形式
+    - `http://localhost/user/getById?id=1` 查询id为1的用户信息
+    - `http://localhost/user/saveUser` 保存用户信息
+  - REST风格描述形式
+    - `http://localhost/user/1`
+    - `http://localhost/user`
 
 传统方式一般是一个请求url对应一种操作，这样做不仅麻烦，也不安全，因为会程序的人读取了你的请求url地址，就大概知道该url实现的是一个什么样的操作。
 
@@ -26,38 +25,38 @@
 
 所以REST的优点有:
 
-* 隐藏资源的访问行为，无法通过地址得知对资源是何种操作
-* 书写简化
+- 隐藏资源的访问行为，无法通过地址得知对资源是何种操作
+- 书写简化
 
 但是我们的问题也随之而来了，一个相同的url地址即可以是新增也可以是修改或者查询，那么到底我们该如何区分该请求到底是什么操作呢?
 
-* 按照REST风格访问资源时使用==行为动作==区分对资源进行了何种操作
-  * `http://localhost/users` 查询全部用户信息 GET（查询）
-  * `http://localhost/users/1`  查询指定用户信息 GET（查询）
-  * `http://localhost/users`    添加用户信息    POST（新增/保存）
-  * `http://localhost/users`    修改用户信息    PUT（修改/更新）
-  * `http://localhost/users/1`  删除用户信息    DELETE（删除）
+- 按照REST风格访问资源时使用==行为动作==区分对资源进行了何种操作
+  - `http://localhost/users` 查询全部用户信息 GET（查询）
+  - `http://localhost/users/1` 查询指定用户信息 GET（查询）
+  - `http://localhost/users` 添加用户信息 POST（新增/保存）
+  - `http://localhost/users` 修改用户信息 PUT（修改/更新）
+  - `http://localhost/users/1` 删除用户信息 DELETE（删除）
 
 请求的方式比较多，但是比较常用的就4种，分别是`GET`,`POST`,`PUT`,`DELETE`。
 
 按照不同的请求方式代表不同的操作类型。
 
-* 发送GET请求是用来做查询
-* 发送POST请求是用来做新增
-* 发送PUT请求是用来做修改
-* 发送DELETE请求是用来做删除
+- 发送GET请求是用来做查询
+- 发送POST请求是用来做新增
+- 发送PUT请求是用来做修改
+- 发送DELETE请求是用来做删除
 
 但是==注意==:
 
-* 上述行为是约定方式，约定不是规范，可以打破，所以称REST风格，而不是REST规范
-  * REST提供了对应的架构方式，按照这种架构设计项目可以降低开发的复杂性，提高系统的可伸缩性
-  * REST中规定GET/POST/PUT/DELETE针对的是查询/新增/修改/删除，但是我们如果非要用GET请求做删除，这点在程序上运行是可以实现的
-  * 但是如果绝大多数人都遵循这种风格，你写的代码让别人读起来就有点莫名其妙了。
-* 描述模块的名称通常使用复数，也就是加s的格式描述，表示此类资源，而非单个资源，例如:users、books、accounts......
+- 上述行为是约定方式，约定不是规范，可以打破，所以称REST风格，而不是REST规范
+  - REST提供了对应的架构方式，按照这种架构设计项目可以降低开发的复杂性，提高系统的可伸缩性
+  - REST中规定GET/POST/PUT/DELETE针对的是查询/新增/修改/删除，但是我们如果非要用GET请求做删除，这点在程序上运行是可以实现的
+  - 但是如果绝大多数人都遵循这种风格，你写的代码让别人读起来就有点莫名其妙了。
+- 描述模块的名称通常使用复数，也就是加s的格式描述，表示此类资源，而非单个资源，例如:users、books、accounts......
 
 清楚了什么是REST风格后，我们后期会经常提到一个概念叫`RESTful`，那什么又是RESTful呢?
 
-* 根据REST风格对资源进行访问称为==RESTful==。
+- 根据REST风格对资源进行访问称为==RESTful==。
 
 后期我们在进行开发的过程中，大多是都是遵从REST风格来访问我们的后台服务，所以可以说咱们以后都是基于RESTful来进行开发的。
 
@@ -65,22 +64,22 @@
 
 ### 环境准备
 
-* 创建一个Web的Maven项目
+- 创建一个Web的Maven项目
 
-* pom.xml添加Spring依赖
+- pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_06_rest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -99,7 +98,7 @@
         <version>2.9.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -114,25 +113,25 @@
       </plugins>
     </build>
   </project>
-  
+
   ```
 
-* 创建对应的配置类
+- 创建对应的配置类
 
   ```java
   public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
       protected Class<?>[] getRootConfigClasses() {
           return new Class[0];
       }
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
-  
+
       protected String[] getServletMappings() {
           return new String[]{"/"};
       }
-  
+
       //乱码处理
       @Override
       protected Filter[] getServletFilters() {
@@ -141,18 +140,18 @@
           return new Filter[]{filter};
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   //开启json数据类型自动转换
   @EnableWebMvc
   public class SpringMvcConfig {
   }
-  
-  
+
+
   ```
 
-* 编写模型类User和Book
+- 编写模型类User和Book
 
   ```java
   public class User {
@@ -160,7 +159,7 @@
       private int age;
       //getter...setter...toString省略
   }
-  
+
   public class Book {
       private String name;
       private double price;
@@ -168,7 +167,7 @@
   }
   ```
 
-* 编写UserController和BookController
+- 编写UserController和BookController
 
   ```java
   @Controller
@@ -179,28 +178,28 @@
           System.out.println("user save..."+user);
           return "{'module':'user save'}";
       }
-  
+
       @RequestMapping("/delete")
       @ResponseBody
       public String delete(Integer id) {
           System.out.println("user delete..." + id);
           return "{'module':'user delete'}";
       }
-  
+
       @RequestMapping("/update")
       @ResponseBody
       public String update(@RequestBody User user) {
           System.out.println("user update..." + user);
           return "{'module':'user update'}";
       }
-  
+
       @RequestMapping("/getById")
       @ResponseBody
       public String getById(Integer id) {
           System.out.println("user getById..." + id);
           return "{'module':'user getById'}";
       }
-  
+
       @RequestMapping("/findAll")
       @ResponseBody
       public String getAll() {
@@ -208,52 +207,52 @@
           return "{'module':'user getAll'}";
       }
   }
-  
-  
+
+
   @Controller
   public class BookController {
-      
+
    @RequestMapping(value = "/books",method = RequestMethod.POST)
       @ResponseBody
       public String save(@RequestBody Book book){
           System.out.println("book save..." + book);
           return "{'module':'book save'}";
       }
-  
+
       @RequestMapping(value = "/books/{id}",method = RequestMethod.DELETE)
       @ResponseBody
       public String delete(@PathVariable Integer id){
           System.out.println("book delete..." + id);
           return "{'module':'book delete'}";
       }
-  
+
       @RequestMapping(value = "/books",method = RequestMethod.PUT)
       @ResponseBody
       public String update(@RequestBody Book book){
           System.out.println("book update..." + book);
           return "{'module':'book update'}";
       }
-  
+
       @RequestMapping(value = "/books/{id}",method = RequestMethod.GET)
       @ResponseBody
       public String getById(@PathVariable Integer id){
           System.out.println("book getById..." + id);
           return "{'module':'book getById'}";
       }
-  
+
       @RequestMapping(value = "/books",method = RequestMethod.GET)
       @ResponseBody
       public String getAll(){
           System.out.println("book getAll...");
           return "{'module':'book getAll'}";
       }
-      
+
   }
   ```
 
 最终创建好的项目结构如下:
 
-![1630503741455](https://lsky-pro.smartideahub.site:2083/qls/1630503741455.png)
+![1630503741455](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630503741455.png)
 
 ### 思路分析
 
@@ -286,15 +285,13 @@ public class UserController {
 }
 ```
 
-* 将请求路径更改为`/users`
+- 将请求路径更改为`/users`
+  - 访问该方法使用 POST: `http://localhost/users`
 
-  * 访问该方法使用 POST: `http://localhost/users`
+- 使用method属性限定该方法的访问方式为`POST`
+  - 如果发送的不是POST请求，比如发送GET请求，则会报错
 
-* 使用method属性限定该方法的访问方式为`POST`
-
-  * 如果发送的不是POST请求，比如发送GET请求，则会报错
-
-    ![1630505392070](https://lsky-pro.smartideahub.site:2083/qls/1630505392070.png)
+    ![1630505392070](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630505392070.png)
 
 #### 删除
 
@@ -311,8 +308,8 @@ public class UserController {
 }
 ```
 
-* 将请求路径更改为`/users`
-  * 访问该方法使用 DELETE: `http://localhost/users`
+- 将请求路径更改为`/users`
+  - 访问该方法使用 DELETE: `http://localhost/users`
 
 访问成功，但是删除方法没有携带所要删除数据的id,所以针对RESTful的开发，如何携带数据参数?
 
@@ -322,8 +319,8 @@ public class UserController {
 
 后端获取参数，需要做如下修改:
 
-* 修改@RequestMapping的value属性，将其中修改为`/users/{id}`，目的是和路径匹配
-* 在方法的形参前添加@PathVariable注解
+- 修改@RequestMapping的value属性，将其中修改为`/users/{id}`，目的是和路径匹配
+- 在方法的形参前添加@PathVariable注解
 
 ```java
 @Controller
@@ -342,7 +339,7 @@ public class UserController {
 
 (1)如果方法形参的名称和路径`{}`中的值不一致，该怎么办?
 
-![1630506231379](https://lsky-pro.smartideahub.site:2083/qls/1630506231379.png)
+![1630506231379](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630506231379.png)
 
 (2)如果有多个参数需要传递该如何编写?
 
@@ -378,13 +375,12 @@ public class UserController {
 }
 ```
 
-* 将请求路径更改为`/users`
+- 将请求路径更改为`/users`
+  - 访问该方法使用 PUT: `http://localhost/users`
 
-  * 访问该方法使用 PUT: `http://localhost/users`
+- 访问并携带参数:
 
-* 访问并携带参数:
-
-  ![1630506507096](https://lsky-pro.smartideahub.site:2083/qls/1630506507096.png)
+  ![1630506507096](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630506507096.png)
 
 #### 根据ID查询
 
@@ -403,7 +399,7 @@ public class UserController {
 
 将请求路径更改为`/users`
 
-* 访问该方法使用 GET: `http://localhost/users/666`
+- 访问该方法使用 GET: `http://localhost/users/666`
 
 #### 查询所有
 
@@ -422,7 +418,7 @@ public class UserController {
 
 将请求路径更改为`/users`
 
-* 访问该方法使用 GET: `http://localhost/users`
+- 访问该方法使用 GET: `http://localhost/users`
 
 **小结**
 
@@ -444,28 +440,28 @@ public String delete(==@PathVariable== Integer ==id==){
 
 ### 知识点1：@PathVariable
 
-| 名称 | @PathVariable                                                |
-| ---- | ------------------------------------------------------------ |
-| 类型 | ==形参注解==                                                 |
-| 位置 | SpringMVC控制器方法形参定义前面                              |
+| 名称 | @PathVariable                                                        |
+| ---- | -------------------------------------------------------------------- |
+| 类型 | ==形参注解==                                                         |
+| 位置 | SpringMVC控制器方法形参定义前面                                      |
 | 作用 | 绑定路径参数与处理器方法形参间的关系，要求路径参数名与形参名一一对应 |
 
 关于接收参数，我们学过三个注解`@RequestBody`、`@RequestParam`、`@PathVariable`,这三个注解之间的区别和应用分别是什么?
 
-* 区别
-  * @RequestParam用于接收url地址传参或表单传参
-  * @RequestBody用于接收json数据
-  * @PathVariable用于接收路径参数，使用{参数名称}描述路径参数
-* 应用
-  * 后期开发中，发送请求参数超过1个时，以json格式为主，@RequestBody应用较广
-  * 如果发送非json格式数据，选用@RequestParam接收请求参数
-  * 采用RESTful进行开发，当参数数量较少时，例如1个，可以采用@PathVariable接收请求路径变量，通常用于传递id值
+- 区别
+  - @RequestParam用于接收url地址传参或表单传参
+  - @RequestBody用于接收json数据
+  - @PathVariable用于接收路径参数，使用{参数名称}描述路径参数
+- 应用
+  - 后期开发中，发送请求参数超过1个时，以json格式为主，@RequestBody应用较广
+  - 如果发送非json格式数据，选用@RequestParam接收请求参数
+  - 采用RESTful进行开发，当参数数量较少时，例如1个，可以采用@PathVariable接收请求路径变量，通常用于传递id值
 
 ## RESTful快速开发
 
 做完了RESTful的开发，你会发现==好麻烦==，麻烦在哪?
 
-![1630507339724](https://lsky-pro.smartideahub.site:2083/qls/1630507339724.png)
+![1630507339724](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630507339724.png)
 
 问题1：每个方法的@RequestMapping注解中都定义了访问路径/books，重复性太高。
 
@@ -479,7 +475,7 @@ public String delete(==@PathVariable== Integer ==id==){
 @RestController //@Controller + ReponseBody
 @RequestMapping("/books")
 public class BookController {
-    
+
  //@RequestMapping(method = RequestMethod.POST)
     @PostMapping
     public String save(@RequestBody Book book){
@@ -514,7 +510,7 @@ public class BookController {
         System.out.println("book getAll...");
         return "{'module':'book getAll'}";
     }
-    
+
 }
 ```
 
@@ -541,20 +537,20 @@ public class BookController {
 
 ### 知识点1：@RestController
 
-| 名称 | @RestController                                              |
-| ---- | ------------------------------------------------------------ |
-| 类型 | ==类注解==                                                   |
-| 位置 | 基于SpringMVC的RESTful开发控制器类定义上方                   |
+| 名称 | @RestController                                                                        |
+| ---- | -------------------------------------------------------------------------------------- |
+| 类型 | ==类注解==                                                                             |
+| 位置 | 基于SpringMVC的RESTful开发控制器类定义上方                                             |
 | 作用 | 设置当前控制器类为RESTful风格，`<br/>`等同于@Controller与@ResponseBody两个注解组合功能 |
 
 ### 知识点2：@GetMapping @PostMapping @PutMapping @DeleteMapping
 
-| 名称     | @GetMapping @PostMapping @PutMapping @DeleteMapping          |
-| -------- | ------------------------------------------------------------ |
-| 类型     | ==方法注解==                                                 |
-| 位置     | 基于SpringMVC的RESTful开发控制器方法定义上方                 |
+| 名称     | @GetMapping @PostMapping @PutMapping @DeleteMapping                                               |
+| -------- | ------------------------------------------------------------------------------------------------- |
+| 类型     | ==方法注解==                                                                                      |
+| 位置     | 基于SpringMVC的RESTful开发控制器方法定义上方                                                      |
 | 作用     | 设置当前控制器方法请求访问路径与请求动作，每种对应一个请求动作，`<br/>`例如@GetMapping对应GET请求 |
-| 相关属性 | value（默认）：请求访问路径                                  |
+| 相关属性 | value（默认）：请求访问路径                                                                       |
 
 ## RESTful案例
 
@@ -562,11 +558,11 @@ public class BookController {
 
 需求一:图片列表查询，从后台返回数据，将数据展示在页面上
 
-![1630508310063](https://lsky-pro.smartideahub.site:2083/qls/1630508310063.png)
+![1630508310063](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630508310063.png)
 
 需求二:新增图片，将新增图书的数据传递到后台，并在控制台打印
 
-![1630508367105](https://lsky-pro.smartideahub.site:2083/qls/1630508367105.png)
+![1630508367105](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630508367105.png)
 
 **说明:**此次案例的重点是在SpringMVC中如何使用RESTful实现前后台交互，所以本案例并没有和数据库进行交互，所有数据使用`假`数据来完成开发。
 
@@ -590,22 +586,22 @@ public class BookController {
 
 ### 环境准备
 
-* 创建一个Web的Maven项目
+- 创建一个Web的Maven项目
 
-* pom.xml添加Spring依赖
+- pom.xml添加Spring依赖
 
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
-  
+
   <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-  
+
     <groupId>com.itheima</groupId>
     <artifactId>springmvc_07_rest_case</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-  
+
     <dependencies>
       <dependency>
         <groupId>javax.servlet</groupId>
@@ -624,7 +620,7 @@ public class BookController {
         <version>2.9.0</version>
       </dependency>
     </dependencies>
-  
+
     <build>
       <plugins>
         <plugin>
@@ -639,25 +635,25 @@ public class BookController {
       </plugins>
     </build>
   </project>
-  
+
   ```
 
-* 创建对应的配置类
+- 创建对应的配置类
 
   ```java
   public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
       protected Class<?>[] getRootConfigClasses() {
           return new Class[0];
       }
-  
+
       protected Class<?>[] getServletConfigClasses() {
           return new Class[]{SpringMvcConfig.class};
       }
-  
+
       protected String[] getServletMappings() {
           return new String[]{"/"};
       }
-  
+
       //乱码处理
       @Override
       protected Filter[] getServletFilters() {
@@ -666,18 +662,18 @@ public class BookController {
           return new Filter[]{filter};
       }
   }
-  
+
   @Configuration
   @ComponentScan("com.itheima.controller")
   //开启json数据类型自动转换
   @EnableWebMvc
   public class SpringMvcConfig {
   }
-  
-  
+
+
   ```
 
-* 编写模型类Book
+- 编写模型类Book
 
   ```java
   public class Book {
@@ -689,19 +685,19 @@ public class BookController {
   }
   ```
 
-* 编写BookController
+- 编写BookController
 
   ```java
   @Controller
   public class BookController {
-  
-      
+
+
   }
   ```
 
 最终创建好的项目结构如下:
 
-![1630508864017](https://lsky-pro.smartideahub.site:2083/qls/1630508864017.png)
+![1630508864017](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630508864017.png)
 
 ### 后台接口开发
 
@@ -753,17 +749,17 @@ public class BookController {
 
 ```json
 {
-    "type":"计算机丛书",
-    "name":"SpringMVC终极开发",
-    "description":"这是一本好书"
+  "type": "计算机丛书",
+  "name": "SpringMVC终极开发",
+  "description": "这是一本好书"
 }
 ```
 
-![1630509266954](https://lsky-pro.smartideahub.site:2083/qls/1630509266954.png)
+![1630509266954](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630509266954.png)
 
 测试查询
 
-![20210805140307371](https://lsky-pro.smartideahub.site:2083/qls/image-20210805140307371.png)
+![20210805140307371](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210805140307371.png)
 
 ### 页面访问处理
 
@@ -771,27 +767,27 @@ public class BookController {
 
 将`资料\功能页面`下的所有内容拷贝到项目的`webapp`目录下
 
-![1630510166433](https://lsky-pro.smartideahub.site:2083/qls/1630510166433.png)
+![1630510166433](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630510166433.png)
 
 #### 步骤2:访问pages目录下的books.html
 
 打开浏览器输入`http://localhost/pages/books.html`
 
-![1630510225182](https://lsky-pro.smartideahub.site:2083/qls/1630510225182.png)
+![1630510225182](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630510225182.png)
 
 (1)出现错误的原因?
 
-![1630510264650](https://lsky-pro.smartideahub.site:2083/qls/1630510264650.png)
+![1630510264650](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630510264650.png)
 
 SpringMVC拦截了静态资源，根据/pages/books.html去controller找对应的方法，找不到所以会报404的错误。
 
 (2)SpringMVC为什么会拦截静态资源呢?
 
-![1630510397429](https://lsky-pro.smartideahub.site:2083/qls/1630510397429.png)
+![1630510397429](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1630510397429.png)
 
 (3)解决方案?
 
-* SpringMVC需要将静态资源进行放行。
+- SpringMVC需要将静态资源进行放行。
 
 ```java
 @Configuration
@@ -809,7 +805,7 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport {
 
 ```
 
-* 该配置类是在config目录下，SpringMVC扫描的是controller包，所以该配置类还未生效，要想生效需要将SpringMvcConfig配置类进行修改
+- 该配置类是在config目录下，SpringMVC扫描的是controller包，所以该配置类还未生效，要想生效需要将SpringMvcConfig配置类进行修改
 
 ```java
 @Configuration
@@ -833,145 +829,179 @@ public class SpringMvcConfig {
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <!-- 页面meta -->
-        <meta charset="utf-8">
-        <title>SpringMVC案例</title>
-        <!-- 引入样式 -->
-        <link rel="stylesheet" href="../plugins/elementui/index.css">
-        <link rel="stylesheet" href="../plugins/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
+  <head>
+    <!-- 页面meta -->
+    <meta charset="utf-8" />
+    <title>SpringMVC案例</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../plugins/elementui/index.css" />
+    <link
+      rel="stylesheet"
+      href="../plugins/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-    <body class="hold-transition">
+  <body class="hold-transition">
+    <div id="app">
+      <div class="content-header">
+        <h1>图书管理</h1>
+      </div>
 
-        <div id="app">
+      <div class="app-container">
+        <div class="box">
+          <div class="filter-container">
+            <el-input
+              placeholder="图书名称"
+              style="width: 200px;"
+              class="filter-item"
+            ></el-input>
+            <el-button class="dalfBut">查询</el-button>
+            <el-button type="primary" class="butT" @click="openSave()"
+              >新建</el-button
+            >
+          </div>
 
-            <div class="content-header">
-                <h1>图书管理</h1>
-            </div>
+          <el-table
+            size="small"
+            current-row-key="id"
+            :data="dataList"
+            stripe
+            highlight-current-row
+          >
+            <el-table-column
+              type="index"
+              align="center"
+              label="序号"
+            ></el-table-column>
+            <el-table-column
+              prop="type"
+              label="图书类别"
+              align="center"
+            ></el-table-column>
+            <el-table-column
+              prop="name"
+              label="图书名称"
+              align="center"
+            ></el-table-column>
+            <el-table-column
+              prop="description"
+              label="描述"
+              align="center"
+            ></el-table-column>
+            <el-table-column label="操作" align="center">
+              <template slot-scope="scope">
+                <el-button type="primary" size="mini">编辑</el-button>
+                <el-button size="mini" type="danger">删除</el-button>
+              </template>
+            </el-table-column>
+          </el-table>
 
-            <div class="app-container">
-                <div class="box">
-                    <div class="filter-container">
-                        <el-input placeholder="图书名称" style="width: 200px;" class="filter-item"></el-input>
-                        <el-button class="dalfBut">查询</el-button>
-                        <el-button type="primary" class="butT" @click="openSave()">新建</el-button>
-                    </div>
+          <div class="pagination-container">
+            <el-pagination
+              class="pagiantion"
+              @current-change="handleCurrentChange"
+              :current-page="pagination.currentPage"
+              :page-size="pagination.pageSize"
+              layout="total, prev, pager, next, jumper"
+              :total="pagination.total"
+            >
+            </el-pagination>
+          </div>
 
-                    <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
-                        <el-table-column type="index" align="center" label="序号"></el-table-column>
-                        <el-table-column prop="type" label="图书类别" align="center"></el-table-column>
-                        <el-table-column prop="name" label="图书名称" align="center"></el-table-column>
-                        <el-table-column prop="description" label="描述" align="center"></el-table-column>
-                        <el-table-column label="操作" align="center">
-                            <template slot-scope="scope">
-                                <el-button type="primary" size="mini">编辑</el-button>
-                                <el-button size="mini" type="danger">删除</el-button>
-                            </template>
-                        </el-table-column>
-                    </el-table>
-
-                    <div class="pagination-container">
-                        <el-pagination
-                            class="pagiantion"
-                            @current-change="handleCurrentChange"
-                            :current-page="pagination.currentPage"
-                            :page-size="pagination.pageSize"
-                            layout="total, prev, pager, next, jumper"
-                            :total="pagination.total">
-                        </el-pagination>
-                    </div>
-
-                    <!-- 新增标签弹层 -->
-                    <div class="add-form">
-                        <el-dialog title="新增图书" :visible.sync="dialogFormVisible">
-                            <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
-                                <el-row>
-                                    <el-col :span="12">
-                                        <el-form-item label="图书类别" prop="type">
-                                            <el-input v-model="formData.type"/>
-                                        </el-form-item>
-                                    </el-col>
-                                    <el-col :span="12">
-                                        <el-form-item label="图书名称" prop="name">
-                                            <el-input v-model="formData.name"/>
-                                        </el-form-item>
-                                    </el-col>
-                                </el-row>
-                                <el-row>
-                                    <el-col :span="24">
-                                        <el-form-item label="描述">
-                                            <el-input v-model="formData.description" type="textarea"></el-input>
-                                        </el-form-item>
-                                    </el-col>
-                                </el-row>
-                            </el-form>
-                            <div slot="footer" class="dialog-footer">
-                                <el-button @click="dialogFormVisible = false">取消</el-button>
-                                <el-button type="primary" @click="saveBook()">确定</el-button>
-                            </div>
-                        </el-dialog>
-                    </div>
-
-                </div>
-            </div>
+          <!-- 新增标签弹层 -->
+          <div class="add-form">
+            <el-dialog title="新增图书" :visible.sync="dialogFormVisible">
+              <el-form
+                ref="dataAddForm"
+                :model="formData"
+                :rules="rules"
+                label-position="right"
+                label-width="100px"
+              >
+                <el-row>
+                  <el-col :span="12">
+                    <el-form-item label="图书类别" prop="type">
+                      <el-input v-model="formData.type" />
+                    </el-form-item>
+                  </el-col>
+                  <el-col :span="12">
+                    <el-form-item label="图书名称" prop="name">
+                      <el-input v-model="formData.name" />
+                    </el-form-item>
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="24">
+                    <el-form-item label="描述">
+                      <el-input
+                        v-model="formData.description"
+                        type="textarea"
+                      ></el-input>
+                    </el-form-item>
+                  </el-col>
+                </el-row>
+              </el-form>
+              <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取消</el-button>
+                <el-button type="primary" @click="saveBook()">确定</el-button>
+              </div>
+            </el-dialog>
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
 
-    <!-- 引入组件库 -->
-    <script src="../js/vue.js"></script>
-    <script src="../plugins/elementui/index.js"></script>
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script src="../js/axios-0.18.0.js"></script>
+  <!-- 引入组件库 -->
+  <script src="../js/vue.js"></script>
+  <script src="../plugins/elementui/index.js"></script>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <script src="../js/axios-0.18.0.js"></script>
 
-    <script>
-        var vue = new Vue({
+  <script>
+    var vue = new Vue({
+      el: "#app",
 
-            el: '#app',
+      data: {
+        dataList: [], //当前页要展示的分页列表数据
+        formData: {}, //表单数据
+        dialogFormVisible: false, //增加表单是否可见
+        dialogFormVisible4Edit: false, //编辑表单是否可见
+        pagination: {}, //分页模型数据，暂时弃用
+      },
 
-            data:{
-    dataList: [],//当前页要展示的分页列表数据
-                formData: {},//表单数据
-                dialogFormVisible: false,//增加表单是否可见
-                dialogFormVisible4Edit:false,//编辑表单是否可见
-                pagination: {},//分页模型数据，暂时弃用
-            },
+      //钩子函数，VUE对象初始化完成后自动执行
+      created() {
+        this.getAll();
+      },
 
-            //钩子函数，VUE对象初始化完成后自动执行
-            created() {
-                this.getAll();
-            },
+      methods: {
+        // 重置表单
+        resetForm() {
+          //清空输入框
+          this.formData = {};
+        },
 
-            methods: {
-                // 重置表单
-                resetForm() {
-                    //清空输入框
-                    this.formData = {};
-                },
+        // 弹出添加窗口
+        openSave() {
+          this.dialogFormVisible = true;
+          this.resetForm();
+        },
 
-                // 弹出添加窗口
-                openSave() {
-                    this.dialogFormVisible = true;
-                    this.resetForm();
-                },
+        //添加
+        saveBook() {
+          axios.post("/books", this.formData).then((res) => {});
+        },
 
-                //添加
-                saveBook () {
-                    axios.post("/books",this.formData).then((res)=>{
-
-                    });
-                },
-
-                //主页列表查询
-                getAll() {
-                    axios.get("/books").then((res)=>{
-                        this.dataList = res.data;
-                    });
-                },
-
-            }
-        })
-    </script>
+        //主页列表查询
+        getAll() {
+          axios.get("/books").then((res) => {
+            this.dataList = res.data;
+          });
+        },
+      },
+    });
+  </script>
 </html>
 ```

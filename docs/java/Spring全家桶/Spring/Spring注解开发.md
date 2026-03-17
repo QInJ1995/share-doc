@@ -73,7 +73,7 @@ public class AppForAnnotation {
 
 **运行结果**
 
-![image-20210730104835746](https://lsky-pro.smartideahub.site:2083/qls/image-20210730104835746.png)
+![image-20210730104835746](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730104835746.png)
 
 ### @Component三个衍生注解
 
@@ -108,7 +108,7 @@ public class BookServiceImpl implements BookService {
 - Spring3.0开启了纯注解开发模式，使用Java类替代配置文件，开启了Spring快速开发赛道
 - Java类代替Spring核心配置文件
 
-![image-20210803192052811](https://lsky-pro.smartideahub.site:2083/qls/image-20210803192052811.png)
+![image-20210803192052811](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210803192052811.png)
 
 - @Configuration注解用于设定当前类为配置类
 - @ComponentScan注解用于设定扫描路径，此注解只能添加一次，多个数据请用数组格式
@@ -282,7 +282,7 @@ public class SpringConfig {
 }
 ```
 
-==注意：@PropertySource()中加载多文件请使用数组格式配置，不允许使用通配符*==
+==注意：@PropertySource()中加载多文件请使用数组格式配置，不允许使用通配符\*==
 
 ## 注解开发管理第三方Bean【重点】
 
@@ -367,7 +367,7 @@ public class JdbcConfig {
 
 ```java
 //Spring会自动从IOC容器中找到BookDao对象赋值给参数bookDao变量，如果没有就会报错。
-@Bean 
+@Bean
 public DataSource dataSource(BookDao bookDao){
     System.out.println(bookDao);
     DruidDataSource ds = new DruidDataSource();
@@ -383,4 +383,4 @@ public DataSource dataSource(BookDao bookDao){
 
 ## 注解开发总结
 
-![image-20210730113548708](https://lsky-pro.smartideahub.site:2083/qls/image-20210730113548708.png)
+![image-20210730113548708](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210730113548708.png)

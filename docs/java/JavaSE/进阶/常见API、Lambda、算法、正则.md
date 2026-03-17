@@ -2,15 +2,15 @@
 
 ## 一、Arrays类
 
-接下来 学习的类叫做Arrays，其实Arrays并不是重点，但是 通过Arrays这个类的学习有助于 理解下一个知识点Lambda的学习。所以 这里先学习Arrays，再通过Arrays来学习Lamdba这样学习会更丝滑一些^_^.
+接下来 学习的类叫做Arrays，其实Arrays并不是重点，但是 通过Arrays这个类的学习有助于 理解下一个知识点Lambda的学习。所以 这里先学习Arrays，再通过Arrays来学习Lamdba这样学习会更丝滑一些^\_^.
 
 ### 1.1 Arrays基本使用
 
- 先认识一下Arrays是干什么用的，Arrays是操作数组的工具类，它可以很方便的对数组中的元素进行遍历、拷贝、排序等操作。
+先认识一下Arrays是干什么用的，Arrays是操作数组的工具类，它可以很方便的对数组中的元素进行遍历、拷贝、排序等操作。
 
 下面 用代码来演示一下：**遍历、拷贝、排序等操作**。需要用到的方法如下
 
-![1667458681721](https://lsky-pro.smartideahub.site:2083/qls/1667458681721.png)
+![1667458681721](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667458681721.png)
 
 ```java
 /**
@@ -63,7 +63,7 @@ public class Student implements Comparable<Student>{
     private String name;
     private double height;
     private int age;
- 
+
     public Student(String name, double height, int age) {
         this.name = name;
         this.height = height;
@@ -101,7 +101,7 @@ public class ArraysTest2 {
 }
 ```
 
-![1667459056681](https://lsky-pro.smartideahub.site:2083/qls/1667459056681.png)
+![1667459056681](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667459056681.png)
 
 上面的代码为什么会报错呢？因为Arrays根本就不知道按照什么规则进行排序。为了让Arrays知道按照什么规则排序， 有如下的两种办法。
 
@@ -112,7 +112,7 @@ public class Student implements Comparable<Student>{
     private String name;
     private double height;
     private int age;
-    
+
     //...get、set、空参数构造方法、有参数构造方法...自己补全
 
     // 指定比较规则
@@ -133,7 +133,7 @@ public class Student implements Comparable<Student>{
         return this.age - o.age; // 按照年龄升序排列
         // return o.age - this.age; // 按照年龄降序排列
     }
-    
+
     @Override
     public String toString() {
         return "Student{" +
@@ -220,7 +220,7 @@ public class LambdaTest1 {
              }
          };
          s.swim();
-  
+
         //2.使用Lambda表达式对Swimming接口的匿名内部类进行简化
         Swimming s1 = () -> {
               System.out.println("学生快乐的游泳~~~~");
@@ -252,7 +252,7 @@ public class LambdaTest2 {
 
         System.out.println(Arrays.toString(prices));
         System.out.println("-----------------------------------------------");
-  
+
         Student[] students = new Student[4];
         students[0] = new Student("蜘蛛精", 169.5, 23);
         students[1] = new Student("紫霞", 163.8, 26);
@@ -292,10 +292,10 @@ public class LambdaTest2 {
   ...方法体的代码...
   return 返回值;
  }
- 
+
 3.如果{}总的语句只有一条语句，则{}可以省略、return关键字、以及最后的“;”都可以省略
  (参数名1, 参数名2)-> 结果
- 
+
 4.如果()里面只有一个参数，则()可以省略
  (参数名)->结果
 ```
@@ -331,7 +331,7 @@ public class LambdaTest2 {
         Arrays.setAll(prices, value -> prices[value] * 0.8 );
 
         System.out.println(Arrays.toString(prices));
-        
+
         System.out.println("------------------------------------
 
         Student[] students = new Student[4];
@@ -339,7 +339,7 @@ public class LambdaTest2 {
         students[1] = new Student("紫霞", 163.8, 26);
         students[2] = new Student("紫霞", 163.8, 26);
         students[3] = new Student("至尊宝", 167.5, 24);
-  
+
         //1.使用匿名内部类
         Arrays.sort(students, new Comparator<Student>() {
             @Override
@@ -370,13 +370,13 @@ public class LambdaTest2 {
 
 各位小伙伴，接下来 学习JDK8的另一个新特性，叫做方法引用。 知道Lambda是用来简化匿名代码的书写格式的，而方法引用是用来进一步简化Lambda表达式的，它简化的更加过分。
 
-到这里有小伙伴可能就想慰问Java爸爸了：“之前的代码挺好的呀！好不容易学会，你又来搞这些，把我都搞晕了。“    说句大实话，确实有这样的问题，学习新的东西肯定会增加 的学习成本，从心理上来说多少是有写抗拒的。但是从另一个角度想，一旦 学会了，会大大简化 的代码书写，提高 编写代码的效率，而且这些新的语法都是有前提条件的，遇到的时候就简化得了。再退一步想，就算你没有学会，还是用以前的办法一点问题也没有。
+到这里有小伙伴可能就想慰问Java爸爸了：“之前的代码挺好的呀！好不容易学会，你又来搞这些，把我都搞晕了。“ 说句大实话，确实有这样的问题，学习新的东西肯定会增加 的学习成本，从心理上来说多少是有写抗拒的。但是从另一个角度想，一旦 学会了，会大大简化 的代码书写，提高 编写代码的效率，而且这些新的语法都是有前提条件的，遇到的时候就简化得了。再退一步想，就算你没有学会，还是用以前的办法一点问题也没有。
 
 给大家交代清楚了，学习方法引用可能存在的一些心理特点之后，接下来 再正式学习方法引用的代码怎么编写。
 
 ### 3.1 静态方法引用
 
- 先学习静态方法的引用，还是用之前Arrays代码来做演示。现在准备好下面的代码
+先学习静态方法的引用，还是用之前Arrays代码来做演示。现在准备好下面的代码
 
 ```java
 public class Test1 {
@@ -403,7 +403,7 @@ public class Test1 {
 
 现在，我想要把下图中Lambda表达式的方法体，用一个静态方法代替
 
-![1667464274934](https://lsky-pro.smartideahub.site:2083/qls/1667464274934.png)
+![1667464274934](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667464274934.png)
 
 准备另外一个类CompareByData类，用于封装Lambda表达式的方法体代码；
 
@@ -432,11 +432,11 @@ Arrays.sort(students, CompareByData::compareByAge);
 
 还是基于上面的案例， 现在来学习一下实例方法的引用。现在，我想要把下图中Lambda表达式的方法体，用一个实例方法代替。
 
-![1667464274934](https://lsky-pro.smartideahub.site:2083/qls/1667464274934.png)
+![1667464274934](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667464274934.png)
 
 在CompareByData类中，再添加一个实例方法，用于封装Lambda表达式的方法体
 
-![1667464896645](https://lsky-pro.smartideahub.site:2083/qls/1667464896645.png)
+![1667464896645](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667464896645.png)
 
 接下来， 把Lambda表达式的方法体，改用对象调用方法
 
@@ -469,7 +469,7 @@ Java约定：
 public class Test2 {
     public static void main(String[] args) {
         String[] names = {"boby", "angela", "Andy" ,"dlei", "caocao", "Babo", "jack", "Cici"};
-        
+
         // 要求忽略首字符大小写进行排序。
         Arrays.sort(names, new Comparator<String>() {
             @Override
@@ -478,7 +478,7 @@ public class Test2 {
                 return o1.compareToIgnoreCase(o2);
             }
         });
-  
+
         //lambda表达式写法
         Arrays.sort(names, ( o1,  o2) -> o1.compareToIgnoreCase(o2) );
         //特定类型的方法引用！
@@ -560,9 +560,9 @@ public class Test3 {
 
         //3、使用方法引用改进：构造器引用
         CreateCar cc3 = Car::new;
-        
+
         //注意：以上是创建CreateCar接口实现类对象的几种形式而已，语法一步一步简化。
-        
+
         //4、对象调用方法
         Car car = cc3.create("奔驰", 49.9);
         System.out.println(car);
@@ -576,11 +576,11 @@ public class Test3 {
 
 接下来， 认识一下什么是算法。算法其实是解决某个实际问题的过程和方法。比如百度地图给你规划路径，计算最优路径的过程就需要用到算法。再比如你在抖音上刷视频时，它会根据你的喜好给你推荐你喜欢看的视频，这里也需要用到算法。
 
- 为什么要学习算法呢？主要目的是训练 的编程思维，还有就是面试的时候，面试官也喜欢问一下算法的问题来考察你的技术水平。最后一点，学习算法是成为一个高级程序员的必经之路。
+为什么要学习算法呢？主要目的是训练 的编程思维，还有就是面试的时候，面试官也喜欢问一下算法的问题来考察你的技术水平。最后一点，学习算法是成为一个高级程序员的必经之路。
 
 当然 现在并不会学习非常复杂的算法，万丈高楼平地起， 现在只需要学习几种常见的基础算法就可以了。而且Java语言本身就内置了一些基础算法给 使用，实际上自己也不会去写这些算法。
 
-![1667402734025](https://lsky-pro.smartideahub.site:2083/qls/1667402734025.png)
+![1667402734025](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667402734025.png)
 
 ### 1.2 冒泡排序
 
@@ -588,7 +588,7 @@ public class Test3 {
 
 排序算法有很多种， 这里只学习比较简单的两种，一种是冒泡排序，一种是选择排序。学习算法 先要搞清楚算法的流程，然后再去“推敲“如何写代码。（**注意，我这里用的次是推敲，也就是说算法这样的代码并不是一次成型的，是需要反复修改才能写好的**）。
 
-![1667403334232](https://lsky-pro.smartideahub.site:2083/qls/1667403334232.png)
+![1667403334232](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667403334232.png)
 
 先来学习冒泡排序，先来介绍一下，冒泡排序的流程
 
@@ -600,7 +600,7 @@ public class Test3 {
    第三轮比较 1次
 ```
 
-![1667403618904](https://lsky-pro.smartideahub.site:2083/qls/1667403618904.png)
+![1667403618904](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667403618904.png)
 
 ```java
 public class Test1 {
@@ -636,7 +636,7 @@ public class Test1 {
 
 所以 先分析选择排序算法的流程：选择排序的核心思路是，每一轮选定一个固定的元素，和其他的每一个元素进行比较；经过几轮比较之后，每一个元素都能比较到了。
 
-![1667467347586](https://lsky-pro.smartideahub.site:2083/qls/1667467347586.png)
+![1667467347586](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667467347586.png)
 
 接下来，按照选择排序的流程编写代码
 
@@ -673,7 +673,7 @@ ublic class Test2 {
 
 **先聊一聊基本查找：**假设 要查找的元素是81，如果是基本查找的话，只能从0索引开始一个一个往后找，但是如果元素比较多，你要查找的元素比较靠后的话，这样查找的此处就比较多。性能比较差。
 
-![1667467611576](https://lsky-pro.smartideahub.site:2083/qls/1667467611576.png)
+![1667467611576](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667467611576.png)
 
 **再讲二分查找**：二分查找的主要特点是，每次查找能排除一般元素，这样效率明显提高。**但是二分查找要求比较苛刻，它要求元素必须是有序的，否则不能进行二分查找。**
 
@@ -688,11 +688,11 @@ ublic class Test2 {
      如果中间位置元素比目标元素大，那说明mid后面的元素都比目标元素大
       此时：right = mid-1
   如果中间位置元素和目标元素相等，那说明mid就是 要找的位置
-   此时：把mid返回  
+   此时：把mid返回
 注意：一搬查找一次肯定是不够的，所以需要把第1步和第2步循环来做，只到left>end就结束，如果最后还没有找到目标元素，就返回-1.
 ```
 
-![1667468412882](https://lsky-pro.smartideahub.site:2083/qls/1667468412882.png)
+![1667468412882](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667468412882.png)
 
 ```java
 /**
@@ -742,7 +742,7 @@ public class Test3 {
 >
 > 正则表达式的作用2：可以从一段文本中查找满足要求的内容
 
-![1667468712516](https://lsky-pro.smartideahub.site:2083/qls/1667468712516.png)
+![1667468712516](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667468712516.png)
 
 ### 5.1 正则表达式初体验
 
@@ -781,21 +781,21 @@ public static boolean checkQQ1(String qq){
 }
 ```
 
- 发现，使用正则表达式，大大简化的了代码的写法。这个代码现在不用写，体验到正则表达式的优势就可以了。
+发现，使用正则表达式，大大简化的了代码的写法。这个代码现在不用写，体验到正则表达式的优势就可以了。
 
 ### 5.2 正则表达式书写规则
 
 前面 已经体验到了正则表达式，可以简化校验数据的代码书写。这里需要用到一个方法叫`matches(String regex)`。这个方法时属于String类的方法。
 
-![1667469085970](https://lsky-pro.smartideahub.site:2083/qls/1667469085970.png)
+![1667469085970](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667469085970.png)
 
 这个方法是用来匹配一个字符串是否匹配正则表达式的规则，参数需要调用者传递一个正则表达式。但是正则表达式不能乱写，是有特定的规则的。
 
 下面 就学习一下，正则表达式的规则。从哪里学呢？在API中有一个类叫做Pattern， 可以到API文档中搜索，关于正则表达式的规则，这个类都告诉 了。我这里把常用的已经给大家整理好了。
 
-![1667469259345](https://lsky-pro.smartideahub.site:2083/qls/1667469259345.png)
+![1667469259345](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667469259345.png)
 
- 将这些规则，在代码中演示一下
+将这些规则，在代码中演示一下
 
 ```java
 /**
@@ -948,9 +948,9 @@ public class RegexTest3 {
 
 各位小伙伴，在前面的课程中， 学习了正则表达式的作用之一，用来校验数据格式的正确性。接下来 学习**正则表达式的第二个作用：在一段文本中查找满足要求的内容**
 
- 还是通过一个案例给大家做演示：案例需求如下
+还是通过一个案例给大家做演示：案例需求如下
 
-![1667469722842](https://lsky-pro.smartideahub.site:2083/qls/1667469722842.png)
+![1667469722842](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667469722842.png)
 
 ```java
 /**
@@ -990,7 +990,7 @@ public class RegexTest4 {
 
 接下来， 学习一下正则表达式的另外两个功能，替换、分割的功能。需要注意的是这几个功能需要用到Stirng类中的方法。这两个方法其实 之前学过，只是当时没有学正则表达式而已。
 
-![1667469943451](https://lsky-pro.smartideahub.site:2083/qls/1667469943451.png)
+![1667469943451](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/1667469943451.png)
 
 ```java
 /**
@@ -1002,7 +1002,7 @@ public class RegexTest5 {
         // 需求1：请把下面字符串中的不是汉字的部分替换为 “-”
         String s1 = "古力娜扎ai8888迪丽热巴999aa5566马尔扎哈fbbfsfs42425卡尔扎巴";
         System.out.println(s1.replaceAll("\\w+", "-"));
-        
+
         // 需求2(拓展)：某语音系统，收到一个口吃的人说的“我我我喜欢编编编编编编编编编编编编程程程！”，需要优化成“我喜欢编程！”。
         String s2 = "我我我喜欢编编编编编编编编编编编编程程程";
         System.out.println(s2.replaceAll("(.)\\1+", "$1"));

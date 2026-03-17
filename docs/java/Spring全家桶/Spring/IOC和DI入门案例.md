@@ -79,7 +79,7 @@ public class BookServiceImpl implements BookService {
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
- 
+
     <!--
 		bean标签：表示配置bean
     	id属性：表示给bean起名字
@@ -109,7 +109,7 @@ public class App {
 
 ### 运行结果
 
-![image-20210729184337603](https://lsky-pro.smartideahub.site:2083/qls/image-20210729184337603.png)
+![image-20210729184337603](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210729184337603.png)
 
 ## DI入门案例【重点】
 
@@ -191,4 +191,4 @@ public class BookServiceImpl implements BookService {
 
 ### 图解演示
 
-![image-20210729183104748](https://lsky-pro.smartideahub.site:2083/qls/image-20210729183104748.png)
+![image-20210729183104748](https://lsky-pro.qinlaoshi.dpdns.org:2083/qls/image-20210729183104748.png)
